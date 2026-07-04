@@ -1,0 +1,173 @@
+{
+  "genere_le": "2026-07-04T19:32:12.856106+00:00",
+  "source": "open data CIVIX / Assemblée nationale",
+  "nb_textes": 12,
+  "textes": [
+    {
+      "date": "2026-04-02",
+      "ref": "DLR5L17N52984",
+      "numero_scrutin": "6022",
+      "titre": "Projet de loi constitutionnelle relatif à la Nouvelle-Calédonie",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°6022",
+      "statut": "adopté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-07",
+      "ref": "DLR5L17N52985",
+      "numero_scrutin": "6023",
+      "titre": "Projet de loi relatif à la lutte contre les fraudes sociales et fiscales",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°6023",
+      "statut": "adopté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-08",
+      "ref": "DLR5L17N53067",
+      "numero_scrutin": "6069",
+      "titre": "Reconnaître une politique nationale d’adaptation au changement climatique et à adapter les mécanismes d’assurance",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6069",
+      "statut": "adopté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-08",
+      "ref": "DLR5L17N53426",
+      "numero_scrutin": "6061",
+      "titre": "Accélérer la prévention cardio-neuro-vasculaire et anticiper un risque sanitaire et social majeur",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6061",
+      "statut": "rejeté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-08",
+      "ref": "DLR5L17N52750",
+      "numero_scrutin": "6045",
+      "titre": "Simplifier le millefeuille territorial par la collectivité unique",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6045",
+      "statut": "adopté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-09",
+      "ref": "DLR5L17N53770",
+      "numero_scrutin": "6131",
+      "titre": "Simplifier la gestion de la commande publique par les acheteurs publics et les opérateurs économiques",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6131",
+      "statut": "adopté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-09",
+      "ref": "DLR5L17N51711",
+      "numero_scrutin": "6124",
+      "titre": "Renforcer la pénalisation de l’organisation de rave-parties",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6124",
+      "statut": "adopté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-09",
+      "ref": "DLR5L17N53772",
+      "numero_scrutin": "6092",
+      "titre": "Garantir le bénéfice des prestations familiales aux enfants placés",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6092",
+      "statut": "rejeté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-09",
+      "ref": "DLR5L17N53775",
+      "numero_scrutin": "6076",
+      "titre": "Encadrer les regroupements pédagogiques intercommunaux afin de garantir l’égalité d’accès à l’école en milieu rural",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6076",
+      "statut": "adopté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-10",
+      "ref": "DLR5L17N53315",
+      "numero_scrutin": "6135",
+      "titre": "Proposition de loi visant à instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6135",
+      "statut": "adopté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-10",
+      "ref": "DLR5L17N51987",
+      "numero_scrutin": "6133",
+      "titre": "Proposition de loi visant à permettre aux salariés de certains établissements et services de travailler le 1er mai",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6133",
+      "statut": "adopté",
+      "votesParGroupe": null
+    },
+    {
+      "date": "2026-04-13",
+      "ref": "DLR5L17N52635",
+      "numero_scrutin": "6176",
+      "titre": "Projet de loi relatif à la restitution de biens culturels provenant d’États qui, du fait d’une appropriation illicite, en ont été privés",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°6176",
+      "statut": "rejeté",
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 49,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 13,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 2,
+          "contre": 11,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 1
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 1
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    }
+  ]
+}
