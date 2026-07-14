@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hémicycle — Suivi des textes de l'Assemblée nationale</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f4f1ea; font-family: system-ui, -apple-system, sans-serif; color: #1a1a2e; }
+  .spin { animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  button { font-family: inherit; }
+  a { color: inherit; }
+  code { background: #f2efe8; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  @media (max-width: 780px) {
+    .layout { grid-template-columns: 1fr !important; }
+    .cal-col { position: static !important; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+const { useState, useEffect, useMemo } = React;
+
+// ============================================================
+// CONFIG : le data.json est au même endroit que cette page,
+// donc chemin relatif — aucun problème de CORS.
+// ============================================================
+const DATA_URL = "public/data.json";
+
+const GROUPES = {
+  RN:{nom:"Rassemblement national",court:"RN",couleur:"#1f3d6b"},
+  EPR:{nom:"Ensemble pour la République",court:"EPR",couleur:"#ffc400"},
+  LFI:{nom:"La France insoumise",court:"LFI-NFP",couleur:"#cc2b2b"},
+  SOC:{nom:"Socialistes et apparentés",court:"SOC",couleur:"#e8568f"},
+  DR:{nom:"Droite Républicaine",court:"DR",couleur:"#1d6fb8"},
+  ECO:{nom:"Écologiste et social",court:"ECO",couleur:"#3a8a3a"},
+  DEM:{nom:"Les Démocrates",court:"DEM",couleur:"#f59e0b"},
+  HOR:{nom:"Horizons & indépendants",court:"HOR",couleur:"#5b8db8"},
+  GDR:{nom:"Gauche démocrate et républicaine",court:"GDR",couleur:"#b91c1c"},
+  LIOT:{nom:"Libertés, Indépendants, Outre-mer et Territoires",court:"LIOT",couleur:"#6b7280"},
+  UDR:{nom:"Union des droites pour la République",court:"UDR",couleur:"#243b6b"},
+  AUTRE:{nom:"Autres / non inscrits",court:"NI",couleur:"#9ca3af"},
+};
+const G = (c) => GROUPES[c] || GROUPES.AUTRE;
+const MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const JOURS=["L","M","M","J","V","S","D"];
+const ymd=(d)=>{const p=(n)=>String(n).padStart(2,"0");return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate());};
+const frDate=(iso)=>{const [y,m,d]=iso.split("-").map(Number);return d+" "+MOIS[m-1]+" "+y;};
+
+const navBtn={background:"#f2efe8",border:"1px solid #e2dcd0",borderRadius:8,width:36,height:36,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",color:"#1f3d6b",fontSize:18};
+
+function Pastille({position}){
+  const m={pour:["#1a7a3a","● Pour"],contre:["#c0392b","● Contre"],abstention:["#b8860b","● Abstention"]};
+  const [c,t]=m[position]||["#888","● "+(position||"—")];
+  return <span style={{color:c,fontWeight:600,fontSize:13}}>{t}</span>;
+}
+function BarreVotes({v}){
+  const tot=v.pour+v.contre+v.abstention; if(!tot)return null;
+  return <div>
+    <div style={{display:"flex",height:8,borderRadius:4,overflow:"hidden",background:"#eee"}}>
+      {[["pour","#1a7a3a"],["contre","#c0392b"],["abstention","#b8860b"]].map(([k,c])=>v[k]>0?<div key={k} style={{flex:v[k],background:c}}/>:null)}
+    </div>
+    <div style={{display:"flex",gap:12,marginTop:5,fontSize:11.5,color:"#666",flexWrap:"wrap"}}>
+      <span><b style={{color:"#1a7a3a"}}>{v.pour}</b> pour</span><span><b style={{color:"#c0392b"}}>{v.contre}</b> contre</span><span><b style={{color:"#b8860b"}}>{v.abstention}</b> abst.</span>
+    </div>
+  </div>;
+}
+
+function Fiche({t,onClose}){
+  const totaux=useMemo(()=>{
+    if(!t.votesParGroupe)return null;
+    const s={pour:0,contre:0,abstention:0};
+    Object.values(t.votesParGroupe).forEach(v=>{s.pour+=v.pour;s.contre+=v.contre;s.abstention+=v.abstention;});
+    return s;
+  },[t]);
+  const dossierURL="https://www.assemblee-nationale.fr/dyn/17/dossiers/"+t.ref;
+  const Section=({titre,children})=><section style={{marginTop:26}}><h3 style={{fontFamily:"Georgia,serif",fontSize:17,color:"#1a1a2e",margin:"0 0 14px",paddingBottom:8,borderBottom:"2px solid #1f3d6b"}}>{titre}</h3>{children}</section>;
+
+  return <div onClick={onClose} style={{position:"fixed",inset:0,background:"rgba(20,20,35,0.55)",zIndex:50,display:"flex",justifyContent:"center",overflowY:"auto",padding:"24px 16px"}}>
+    <div onClick={e=>e.stopPropagation()} style={{background:"#fdfcf9",borderRadius:14,maxWidth:760,width:"100%",height:"fit-content",boxShadow:"0 20px 60px rgba(0,0,0,0.3)",overflow:"hidden"}}>
+      <div style={{background:"linear-gradient(135deg,#1f3d6b 0%,#16294a 100%)",color:"#fff",padding:"22px 28px",position:"relative"}}>
+        <button onClick={onClose} style={{position:"absolute",top:16,right:16,background:"rgba(255,255,255,0.15)",border:"none",borderRadius:8,width:32,height:32,color:"#fff",cursor:"pointer",fontSize:16}}>✕</button>
+        <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:10}}>
+          <span style={{fontSize:12,background:"rgba(255,196,0,0.2)",color:"#ffc400",padding:"3px 9px",borderRadius:5,fontWeight:600}}>{t.type}</span>
+          <span style={{fontSize:12,background:"rgba(255,255,255,0.12)",padding:"3px 9px",borderRadius:5}}>{t.contexte}</span>
+        </div>
+        <h2 style={{fontFamily:"Georgia,serif",fontSize:21,lineHeight:1.3,paddingRight:40}}>{t.titre}</h2>
+        <div style={{marginTop:10,fontSize:13,opacity:0.85}}>📅 {frDate(t.date)} · 🆔 {t.ref}</div>
+      </div>
+      <div style={{padding:"8px 28px 32px"}}>
+        <Section titre="Résultat du scrutin (données CIVIX)">
+          {totaux?<>
+            <div style={{display:"flex",gap:12,flexWrap:"wrap",alignItems:"center"}}>
+              <div style={{display:"flex",borderRadius:8,overflow:"hidden",border:"1px solid #e2dcd0",flex:"1 1 280px",minWidth:260}}>
+                {[["Pour",totaux.pour,"#1a7a3a"],["Contre",totaux.contre,"#c0392b"],["Abst.",totaux.abstention,"#b8860b"]].map(([n,v,c],i)=><div key={i} style={{flex:1,textAlign:"center",padding:"10px 6px",background:"#fff"}}><div style={{fontSize:22,fontWeight:700,color:c,fontFamily:"Georgia,serif"}}>{v}</div><div style={{fontSize:12,color:"#777"}}>{n}</div></div>)}
+              </div>
+              <span style={{fontSize:15,fontWeight:700,padding:"8px 16px",borderRadius:8,background:t.statut==="adopté"?"#e6f4ea":"#fbeaea",color:t.statut==="adopté"?"#1a7a3a":"#c0392b",textTransform:"capitalize"}}>{t.statut}</span>
+            </div>
+            <div style={{marginTop:12}}><BarreVotes v={totaux}/></div>
+          </>:<div style={{padding:14,background:"#f2efe8",border:"1px solid #e2dcd0",borderRadius:8,fontSize:13.5,color:"#555",lineHeight:1.5}}>Sort officiel : <strong style={{textTransform:"capitalize"}}>{t.statut}</strong>. Le détail des votes par groupe n'est pas présent pour ce scrutin dans les données chargées.</div>}
+        </Section>
+
+        {t.votesParGroupe&&<Section titre="Vote par groupe (données réelles CIVIX)">
+          <div style={{display:"flex",flexDirection:"column",gap:10}}>
+            {Object.entries(t.votesParGroupe).sort((a,b)=>(b[1].pour+b[1].contre+b[1].abstention)-(a[1].pour+a[1].contre+a[1].abstention)).map(([code,v])=>{
+              const g=G(code);const dom=v.pour>=v.contre&&v.pour>=v.abstention?"pour":v.contre>=v.abstention?"contre":"abstention";
+              return <div key={code} style={{border:"1px solid #e8e3d8",borderLeft:"4px solid "+g.couleur,borderRadius:8,padding:"12px 15px",background:"#fff"}}>
+                <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10,flexWrap:"wrap"}}>
+                  <strong style={{fontSize:14}}>{g.nom} <span style={{color:"#aaa",fontWeight:500}}>· {g.court}</span></strong>
+                  <Pastille position={dom}/>
+                </div>
+                <div style={{marginTop:9}}><BarreVotes v={v}/></div>
+              </div>;
+            })}
+          </div>
+        </Section>}
+
+        <a href={dossierURL} target="_blank" rel="noopener noreferrer" style={{display:"inline-flex",alignItems:"center",gap:6,marginTop:24,fontSize:13,color:"#1f3d6b",fontWeight:600,textDecoration:"none"}}>↗ Dossier officiel sur assemblee-nationale.fr ({t.ref})</a>
+      </div>
+    </div>
+  </div>;
+}
+
+function Calendrier({mois,setMois,onJour,jourActif,jours}){
+  const a=mois.getFullYear(),m=mois.getMonth();
+  const dec=(new Date(a,m,1).getDay()+6)%7,nbj=new Date(a,m+1,0).getDate();
+  const cases=[];for(let i=0;i<dec;i++)cases.push(null);for(let d=1;d<=nbj;d++)cases.push(d);
+  return <div>
+    <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}>
+      <button onClick={()=>setMois(new Date(a,m-1,1))} style={navBtn}>‹</button>
+      <h2 style={{fontFamily:"Georgia,serif",fontSize:20,textTransform:"capitalize"}}>{MOIS[m]} {a}</h2>
+      <button onClick={()=>setMois(new Date(a,m+1,1))} style={navBtn}>›</button>
+    </div>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:6}}>
+      {JOURS.map((j,i)=><div key={i} style={{textAlign:"center",fontSize:12,fontWeight:600,color:"#999",paddingBottom:4}}>{j}</div>)}
+      {cases.map((d,i)=>{if(d===null)return <div key={i}/>;
+        const iso=ymd(new Date(a,m,d));const n=jours[iso]||0;const act=n>0;const sel=iso===jourActif;
+        return <button key={i} onClick={()=>act&&onJour(iso)} disabled={!act} style={{aspectRatio:"1",border:sel?"2px solid #1f3d6b":act?"1px solid #1f3d6b":"1px solid transparent",borderRadius:10,background:sel?"#eef1f6":act?"#fff":"transparent",cursor:act?"pointer":"default",position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",fontSize:14,color:act?"#1a1a2e":"#c4bfb4",fontWeight:act||sel?600:400}}>
+          {d}{act&&<span style={{position:"absolute",bottom:6,display:"flex",gap:2}}>{Array.from({length:Math.min(n,3)}).map((_,k)=><span key={k} style={{width:4,height:4,borderRadius:"50%",background:"#ffc400"}}/>)}</span>}
+        </button>;
+      })}
+    </div>
+    <p style={{fontSize:12,color:"#999",marginTop:14}}>● Jour avec scrutin dans la base CIVIX</p>
+  </div>;
+}
+
+function App(){
+  const [data,setData]=useState(null);
+  const [etat,setEtat]=useState("load");
+  const [mois,setMois]=useState(new Date());
+  const [jour,setJour]=useState(null);
+  const [fiche,setFiche]=useState(null);
+
+  async function charger(){
+    setEtat("load");
+    try{
+      const res=await fetch(DATA_URL+"?t="+Date.now());
+      const j=await res.json();
+      setData(j);
+      if(j.textes&&j.textes.length){const [y,m]=j.textes[j.textes.length-1].date.split("-").map(Number);setMois(new Date(y,m-1,1));}
+      setEtat("ok");
+    }catch(e){setEtat("err");}
+  }
+  useEffect(()=>{charger();},[]);
+
+  const BASE=(data&&data.textes)||[];
+  const jours={};BASE.forEach(t=>{jours[t.date]=(jours[t.date]||0)+1;});
+  const textesDuJour=jour?BASE.filter(t=>t.date===jour):[];
+  const dates=[...new Set(BASE.map(t=>t.date))].sort().reverse();
+
+  return <div style={{minHeight:"100vh"}}>
+    <header style={{background:"linear-gradient(135deg,#16294a 0%,#1f3d6b 100%)",color:"#fff",padding:"24px 20px"}}>
+      <div style={{maxWidth:1000,margin:"0 auto"}}>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:12,flexWrap:"wrap"}}>
+          <div style={{display:"flex",alignItems:"center",gap:12}}>
+            <div style={{width:6,height:40,background:"#ffc400",borderRadius:3}}/>
+            <div><h1 style={{fontFamily:"Georgia,serif",fontSize:26}}>Hémicycle</h1><p style={{fontSize:13.5,opacity:0.8,marginTop:2}}>Suivi des textes votés à l'Assemblée nationale</p></div>
+          </div>
+          <button onClick={charger} style={{background:"rgba(255,255,255,0.15)",color:"#fff",border:"none",borderRadius:8,padding:"9px 16px",fontSize:14,fontWeight:600,cursor:"pointer"}}>↻ Recharger</button>
+        </div>
+        {etat==="ok"&&data&&<div style={{marginTop:16,display:"inline-block",background:"rgba(255,255,255,0.1)",borderRadius:10,padding:"8px 14px",fontSize:12.5}}>▤ {data.nb_textes} textes · {data.source} · générées le {data.genere_le?new Date(data.genere_le).toLocaleDateString("fr-FR"):"?"}</div>}
+      </div>
+    </header>
+
+    {etat==="load"&&<div style={{padding:"80px 0",textAlign:"center",color:"#666"}}><div className="spin" style={{width:30,height:30,border:"3px solid #ddd",borderTopColor:"#1f3d6b",borderRadius:"50%",margin:"0 auto 14px"}}/>Chargement des données…</div>}
+    {etat==="err"&&<div style={{maxWidth:560,margin:"60px auto",padding:20,background:"#fff6e5",border:"1px solid #f0d9a8",borderRadius:10,color:"#7a5c10",fontSize:13.5,lineHeight:1.6}}>⚠ Impossible de charger <code>public/data.json</code>. Vérifiez que le fichier existe bien dans le dépôt et que GitHub Pages est activé, puis cliquez « Recharger ».</div>}
+
+    {etat==="ok"&&<main className="layout" style={{maxWidth:1000,margin:"0 auto",padding:"28px 20px",display:"grid",gridTemplateColumns:"minmax(300px,380px) 1fr",gap:28,alignItems:"start"}}>
+      <div className="cal-col" style={{background:"#fdfcf9",borderRadius:14,padding:22,border:"1px solid #e6e1d6",position:"sticky",top:20}}>
+        <Calendrier mois={mois} setMois={setMois} onJour={setJour} jourActif={jour} jours={jours}/>
+      </div>
+      <div>
+        {!jour?<div style={{background:"#fdfcf9",borderRadius:14,padding:"40px 28px",border:"1px dashed #d8d2c4"}}>
+          <div style={{textAlign:"center",marginBottom:24}}><div style={{fontSize:30,marginBottom:8}}>🗓</div><h3 style={{fontFamily:"Georgia,serif",fontSize:18,marginBottom:6}}>Choisissez une date</h3><p style={{fontSize:14,color:"#777",lineHeight:1.5}}>Cliquez sur un jour marqué du calendrier, ou dans la liste ci-dessous.</p></div>
+          <div style={{borderTop:"1px solid #eee",paddingTop:18}}>
+            <div style={{fontSize:11.5,color:"#999",fontWeight:600,textTransform:"uppercase",letterSpacing:0.5,marginBottom:10}}>Séances de la base</div>
+            {dates.map(dt=><button key={dt} onClick={()=>setJour(dt)} style={{display:"flex",justifyContent:"space-between",alignItems:"center",width:"100%",textAlign:"left",background:"none",border:"none",borderBottom:"1px solid #f3f0e8",padding:"9px 0",fontSize:13.5,color:"#1f3d6b",cursor:"pointer",fontWeight:500}}><span>{frDate(dt)}</span><span style={{fontSize:12,color:"#999"}}>{jours[dt]} texte{jours[dt]>1?"s":""} →</span></button>)}
+          </div>
+        </div>:<div>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}><h2 style={{fontFamily:"Georgia,serif",fontSize:19}}>{frDate(jour)}<span style={{fontSize:14,fontWeight:400,color:"#888",marginLeft:8}}>· {textesDuJour.length} texte{textesDuJour.length>1?"s":""}</span></h2><button onClick={()=>setJour(null)} style={{...navBtn,width:"auto",padding:"0 12px",fontSize:13}}>✕ Fermer</button></div>
+          <div style={{display:"flex",flexDirection:"column",gap:14}}>
+            {textesDuJour.map((t,i)=>{const ad=t.statut==="adopté",rej=t.statut==="rejeté";
+              return <button key={i} onClick={()=>setFiche(t)} style={{textAlign:"left",background:"#fdfcf9",border:"1px solid #e6e1d6",borderRadius:12,padding:18,cursor:"pointer"}}>
+                <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:10}}>
+                  <span style={{fontSize:11.5,background:"#eef1f6",color:"#1f3d6b",padding:"3px 9px",borderRadius:5,fontWeight:600}}>{t.type}</span>
+                  {t.statut&&t.statut!=="—"&&<span style={{fontSize:11.5,padding:"3px 9px",borderRadius:5,fontWeight:600,background:ad?"#e6f4ea":rej?"#fbeaea":"#fff6e5",color:ad?"#1a7a3a":rej?"#c0392b":"#b8860b",textTransform:"capitalize"}}>{t.statut}</span>}
+                  {t.votesParGroupe&&<span style={{fontSize:11.5,padding:"3px 9px",borderRadius:5,fontWeight:600,background:"#eef6f0",color:"#1a7a3a"}}>vote détaillé ✓</span>}
+                </div>
+                <h3 style={{fontFamily:"Georgia,serif",fontSize:16.5,lineHeight:1.35}}>{t.titre}</h3>
+                <div style={{marginTop:8,fontSize:12.5,color:"#888"}}>🔍 {t.ref} · cliquer pour le détail</div>
+              </button>;
+            })}
+          </div>
+        </div>}
+      </div>
+    </main>}
+
+    <footer style={{maxWidth:1000,margin:"0 auto",padding:"8px 20px 40px",fontSize:11.5,color:"#aaa",lineHeight:1.5}}>Données réelles issues de l'open data CIVIX / Assemblée nationale. Résultats et votes par groupe : données officielles. Ce site se met à jour automatiquement quand la base est rafraîchie.</footer>
+
+    {fiche&&<Fiche t={fiche} onClose={()=>setFiche(null)}/>}
+  </div>;
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
