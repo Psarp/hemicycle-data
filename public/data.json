@@ -1,134 +1,1181 @@
 {
-  "genere_le": "2026-07-14T07:12:00.794989+00:00",
-  "source": "open data CIVIX / Assemblée nationale",
-  "nb_textes": 12,
+  "genere_le": "2026-07-14T08:40:07.315425+00:00",
+  "source": "open data Assemblée nationale — scrutins 17e législature",
+  "source_url": "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.json.zip",
+  "nb_textes": 71,
+  "nb_scrutins_total": 8277,
   "textes": [
+    {
+      "date": "2026-01-29",
+      "ref": "DLR5L17N51655",
+      "numero_scrutin": "5280",
+      "titre": "L’intérêt des enfants",
+      "objet": "l'amendement n° 107 de Mme Hamelet à l'article 4 de la proposition de loi relative à l'intérêt des enfants (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5280",
+      "statut": "rejeté",
+      "total": {
+        "pour": 8,
+        "contre": 18,
+        "abstention": 3
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 1
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 2
+        }
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "ref": "DLR5L17N53715",
+      "numero_scrutin": "5836",
+      "titre": "Renforcer la place des agriculteurs dans l’aménagement du territoire et à sécuriser l’exercice des activités agricoles face au changement climatique",
+      "objet": "l'amendement n° 6 de M. de Lépinau à l'article 2 de la proposition de loi visant à renforcer la place des agriculteurs dans l'aménagement du territoire et à sécuriser l'exercice des activités agricoles face au changement climatique (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5836",
+      "statut": "rejeté",
+      "total": {
+        "pour": 24,
+        "contre": 77,
+        "abstention": 2
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 20,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 15,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 15,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 2
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 28,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "ref": "DLR5L17N53672",
+      "numero_scrutin": "5845",
+      "titre": "Renforcer l’enseignement à la défense nationale dans le cadre du parcours de citoyenneté",
+      "objet": "l'ensemble de la proposition de loi visant à renforcer l'enseignement de la défense nationale dans le cadre du parcours de citoyenneté (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5845",
+      "statut": "adopté",
+      "total": {
+        "pour": 39,
+        "contre": 17,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 11,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 1,
+          "contre": 2,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 26,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "ref": "DLR5L17N51346",
+      "numero_scrutin": "5829",
+      "titre": "Création du cadre d'emploi des personnels de santé des services d’incendie et de secours",
+      "objet": "l'ensemble de la proposition de loi relative aux missions des professionnels de santé, vétérinaires et psychothérapeutes des services d'incendie et de secours (deuxième lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5829",
+      "statut": "adopté",
+      "total": {
+        "pour": 92,
+        "contre": 0,
+        "abstention": 2
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 19,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 11,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 24,
+          "contre": 0,
+          "abstention": 2
+        },
+        "HOR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "ref": "DLR5L17N51330",
+      "numero_scrutin": "5830",
+      "titre": "Renforcer l’effectivité des droits voisins de la presse",
+      "objet": "l'amendement n° 13 de M. Balanant à l'article 1er bis de la proposition de loi visant à renforcer l'effectivité des droits voisins des éditeurs et des agences de presse (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5830",
+      "statut": "adopté",
+      "total": {
+        "pour": 80,
+        "contre": 29,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 20,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 24,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "ref": "DLR5L17N51175",
+      "numero_scrutin": "5844",
+      "titre": "Proposition de loi visant à soutenir les collectivités territoriales dans la prévention et la gestion des inondations",
+      "objet": "l'ensemble de la proposition de loi visant à soutenir les collectivités territoriales dans la prévention et la gestion des inondations (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5844",
+      "statut": "adopté",
+      "total": {
+        "pour": 56,
+        "contre": 22,
+        "abstention": 11
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 14,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 20,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 4
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 6
+        },
+        "DEM": {
+          "pour": 27,
+          "contre": 2,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 1
+        },
+        "UDR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "ref": "DLR5L17N53717",
+      "numero_scrutin": "5847",
+      "titre": "Interdire les sucres ajoutés dans les aliments destinés aux nourrissons et aux enfants en bas âge",
+      "objet": "l'article unique de la proposition de loi visant à interdire les sucres ajoutés dans les aliments destinés aux nourissons et aux enfants en bas âge (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5847",
+      "statut": "adopté",
+      "total": {
+        "pour": 49,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 24,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "ref": "DLR5L17N53720",
+      "numero_scrutin": "5846",
+      "titre": "Renforcer le contrôle, la gouvernance et la responsabilité financière des agences et opérateurs de l’État",
+      "objet": "l'ensemble de la proposition de loi visant à renforcer le contrôle, la gouvernance et la responsabilité financière des opérateurs de l'Etat (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5846",
+      "statut": "adopté",
+      "total": {
+        "pour": 34,
+        "contre": 14,
+        "abstention": 5
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 11,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 4
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 1
+        },
+        "DEM": {
+          "pour": 24,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "ref": "DLR5L17N51329",
+      "numero_scrutin": "5832",
+      "titre": "Simplifier la sortie de l’indivision successorale",
+      "objet": "l'ensemble de la proposition de loi visant à simplifier la sortie de l'indivision et la gestion des successions vacantes (deuxième lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5832",
+      "statut": "adopté",
+      "total": {
+        "pour": 65,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 7,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 25,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-03-30",
+      "ref": "DLR5L17N53690",
+      "numero_scrutin": "5849",
+      "titre": "Proposition de loi visant à permettre le remboursement des honoraires d'expert-comptable aux candidats",
+      "objet": "l'ensemble de la proposition de loi visant à permettre le remboursement des frais d'expertise comptable aux candidats (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°5849",
+      "statut": "adopté",
+      "total": {
+        "pour": 42,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 12,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 11,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
     {
       "date": "2026-04-02",
       "ref": "DLR5L17N52984",
       "numero_scrutin": "6022",
       "titre": "Projet de loi constitutionnelle relatif à la Nouvelle-Calédonie",
+      "objet": "la motion de rejet préalable, déposée par M. Stéphane Peu, du projet de loi constitutionnelle relatif à la Nouvelle-Calédonie (première lecture).",
       "type": "Projet de loi",
       "contexte": "Scrutin n°6022",
       "statut": "adopté",
-      "votesParGroupe": null
-    },
-    {
-      "date": "2026-04-07",
-      "ref": "DLR5L17N52985",
-      "numero_scrutin": "6023",
-      "titre": "Projet de loi relatif à la lutte contre les fraudes sociales et fiscales",
-      "type": "Projet de loi",
-      "contexte": "Scrutin n°6023",
-      "statut": "adopté",
-      "votesParGroupe": null
-    },
-    {
-      "date": "2026-04-08",
-      "ref": "DLR5L17N53067",
-      "numero_scrutin": "6069",
-      "titre": "Reconnaître une politique nationale d’adaptation au changement climatique et à adapter les mécanismes d’assurance",
-      "type": "Proposition de loi",
-      "contexte": "Scrutin n°6069",
-      "statut": "adopté",
-      "votesParGroupe": null
+      "total": {
+        "pour": 190,
+        "contre": 107,
+        "abstention": 1
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 71,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 61,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 45,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 29,
+          "contre": 2,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 11,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 18,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 13,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 3,
+          "contre": 1,
+          "abstention": 1
+        },
+        "GDR": {
+          "pour": 15,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
     },
     {
       "date": "2026-04-08",
       "ref": "DLR5L17N53426",
-      "numero_scrutin": "6061",
+      "numero_scrutin": "6051",
       "titre": "Accélérer la prévention cardio-neuro-vasculaire et anticiper un risque sanitaire et social majeur",
+      "objet": "l'amendement n° 2 de M. Califer à l'article 2 de la proposition de loi visant à accélérer la prévention cardio-neuro-vasculaire et à anticiper un risque sanitaire et social majeur (première lecture).",
       "type": "Proposition de loi",
-      "contexte": "Scrutin n°6061",
+      "contexte": "Scrutin n°6051",
       "statut": "rejeté",
-      "votesParGroupe": null
+      "total": {
+        "pour": 34,
+        "contre": 41,
+        "abstention": 1
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 18,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 8,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 1
+        },
+        "ECO": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 1,
+          "contre": 2,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 11,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 1,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-04-08",
+      "ref": "DLR5L17N53067",
+      "numero_scrutin": "6063",
+      "titre": "Reconnaître une politique nationale d’adaptation au changement climatique et à adapter les mécanismes d’assurance",
+      "objet": "l'amendement n° 6 de Mme Ferrer à l'article 2 de la proposition de loi visant à reconnaître une politique nationale d'adaptation au changement climatique et à adapter les mécanismes d'assurance (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6063",
+      "statut": "adopté",
+      "total": {
+        "pour": 73,
+        "contre": 0,
+        "abstention": 1
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 1
+        },
+        "ECO": {
+          "pour": 11,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
     },
     {
       "date": "2026-04-08",
       "ref": "DLR5L17N52750",
-      "numero_scrutin": "6045",
+      "numero_scrutin": "6036",
       "titre": "Simplifier le millefeuille territorial par la collectivité unique",
+      "objet": "l'amendement n° 63 de M. Sother à l'article 2 de la proposition de loi visant à simplifier le millefeuille territorial par la collectivité unique (première lecture).",
       "type": "Proposition de loi",
-      "contexte": "Scrutin n°6045",
-      "statut": "adopté",
-      "votesParGroupe": null
-    },
-    {
-      "date": "2026-04-09",
-      "ref": "DLR5L17N53770",
-      "numero_scrutin": "6131",
-      "titre": "Simplifier la gestion de la commande publique par les acheteurs publics et les opérateurs économiques",
-      "type": "Proposition de loi",
-      "contexte": "Scrutin n°6131",
-      "statut": "adopté",
-      "votesParGroupe": null
+      "contexte": "Scrutin n°6036",
+      "statut": "rejeté",
+      "total": {
+        "pour": 54,
+        "contre": 88,
+        "abstention": 3
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 37,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 2,
+          "contre": 19,
+          "abstention": 1
+        },
+        "LFI": {
+          "pour": 18,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 19,
+          "contre": 1,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 2,
+          "contre": 5,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 3,
+          "contre": 8,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 2
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 3,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 2,
+          "contre": 2,
+          "abstention": 0
+        }
+      }
     },
     {
       "date": "2026-04-09",
       "ref": "DLR5L17N51711",
-      "numero_scrutin": "6124",
+      "numero_scrutin": "6103",
       "titre": "Renforcer la pénalisation de l’organisation de rave-parties",
+      "objet": "l'amendement n° 41 de M. Bovet à l'article premier de la proposition de loi visant à renforcer la pénalisation de l’organisation de rave-parties (première lecture).",
       "type": "Proposition de loi",
-      "contexte": "Scrutin n°6124",
-      "statut": "adopté",
-      "votesParGroupe": null
+      "contexte": "Scrutin n°6103",
+      "statut": "rejeté",
+      "total": {
+        "pour": 24,
+        "contre": 91,
+        "abstention": 3
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 20,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 14,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 32,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 1
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 8,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 1
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 4,
+          "contre": 17,
+          "abstention": 1
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
     },
     {
       "date": "2026-04-09",
-      "ref": "DLR5L17N53772",
-      "numero_scrutin": "6092",
-      "titre": "Garantir le bénéfice des prestations familiales aux enfants placés",
+      "ref": "DLR5L17N53770",
+      "numero_scrutin": "6130",
+      "titre": "Simplifier la gestion de la commande publique par les acheteurs publics et les opérateurs économiques",
+      "objet": "l'amendement n° 2 de M. Salmon après l'article 3 de la proposition de loi visant à simplifier la gestion de la commande publique par les acheteurs publics et les opérateurs économiques (première lecture).",
       "type": "Proposition de loi",
-      "contexte": "Scrutin n°6092",
+      "contexte": "Scrutin n°6130",
       "statut": "rejeté",
-      "votesParGroupe": null
+      "total": {
+        "pour": 15,
+        "contre": 64,
+        "abstention": 4
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 14,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 13,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 2
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 10,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 2
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 25,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
     },
     {
       "date": "2026-04-09",
       "ref": "DLR5L17N53775",
       "numero_scrutin": "6076",
       "titre": "Encadrer les regroupements pédagogiques intercommunaux afin de garantir l’égalité d’accès à l’école en milieu rural",
+      "objet": "l'ensemble de la proposition de loi visant à encadrer les regroupements pédagogiques intercommunaux afin de garantir l'égalité d'accès à l'école en milieu rural (première lecture).",
       "type": "Proposition de loi",
       "contexte": "Scrutin n°6076",
       "statut": "adopté",
-      "votesParGroupe": null
-    },
-    {
-      "date": "2026-04-10",
-      "ref": "DLR5L17N53315",
-      "numero_scrutin": "6135",
-      "titre": "Proposition de loi visant à instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées",
-      "type": "Proposition de loi",
-      "contexte": "Scrutin n°6135",
-      "statut": "adopté",
-      "votesParGroupe": null
-    },
-    {
-      "date": "2026-04-10",
-      "ref": "DLR5L17N51987",
-      "numero_scrutin": "6133",
-      "titre": "Proposition de loi visant à permettre aux salariés de certains établissements et services de travailler le 1er mai",
-      "type": "Proposition de loi",
-      "contexte": "Scrutin n°6133",
-      "statut": "adopté",
-      "votesParGroupe": null
-    },
-    {
-      "date": "2026-04-13",
-      "ref": "DLR5L17N52635",
-      "numero_scrutin": "6176",
-      "titre": "Projet de loi relatif à la restitution de biens culturels provenant d’États qui, du fait d’une appropriation illicite, en ont été privés",
-      "type": "Projet de loi",
-      "contexte": "Scrutin n°6176",
-      "statut": "rejeté",
+      "total": {
+        "pour": 132,
+        "contre": 0,
+        "abstention": 25
+      },
       "votesParGroupe": {
         "RN": {
-          "pour": 0,
-          "contre": 49,
+          "pour": 35,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 13,
+          "contre": 0,
           "abstention": 0
         },
         "LFI": {
-          "pour": 13,
+          "pour": 0,
+          "contre": 0,
+          "abstention": 22
+        },
+        "SOC": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 11,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 28,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 3
+        },
+        "UDR": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-04-09",
+      "ref": "DLR5L17N53772",
+      "numero_scrutin": "6082",
+      "titre": "Garantir le bénéfice des prestations familiales aux enfants placés",
+      "objet": "le sous-amendement n° 24 de M. Peytavie à l'amendement n° 20 (2e rect.) de Mme Colin-Oesterlé à l'article premier (supprimé) de la proposition de loi visant à garantir le bénéfice des prestations familiales aux enfants placés (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6082",
+      "statut": "rejeté",
+      "total": {
+        "pour": 74,
+        "contre": 83,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 24,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 11,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 29,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 9,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 19,
           "contre": 0,
           "abstention": 0
         },
@@ -137,27 +1184,1189 @@
           "contre": 6,
           "abstention": 0
         },
+        "HOR": {
+          "pour": 0,
+          "contre": 28,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-04-10",
+      "ref": "DLR5L17N51987",
+      "numero_scrutin": "6133",
+      "titre": "Proposition de loi visant à permettre aux salariés de certains établissements et services de travailler le 1er mai",
+      "objet": "la motion de rejet préalable, déposée par Mme Dubré-Chirat, de la proposition de loi visant à permettre aux salariés de certains établissements et services de travailler le 1er mai (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6133",
+      "statut": "adopté",
+      "total": {
+        "pour": 120,
+        "contre": 105,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 19,
+          "contre": 0,
+          "abstention": 0
+        },
         "EPR": {
+          "pour": 66,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 46,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 25,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 24,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
           "pour": 2,
-          "contre": 11,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-04-10",
+      "ref": "DLR5L17N53315",
+      "numero_scrutin": "6135",
+      "titre": "Proposition de loi visant à instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées",
+      "objet": "l'ensemble de la proposition de loi visant à instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6135",
+      "statut": "adopté",
+      "total": {
+        "pour": 41,
+        "contre": 14,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 21,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 9,
           "abstention": 0
         },
         "SOC": {
           "pour": 5,
           "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-04-14",
+      "ref": "DLR5L16N49868",
+      "numero_scrutin": "6182",
+      "titre": "Projet de loi de simplification de la vie économique",
+      "objet": "la motion de rejet préalable, déposée par M. Boris Vallaud, du projet de loi de simplification de la vie économique (texte de la commission mixte paritaire).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°6182",
+      "statut": "rejeté",
+      "total": {
+        "pour": 120,
+        "contre": 247,
+        "abstention": 6
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 97,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 51,
           "abstention": 1
         },
+        "LFI": {
+          "pour": 42,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 46,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 33,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 25,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 20,
+          "abstention": 2
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 23,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 10,
+          "abstention": 2
+        },
+        "GDR": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 10,
+          "abstention": 0
+        },
         "AUTRE": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 1
+        }
+      }
+    },
+    {
+      "date": "2026-04-16",
+      "ref": "DLR5L17N53235",
+      "numero_scrutin": "6284",
+      "titre": "Projet de loi autorisant l’approbation de l’accord entre le Gouvernement de la République française et la Communauté des Caraïbes relatif à l’adhésion au protocole sur les privilèges et immunités de la Communauté des Caraïbes du 14 janvier 1985",
+      "objet": "le projet de loi autorisant l'approbation de l'accord entre le Gouvernement de la République française et la Communauté des Caraïbes relatif à l'adhésion au protocole sur les privilèges et immunités de la Communauté des Caraïbes du 14 janvier 1985 (première lecture).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°6284",
+      "statut": "adopté",
+      "total": {
+        "pour": 31,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "ref": "DLR5L17N52230",
+      "numero_scrutin": "6285",
+      "titre": "Proposition de loi visant à garantir le droit de visite des parlementaires et des bâtonniers dans les lieux de privation de liberté",
+      "objet": "l'ensemble de la proposition de loi visant à garantir le droit de visite des parlementaires et des bâtonniers dans les lieux de privation de liberté (texte de la commission mixte paritaire).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6285",
+      "statut": "adopté",
+      "total": {
+        "pour": 204,
+        "contre": 31,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 36,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 39,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 31,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 27,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 27,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 19,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 21,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 19,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-04",
+      "ref": "DLR5L17N53192",
+      "numero_scrutin": "6286",
+      "titre": "Faciliter l’exercice en France des médecins diplômés au Royaume-Uni avant le Brexit",
+      "objet": "l'ensemble de la proposition de loi facilitant l'exercice en France des médecins diplômés au Royaume-Uni ayant débuté leurs études avant le Brexit (deuxième lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6286",
+      "statut": "adopté",
+      "total": {
+        "pour": 72,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 15,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "ref": "DLR5L17N52985",
+      "numero_scrutin": "6319",
+      "titre": "Projet de loi relatif à la lutte contre les fraudes sociales et fiscales",
+      "objet": "l'ensemble du projet de loi relatif à la lutte contre les fraudes sociales et fiscales (texte de la commission mixte paritaire).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°6319",
+      "statut": "adopté",
+      "total": {
+        "pour": 335,
+        "contre": 182,
+        "abstention": 5
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 109,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 79,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 60,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 64,
+          "abstention": 1
+        },
+        "DR": {
+          "pour": 48,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 34,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 34,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 33,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 10,
+          "contre": 7,
+          "abstention": 4
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 16,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 6,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-06",
+      "ref": "DLR5L17N52635",
+      "numero_scrutin": "6346",
+      "titre": "Projet de loi relatif à la restitution de biens culturels provenant d’États qui, du fait d’une appropriation illicite, en ont été privés",
+      "objet": "l'ensemble du projet de loi relatif à la restitution de biens culturels ayant fait l'objet d'une appropriation illicite (texte de la commission mixte paritaire).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°6346",
+      "statut": "adopté",
+      "total": {
+        "pour": 141,
+        "contre": 0,
+        "abstention": 12
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 30,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 28,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 14,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 6
+        },
+        "ECO": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 20,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 11,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 5
+        },
+        "GDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 1
+        }
+      }
+    },
+    {
+      "date": "2026-05-11",
+      "ref": "DLR5L17N50686",
+      "numero_scrutin": "6496",
+      "titre": "Renforcer le parcours inclusif des élèves en situation de handicap",
+      "objet": "l'amendement n° 10 de M. Fait à l'article 1er bis A de la proposition de loi visant à renforcer le parcours inclusif des enfants à besoins éducatifs particuliers (nouvelle lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6496",
+      "statut": "rejeté",
+      "total": {
+        "pour": 43,
+        "contre": 60,
+        "abstention": 2
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 22,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 3,
+          "contre": 27,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 12,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 1
+        },
+        "ECO": {
+          "pour": 7,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 1
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-11",
+      "ref": "DLR5L17N52820",
+      "numero_scrutin": "6524",
+      "titre": "Condamner la dérive illibérale et autoritaire du gouvernement géorgien et réaffirmer notre soutien au destin européen de la Géorgie",
+      "objet": "l'amendement n° 4 de M. Chenu à l'article unique de la proposition de résolution européenne visant à condamner la dérive illibérale et autoritaire du gouvernement géorgien et à réaffirmer notre soutien au destin européen de la Géorgie.",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6524",
+      "statut": "rejeté",
+      "total": {
+        "pour": 18,
+        "contre": 80,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 13,
+          "contre": 2,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 34,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 10,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 10,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 0
+        },
+        "DEM": {
           "pour": 0,
           "contre": 6,
           "abstention": 0
         },
         "HOR": {
           "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 1,
           "contre": 1,
-          "abstention": 1
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-12",
+      "ref": "DLR5L17N52743",
+      "numero_scrutin": "6557",
+      "titre": "Garantir l’information et la protection effective des victimes de violences sexuelles lors de la libération de leur agresseur",
+      "objet": "l'amendement n° 14 de Mme Leboucher et l'amendement identique suivant à l'article 3 de la proposition de loi visant à garantir l'information et la protection effective des victimes de violences sexistes et sexuelles lors de la libération de leur agresseur (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6557",
+      "statut": "rejeté",
+      "total": {
+        "pour": 53,
+        "contre": 86,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 28,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 1,
+          "contre": 31,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 23,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 8,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 9,
+          "abstention": 0
         },
         "LIOT": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-12",
+      "ref": "DLR5L17N52208",
+      "numero_scrutin": "6541",
+      "titre": "Accélérer le développement du transport maritime à propulsion vélique",
+      "objet": "l'ensemble de la proposition de loi visant à accélérer le développement du transport maritime à propulsion vélique (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6541",
+      "statut": "adopté",
+      "total": {
+        "pour": 175,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 40,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 26,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 27,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 15,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 18,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-13",
+      "ref": "DLR5L17N54006",
+      "numero_scrutin": "6617",
+      "titre": "Pour une montagne vivante et souveraine",
+      "objet": "l'amendement n° 130 de Mme Pochon après l'article 6 de la proposition de loi pour une montagne vivante et souveraine (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6617",
+      "statut": "rejeté",
+      "total": {
+        "pour": 15,
+        "contre": 44,
+        "abstention": 1
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 14,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 1
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 5,
+          "contre": 1,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-13",
+      "ref": "DLR5L17N52924",
+      "numero_scrutin": "6572",
+      "titre": "Mettre en place un programme de soutien à l’innovation thérapeutique contre les cancers, les maladies rares et les maladies orphelines de l’enfant",
+      "objet": "l'ensemble de la proposition de loi visant à mettre en place un programme de soutien à l'innovation thérapeutique contre les cancers, les maladies rares et les maladies orphelines de l'enfant (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6572",
+      "statut": "adopté",
+      "total": {
+        "pour": 98,
+        "contre": 22,
+        "abstention": 3
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 22,
+          "abstention": 2
+        },
+        "EPR": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 28,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 13,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 1
+        },
+        "HOR": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-20",
+      "ref": "DLR5L17N52104",
+      "numero_scrutin": "6752",
+      "titre": "Proposition de loi organique portant actualisation du corps électoral pour les élections au congrès et aux assemblées de province de la Nouvelle-Calédonie",
+      "objet": "l'article 2 de la proposition de loi organique portant régularisation des natifs dans le corps électoral pour les élections au congrès et aux assemblées de province de Nouvelle-Calédonie (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6752",
+      "statut": "adopté",
+      "total": {
+        "pour": 244,
+        "contre": 80,
+        "abstention": 2
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 77,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 52,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 47,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 29,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 25,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 19,
+          "abstention": 2
+        },
+        "DEM": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 18,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 9,
+          "contre": 1,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 13,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-28",
+      "ref": "DLR5L17N54144",
+      "numero_scrutin": "7005",
+      "titre": "Pour la mobilisation de l’habitat existant en réponse à la crise du logement",
+      "objet": "l'amendement n° 72 de Mme Soudais de suppression de l'article premier de la proposition de loi pour la mobilisation de l'habitat existant en réponse à la crise du logement (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7005",
+      "statut": "rejeté",
+      "total": {
+        "pour": 17,
+        "contre": 83,
+        "abstention": 1
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 38,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 12,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 14,
+          "contre": 0,
+          "abstention": 1
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 13,
+          "abstention": 0
+        },
+        "UDR": {
           "pour": 0,
           "contre": 2,
           "abstention": 0
@@ -165,6 +2374,2670 @@
         "GDR": {
           "pour": 2,
           "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-28",
+      "ref": "DLR5L17N52767",
+      "numero_scrutin": "6994",
+      "titre": "Abrogation du Code noir",
+      "objet": "l'amendement n° 16 de M. William à l'article premier de la proposition de loi portant abrogation du « code noir » (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°6994",
+      "statut": "rejeté",
+      "total": {
+        "pour": 85,
+        "contre": 107,
+        "abstention": 13
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 45,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 20,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 46,
+          "contre": 0,
+          "abstention": 1
+        },
+        "SOC": {
+          "pour": 21,
+          "contre": 0,
+          "abstention": 2
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 9
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 8,
+          "abstention": 1
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 16,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-28",
+      "ref": "DLR5L17N51791",
+      "numero_scrutin": "7029",
+      "titre": "Proposition de loi portant pérennisation du contrat de professionnalisation expérimental",
+      "objet": "l'amendement n° 6 de M. Peytavie et l'amendement identique suivant à l'article unique de la proposition de loi portant pérennisation du contrat de professionnalisation expérimental (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7029",
+      "statut": "rejeté",
+      "total": {
+        "pour": 28,
+        "contre": 61,
+        "abstention": 3
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 25,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 3
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 13,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-05-28",
+      "ref": "DLR5L17N53357",
+      "numero_scrutin": "7004",
+      "titre": "Proposition de loi visant à étendre à toutes les communes la compensation financière prévue pour les communes de plus de 3 500 habitants pour l’exercice de l’ensemble des compétences du service public de la petite enfance",
+      "objet": "l'ensemble de la proposition de loi visant à étendre à toutes les communes la compensation financière prévue pour les communes de plus de 3 500 habitants pour l'exercice de l'ensemble des compétences du service public de la petite enfance (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7004",
+      "statut": "adopté",
+      "total": {
+        "pour": 121,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 35,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 14,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-01",
+      "ref": "DLR5L17N54227",
+      "numero_scrutin": "7224",
+      "titre": "Protéger les enfants et lutter contre les violences en milieu scolaire",
+      "objet": "le sous-amendement n° 201 de M. Vannier à l'amendement n° 181 du Gouvernement à l'article 5 de la proposition de loi visant à protéger les enfants et à lutter contre les violences en milieu scolaire (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7224",
+      "statut": "adopté",
+      "total": {
+        "pour": 73,
+        "contre": 38,
+        "abstention": 25
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 17
+        },
+        "EPR": {
+          "pour": 3,
+          "contre": 24,
+          "abstention": 1
+        },
+        "LFI": {
+          "pour": 44,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 1
+        },
+        "DR": {
+          "pour": 1,
+          "contre": 7,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 1
+        },
+        "HOR": {
+          "pour": 6,
+          "contre": 2,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 1,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 5
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-02",
+      "ref": "DLR5L17N54085",
+      "numero_scrutin": "7259",
+      "titre": "Projet de loi d’urgence pour la protection et la souveraineté agricoles",
+      "objet": "l'ensemble du projet de loi d'urgence pour la protection et la souveraineté agricoles (première lecture).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°7259",
+      "statut": "adopté",
+      "total": {
+        "pour": 369,
+        "contre": 178,
+        "abstention": 15
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 120,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 82,
+          "contre": 0,
+          "abstention": 5
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 70,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 2,
+          "contre": 57,
+          "abstention": 6
+        },
+        "DR": {
+          "pour": 48,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 34,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 37,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 34,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 19,
+          "contre": 0,
+          "abstention": 4
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 17,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-02",
+      "ref": "DLR5L17N50444",
+      "numero_scrutin": "7263",
+      "titre": "Optimiser la protection et l'accompagnement des parents d'enfants atteints de cancers, de maladies graves et de handicaps",
+      "objet": "l'amendement n° 12 de Mme Amiot et l'amendement identique suivant à l'article 3 de la proposition de loi visant à améliorer la protection et l'accompagnement des parents d'enfants atteints d'un cancer, d'une maladie grave ou d'un handicap (deuxième lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7263",
+      "statut": "rejeté",
+      "total": {
+        "pour": 35,
+        "contre": 100,
+        "abstention": 36
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 25
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 21,
+          "abstention": 1
+        },
+        "LFI": {
+          "pour": 20,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 4,
+          "contre": 20,
+          "abstention": 4
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 18,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 2
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 23,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 1
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 2
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 1
+        }
+      }
+    },
+    {
+      "date": "2026-06-02",
+      "ref": "DLR5L17N53981",
+      "numero_scrutin": "7260",
+      "titre": "Projet de loi portant transposition de l’avenant n°3 du 25 février 2026 au protocole d’accord du 10 novembre 2023 relatif à l’assurance chômage",
+      "objet": "l'ensemble du projet de loi portant transposition de l'avenant n° 3 du 25 février 2026 au protocole d'accord du 10 novembre 2023 relatif à l'assurance chômage (deuxième lecture).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°7260",
+      "statut": "adopté",
+      "total": {
+        "pour": 353,
+        "contre": 114,
+        "abstention": 37
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 115,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 87,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 63,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 1,
+          "contre": 18,
+          "abstention": 37
+        },
+        "DR": {
+          "pour": 44,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 14,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 33,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 30,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 19,
+          "contre": 2,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 17,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 14,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-02",
+      "ref": "DLR5L16N49263",
+      "numero_scrutin": "7261",
+      "titre": "Reconnaître la responsabilité de l’État et indemniser les victimes du chlordécone",
+      "objet": "l'ensemble de la proposition de loi visant à reconnaître la responsabilité de l'État et à indemniser les victimes du chlordécone (deuxième lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7261",
+      "statut": "adopté",
+      "total": {
+        "pour": 236,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 45,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 51,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 36,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 18,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 12,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 11,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "ref": "DLR5L17N53159",
+      "numero_scrutin": "7276",
+      "titre": "Proposition de loi visant à améliorer les moyens d'action de l'Agence de gestion et de recouvrement des avoirs saisis et confisqués et à faciliter l'exercice des missions d'expert judiciaire",
+      "objet": "l'amendement n° 50 de Mme Thiébault-Martinez à l'article 3 de la proposition de loi visant à améliorer les moyens d'action de l'Agence de gestion et de recouvrement des avoirs saisis et confisqués et à faciliter l'exercice des missions d'expert judiciaire (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7276",
+      "statut": "adopté",
+      "total": {
+        "pour": 43,
+        "contre": 28,
+        "abstention": 52
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 39
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 12,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 19,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 6
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 1,
+          "contre": 4,
+          "abstention": 2
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 5
+        }
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "ref": "DLR5L17N54148",
+      "numero_scrutin": "7303",
+      "titre": "Réduire les risques sanitaires liés aux contaminations au cadmium dans l’alimentation",
+      "objet": "l'ensemble de la proposition de loi visant à protéger l'alimentation des Français et des Françaises des contaminations au cadmium (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7303",
+      "statut": "adopté",
+      "total": {
+        "pour": 144,
+        "contre": 22,
+        "abstention": 4
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 19,
+          "abstention": 1
+        },
+        "EPR": {
+          "pour": 20,
+          "contre": 0,
+          "abstention": 1
+        },
+        "LFI": {
+          "pour": 44,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 21,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 1,
+          "contre": 1,
+          "abstention": 1
+        },
+        "ECO": {
+          "pour": 32,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 11,
+          "contre": 0,
+          "abstention": 1
+        },
+        "HOR": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "ref": "DLR5L17N53053",
+      "numero_scrutin": "7345",
+      "titre": "Protéger la santé mentale des agricultrices et des agriculteurs",
+      "objet": "l'amendement n° 26 de Mme Manon Meunier après l'article 3 bis de la proposition de loi visant à prévenir le mal-être et le risque suicidaire dans le monde agricole (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7345",
+      "statut": "rejeté",
+      "total": {
+        "pour": 34,
+        "contre": 41,
+        "abstention": 1
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 23,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 13,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 13,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 2,
+          "contre": 1,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 1
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "ref": "DLR5L17N51775",
+      "numero_scrutin": "7306",
+      "titre": "Garantir l'interdiction de la vaisselle en plastique dans la restauration collective accueillant du jeune public et liée à la petite enfance",
+      "objet": "l'amendement n° 9 de M. Carrière à l'article premier de la proposition de loi visant à garantir l'interdiction de la vaisselle en plastique dans la restauration collective accueillant du jeune public et liée à la petite enfance (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7306",
+      "statut": "rejeté",
+      "total": {
+        "pour": 17,
+        "contre": 31,
+        "abstention": 7
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 11,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 10,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 7
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 1,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "ref": "DLR5L17N52700",
+      "numero_scrutin": "7349",
+      "titre": "Évaluer précisément le coût réel et sociétal de l’insécurité routière et son impact sur les finances publiques",
+      "objet": "l’article unique de la proposition de résolution visant à évaluer précisément le coût réel et sociétal de l’insécurité routière et son impact sur les finances publiques (article 34-1 de la Constitution).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7349",
+      "statut": "adopté",
+      "total": {
+        "pour": 13,
+        "contre": 10,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "ref": "DLR5L17N51955",
+      "numero_scrutin": "7323",
+      "titre": "Mesures de justice en faveur de la revalorisation des pensions de retraites agricoles",
+      "objet": "l'amendement n° 10 de M. Alexandre après l'article 6 de la proposition de loi portant plusieurs mesures de justice en faveur de la revalorisation des pensions de retraites agricoles (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7323",
+      "statut": "rejeté",
+      "total": {
+        "pour": 21,
+        "contre": 43,
+        "abstention": 21
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 19,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 8,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 18,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 3,
+          "contre": 1,
+          "abstention": 4
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 9
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 1
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 7
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-09",
+      "ref": "DLR5L17N54196",
+      "numero_scrutin": "7350",
+      "titre": "Projet de loi relative aux résultats de la gestion et portant approbation des comptes de l'année 2025",
+      "objet": "la motion de rejet préalable, déposée par Mme Mathilde Panot, du projet de loi relative aux résultats de la gestion et portant approbation des comptes de l'année 2025 (première lecture).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°7350",
+      "statut": "adopté",
+      "total": {
+        "pour": 145,
+        "contre": 96,
+        "abstention": 1
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 58,
+          "contre": 1,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 36,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 42,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 21,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 14,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 18,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 1
+        },
+        "GDR": {
+          "pour": 11,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-09",
+      "ref": "DLR5L17N54373",
+      "numero_scrutin": "7351",
+      "titre": "Projet de loi portant approbation des comptes de la sécurité sociale de l’année 2025",
+      "objet": "la motion de rejet préalable, déposée par Mme Mathilde Panot, du projet de loi portant approbation des comptes de la sécurité sociale de l'année 2025 (première lecture).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°7351",
+      "statut": "adopté",
+      "total": {
+        "pour": 145,
+        "contre": 82,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 63,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 28,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 38,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 20,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 20,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 12,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 11,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 18,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 2,
+          "contre": 2,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 7,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-11",
+      "ref": "DLR5L17N54229",
+      "numero_scrutin": "7390",
+      "titre": "Réformer les bourses sur critères sociaux et lutter contre la précarité étudiante",
+      "objet": "l'amendement n° 21 de M. Sitzenstuhl à l'article premier de la proposition de loi visant à réformer les bourses sur critères sociaux et à lutter contre la précarité étudiante (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7390",
+      "statut": "rejeté",
+      "total": {
+        "pour": 9,
+        "contre": 75,
+        "abstention": 2
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 19,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 19,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 10,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 12,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 2
+        }
+      }
+    },
+    {
+      "date": "2026-06-11",
+      "ref": "DLR5L17N52977",
+      "numero_scrutin": "7368",
+      "titre": "Nationalisation d'ArcelorMittal France",
+      "objet": "l'amendement n° 29 de M. Sitzenstuhl à l'article premier de la proposition de loi visant à la nationalisation d'ArcelorMittal France afin de préserver la souveraineté industrielle de la France (deuxième lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7368",
+      "statut": "rejeté",
+      "total": {
+        "pour": 41,
+        "contre": 136,
+        "abstention": 3
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 43,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 33,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 40,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 20,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 17,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 1
+        },
+        "HOR": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 2
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 14,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-11",
+      "ref": "DLR5L17N51981",
+      "numero_scrutin": "7354",
+      "titre": "Renforcer la solidarité envers les retraités pauvres",
+      "objet": "l'ensemble de la proposition de loi visant à renforcer la solidarité envers les retraités pauvres (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7354",
+      "statut": "adopté",
+      "total": {
+        "pour": 165,
+        "contre": 0,
+        "abstention": 3
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 41,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 30,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 21,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 15,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 3
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 15,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-11",
+      "ref": "DLR5L17N53304",
+      "numero_scrutin": "7382",
+      "titre": "Proposition de loi visant à lever dans les territoires d’outre-mer l’interdiction de recherche, d’exploration et d’exploitation des hydrocarbures",
+      "objet": "l'amendement n° 24 de M. Loubet à l'article premier de la proposition de loi visant à lever dans les territoires d'outre-mer l'interdiction de recherche, d'exploration et d'exploitation des hydrocarbures (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7382",
+      "statut": "rejeté",
+      "total": {
+        "pour": 43,
+        "contre": 79,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 39,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 13,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 17,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 10,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 19,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 6,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-15",
+      "ref": "DLR5L17N53600",
+      "numero_scrutin": "7399",
+      "titre": "Projet de loi portant habilitation de l’assemblée de Martinique à fixer elle-même des règles applicables sur son territoire en application de l’article 73 de la Constitution en matière d’énergie, d’eau et d’assainissement",
+      "objet": "l'article premier du projet de loi portant habilitation de l'assemblée de Martinique à fixer des règles applicables sur son territoire en application de l'article 73 de la Constitution en matière d'énergie, d'eau et d'assainissement (première lecture).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°7399",
+      "statut": "adopté",
+      "total": {
+        "pour": 39,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 7,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 7,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-15",
+      "ref": "DLR5L17N50548",
+      "numero_scrutin": "7398",
+      "titre": "Proposition de loi relative au déclassement de restes humains kali'nas et à leur remise à la collectivité de Guyane à des fins funéraires",
+      "objet": "l'article unique de la proposition de loi relative à la sortie des collections publiques de restes humains kali'nas et arawaks en vue de funérailles sur le territoire de la Guyane (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7398",
+      "statut": "adopté",
+      "total": {
+        "pour": 59,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 11,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 12,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-16",
+      "ref": "DLR5L17N53284",
+      "numero_scrutin": "7405",
+      "titre": "Renforcer la sécurité, la rétention administrative et la prévention des risques d’attentat",
+      "objet": "l'ensemble de la proposition de loi visant à renforcer la sécurité, la rétention administrative et la prévention des risques d’attentat (texte de la commission mixte paritaire).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7405",
+      "statut": "adopté",
+      "total": {
+        "pour": 345,
+        "contre": 177,
+        "abstention": 11
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 117,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 86,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 67,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 62,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 47,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 35,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 26,
+          "contre": 0,
+          "abstention": 1
+        },
+        "HOR": {
+          "pour": 33,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 12,
+          "contre": 0,
+          "abstention": 9
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 12,
+          "abstention": 1
+        },
+        "UDR": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 7,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-17",
+      "ref": "DLR5L17N53530",
+      "numero_scrutin": "7409",
+      "titre": "Relancer les investissements dans le secteur de l’hydroélectricité pour contribuer à la transition énergétique",
+      "objet": "l'ensemble de la proposition de loi visant à relancer les investissements dans le secteur de l'hydroélectricité pour contribuer à la transition énergétique (texte de la commission mixte paritaire).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7409",
+      "statut": "adopté",
+      "total": {
+        "pour": 290,
+        "contre": 59,
+        "abstention": 116
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 84
+        },
+        "EPR": {
+          "pour": 75,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 59,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 60,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 36,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 32
+        },
+        "DEM": {
+          "pour": 29,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 34,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 18,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-17",
+      "ref": "DLR5L17N51968",
+      "numero_scrutin": "7408",
+      "titre": "Améliorer l'accès au logement des travailleurs des services publics",
+      "objet": "l'ensemble de la proposition de loi visant à améliorer l'accès au logement des travailleurs des services publics (texte de la commission mixte paritaire).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7408",
+      "statut": "adopté",
+      "total": {
+        "pour": 292,
+        "contre": 160,
+        "abstention": 14
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 89,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 80,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 63,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 51,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 42,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 31,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 24,
+          "contre": 0,
+          "abstention": 2
+        },
+        "HOR": {
+          "pour": 33,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 2,
+          "contre": 2,
+          "abstention": 12
+        },
+        "UDR": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 13,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-23",
+      "ref": "DLR5L17N54218",
+      "numero_scrutin": "7454",
+      "titre": "Projet de loi constitutionnelle pour une Corse autonome au sein de la République",
+      "objet": "l'ensemble du projet de loi constitutionnelle pour une Corse autonome au sein de la République (première lecture).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°7454",
+      "statut": "adopté",
+      "total": {
+        "pour": 271,
+        "contre": 202,
+        "abstention": 64
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 120,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 66,
+          "contre": 5,
+          "abstention": 11
+        },
+        "LFI": {
+          "pour": 60,
+          "contre": 2,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 41,
+          "contre": 5,
+          "abstention": 19
+        },
+        "DR": {
+          "pour": 1,
+          "contre": 34,
+          "abstention": 10
+        },
+        "ECO": {
+          "pour": 27,
+          "contre": 5,
+          "abstention": 4
+        },
+        "DEM": {
+          "pour": 25,
+          "contre": 0,
+          "abstention": 11
+        },
+        "HOR": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 6
+        },
+        "LIOT": {
+          "pour": 21,
+          "contre": 2,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 6,
+          "contre": 6,
+          "abstention": 2
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 17,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 2,
+          "contre": 6,
+          "abstention": 1
+        }
+      }
+    },
+    {
+      "date": "2026-06-24",
+      "ref": "DLR5L16N49364",
+      "numero_scrutin": "7494",
+      "titre": "Réduire l’impact environnemental de l’industrie textile",
+      "objet": "l’ensemble de la proposition de loi visant à réduire l’impact environnemental de l’industrie textile (texte de la commission mixte paritaire).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7494",
+      "statut": "adopté",
+      "total": {
+        "pour": 338,
+        "contre": 0,
+        "abstention": 151
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 98,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 89,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 50
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 54
+        },
+        "DR": {
+          "pour": 44,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 35
+        },
+        "DEM": {
+          "pour": 32,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 33,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 12
+        },
+        "AUTRE": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-25",
+      "ref": "DLR5L16N49075",
+      "numero_scrutin": "7580",
+      "titre": "Proposition de loi visant à renforcer les prérogatives des officiers de l’état civil et du ministère public pour lutter contre les mariages simulés ou arrangés",
+      "objet": "la demande de suspension de séance formulée par M. Boyard en application de l'article 58 du Règlement de l'Assemblée nationale (proposition de loi visant à renforcer les prérogatives des officiers de l'état civil et du ministère public pour lutter contre les mariages simulés ou arrangés) (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7580",
+      "statut": "adopté",
+      "total": {
+        "pour": 49,
+        "contre": 35,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 18,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 32,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 13,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 3,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 8,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-29",
+      "ref": "DLR5L17N51732",
+      "numero_scrutin": "7849",
+      "titre": "Proposition de loi relative à l'organisation, à la gestion et au financement du sport professionnel",
+      "objet": "l'amendement n° 165 de M. Belhaddad et l'amendement identique suivant à l'article 3 de la proposition de loi relative à l'organisation, à la gestion et au financement du sport professionnel (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7849",
+      "statut": "adopté",
+      "total": {
+        "pour": 25,
+        "contre": 17,
+        "abstention": 13
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 0,
+          "abstention": 10
+        },
+        "EPR": {
+          "pour": 2,
+          "contre": 4,
+          "abstention": 2
+        },
+        "LFI": {
+          "pour": 10,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 4,
+          "contre": 2,
+          "abstention": 1
+        },
+        "ECO": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 7,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-06-30",
+      "ref": "DLR5L17N51670",
+      "numero_scrutin": "7894",
+      "titre": "Fin de vie",
+      "objet": "l'ensemble de la proposition de loi relative au droit à l'aide à mourir (nouvelle lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7894",
+      "statut": "adopté",
+      "total": {
+        "pour": 295,
+        "contre": 232,
+        "abstention": 35
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 14,
+          "contre": 103,
+          "abstention": 5
+        },
+        "EPR": {
+          "pour": 66,
+          "contre": 17,
+          "abstention": 7
+        },
+        "LFI": {
+          "pour": 62,
+          "contre": 2,
+          "abstention": 3
+        },
+        "SOC": {
+          "pour": 57,
+          "contre": 4,
+          "abstention": 5
+        },
+        "DR": {
+          "pour": 5,
+          "contre": 38,
+          "abstention": 3
+        },
+        "ECO": {
+          "pour": 34,
+          "contre": 1,
+          "abstention": 2
+        },
+        "DEM": {
+          "pour": 19,
+          "contre": 16,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 16,
+          "contre": 18,
+          "abstention": 1
+        },
+        "LIOT": {
+          "pour": 9,
+          "contre": 7,
+          "abstention": 6
+        },
+        "GDR": {
+          "pour": 10,
+          "contre": 2,
+          "abstention": 3
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 17,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 3,
+          "contre": 7,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-07-01",
+      "ref": "DLR5L17N54083",
+      "numero_scrutin": "7905",
+      "titre": "Projet de loi actualisant la programmation militaire pour les années 2024 à 2030 et portant diverses dispositions intéressant la défense",
+      "objet": "l'ensemble du projet de loi actualisant la programmation militaire pour les années 2024 à 2030 et portant diverses dispositions intéressant la défense (texte de la commission mixte paritaire).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°7905",
+      "statut": "adopté",
+      "total": {
+        "pour": 375,
+        "contre": 113,
+        "abstention": 2
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 97,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 86,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 62,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 46,
+          "contre": 1,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 44,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 1,
+          "contre": 36,
+          "abstention": 1
+        },
+        "DEM": {
+          "pour": 26,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 35,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 19,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 14,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 14,
+          "abstention": 1
+        },
+        "AUTRE": {
+          "pour": 7,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-07-01",
+      "ref": "DLR5L17N52781",
+      "numero_scrutin": "7904",
+      "titre": "Assurer le droit de chaque enfant à disposer d’un avocat dans le cadre d’une mesure d’assistance éducative et de protection de l’enfance",
+      "objet": "l'ensemble de la proposition de loi visant à assurer le droit de chaque enfant à être assisté d'un avocat dans le cadre d'une mesure d'assistance éducative et de protection de l'enfance (deuxième lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7904",
+      "statut": "adopté",
+      "total": {
+        "pour": 292,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 55,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 54,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 41,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 41,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 19,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 15,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 21,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 8,
+          "contre": 0,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 6,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 7,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-07-06",
+      "ref": "DLR5L17N54613",
+      "numero_scrutin": "7979",
+      "titre": "Motion de censure déposée en application de l'article 49, alinéa 2, de la Constitution par Mme Cyrielle Chatelain, Mme Nadège Abomangoli et 56 de leurs collègues",
+      "objet": "la motion de censure déposée en application de l'article 49, alinéa 2, de la Constitution par Mmes Cyrielle Chatelain, Nadège Abomangoli et 56 députés.",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7979",
+      "statut": "rejeté",
+      "total": {
+        "pour": 132,
+        "contre": 0,
+        "abstention": 0
+      },
+      "votesParGroupe": {
+        "LFI": {
+          "pour": 71,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 20,
+          "contre": 0,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 32,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 2,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 7,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-07-07",
+      "ref": "DLR5L17N51037",
+      "numero_scrutin": "7983",
+      "titre": "Reconnaître une présomption de légitime défense pour les forces de l'ordre, dans l'exercice de leurs fonctions",
+      "objet": "l'amendement n° 16 de M. Bompard au titre de la proposition de loi visant à reconnaître une présomption de légitime défense pour les forces de l'ordre, dans l'exercice de leurs fonctions (première lecture).",
+      "type": "Proposition de loi",
+      "contexte": "Scrutin n°7983",
+      "statut": "rejeté",
+      "total": {
+        "pour": 112,
+        "contre": 227,
+        "abstention": 2
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 94,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 38,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 52,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 28,
+          "contre": 3,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 35,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 22,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 1,
+          "contre": 17,
+          "abstention": 1
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 19,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 8,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 9,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 9,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 1
+        }
+      }
+    },
+    {
+      "date": "2026-07-08",
+      "ref": "DLR5L17N53942",
+      "numero_scrutin": "8041",
+      "titre": "Projet de loi organique relatif au renforcement des juridictions criminelles",
+      "objet": "la motion de rejet préalable, déposée par Mme Mathilde Panot, du projet de loi organique relatif au renforcement des juridictions criminelles (texte de la commission mixte paritaire).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°8041",
+      "statut": "rejeté",
+      "total": {
+        "pour": 70,
+        "contre": 133,
+        "abstention": 1
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 36,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 42,
+          "abstention": 1
+        },
+        "LFI": {
+          "pour": 32,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 17,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 10,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 20,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 15,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        },
+        "AUTRE": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-07-08",
+      "ref": "DLR5L17N53940",
+      "numero_scrutin": "8040",
+      "titre": "Projet de loi sur la justice criminelle et le respect des victimes",
+      "objet": "la motion de rejet préalable, déposée par Mme Mathilde Panot, du projet de loi sur la justice criminelle et le respect des victimes (texte de la commission mixte paritaire).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°8040",
+      "statut": "rejeté",
+      "total": {
+        "pour": 53,
+        "contre": 128,
+        "abstention": 1
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 0,
+          "contre": 43,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 0,
+          "contre": 38,
+          "abstention": 1
+        },
+        "LFI": {
+          "pour": 28,
+          "contre": 0,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 16,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 0,
+          "contre": 9,
+          "abstention": 0
+        },
+        "ECO": {
+          "pour": 4,
+          "contre": 0,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 0,
+          "contre": 18,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 0,
+          "contre": 15,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 0,
+          "contre": 1,
+          "abstention": 0
+        },
+        "UDR": {
+          "pour": 0,
+          "contre": 4,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 0
+        }
+      }
+    },
+    {
+      "date": "2026-07-10",
+      "ref": "DLR5L17N53980",
+      "numero_scrutin": "8194",
+      "titre": "Projet de loi visant à offrir des réponses immédiates aux phénomènes troublant l’ordre public, la sécurité et la tranquillité de nos concitoyens",
+      "objet": "l'amendement n° 907 du Gouvernement de rétablissement de l'article 19 (supprimé) du projet de loi visant à offrir des réponses immédiates aux phénomènes troublant l'ordre public, la sécurité et la tranquillité de nos concitoyens (première lecture).",
+      "type": "Projet de loi",
+      "contexte": "Scrutin n°8194",
+      "statut": "adopté",
+      "total": {
+        "pour": 42,
+        "contre": 23,
+        "abstention": 2
+      },
+      "votesParGroupe": {
+        "RN": {
+          "pour": 15,
+          "contre": 0,
+          "abstention": 0
+        },
+        "EPR": {
+          "pour": 15,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LFI": {
+          "pour": 0,
+          "contre": 15,
+          "abstention": 0
+        },
+        "SOC": {
+          "pour": 0,
+          "contre": 2,
+          "abstention": 0
+        },
+        "DR": {
+          "pour": 5,
+          "contre": 0,
+          "abstention": 2
+        },
+        "ECO": {
+          "pour": 0,
+          "contre": 5,
+          "abstention": 0
+        },
+        "DEM": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "HOR": {
+          "pour": 3,
+          "contre": 0,
+          "abstention": 0
+        },
+        "LIOT": {
+          "pour": 1,
+          "contre": 0,
+          "abstention": 0
+        },
+        "GDR": {
+          "pour": 0,
+          "contre": 1,
           "abstention": 0
         }
       }
