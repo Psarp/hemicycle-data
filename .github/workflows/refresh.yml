@@ -1,15 +1,10 @@
 name: Rafraîchir les données Hémicycle
 
-# Deux déclencheurs :
-#  1. schedule  : automatique, tous les jours à 5h00 UTC (7h en France l'été)
-#  2. workflow_dispatch : bouton manuel, cliquable depuis l'onglet "Actions"
-#     de GitHub — y compris depuis votre téléphone.
 on:
   schedule:
     - cron: "0 5 * * *"
   workflow_dispatch: {}
 
-# Autorise le workflow à écrire dans le dépôt (pour committer data.json)
 permissions:
   contents: write
 
@@ -19,15 +14,12 @@ jobs:
     steps:
       - name: Récupérer le dépôt
         uses: actions/checkout@v4
-
       - name: Installer Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Générer data.json
-        run: python build_data.py
-
+      - name: Générer data.json (télécharge l'open data AN et l'assemble)
+        run: python build_all.py
       - name: Publier data.json si modifié
         run: |
           git config user.name "hemicycle-bot"
