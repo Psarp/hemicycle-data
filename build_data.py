@@ -1,164 +1,113 @@
 #!/usr/bin/env python3
-"""
-build_data.py — Récupère les données parlementaires CIVIX et génère data.json
-pour l'app Hémicycle.
-
-Deux modes de fonctionnement :
-  1. EN LIGNE (défaut) : télécharge les CSV depuis data.gouv.fr / CIVIX.
-  2. LOCAL : si des fichiers CSV sont présents dans le dossier ./csv/,
-     les utilise au lieu de télécharger (utile pour tester hors ligne).
-
-Usage :
-    python build_data.py
-
-Produit :
-    ./public/data.json   (lu par l'artefact Hémicycle)
-
-Ce script est conçu pour tourner aussi bien sur votre ordinateur que sur
-les serveurs de GitHub (GitHub Actions), sans modification.
-"""
-
-import csv
-import json
-import os
-import sys
-import io
-from collections import defaultdict
+"""build_data.py — Source: OPEN DATA OFFICIEL DE L'ASSEMBLEE NATIONALE.
+Telecharge l'archive scrutins 17e legislature, la parse, genere public/data.json.
+Aucun fichier a fournir. Concu pour GitHub Actions."""
+import io, json, os, zipfile
 from datetime import datetime, timezone
 from urllib.request import urlopen, Request
 
-# ------------------------------------------------------------------
-# CONFIGURATION — URLs des ressources CIVIX sur data.gouv.fr
-# ------------------------------------------------------------------
-# NOTE : ces identifiants de ressources peuvent évoluer. Si le
-# téléchargement échoue, récupérez les CSV à la main depuis la page
-#   https://www.data.gouv.fr/datasets/donnees-parlementaires-francaises-votes-deputes-scrutins-civix
-# et placez-les dans le dossier ./csv/ (mode LOCAL).
-#
-# L'API tabulaire de data.gouv.fr permet de récupérer une ressource par
-# son id : https://tabular-api.data.gouv.fr/api/resources/{id}/data/csv/
-# On tente d'abord le dossier local, puis le téléchargement.
-
-CSV_LOCAL_DIR = "csv"
+URL_SCRUTINS = "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.json.zip"
 OUTPUT_DIR = "public"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "data.json")
 
-# Noms de fichiers attendus en mode local
-FICHIERS = {
-    "scrutins": "civix-scrutins.csv",
-    "votes": "civix-votes-l17.csv",
-    "groupes": "civix-groupes-l17.csv",
-    "deputes": "civix-deputes-actifs-l17.csv",
+ORGANE_TO_GROUPE = {
+    "PO845401":"RN","PO845407":"EPR","PO845413":"LFI","PO845419":"SOC",
+    "PO845425":"DR","PO845439":"ECO","PO845454":"DEM","PO845470":"HOR",
+    "PO845485":"LIOT","PO872880":"UDR","PO845514":"GDR","PO840056":"AUTRE",
+    "PO847173":"AUTRE","PO0":"AUTRE",
 }
 
-# Mapping abréviations de groupe CIVIX -> codes de l'app
-GRP_MAP = {
-    "RN": "RN", "EPR": "EPR", "LFI-NFP": "LFI", "LFI": "LFI", "SOC": "SOC",
-    "DR": "DR", "ECOS": "ECO", "ECO": "ECO", "DEM": "DEM", "HOR": "HOR",
-    "GDR": "GDR", "LIOT": "LIOT", "UDR": "UDR", "NI": "AUTRE", "": "AUTRE",
-}
+def txt(c):
+    if isinstance(c, dict):
+        if c.get("@xsi:nil") == "true": return ""
+        return c.get("#text","") or ""
+    if isinstance(c,(int,float)): return str(c)
+    return c or ""
 
+def entier(c):
+    try: return int(txt(c))
+    except (ValueError, TypeError): return 0
 
-def gmap(ab):
-    return GRP_MAP.get((ab or "").strip().upper(), "AUTRE")
+def telecharger_zip(url):
+    print("Telechargement de l'archive officielle...\n  "+url)
+    req = Request(url, headers={"User-Agent":"Hemicycle/1.0"})
+    with urlopen(req, timeout=180) as resp:
+        data = resp.read()
+    print("  %d Ko recus" % (len(data)//1024))
+    return zipfile.ZipFile(io.BytesIO(data))
 
-
-def lire_csv_local(nom_fichier):
-    """Lit un CSV depuis ./csv/ s'il existe, sinon renvoie None."""
-    chemin = os.path.join(CSV_LOCAL_DIR, nom_fichier)
-    if os.path.exists(chemin):
-        with open(chemin, encoding="utf-8") as f:
-            return list(csv.DictReader(f))
-    return None
-
-
-def charger(cle):
-    """Charge un jeu de données : local d'abord, téléchargement ensuite."""
-    local = lire_csv_local(FICHIERS[cle])
-    if local is not None:
-        print(f"  [local] {FICHIERS[cle]} : {len(local)} lignes")
-        return local
-    # Ici, en usage réel, on téléchargerait depuis data.gouv.fr.
-    # Laissé volontairement explicite : voir le tutoriel pour renseigner
-    # les URLs exactes des ressources (elles changent selon les versions).
-    print(f"  [manquant] {FICHIERS[cle]} : placez le CSV dans ./{CSV_LOCAL_DIR}/")
-    return []
-
+def parse_scrutin(s):
+    numero = txt(s.get("numero"))
+    date = txt(s.get("dateScrutin"))[:10]
+    titre = txt(s.get("titre"))
+    sort = s.get("sort") or {}
+    code = txt(sort.get("code")).lower()
+    statut = "adopté" if code.startswith("adopt") else "rejeté" if code.startswith("rejet") else "—"
+    ref, lib_dossier = "", ""
+    objet = s.get("objet") or {}
+    if isinstance(objet, dict):
+        dl = objet.get("dossierLegislatif") or {}
+        if isinstance(dl, dict):
+            ref = txt(dl.get("dossierRef")); lib_dossier = txt(dl.get("libelle"))
+    total = None
+    sv = s.get("syntheseVote") or {}
+    dec = sv.get("decompte") if isinstance(sv, dict) else None
+    if isinstance(dec, dict):
+        total = {"pour":entier(dec.get("pour")),"contre":entier(dec.get("contre")),"abstention":entier(dec.get("abstentions"))}
+    vpg = {}
+    vent = s.get("ventilationVotes") or {}
+    organe = vent.get("organe") if isinstance(vent, dict) else None
+    groupes = None
+    if isinstance(organe, dict):
+        groupes = (organe.get("groupes") or {}).get("groupe")
+    if isinstance(groupes, dict): groupes = [groupes]
+    if isinstance(groupes, list):
+        for g in groupes:
+            code_g = ORGANE_TO_GROUPE.get(txt(g.get("organeRef")), "AUTRE")
+            vote = (g.get("vote") or {}).get("decompteVoix") or {}
+            p,c,a = entier(vote.get("pour")),entier(vote.get("contre")),entier(vote.get("abstentions"))
+            if p or c or a:
+                cur = vpg.get(code_g, {"pour":0,"contre":0,"abstention":0})
+                cur["pour"]+=p; cur["contre"]+=c; cur["abstention"]+=a
+                vpg[code_g]=cur
+    titre_affiche = lib_dossier or titre or ("Scrutin n°"+numero)
+    typ = "Projet de loi" if titre_affiche.lower().startswith("projet de loi") else "Proposition de loi"
+    return {"date":date,"ref":ref,"numero_scrutin":numero,"titre":titre_affiche,
+            "objet":titre,"type":typ,"contexte":"Scrutin n°"+numero,"statut":statut,
+            "total":total,"votesParGroupe":vpg or None}
 
 def construire():
-    print("Chargement des données CIVIX…")
-    scrutins_raw = charger("scrutins")
-    votes_raw = charger("votes")
-
-    # 1. Scrutins -> dossiers législatifs
+    zf = telecharger_zip(URL_SCRUTINS)
+    noms = [n for n in zf.namelist() if n.lower().endswith(".json")]
+    print("  %d scrutins dans l'archive" % len(noms))
     scrutins = []
-    for s in scrutins_raw:
+    for nom in noms:
         try:
-            objet = json.loads(s.get("objet", "{}"))
-            sort = json.loads(s.get("sort", "{}"))
-        except (ValueError, TypeError):
+            obj = json.loads(zf.read(nom).decode("utf-8"))
+            s = obj.get("scrutin", obj)
+            p = parse_scrutin(s)
+            if p["date"]: scrutins.append(p)
+        except Exception:
             continue
-        dossier = objet.get("dossierLegislatif") or {}
-        scrutins.append({
-            "numero": s.get("numero", ""),
-            "date": (s.get("date_scrutin", "") or "")[:10],
-            "sort": sort.get("code", ""),
-            "titre": s.get("titre", ""),
-            "dossier_ref": dossier.get("dossierRef", ""),
-            "dossier_lib": dossier.get("libelle", ""),
-        })
-
-    # 2. Votes -> agrégation par scrutin et par groupe
-    votes_par_scrutin = defaultdict(
-        lambda: defaultdict(lambda: {"pour": 0, "contre": 0, "abstention": 0})
-    )
-    for v in votes_raw:
-        num = v.get("numero_scrutin", "")
-        g = gmap(v.get("groupe", ""))
-        pos = (v.get("position", "") or "").strip().lower()
-        if pos in ("pour", "contre", "abstention"):
-            votes_par_scrutin[num][g][pos] += 1
-
-    # 3. Une entrée par dossier (dernier scrutin = sort le plus récent)
     par_dossier = {}
     for s in scrutins:
-        ref = s["dossier_ref"]
-        if not ref:
-            continue
-        if ref not in par_dossier or s["date"] > par_dossier[ref]["date"]:
-            par_dossier[ref] = s
-
-    base = []
-    for ref, s in par_dossier.items():
-        lib = s["dossier_lib"]
-        typ = "Projet de loi" if lib.lower().startswith("projet de loi") else "Proposition de loi"
-        statut = {"adopté": "adopté", "rejeté": "rejeté"}.get(s["sort"], "—")
-        gv = votes_par_scrutin.get(s["numero"], {})
-        decompo = {g: dict(v) for g, v in gv.items()} if gv else None
-        base.append({
-            "date": s["date"], "ref": ref, "numero_scrutin": s["numero"],
-            "titre": lib, "type": typ, "contexte": f"Scrutin n°{s['numero']}",
-            "statut": statut, "votesParGroupe": decompo,
-        })
-
-    base.sort(key=lambda x: x["date"])
-    out = {
-        "genere_le": datetime.now(timezone.utc).isoformat(),
-        "source": "open data CIVIX / Assemblée nationale",
-        "nb_textes": len(base),
-        "textes": base,
-    }
-
+        if s["ref"]:
+            k = s["ref"]
+            if k not in par_dossier or s["date"] > par_dossier[k]["date"]:
+                par_dossier[k] = s
+    base = sorted(par_dossier.values(), key=lambda x: x["date"])
+    out = {"genere_le":datetime.now(timezone.utc).isoformat(),
+           "source":"open data Assemblée nationale — scrutins 17e législature",
+           "source_url":URL_SCRUTINS,"nb_textes":len(base),
+           "nb_scrutins_total":len(scrutins),"textes":base}
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-
-    print(f"\n✓ {OUTPUT_FILE} généré : {len(base)} textes")
-    avec_vote = sum(1 for b in base if b["votesParGroupe"])
-    print(f"  dont {avec_vote} avec décomposition de vote par groupe")
-    if base:
-        print(f"  période : {base[0]['date']} → {base[-1]['date']}")
-
+    avec = sum(1 for b in base if b["votesParGroupe"])
+    print("\n✓ %s" % OUTPUT_FILE)
+    print("  %d scrutins → %d dossiers distincts" % (len(scrutins), len(base)))
+    print("  dont %d avec décompo par groupe" % avec)
+    if base: print("  période : %s → %s" % (base[0]["date"], base[-1]["date"]))
 
 if __name__ == "__main__":
     construire()
