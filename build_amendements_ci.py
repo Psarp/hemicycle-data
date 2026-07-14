@@ -36,12 +36,35 @@ def parse_amendement(a):
     }
 
 def telecharger(url):
-    print("Téléchargement archive amendements (~283 Mo)…")
-    req = Request(url, headers={"User-Agent": "Hemicycle/1.0"})
-    with urlopen(req, timeout=900) as r:
-        data = r.read()
-    print("  %d Mo reçus" % (len(data)//1024//1024))
-    return zipfile.ZipFile(io.BytesIO(data))
+    """Télécharge l'archive par blocs vers un fichier disque (robuste face aux
+    coupures), avec quelques tentatives en cas d'interruption réseau."""
+    import time
+    dest = "Amendements.json.zip"
+    for tentative in range(1, 4):
+        try:
+            print("Téléchargement archive amendements (~283 Mo), tentative %d…" % tentative)
+            req = Request(url, headers={"User-Agent": "Hemicycle/1.0"})
+            recu = 0
+            with urlopen(req, timeout=120) as r, open(dest, "wb") as f:
+                while True:
+                    bloc = r.read(1024 * 256)  # 256 Ko par bloc
+                    if not bloc:
+                        break
+                    f.write(bloc)
+                    recu += len(bloc)
+                    if recu % (20 * 1024 * 1024) < 256 * 1024:
+                        print("  ... %d Mo reçus" % (recu // 1024 // 1024))
+            taille = os.path.getsize(dest)
+            print("  Terminé : %d Mo" % (taille // 1024 // 1024))
+            if taille < 50 * 1024 * 1024:
+                raise IOError("archive trop petite (%d o), téléchargement incomplet" % taille)
+            return zipfile.ZipFile(dest)
+        except Exception as e:
+            print("  Échec tentative %d : %s" % (tentative, e))
+            if tentative < 3:
+                time.sleep(5)
+            else:
+                raise
 
 def main():
     if not os.path.exists(DATA):
