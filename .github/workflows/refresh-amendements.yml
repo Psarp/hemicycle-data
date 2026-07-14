@@ -1,0 +1,36 @@
+name: Rafraîchir les amendements (hebdomadaire)
+
+# Séparé du workflow quotidien : l'archive amendements (283 Mo) est lourde
+# et les amendements d'un texte voté ne changent plus. Une fois par semaine suffit.
+on:
+  schedule:
+    - cron: "0 4 * * 1"   # tous les lundis à 4h UTC
+  workflow_dispatch: {}    # + bouton manuel (onglet Actions)
+
+permissions:
+  contents: write
+
+jobs:
+  amendements:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Générer le bilan des amendements
+        run: python build_amendements_ci.py
+      - name: Publier si modifié
+        run: |
+          git config user.name "hemicycle-bot"
+          git config user.email "actions@github.com"
+          git add public/data.json public/amendements
+          if git diff --staged --quiet; then
+            echo "Aucun changement."
+          else
+            git commit -m "Amendements rafraîchis le $(date -u +%Y-%m-%d)"
+            git push
+          fi
