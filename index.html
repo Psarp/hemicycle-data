@@ -73,6 +73,26 @@ function BarreVotes({v}){
   </div>;
 }
 
+function ObjetTexte({texte,num,groupe,apercu=180}){
+  const [ouvert,setOuvert]=useState(false);
+  if(!texte) return null;
+  const court=texte.length>apercu;
+  const coupe=court?texte.slice(0,apercu).replace(/\s+\S*$/,"")+"…":texte;
+  return <>
+    <span style={{fontSize:12.5,color:"#444"}}>{coupe}</span>
+    {court&&<button onClick={(e)=>{e.stopPropagation();setOuvert(true);}} style={{marginLeft:6,fontSize:11.5,color:"#1f3d6b",background:"none",border:"none",cursor:"pointer",fontWeight:600,padding:0,textDecoration:"underline"}}>voir plus</button>}
+    {ouvert&&<div onClick={()=>setOuvert(false)} style={{position:"fixed",inset:0,background:"rgba(20,20,35,0.55)",zIndex:60,display:"flex",justifyContent:"center",alignItems:"flex-start",overflowY:"auto",padding:"40px 16px"}}>
+      <div onClick={e=>e.stopPropagation()} style={{background:"#fdfcf9",borderRadius:12,maxWidth:640,width:"100%",padding:24,boxShadow:"0 20px 60px rgba(0,0,0,0.3)"}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14,gap:12}}>
+          <strong style={{fontFamily:"Georgia,serif",fontSize:16}}>Amendement {num}{groupe?" · "+G(groupe).court:""}</strong>
+          <button onClick={()=>setOuvert(false)} style={{background:"#f2efe8",border:"1px solid #e2dcd0",borderRadius:8,width:30,height:30,cursor:"pointer",color:"#1f3d6b",fontSize:15}}>✕</button>
+        </div>
+        <div style={{fontSize:14,lineHeight:1.6,color:"#2a2a2a",whiteSpace:"pre-wrap"}}>{texte}</div>
+      </div>
+    </div>}
+  </>;
+}
+
 function TableauAmendements({texteRef}){
   const [ouvert,setOuvert]=useState(false);
   const [etat,setEtat]=useState("idle");
@@ -130,7 +150,7 @@ function TableauAmendements({texteRef}){
               <td style={{padding:"5px 8px",whiteSpace:"nowrap"}}><span style={{display:"inline-block",width:7,height:7,borderRadius:"50%",background:G(a.groupe).couleur,marginRight:5}}></span>{G(a.groupe).court}</td>
               <td style={{padding:"5px 8px",whiteSpace:"nowrap",color:a.sort.toLowerCase().startsWith("adopt")?"#1a7a3a":"#555"}}>{a.sort}</td>
               <td style={{padding:"5px 8px",whiteSpace:"nowrap",color:"#888"}}>{a.organe}</td>
-              <td style={{padding:"5px 8px",color:"#444",minWidth:200}}>{a.objet}</td>
+              <td style={{padding:"5px 8px",color:"#444",minWidth:200}}><ObjetTexte texte={a.objet} num={a.num} groupe={a.groupe} apercu={120}/></td>
             </tr>)}</tbody>
           </table>
         </div>
@@ -213,7 +233,7 @@ function Fiche({t,onClose}){
           </div>
           {t.amendements.listeAdoptes&&t.amendements.listeAdoptes.length>0&&<div style={{marginBottom:14}}>
             <div style={{fontSize:12.5,fontWeight:600,color:"#555",marginBottom:8}}>Amendements adoptés</div>
-            {t.amendements.listeAdoptes.map((a,i)=><div key={i} style={{borderLeft:"3px solid "+G(a.groupe).couleur,padding:"6px 12px",marginBottom:6,background:"#fff",borderRadius:"0 6px 6px 0"}}><div style={{fontSize:12.5}}><strong>{a.num}</strong> <span style={{color:"#888"}}>· {G(a.groupe).court}</span></div><div style={{fontSize:12.5,color:"#444",marginTop:2}}>{a.objet}</div></div>)}
+            {t.amendements.listeAdoptes.map((a,i)=><div key={i} style={{borderLeft:"3px solid "+G(a.groupe).couleur,padding:"6px 12px",marginBottom:6,background:"#fff",borderRadius:"0 6px 6px 0"}}><div style={{fontSize:12.5,display:"flex",alignItems:"center",gap:8,flexWrap:"wrap"}}><strong>{a.num}</strong> <span style={{color:"#888"}}>· {G(a.groupe).court}</span><span style={{fontSize:10.5,padding:"1px 7px",borderRadius:4,background:"#e6f4ea",color:"#1a7a3a",fontWeight:600}}>{a.sort}</span></div><div style={{fontSize:12.5,color:"#444",marginTop:2}}><ObjetTexte texte={a.objet} num={a.num} groupe={a.groupe}/></div></div>)}
           </div>}
           <TableauAmendements texteRef={t.ref}/>
         </Section>}

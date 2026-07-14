@@ -32,7 +32,7 @@ def parse_amendement(a):
         "sort": txt(cv.get("sort")) or "—",
         "dateDepot": txt(cv.get("dateDepot")),
         "organe": txt(ident.get("prefixeOrganeExamen")),
-        "objet": clean_html(txt(contenu.get("exposeSommaire")))[:280],
+        "objet": clean_html(txt(contenu.get("exposeSommaire")))[:3000],
     }
 
 def telecharger(url):
