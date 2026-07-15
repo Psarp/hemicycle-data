@@ -36,35 +36,74 @@ def parse_amendement(a):
     }
 
 def telecharger(url):
-    """Télécharge l'archive par blocs vers un fichier disque (robuste face aux
-    coupures), avec quelques tentatives en cas d'interruption réseau."""
+    """Télécharge l'archive de façon robuste :
+    - par blocs vers le disque (pas de gros bloc en mémoire) ;
+    - REPREND là où ça s'est arrêté si le serveur coupe (requête Range) ;
+    - vérifie la taille annoncée par le serveur (Content-Length) ;
+    - plusieurs tentatives avec attente progressive.
+    Le serveur de l'AN coupe parfois la connexion en cours de route."""
     import time
     dest = "Amendements.json.zip"
-    for tentative in range(1, 4):
+    attendu = None
+    if os.path.exists(dest):
+        os.remove(dest)
+
+    for tentative in range(1, 7):
+        deja = os.path.getsize(dest) if os.path.exists(dest) else 0
         try:
-            print("Téléchargement archive amendements (~283 Mo), tentative %d…" % tentative)
-            req = Request(url, headers={"User-Agent": "Hemicycle/1.0"})
-            recu = 0
-            with urlopen(req, timeout=120) as r, open(dest, "wb") as f:
-                while True:
-                    bloc = r.read(1024 * 256)  # 256 Ko par bloc
-                    if not bloc:
-                        break
-                    f.write(bloc)
-                    recu += len(bloc)
-                    if recu % (20 * 1024 * 1024) < 256 * 1024:
-                        print("  ... %d Mo reçus" % (recu // 1024 // 1024))
-            taille = os.path.getsize(dest)
-            print("  Terminé : %d Mo" % (taille // 1024 // 1024))
-            if taille < 50 * 1024 * 1024:
-                raise IOError("archive trop petite (%d o), téléchargement incomplet" % taille)
-            return zipfile.ZipFile(dest)
-        except Exception as e:
-            print("  Échec tentative %d : %s" % (tentative, e))
-            if tentative < 3:
-                time.sleep(5)
+            entetes = {"User-Agent": "Hemicycle/1.0"}
+            if deja > 0:
+                entetes["Range"] = "bytes=%d-" % deja
+                print("Reprise du téléchargement à %d Mo (tentative %d)…" % (deja // 1024 // 1024, tentative))
             else:
-                raise
+                print("Téléchargement archive amendements (tentative %d)…" % tentative)
+
+            req = Request(url, headers=entetes)
+            with urlopen(req, timeout=120) as r:
+                # taille totale annoncée
+                if attendu is None:
+                    cl = r.headers.get("Content-Length")
+                    cr = r.headers.get("Content-Range")  # ex: bytes 100-999/1000
+                    if cr and "/" in cr:
+                        attendu = int(cr.split("/")[-1])
+                    elif cl:
+                        attendu = int(cl) + deja
+                    if attendu:
+                        print("  taille annoncée : %d Mo" % (attendu // 1024 // 1024))
+
+                reprise = r.status == 206  # le serveur accepte la reprise
+                mode = "ab" if (deja > 0 and reprise) else "wb"
+                if deja > 0 and not reprise:
+                    print("  (serveur sans reprise : on repart de zéro)")
+                    deja = 0
+                recu = deja
+                with open(dest, mode) as f:
+                    while True:
+                        bloc = r.read(1024 * 256)
+                        if not bloc:
+                            break
+                        f.write(bloc)
+                        recu += len(bloc)
+                        if recu % (25 * 1024 * 1024) < 256 * 1024:
+                            print("  ... %d Mo" % (recu // 1024 // 1024))
+
+            taille = os.path.getsize(dest)
+            complet = (attendu is not None and taille >= attendu) or (attendu is None and taille > 200 * 1024 * 1024)
+            if complet:
+                print("  ✓ Terminé : %d Mo" % (taille // 1024 // 1024))
+                return zipfile.ZipFile(dest)
+            print("  Incomplet : %d Mo reçus sur %s Mo attendus" % (
+                taille // 1024 // 1024, (attendu // 1024 // 1024) if attendu else "?"))
+        except Exception as e:
+            print("  Interruption tentative %d : %s" % (tentative, e))
+
+        if tentative < 6:
+            attente = min(10 * tentative, 45)
+            print("  nouvelle tentative dans %d s…" % attente)
+            time.sleep(attente)
+
+    raise IOError("Téléchargement impossible après 6 tentatives (serveur AN instable). "
+                  "Relancez le workflow plus tard.")
 
 def main():
     if not os.path.exists(DATA):
