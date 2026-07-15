@@ -175,6 +175,25 @@ def construire(use_local=False):
         })
     textes.sort(key=lambda x:x["date"])
 
+    # --- Préserver l'enrichissement amendements déjà présent ---
+    # build_all.py tourne tous les jours et régénère data.json ; sans cette
+    # étape, il effacerait le bilan d'amendements produit par le workflow
+    # hebdomadaire (build_amendements_ci.py).
+    anciens_amdts = {}
+    if os.path.exists(OUT_DATA):
+        try:
+            ancien = json.load(open(OUT_DATA, encoding="utf-8"))
+            for t in ancien.get("textes", []):
+                if t.get("amendements"):
+                    anciens_amdts[t["ref"]] = t["amendements"]
+        except Exception:
+            pass
+    for t in textes:
+        if t["ref"] in anciens_amdts:
+            t["amendements"] = anciens_amdts[t["ref"]]
+    if anciens_amdts:
+        print(f"  bilan d'amendements conservé pour {len(anciens_amdts)} textes")
+
     out = {"genere_le":datetime.now(timezone.utc).isoformat(),
            "source":"open data Assemblée nationale (17e législature)",
            "nb_textes":len(textes),"textes":textes}
