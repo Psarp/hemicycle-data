@@ -196,7 +196,7 @@ function Fiche({t,onClose}){
             </React.Fragment>)}
           </div>
         </Section>}
-        <Section titre="Résultat du scrutin (données open data AN)">
+        <Section titre={t.sansScrutin?"Résultat du vote (sans scrutin public)":"Résultat du scrutin (données open data AN)"}>
           {totaux?<>
             <div style={{display:"flex",gap:12,flexWrap:"wrap",alignItems:"center"}}>
               <div style={{display:"flex",borderRadius:8,overflow:"hidden",border:"1px solid #e2dcd0",flex:"1 1 280px",minWidth:260}}>
@@ -205,7 +205,7 @@ function Fiche({t,onClose}){
               <span style={{fontSize:15,fontWeight:700,padding:"8px 16px",borderRadius:8,background:t.statut==="adopté"?"#e6f4ea":"#fbeaea",color:t.statut==="adopté"?"#1a7a3a":"#c0392b",textTransform:"capitalize"}}>{t.statut}</span>
             </div>
             <div style={{marginTop:12}}><BarreVotes v={totaux}/></div>
-          </>:<div style={{padding:14,background:"#f2efe8",border:"1px solid #e2dcd0",borderRadius:8,fontSize:13.5,color:"#555",lineHeight:1.5}}>Sort officiel : <strong style={{textTransform:"capitalize"}}>{t.statut}</strong>. Le détail des votes par groupe n'est pas présent pour ce scrutin dans les données chargées.</div>}
+          </>:<div style={{padding:14,background:"#f2efe8",border:"1px solid #e2dcd0",borderRadius:8,fontSize:13.5,color:"#555",lineHeight:1.5}}>Décision de l'Assemblée : <strong style={{textTransform:"capitalize"}}>{t.mentionDecision||t.statut}</strong>.{t.sansScrutin?" Ce texte a été voté à main levée, sans scrutin public : il n'existe donc aucun décompte par groupe ni par député.":" Le détail des votes par groupe n'est pas disponible pour ce texte."}</div>}
         </Section>
 
         {t.votesParGroupe&&<Section titre="Vote par groupe (données réelles)">
@@ -384,7 +384,7 @@ function App(){
                 <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:10}}>
                   <span style={{fontSize:11.5,background:"#eef1f6",color:"#1f3d6b",padding:"3px 9px",borderRadius:5,fontWeight:600}}>{t.type}</span>
                   {t.statut&&t.statut!=="—"&&<span style={{fontSize:11.5,padding:"3px 9px",borderRadius:5,fontWeight:600,background:ad?"#e6f4ea":rej?"#fbeaea":"#fff6e5",color:ad?"#1a7a3a":rej?"#c0392b":"#b8860b",textTransform:"capitalize"}}>{t.statut}</span>}
-                  {t.votesParGroupe&&<span style={{fontSize:11.5,padding:"3px 9px",borderRadius:5,fontWeight:600,background:"#eef6f0",color:"#1a7a3a"}}>vote détaillé ✓</span>}
+                  {t.votesParGroupe?<span style={{fontSize:11.5,padding:"3px 9px",borderRadius:5,fontWeight:600,background:"#eef6f0",color:"#1a7a3a"}}>vote détaillé ✓</span>:<span style={{fontSize:11.5,padding:"3px 9px",borderRadius:5,fontWeight:600,background:"#f2efe8",color:"#8a8478"}}>à main levée</span>}
                 </div>
                 <h3 style={{fontFamily:"Georgia,serif",fontSize:16.5,lineHeight:1.35}}>{t.titre}</h3>
                 {t.auteur&&<div style={{marginTop:6,fontSize:12.5,color:"#555",display:"flex",alignItems:"center",gap:6}}><span style={{display:"inline-block",width:8,height:8,borderRadius:"50%",background:auteurCouleur(t)}}></span>{t.auteur}{auteurLibelle(t)&&<span style={{color:"#999"}}>· {auteurLibelle(t)}</span>}</div>}

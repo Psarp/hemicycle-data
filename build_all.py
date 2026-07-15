@@ -7,7 +7,7 @@ Produit :
 
 En production (GitHub Actions), télécharge les 4 archives.
 En test local, on peut injecter des ZIP locaux (voir --local)."""
-import io, json, os, sys, zipfile, glob
+import io, json, os, re, sys, zipfile, glob
 from collections import defaultdict
 from datetime import datetime, timezone
 from urllib.request import urlopen, Request
@@ -130,12 +130,22 @@ def _chambre(code):
         return "Sénat"
     return ""
 
-def _parcours_actes(node, etapes, textes, votes=None):
+def _parcours_actes(node, etapes, textes, votes=None, decisions=None):
     """Parcourt récursivement l'arbre d'actes pour extraire étapes, textes associés
     et références de scrutins (voteRefs) — ce dernier lien couvre TOUTE la
     législature, alors que scrutin->dossierRef n'est renseigné que depuis 03/2026."""
     if votes is None: votes = set()
+    if decisions is None: decisions = []
     if isinstance(node, dict):
+        # Décision de l'Assemblée (AN1-DEBATS-DEC, AN2-DEBATS-DEC…) : présente
+        # même quand le vote a eu lieu à main levée, sans scrutin public.
+        ca = txt(node.get("codeActe"))
+        if re.match(r"^AN\d.*-DEBATS-DEC$", ca or ""):
+            sc = node.get("statutConclusion") or {}
+            lib = txt(sc.get("libelle")) if isinstance(sc, dict) else ""
+            dt = txt(node.get("dateActe"))[:10]
+            if dt:
+                decisions.append({"date": dt, "statut": lib, "code": ca})
         vr = node.get("voteRefs") or {}
         if isinstance(vr, dict):
             v = vr.get("voteRef")
@@ -152,19 +162,19 @@ def _parcours_actes(node, etapes, textes, votes=None):
             label = f"{nom} · {ch}" if ch else nom
             etapes.append({"code":code, "label":label, "date":date})
         sub = node.get("actesLegislatifs")
-        if sub: _parcours_actes(sub, etapes, textes, votes)
+        if sub: _parcours_actes(sub, etapes, textes, votes, decisions)
     elif isinstance(node, list):
-        for x in node: _parcours_actes(x, etapes, textes, votes)
+        for x in node: _parcours_actes(x, etapes, textes, votes, decisions)
     # cas dict contenant 'acteLegislatif'
     if isinstance(node, dict) and "acteLegislatif" in node:
-        _parcours_actes(node["acteLegislatif"], etapes, textes, votes)
+        _parcours_actes(node["acteLegislatif"], etapes, textes, votes, decisions)
     return votes
 
 def charger_dossiers(use_local):
     zf = get_zip("dossiers", use_local)
     dossiers = {}
     for n in zf.namelist():
-        if "/dossierParlementaire/DLR" not in n or not n.endswith(".json"): continue
+        if "/dossierParlementaire/DLR5L17" not in n or not n.endswith(".json"): continue
         try:
             d = json.loads(zf.read(n).decode("utf-8")).get("dossierParlementaire", {})
             uid = txt(d.get("uid"))
@@ -174,10 +184,11 @@ def charger_dossiers(use_local):
             if isinstance(init, list): init = init[0] if init else {}
             auteur_ref = txt(init.get("acteurRef"))
             mandat_ref = txt(init.get("mandatRef"))
-            etapes, textes, votes = [], set(), set()
-            _parcours_actes(d.get("actesLegislatifs"), etapes, textes, votes)
+            etapes, textes, votes, decisions = [], set(), set(), []
+            _parcours_actes(d.get("actesLegislatifs"), etapes, textes, votes, decisions)
             dossiers[uid] = {"titre":titre, "procedure":proc, "auteurRef":auteur_ref, "mandatRef":mandat_ref,
-                             "textes":list(textes), "etapes":etapes, "votes":list(votes)}
+                             "textes":list(textes), "etapes":etapes, "votes":list(votes),
+                             "decisions":decisions}
         except Exception: continue
     print(f"  {len(dossiers)} dossiers")
     return dossiers
@@ -221,6 +232,16 @@ def charger_scrutins(use_local):
             par_dossier[k]=s
     print(f"  {len(scrutins)} scrutins | {len(par_dossier)} rattachés directement à un dossier")
     return par_uid, par_dossier
+
+def statut_decision(libelle):
+    """Normalise un statutConclusion en adopté / rejeté / —."""
+    s = (libelle or "").lower()
+    if s.startswith("rejet"):
+        return "rejeté"
+    if any(x in s for x in ("adopt", "modifi", "conforme", "accord")):
+        return "adopté"
+    return "—"
+
 
 def deduire_type(procedure, titre):
     """Type du texte, déduit d'abord de la procédure officielle (fiable),
@@ -268,6 +289,24 @@ def construire(use_local=False):
             retenu[dlr] = sc
     print(f"  {voie_a} dossiers via voteRefs (toute la législature) -> {len(retenu)} au total")
 
+    # (c) Dossiers décidés à l'Assemblée SANS scrutin public (vote à main levée) :
+    # la décision existe dans le dossier, mais sans détail par groupe (un vote à
+    # main levée ne produit aucun décompte nominatif).
+    sans_scrutin = 0
+    for dlr, d in dossiers.items():
+        if dlr in retenu:
+            continue
+        decs = d.get("decisions") or []
+        if not decs:
+            continue
+        derniere = max(decs, key=lambda x: x["date"])
+        retenu[dlr] = {"uid": "", "date": derniere["date"], "ref": dlr, "numero": "",
+                       "titre": "", "statut": statut_decision(derniere["statut"]),
+                       "votesParGroupe": None, "sansScrutin": True,
+                       "mentionDecision": derniere["statut"]}
+        sans_scrutin += 1
+    print(f"  + {sans_scrutin} dossiers décidés sans scrutin public -> {len(retenu)} textes")
+
     textes = []
     for dlr, sc in retenu.items():
         d = dossiers.get(dlr, {})
@@ -284,6 +323,8 @@ def construire(use_local=False):
             "auteur": auteur.get("nom",""), "auteurGroupe": auteur.get("groupe",""),
             "auteurQualite": auteur.get("qualite",""),
             "statut": sc["statut"], "votesParGroupe": sc["votesParGroupe"],
+            "sansScrutin": bool(sc.get("sansScrutin")),
+            "mentionDecision": sc.get("mentionDecision", ""),
             "cycle": cycle,
             "textesRefs": d.get("textes", []),
         })
