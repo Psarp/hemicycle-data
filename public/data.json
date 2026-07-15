@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-07-15T19:49:01.549294+00:00",
+ "genere_le": "2026-07-15T20:58:04.416333+00:00",
  "source": "open data Assemblée nationale (17e législature)",
  "nb_textes": 71,
  "textes": [
@@ -11,6 +11,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Perrine Goulet",
    "auteurGroupe": "DEM",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -46,11 +47,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
@@ -480,6 +481,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Hubert Ott",
    "auteurGroupe": "DEM",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -545,11 +547,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
@@ -643,6 +645,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Christophe Blanchet",
    "auteurGroupe": "DEM",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -683,17 +686,17 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2523",
     "PIONSNR5S479B0482",
+    "RAPPANR5L17B2523",
     "PIONANR5L17B2385"
    ],
    "amendements": {
@@ -771,6 +774,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Jean-Carles Grelier",
    "auteurGroupe": "DEM",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -831,15 +835,15 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -848,12 +852,12 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2525",
-    "PIONSNR5S459B0413",
     "RAPPSNR5S459B0578",
+    "PIONSNR5S459B0413",
+    "PIONANR5L17B0841",
     "RAPPANR5L17B0994",
-    "PIONANR5L17B1383",
-    "PIONANR5L17B0841"
+    "RAPPANR5L17B2525",
+    "PIONANR5L17B1383"
    ],
    "amendements": {
     "total": 162,
@@ -1198,6 +1202,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Erwan Balanant",
    "auteurGroupe": "DEM",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -1258,24 +1263,24 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0720",
+    "PIONSNR5S479B0475",
+    "PIONANR5L17B0824",
     "PIONANR5L17B2928",
     "RAPPANR5L17B0991",
-    "PIONSNR5S479B0475",
-    "PIONANR5L17B0824"
+    "RAPPSNR5S479B0720"
    ],
    "amendements": {
     "total": 38,
@@ -1418,8 +1423,9 @@
    "titre": "Proposition de loi visant à soutenir les collectivités territoriales dans la prévention et la gestion des inondations",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Jean-Yves Roux",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -1475,15 +1481,15 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -1492,11 +1498,11 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2526",
     "PIONSNR5S479B0481",
-    "RAPPSNR5S459B0361",
-    "RAPPSNR5S479B0579",
     "PIONANR5L17B1041",
+    "RAPPSNR5S459B0361",
+    "RAPPANR5L17B2526",
+    "RAPPSNR5S479B0579",
     "PIONSNR5S459B0226"
    ],
    "amendements": {
@@ -1716,6 +1722,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Cyrille Isaac-Sibille",
    "auteurGroupe": "DEM",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -1751,18 +1758,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
     "RAPPANR5L17B2527",
-    "PIONSNR5S479B0484",
-    "PIONANR5L17B2442"
+    "PIONANR5L17B2442",
+    "PIONSNR5S479B0484"
    ],
    "amendements": {
     "total": 58,
@@ -1883,6 +1890,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Jean-Paul Mattei",
    "auteurGroupe": "DEM",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -1933,17 +1941,17 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2445",
     "PIONSNR5S479B0483",
+    "PIONANR5L17B2445",
     "RAPPANR5L17B2531"
    ],
    "amendements": {
@@ -2061,6 +2069,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Louise Morel",
    "auteurGroupe": "DEM",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -2106,15 +2115,15 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -2123,12 +2132,12 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1004",
     "RAPPANR5L17B2524",
-    "RAPPSNR5S479B0194",
-    "PIONSNR5S459B0415",
     "PIONANR5L17B2263",
-    "PIONANR5L17B0823"
+    "RAPPANR5L17B1004",
+    "PIONANR5L17B0823",
+    "RAPPSNR5S479B0194",
+    "PIONSNR5S459B0415"
    ],
    "amendements": {
     "total": 92,
@@ -2271,8 +2280,9 @@
    "titre": "Proposition de loi visant à permettre le remboursement des honoraires d'expert-comptable aux candidats",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Muriel Jourda",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -2328,11 +2338,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -2341,10 +2351,10 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2515",
-    "RAPPANR5L17B2576",
     "RAPPSNR5S479B0381",
-    "PIONSNR5S479B0328"
+    "PIONANR5L17B2515",
+    "PIONSNR5S479B0328",
+    "RAPPANR5L17B2576"
    ],
    "amendements": {
     "total": 7,
@@ -2364,8 +2374,9 @@
    "titre": "Projet de loi constitutionnelle relatif à la Nouvelle-Calédonie",
    "type": "Projet de loi",
    "contexte": "Projet ou proposition de loi constitutionnelle",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -2431,23 +2442,23 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S479B0023",
-    "PRJLANR5L17B2529",
     "RAPPANR5L17B2579",
     "PRJLSNR5S479B0509",
+    "PRJLSNR5S479B0023",
+    "PRJLANR5L17B2529",
     "RAPPSNR5S479B0409"
    ],
    "amendements": {
@@ -2517,6 +2528,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Yannick Neuder",
    "auteurGroupe": "DR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -2577,11 +2589,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -2591,12 +2603,12 @@
    ],
    "textesRefs": [
     "RAPPSNR5S479B0817",
-    "RAPPANR5L17B2995",
-    "PIONANR5L17B2906",
-    "PIONSNR5S479B0529",
-    "PIONANR5L17B2309",
     "RAPPSNR5S479B0697",
-    "RAPPANR5L17B2616"
+    "RAPPANR5L17B2995",
+    "RAPPANR5L17B2616",
+    "PIONANR5L17B2906",
+    "PIONANR5L17B2309",
+    "PIONSNR5S479B0529"
    ],
    "amendements": {
     "total": 77,
@@ -2869,6 +2881,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Fabrice Barusseau",
    "auteurGroupe": "SOC",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -2929,18 +2942,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0530",
     "PIONANR5L17B2037",
-    "RAPPANR5L17B2193"
+    "RAPPANR5L17B2193",
+    "PIONSNR5S479B0530"
    ],
    "amendements": {
     "total": 98,
@@ -3201,6 +3214,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Brigitte Klinkert",
    "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -3266,11 +3280,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
@@ -3420,6 +3434,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Laetitia Saint-Paul",
    "auteurGroupe": "HOR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -3470,18 +3485,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1133",
+    "RAPPANR5L17B2618",
     "PIONSNR5S479B0537",
-    "RAPPANR5L17B2618"
+    "PIONANR5L17B1133"
    ],
    "amendements": {
     "total": 124,
@@ -3602,6 +3617,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Thomas Lam",
    "auteurGroupe": "HOR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -3662,18 +3678,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
+    "PIONANR5L17B2491",
     "RAPPANR5L17B2605",
-    "PIONSNR5S479B0538",
-    "PIONANR5L17B2491"
+    "PIONSNR5S479B0538"
    ],
    "amendements": {
     "total": 45,
@@ -3776,6 +3792,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Pierre Henriet",
    "auteurGroupe": "HOR",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -3841,17 +3858,17 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2611",
     "PIONANR5L17B2496",
+    "RAPPANR5L17B2611",
     "PIONSNR5S479B0534"
    ],
    "amendements": {
@@ -3989,6 +4006,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Nathalie Colin-Oesterlé",
    "auteurGroupe": "HOR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -4049,13 +4067,13 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2493",
-    "RAPPANR5L17B2621"
+    "RAPPANR5L17B2621",
+    "PIONANR5L17B2493"
    ],
    "amendements": {
     "total": 137,
@@ -4210,8 +4228,9 @@
    "titre": "Proposition de loi visant à permettre aux salariés de certains établissements et services de travailler le 1er mai",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Annick Billon",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -4277,24 +4296,24 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2335",
     "PIONANR5L17B1673",
     "PIONSNR5S459B0550",
+    "PIONSNR5S479B0539",
     "RAPPSNR5S459B0776",
-    "PIONSNR5S479B0539"
+    "RAPPANR5L17B2335"
    ],
    "amendements": {
     "total": 254,
@@ -4338,8 +4357,9 @@
    "titre": "Proposition de loi visant à instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "François Patriat",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -4395,11 +4415,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -4408,10 +4428,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0288",
-    "PIONSNR5S479B0187",
     "RAPPANR5L17B2578",
-    "PIONANR5L17B2413"
+    "PIONANR5L17B2413",
+    "RAPPSNR5S479B0288",
+    "PIONSNR5S479B0187"
    ],
    "amendements": {
     "total": 6,
@@ -4440,7 +4460,8 @@
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
    "auteur": "Gabriel Attal",
-   "auteurGroupe": "EPR",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -4506,11 +4527,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -4527,13 +4548,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1191",
-    "RAPPSNR5S479B0286",
-    "RAPPANR5L17B2357",
-    "PRJLSNR5S459B0758",
     "PRJLSNR5S419B0550",
-    "RAPPSNR5S419B0634",
-    "PRJLANR5L17B0481"
+    "PRJLSNR5S459B0758",
+    "PRJLANR5L17B0481",
+    "RAPPSNR5S479B0286",
+    "RAPPANR5L17B1191",
+    "RAPPANR5L17B2357",
+    "RAPPSNR5S419B0634"
    ],
    "amendements": {
     "total": 0,
@@ -4548,8 +4569,9 @@
    "titre": "Projet de loi autorisant l’approbation de l’accord entre le Gouvernement de la République française et la Communauté des Caraïbes relatif à l’adhésion au protocole sur les privilèges et immunités de la Communauté des Caraïbes du 14 janvier 1985",
    "type": "Projet de loi",
    "contexte": "Projet de ratification des traités et conventions",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -4595,11 +4617,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -4608,11 +4630,11 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0294",
     "PRJLSNR5S479B0160",
     "ACINANR5L17B2414",
-    "PRJLANR5L17B2414",
-    "RAPPANR5L17B2582"
+    "RAPPANR5L17B2582",
+    "RAPPSNR5S479B0294",
+    "PRJLANR5L17B2414"
    ],
    "amendements": {
     "total": 0,
@@ -4627,8 +4649,9 @@
    "titre": "Proposition de loi visant à garantir le droit de visite des parlementaires et des bâtonniers dans les lieux de privation de liberté",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Marie-Pierre de La Gontrie",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -4694,11 +4717,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -4711,13 +4734,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2643",
-    "PIONSNR5S479B0485",
     "PIONANR5L17B2511",
-    "RAPPSNR5S479B0546",
     "RAPPANR5L17B2577",
+    "PIONSNR5S459B0637",
+    "PIONSNR5S479B0485",
     "RAPPSNR5S479B0371",
-    "PIONSNR5S459B0637"
+    "RAPPANR5L17B2643",
+    "RAPPSNR5S479B0546"
    ],
    "amendements": {
     "total": 41,
@@ -4822,6 +4845,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Vincent Caure",
    "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -4887,15 +4911,15 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -4904,12 +4928,12 @@
     }
    ],
    "textesRefs": [
+    "PIONSNR5S479B0401",
+    "PIONANR5L17B2112",
     "RAPPANR5L17B2347",
     "RAPPANR5L17B2733",
-    "PIONANR5L17B2112",
-    "PIONANR5L17B2608",
-    "PIONSNR5S479B0401",
-    "RAPPSNR5S479B0461"
+    "RAPPSNR5S479B0461",
+    "PIONANR5L17B2608"
    ],
    "amendements": {
     "total": 13,
@@ -4960,8 +4984,9 @@
    "titre": "Projet de loi relatif à la lutte contre les fraudes sociales et fiscales",
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -5027,11 +5052,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -5048,13 +5073,13 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S479B0512",
-    "PRJLANR5L17B2115",
-    "RAPPANR5L17B2701",
     "RAPPSNR5S479B0570",
-    "PRJLSNR5S479B0024",
     "RAPPSNR5S479B0111",
-    "RAPPANR5L17B2250"
+    "RAPPANR5L17B2250",
+    "PRJLANR5L17B2115",
+    "PRJLSNR5S479B0512",
+    "PRJLSNR5S479B0024",
+    "RAPPANR5L17B2701"
    ],
    "amendements": {
     "total": 1931,
@@ -8155,8 +8180,9 @@
    "titre": "Projet de loi relatif à la restitution de biens culturels provenant d’États qui, du fait d’une appropriation illicite, en ont été privés",
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
-   "auteur": "",
+   "auteur": "François Bayrou",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -8222,11 +8248,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -8239,13 +8265,13 @@
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B2408",
-    "RAPPANR5L17B2745",
-    "PRJLSNR5S459B0871",
-    "PRJLSNR5S479B0545",
     "RAPPSNR5S479B0592",
     "RAPPSNR5S479B0290",
-    "RAPPANR5L17B2628"
+    "PRJLSNR5S479B0545",
+    "PRJLANR5L17B2408",
+    "PRJLSNR5S459B0871",
+    "RAPPANR5L17B2628",
+    "RAPPANR5L17B2745"
    ],
    "amendements": {
     "total": 126,
@@ -8560,6 +8586,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Julie Delpech",
    "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -8620,11 +8647,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -8632,24 +8659,24 @@
      "etat": "avenir"
     },
     {
-     "label": "Nouvelle lecture",
+     "label": "Nouvelle lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "Nouvelle lecture",
+     "label": "Nouvelle lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0571",
-    "RAPPSNR5S459B0805",
-    "RAPPSNR5S459B0725",
-    "RAPPANR5L17B1360",
-    "RAPPANR5L17B1654",
-    "PIONANR5L17B1610",
-    "RAPPANR5L17B2751",
     "PIONSNR5S479B0608",
-    "PIONANR5L17B0439"
+    "PIONSNR5S459B0571",
+    "PIONANR5L17B0439",
+    "RAPPANR5L17B1654",
+    "RAPPANR5L17B1360",
+    "RAPPSNR5S459B0725",
+    "RAPPANR5L17B2751",
+    "RAPPSNR5S459B0805",
+    "PIONANR5L17B1610"
    ],
    "amendements": {
     "total": 275,
@@ -9270,6 +9297,7 @@
    "contexte": "Résolution",
    "auteur": "Constance Le Grip",
    "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -9426,6 +9454,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Laure Miller",
    "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -9491,18 +9520,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0619",
     "PIONANR5L17B1793",
-    "RAPPANR5L17B2761"
+    "RAPPANR5L17B2761",
+    "PIONSNR5S479B0619"
    ],
    "amendements": {
     "total": 103,
@@ -9731,6 +9760,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Agnès Firmin Le Bodo",
    "auteurGroupe": "HOR",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -9796,18 +9826,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1502",
+    "PIONSNR5S479B0613",
     "RAPPANR5L17B2615",
-    "PIONSNR5S479B0613"
+    "PIONANR5L17B1502"
    ],
    "amendements": {
     "total": 110,
@@ -10034,6 +10064,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Jean-Pierre Vigier",
    "auteurGroupe": "DR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -10094,11 +10125,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -10107,11 +10138,11 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B3019",
-    "PIONSNR5S479B0629",
     "RAPPSNR5S479B0832",
-    "PIONANR5L17B2595",
-    "RAPPANR5L17B2755"
+    "PIONANR5L17B3019",
+    "RAPPANR5L17B2755",
+    "PIONSNR5S479B0629",
+    "PIONANR5L17B2595"
    ],
    "amendements": {
     "total": 426,
@@ -10696,6 +10727,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Marie Récalde",
    "auteurGroupe": "SOC",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -10756,18 +10788,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0627",
     "PIONANR5L17B1909",
-    "RAPPANR5L17B2190"
+    "RAPPANR5L17B2190",
+    "PIONSNR5S479B0627"
    ],
    "amendements": {
     "total": 53,
@@ -10838,8 +10870,9 @@
    "titre": "Proposition de loi organique portant actualisation du corps électoral pour les élections au congrès et aux assemblées de province de la Nouvelle-Calédonie",
    "type": "Proposition de loi",
    "contexte": "Projet ou proposition de loi organique",
-   "auteur": "",
+   "auteur": "Georges Naturel",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -10905,11 +10938,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -10922,10 +10955,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0630",
-    "PIONANR5L17B2804",
+    "PIONSNR5S459B0636",
     "RAPPANR5L17B2807",
-    "PIONSNR5S459B0636"
+    "PIONANR5L17B2804",
+    "RAPPSNR5S479B0630"
    ],
    "amendements": {
     "total": 28,
@@ -10967,6 +11000,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Valérie Létard",
    "auteurGroupe": "LIOT",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -11027,18 +11061,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
     "PIONANR5L17B2674",
-    "RAPPANR5L17B2816",
-    "PIONSNR5S479B0673"
+    "PIONSNR5S479B0673",
+    "RAPPANR5L17B2816"
    ],
    "amendements": {
     "total": 156,
@@ -11163,6 +11197,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Max Mathiasin",
    "auteurGroupe": "LIOT",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -11228,17 +11263,17 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0672",
     "RAPPANR5L17B2810",
+    "PIONSNR5S479B0672",
     "PIONANR5L17B1817"
    ],
    "amendements": {
@@ -11330,8 +11365,9 @@
    "titre": "Proposition de loi portant pérennisation du contrat de professionnalisation expérimental",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Nadège Havet",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -11392,11 +11428,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -11405,9 +11441,9 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0475",
-    "PIONANR5L17B1674",
     "RAPPANR5L17B2812",
+    "PIONANR5L17B1674",
+    "PIONSNR5S459B0475",
     "RAPPSNR5S459B0778"
    ],
    "amendements": {
@@ -11444,8 +11480,9 @@
    "titre": "Proposition de loi visant à étendre à toutes les communes la compensation financière prévue pour les communes de plus de 3 500 habitants pour l’exercice de l’ensemble des compétences du service public de la petite enfance",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Anne-Catherine Loisier",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -11511,11 +11548,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -11524,10 +11561,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2806",
-    "PIONSNR5S479B0213",
     "RAPPSNR5S479B0500",
-    "PIONANR5L17B2637"
+    "RAPPANR5L17B2806",
+    "PIONANR5L17B2637",
+    "PIONSNR5S479B0213"
    ],
    "amendements": {
     "total": 20,
@@ -11557,6 +11594,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Violette Spillebout",
    "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -11617,18 +11655,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B2835",
     "PIONSNR5S479B0675",
-    "PIONANR5L17B2708",
-    "RAPPANR5L17B2835"
+    "PIONANR5L17B2708"
    ],
    "amendements": {
     "total": 382,
@@ -12179,8 +12217,9 @@
    "titre": "Projet de loi d’urgence pour la protection et la souveraineté agricoles",
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -12246,11 +12285,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -12259,13 +12298,13 @@
     }
    ],
    "textesRefs": [
+    "ETDIANR5L17B2632",
     "PRJLSNR5S479B0689",
-    "PRJLANR5L17B2632",
+    "AVCEANR5L17B2632",
     "RAPPSNR5S479B0762",
     "RAPPANR5L17B2765",
-    "ETDIANR5L17B2632",
-    "PRJLANR5L17B3017",
-    "AVCEANR5L17B2632"
+    "PRJLANR5L17B2632",
+    "PRJLANR5L17B3017"
    ],
    "amendements": {
     "total": 4005,
@@ -15368,6 +15407,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Vincent Thiébaut",
    "auteurGroupe": "HOR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -15433,15 +15473,15 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -15451,11 +15491,11 @@
    ],
    "textesRefs": [
     "PIONANR5L17B2538",
+    "RAPPANR5L17B0625",
     "PIONANR5L17B0277",
-    "RAPPANR5L17B2754",
-    "PIONSNR5S459B0180",
     "RAPPSNR5S479B0412",
-    "RAPPANR5L17B0625"
+    "RAPPANR5L17B2754",
+    "PIONSNR5S459B0180"
    ],
    "amendements": {
     "total": 203,
@@ -15734,8 +15774,9 @@
    "titre": "Projet de loi portant transposition de l’avenant n°3 du 25 février 2026 au protocole d’accord du 10 novembre 2023 relatif à l’assurance chômage",
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -15801,19 +15842,19 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -15822,14 +15863,14 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2633",
-    "PRJLSNR5S479B0561",
-    "RAPPSNR5S479B0488",
-    "RAPPSNR5S479B0620",
-    "RAPPANR5L17B2809",
-    "PRJLSNR5S479B0470",
+    "PRJLANR5L17B2805",
     "PRJLANR5L17B2619",
-    "PRJLANR5L17B2805"
+    "RAPPANR5L17B2809",
+    "RAPPSNR5S479B0620",
+    "RAPPSNR5S479B0488",
+    "PRJLSNR5S479B0561",
+    "PRJLSNR5S479B0470",
+    "RAPPANR5L17B2633"
    ],
    "amendements": {
     "total": 157,
@@ -15886,6 +15927,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Elie Califer",
    "auteurGroupe": "SOC",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -15951,15 +15993,15 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -15968,11 +16010,11 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L16B2061",
     "RAPPANR5L17B2837",
+    "RAPPANR5L16B2206",
+    "PIONANR5L16B2061",
     "PIONSNR5S419B0373",
     "PIONANR5L17B1578",
-    "RAPPANR5L16B2206",
     "RAPPSNR5S459B0686"
    ],
    "amendements": {
@@ -15988,8 +16030,9 @@
    "titre": "Proposition de loi visant à améliorer les moyens d'action de l'Agence de gestion et de recouvrement des avoirs saisis et confisqués et à faciliter l'exercice des missions d'expert judiciaire",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Antoine Lefèvre",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -16045,24 +16088,24 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
+    "PIONSNR5S479B0703",
+    "PIONSNR5S479B0128",
     "RAPPSNR5S479B0262",
     "RAPPANR5L17B2840",
-    "PIONANR5L17B2349",
-    "PIONSNR5S479B0128",
-    "PIONSNR5S479B0703"
+    "PIONANR5L17B2349"
    ],
    "amendements": {
     "total": 139,
@@ -16355,6 +16398,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Benoît Biteau",
    "auteurGroupe": "ECO",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -16420,18 +16464,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B2839",
     "PIONSNR5S479B0704",
-    "PIONANR5L17B2678",
-    "RAPPANR5L17B2839"
+    "PIONANR5L17B2678"
    ],
    "amendements": {
     "total": 42,
@@ -16494,6 +16538,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Arnaud Simion",
    "auteurGroupe": "SOC",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -16544,18 +16589,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
+    "PIONANR5L17B2023",
     "PIONSNR5S479B0710",
-    "RAPPANR5L17B2200",
-    "PIONANR5L17B2023"
+    "RAPPANR5L17B2200"
    ],
    "amendements": {
     "total": 96,
@@ -16814,6 +16859,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Graziella Melchior",
    "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -16869,18 +16915,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2838",
     "PIONANR5L17B1169",
-    "PIONSNR5S479B0708"
+    "PIONSNR5S479B0708",
+    "RAPPANR5L17B2838"
    ],
    "amendements": {
     "total": 38,
@@ -16933,6 +16979,7 @@
    "contexte": "Résolution Article 34-1",
    "auteur": "Éric Pauget",
    "auteurGroupe": "DR",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -16990,6 +17037,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Julien Brugerolles",
    "auteurGroupe": "GDR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -17045,18 +17093,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
     "PIONANR5L17B1319",
-    "RAPPANR5L17B2842",
-    "PIONSNR5S479B0709"
+    "PIONSNR5S479B0709",
+    "RAPPANR5L17B2842"
    ],
    "amendements": {
     "total": 45,
@@ -17219,8 +17267,9 @@
    "titre": "Projet de loi relative aux résultats de la gestion et portant approbation des comptes de l'année 2025",
    "type": "Projet de loi",
    "contexte": "Projet de loi relative aux résultats de la gestion et portant approbation des comptes",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -17286,18 +17335,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B2694",
-    "RAPPANR5L17B2847",
     "RAPPSNR5S479B0736",
+    "RAPPANR5L17B2847",
+    "PRJLANR5L17B2694",
     "PRJLSNR5S479B0726"
    ],
    "amendements": {
@@ -17371,8 +17420,9 @@
    "titre": "Projet de loi portant approbation des comptes de la sécurité sociale de l’année 2025",
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -17438,20 +17488,20 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
     "PRJLSNR5S479B0727",
-    "RAPPANR5L17B2863",
     "RAPPSNR5S479B0759",
+    "AVISANR5L17B2869",
     "PRJLANR5L17B2843",
-    "AVISANR5L17B2869"
+    "RAPPANR5L17B2863"
    ],
    "amendements": {
     "total": 33,
@@ -17618,6 +17668,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Soumya Bourouaha",
    "auteurGroupe": "GDR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -17678,11 +17729,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
@@ -17738,6 +17789,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Aurélie Trouvé",
    "auteurGroupe": "LFI",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -17793,30 +17845,30 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0410",
-    "PIONSNR5S479B0735",
-    "PIONANR5L17B2537",
+    "RAPPANR5L17B2872",
+    "RAPPANR5L17B2123",
     "PIONSNR5S479B0170",
     "PIONANR5L17B1950",
-    "RAPPANR5L17B2123",
-    "RAPPANR5L17B2872"
+    "PIONANR5L17B2537",
+    "RAPPSNR5S479B0410",
+    "PIONSNR5S479B0735"
    ],
    "amendements": {
     "total": 492,
@@ -17901,6 +17953,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Émeline K/Bidi",
    "auteurGroupe": "GDR",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -17961,18 +18014,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
     "PIONSNR5S479B0734",
-    "PIONANR5L17B1344",
-    "RAPPANR5L17B1478"
+    "RAPPANR5L17B1478",
+    "PIONANR5L17B1344"
    ],
    "amendements": {
     "total": 30,
@@ -18041,8 +18094,9 @@
    "titre": "Proposition de loi visant à lever dans les territoires d’outre-mer l’interdiction de recherche, d’exploration et d’exploitation des hydrocarbures",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Georges Patient",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -18098,23 +18152,23 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
     "PIONSNR5S479B0185",
+    "RAPPSNR5S479B0297",
     "PIONANR5L17B2415",
     "RAPPANR5L17B2868",
-    "RAPPSNR5S479B0297",
     "PIONSNR5S479B0738"
    ],
    "amendements": {
@@ -18184,8 +18238,9 @@
    "titre": "Projet de loi portant habilitation de l’assemblée de Martinique à fixer elle-même des règles applicables sur son territoire en application de l’article 73 de la Constitution en matière d’énergie, d’eau et d’assainissement",
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -18241,11 +18296,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -18254,10 +18309,10 @@
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B2609",
+    "RAPPSNR5S479B0464",
     "RAPPANR5L17B2905",
-    "PRJLSNR5S479B0283",
-    "RAPPSNR5S479B0464"
+    "PRJLANR5L17B2609",
+    "PRJLSNR5S479B0283"
    ],
    "amendements": {
     "total": 0,
@@ -18272,8 +18327,9 @@
    "titre": "Proposition de loi relative au déclassement de restes humains kali'nas et à leur remise à la collectivité de Guyane à des fins funéraires",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Catherine Morin-Desailly",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -18334,11 +18390,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -18347,10 +18403,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0614",
     "RAPPANR5L17B2912",
-    "PIONSNR5S459B0008",
-    "PIONANR5L17B2803"
+    "PIONANR5L17B2803",
+    "RAPPSNR5S479B0614",
+    "PIONSNR5S459B0008"
    ],
    "amendements": {
     "total": 0,
@@ -18367,6 +18423,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Charles Rodwell",
    "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -18432,11 +18489,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -18449,13 +18506,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0611",
-    "RAPPANR5L17B2877",
     "PIONANR5L17B2180",
-    "PIONSNR5S479B0597",
-    "RAPPANR5L17B2468",
     "PIONANR5L17B2817",
-    "RAPPSNR5S479B0705"
+    "RAPPANR5L17B2468",
+    "RAPPANR5L17B2877",
+    "PIONSNR5S479B0597",
+    "RAPPSNR5S479B0705",
+    "RAPPSNR5S479B0611"
    ],
    "amendements": {
     "total": 369,
@@ -18786,6 +18843,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Marie-Noëlle Battistel",
    "auteurGroupe": "SOC",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -18851,11 +18909,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -18869,12 +18927,12 @@
    ],
    "textesRefs": [
     "PIONANR5L17B2334",
-    "PIONANR5L17B2642",
-    "RAPPSNR5S479B0676",
-    "RAPPANR5L17B2405",
     "RAPPANR5L17B2856",
-    "RAPPSNR5S479B0498",
-    "PIONSNR5S479B0359"
+    "RAPPANR5L17B2405",
+    "RAPPSNR5S479B0676",
+    "PIONANR5L17B2642",
+    "PIONSNR5S479B0359",
+    "RAPPSNR5S479B0498"
    ],
    "amendements": {
     "total": 321,
@@ -19657,8 +19715,9 @@
    "titre": "Améliorer l'accès au logement des travailleurs des services publics",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "David Amiel",
    "auteurGroupe": "",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -19724,11 +19783,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -19741,13 +19800,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2700",
     "PIONANR5L17B2607",
+    "RAPPANR5L17B1449",
+    "RAPPSNR5S479B0378",
     "RAPPSNR5S479B0567",
     "PIONANR5L17B1332",
-    "RAPPSNR5S479B0378",
     "PIONSNR5S479B0273",
-    "RAPPANR5L17B1449"
+    "RAPPANR5L17B2700"
    ],
    "amendements": {
     "total": 88,
@@ -19910,6 +19969,7 @@
    "contexte": "Projet ou proposition de loi constitutionnelle",
    "auteur": "",
    "auteurGroupe": "",
+   "auteurQualite": "",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -19975,19 +20035,19 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
     "RAPPANR5L17B2865",
+    "AVCEANR5L17B2697",
     "PRJLSNR5S479B0782",
-    "PRJLANR5L17B2697",
-    "AVCEANR5L17B2697"
+    "PRJLANR5L17B2697"
    ],
    "amendements": {
     "total": 164,
@@ -20222,6 +20282,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Anne-Cécile Violland",
    "auteurGroupe": "HOR",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -20287,11 +20348,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -20304,13 +20365,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L16B2307",
-    "RAPPSNR5S459B0458",
-    "RAPPSNR5S479B0765",
     "RAPPANR5L17B2940",
+    "PIONANR5L16B2129",
+    "RAPPSNR5S459B0458",
     "PIONANR5L17B1557",
+    "RAPPSNR5S479B0765",
     "PIONSNR5S419B0431",
-    "PIONANR5L16B2129"
+    "RAPPANR5L16B2307"
    ],
    "amendements": {
     "total": 0,
@@ -20325,8 +20386,9 @@
    "titre": "Proposition de loi visant à renforcer les prérogatives des officiers de l’état civil et du ministère public pour lutter contre les mariages simulés ou arrangés",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Stéphane Demilly",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -20387,19 +20449,19 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
     "RAPPSNR5S459B0333",
     "PIONSNR5S419B0190",
-    "RAPPANR5L17B1583",
-    "PIONANR5L17B1008"
+    "PIONANR5L17B1008",
+    "RAPPANR5L17B1583"
    ],
    "amendements": {
     "total": 0,
@@ -20414,8 +20476,9 @@
    "titre": "Proposition de loi relative à l'organisation, à la gestion et au financement du sport professionnel",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Laurent Lafon",
    "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -20476,11 +20539,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -20489,12 +20552,12 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0456",
-    "RAPPSNR5S459B0669",
-    "RAPPANR5L17B2797",
     "RAPPSNR5S479B0885",
-    "PIONSNR5S479B0807",
     "RAPPANR5L17B3057",
+    "RAPPSNR5S459B0669",
+    "PIONSNR5S479B0807",
+    "PIONSNR5S459B0456",
+    "RAPPANR5L17B2797",
     "PIONANR5L17B1560"
    ],
    "amendements": {
@@ -21996,8 +22059,9 @@
    "titre": "Fin de vie",
    "type": "Proposition de loi",
    "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
+   "auteur": "Olivier Falorni",
    "auteurGroupe": "",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -22063,19 +22127,19 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -22083,26 +22147,26 @@
      "etat": "avenir"
     },
     {
-     "label": "Nouvelle lecture",
+     "label": "Nouvelle lecture · Assemblée",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0264",
-    "RAPPANR5L17B2915",
-    "PIONANR5L17BTA0323",
-    "PIONANR5L17B2773",
-    "RAPPSNR5S479B0586",
-    "PIONSNR5S479B0440",
-    "RAPPANR5L17B1364",
-    "PIONSNR5S479B0814",
     "RAPPSNR5S479B0825",
     "PIONANR5L17B1100",
-    "RAPPSNR5S479B0680",
-    "RAPPANR5L17B2861",
     "PIONSNR5S459B0661",
+    "PIONSNR5S479B0814",
+    "RAPPANR5L17B2861",
+    "RAPPSNR5S479B0586",
+    "PIONANR5L17BTA0323",
     "PIONANR5L17B2401",
-    "RAPPANR5L17B2453"
+    "PIONSNR5S479B0440",
+    "RAPPSNR5S479B0680",
+    "RAPPANR5L17B1364",
+    "RAPPANR5L17B2453",
+    "RAPPANR5L17B2915",
+    "PIONANR5L17B2773",
+    "RAPPSNR5S479B0264"
    ],
    "amendements": {
     "total": 9270,
@@ -23997,8 +24061,9 @@
    "titre": "Projet de loi actualisant la programmation militaire pour les années 2024 à 2030 et portant diverses dispositions intéressant la défense",
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -24064,11 +24129,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -24081,14 +24146,14 @@
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B2920",
-    "PRJLANR5L17B2630",
     "ETDIANR5L17B2630",
+    "RAPPSNR5S479B0777",
+    "PRJLANR5L17B2630",
     "PRJLSNR5S479B0635",
     "AVCEANR5L17B2630",
     "RAPPANR5L17B2976",
-    "RAPPSNR5S479B0777",
     "RAPPSNR5S479B0666",
+    "PRJLANR5L17B2920",
     "RAPPANR5L17B2695"
    ],
    "amendements": {
@@ -25548,6 +25613,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Ayda Hadizadeh",
    "auteurGroupe": "SOC",
+   "auteurQualite": "Député",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -25613,15 +25679,15 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "2ème lecture",
+     "label": "2ème lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -25630,12 +25696,12 @@
     }
    ],
    "textesRefs": [
+    "PIONANR5L17B2853",
     "PIONANR5L17B1831",
     "RAPPSNR5S479B0638",
     "RAPPANR5L17B2934",
-    "PIONSNR5S479B0214",
-    "PIONANR5L17B2853",
-    "RAPPANR5L17B2191"
+    "RAPPANR5L17B2191",
+    "PIONSNR5S479B0214"
    ],
    "amendements": {
     "total": 67,
@@ -25800,6 +25866,7 @@
    "contexte": "Engagement de la responsabilité gouvernementale",
    "auteur": "",
    "auteurGroupe": "",
+   "auteurQualite": "",
    "statut": "rejeté",
    "votesParGroupe": {
     "LFI": {
@@ -25830,7 +25897,7 @@
    },
    "cycle": [
     {
-     "label": "Débat",
+     "label": "Débat · Assemblée",
      "etat": "avenir"
     }
    ],
@@ -25852,6 +25919,7 @@
    "contexte": "Proposition de loi ordinaire",
    "auteur": "Éric Pauget",
    "auteurGroupe": "DR",
+   "auteurQualite": "Député",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -25917,18 +25985,18 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B0691",
+    "RAPPANR5L17B2342",
     "PIONSNR5S479B0866",
-    "RAPPANR5L17B2342"
+    "PIONANR5L17B0691"
    ],
    "amendements": {
     "total": 604,
@@ -26013,8 +26081,9 @@
    "titre": "Projet de loi organique relatif au renforcement des juridictions criminelles",
    "type": "Projet de loi",
    "contexte": "Projet ou proposition de loi organique",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -26080,11 +26149,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -26097,13 +26166,13 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S479B0457",
+    "RAPPANR5L17B2908",
     "RAPPSNR5S479B0868",
     "PRJLSNR5S479B0864",
-    "RAPPSNR5S479B0520",
-    "RAPPANR5L17B3047",
     "PRJLANR5L17B2682",
-    "RAPPANR5L17B2908"
+    "RAPPANR5L17B3047",
+    "RAPPSNR5S479B0520",
+    "PRJLSNR5S479B0457"
    ],
    "amendements": {
     "total": 74,
@@ -26284,8 +26353,9 @@
    "titre": "Projet de loi sur la justice criminelle et le respect des victimes",
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
@@ -26346,11 +26416,11 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -26363,13 +26433,13 @@
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B2904",
+    "RAPPSNR5S479B0868",
     "RAPPANR5L17B3046",
     "PRJLSNR5S479B0456",
-    "PRJLANR5L17B2681",
-    "RAPPSNR5S479B0868",
-    "RAPPANR5L17B2904",
     "RAPPSNR5S479B0520",
-    "PRJLSNR5S479B0863"
+    "PRJLSNR5S479B0863",
+    "PRJLANR5L17B2681"
    ],
    "amendements": {
     "total": 824,
@@ -27286,8 +27356,9 @@
    "titre": "Projet de loi visant à offrir des réponses immédiates aux phénomènes troublant l’ordre public, la sécurité et la tranquillité de nos concitoyens",
    "type": "Projet de loi",
    "contexte": "Projet de loi ordinaire",
-   "auteur": "",
+   "auteur": "Sébastien Lecornu",
    "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -27353,19 +27424,19 @@
    },
    "cycle": [
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
     "RAPPANR5L17B2984",
     "RAPPSNR5S479B0601",
-    "PRJLSNR5S479B0472",
-    "PRJLANR5L17B2850"
+    "PRJLANR5L17B2850",
+    "PRJLSNR5S479B0472"
    ],
    "amendements": {
     "total": 1827,
