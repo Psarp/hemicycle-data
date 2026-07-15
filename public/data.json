@@ -1,7 +1,7 @@
 {
- "genere_le": "2026-07-15T21:18:52.032628+00:00",
+ "genere_le": "2026-07-15T21:32:28.342388+00:00",
  "source": "open data Assemblée nationale (17e législature)",
- "nb_textes": 213,
+ "nb_textes": 230,
  "textes": [
   {
    "date": "2024-10-08",
@@ -45,6 +45,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -122,10 +124,12 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
-    "PNREANR5L17B0190",
-    "RAPPANR5L17B0304"
+    "RAPPANR5L17B0304",
+    "PNREANR5L17B0190"
    ]
   },
   {
@@ -195,6 +199,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "RAPPANR5L17B0308",
@@ -268,6 +274,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -280,9 +288,9 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B0291",
-    "RAPPSNR5S459B0034",
+    "PRJLSNR5S459B0032",
     "PRJLANR5L17B0003",
-    "PRJLSNR5S459B0032"
+    "RAPPSNR5S459B0034"
    ]
   },
   {
@@ -352,6 +360,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -363,11 +373,11 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S459B0035",
     "RAPPSNR5S459B0044",
     "RAPPANR5L17B0292",
-    "PRJLANR5L17B0004",
-    "AVISANR5L17B0317"
+    "PRJLSNR5S459B0035",
+    "AVISANR5L17B0317",
+    "PRJLANR5L17B0004"
    ]
   },
   {
@@ -432,6 +442,8 @@
      "abstention": 14
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -510,6 +522,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -529,98 +543,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0038",
-    "RAPPANR5L17B0525",
     "PIONANR5L17B0483",
+    "RAPPANR5L17B0525",
+    "RAPPSNR5S459B0038",
     "PIONSNR5S439B0759"
-   ]
-  },
-  {
-   "date": "2024-11-20",
-   "ref": "DLR5L16N50082",
-   "titre": "Proposition de loi visant à sécuriser le mécanisme de purge des nullités",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "François-Noël Buffet",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 21,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 0,
-     "contre": 7,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONANR5L17B0465",
-    "RAPPSNR5S459B0024",
-    "PIONSNR5S419B0660",
-    "RAPPANR5L17B0550"
    ]
   },
   {
@@ -690,6 +616,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -705,10 +633,10 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0160",
-    "RAPPANR5L17B0552",
     "PIONANR5L17B0532",
-    "RAPPSNR5S459B0182"
+    "RAPPSNR5S459B0182",
+    "RAPPANR5L17B0552",
+    "PIONSNR5S459B0160"
    ]
   },
   {
@@ -778,6 +706,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -798,9 +728,9 @@
    ],
    "textesRefs": [
     "PIONANR5L17B0482",
+    "RAPPSNR5S459B0040",
     "PIONSNR5S419B0720",
-    "RAPPANR5L17B0556",
-    "RAPPSNR5S459B0040"
+    "RAPPANR5L17B0556"
    ]
   },
   {
@@ -870,6 +800,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -885,116 +817,11 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2478",
-    "PIONSNR5S459B0178",
     "RAPPSNR5S479B0352",
-    "PIONANR5L17B0341",
-    "RAPPANR5L17B0624"
-   ]
-  },
-  {
-   "date": "2024-12-03",
-   "ref": "DLR5L16N49258",
-   "titre": "Réduire et encadrer les frais bancaires sur succession",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Christine Pirès Beaune",
-   "auteurGroupe": "SOC",
-   "auteurQualite": "Député",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 49,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 14,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 28,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 13,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 7,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 5,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONSNR5S419B0374",
-    "RAPPSNR5S419B0575",
-    "PIONSNR5S459B0179",
-    "PIONANR5L16B2627",
-    "RAPPSNR5S459B0560",
-    "PIONANR5L16B2056",
-    "RAPPANR5L17B0632",
-    "RAPPANR5L16B2204",
-    "PIONANR5L17B0158"
+    "PIONANR5L17B2478",
+    "RAPPANR5L17B0624",
+    "PIONSNR5S459B0178",
+    "PIONANR5L17B0341"
    ]
   },
   {
@@ -1064,6 +891,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -1075,9 +904,9 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B0203",
+    "RAPPANR5L17B0626",
     "PIONSNR5S459B0181",
-    "RAPPANR5L17B0626"
+    "PIONANR5L17B0203"
    ]
   },
   {
@@ -1127,6 +956,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -1134,9 +965,9 @@
     }
    ],
    "textesRefs": [
-    "MIONANR5L17B0638-N3",
+    "MIONANR5L17B0638-N2",
     "DECLANR5L17B0638-N0",
-    "MIONANR5L17B0638-N2"
+    "MIONANR5L17B0638-N3"
    ]
   },
   {
@@ -1206,6 +1037,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -1225,13 +1058,13 @@
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B0538",
-    "PRJLANR5L17B0623",
     "RAPPANR5L17B0553",
     "RAPPSNR5S459B0159",
-    "RAPPANR5L17B0645",
+    "PRJLANR5L17B0623",
     "PRJLSNR5S459B0155",
-    "RAPPSNR5S459B0175"
+    "RAPPSNR5S459B0175",
+    "PRJLANR5L17B0538",
+    "RAPPANR5L17B0645"
    ]
   },
   {
@@ -1301,6 +1134,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -1316,11 +1151,11 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S459B0207",
     "AVCEANR5L17B0711",
-    "RAPPANR5L17B0719",
     "PRJLANR5L17B0711",
-    "RAPPSNR5S459B0210"
+    "PRJLSNR5S459B0207",
+    "RAPPSNR5S459B0210",
+    "RAPPANR5L17B0719"
    ]
   },
   {
@@ -1355,6 +1190,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -1427,6 +1264,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -1438,9 +1277,9 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0268",
     "PIONANR5L17B0519",
-    "RAPPANR5L17B0701"
+    "RAPPANR5L17B0701",
+    "PIONSNR5S459B0268"
    ]
   },
   {
@@ -1510,6 +1349,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -1521,102 +1362,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B0698",
     "PIONANR5L17B0522",
-    "PIONSNR5S459B0265"
-   ]
-  },
-  {
-   "date": "2025-01-23",
-   "ref": "DLR5L16N46650",
-   "titre": "Proposition de loi relative à l'instauration d'un nombre minimum de soignants par patient hospitalisé",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Bernard Jomier",
-   "auteurGroupe": "",
-   "auteurQualite": "",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 0,
-     "contre": 0,
-     "abstention": 30
-    },
-    "EPR": {
-     "pour": 0,
-     "contre": 1,
-     "abstention": 26
-    },
-    "LFI": {
-     "pour": 35,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 62,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 27,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 6
-    },
-    "HOR": {
-     "pour": 1,
-     "contre": 2,
-     "abstention": 7
-    },
-    "LIOT": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 0,
-     "contre": 0,
-     "abstention": 1
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "RAPPSNR5S399B0281",
-    "RAPPANR5L17B0697",
-    "PIONSNR5S399B0105",
-    "PIONANR5L17B0104",
-    "PIONANR5L16B0813"
+    "PIONSNR5S459B0265",
+    "RAPPANR5L17B0698"
    ]
   },
   {
@@ -1681,6 +1429,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -1693,8 +1443,8 @@
    ],
    "textesRefs": [
     "PIONSNR5S459B0270",
-    "PIONANR5L17B0517",
-    "RAPPANR5L17B0702"
+    "RAPPANR5L17B0702",
+    "PIONANR5L17B0517"
    ]
   },
   {
@@ -1759,6 +1509,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -1770,9 +1522,9 @@
     }
    ],
    "textesRefs": [
+    "PIONSNR5S459B0269",
     "PIONANR5L17B0518",
-    "RAPPANR5L17B0704",
-    "PIONSNR5S459B0269"
+    "RAPPANR5L17B0704"
    ]
   },
   {
@@ -1842,6 +1594,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -1865,13 +1619,13 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1249",
+    "RAPPSNR5S459B0468",
     "RAPPSNR5S459B0569",
+    "PIONANR5L17B1249",
+    "RAPPANR5L17B1368",
     "PIONANR5L17B0447",
     "RAPPANR5L17B0633",
-    "PIONSNR5S459B0274",
-    "RAPPSNR5S459B0468",
-    "RAPPANR5L17B1368"
+    "PIONSNR5S459B0274"
    ]
   },
   {
@@ -1941,6 +1695,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -1956,104 +1712,10 @@
     }
    ],
    "textesRefs": [
+    "PIONSNR5S459B0273",
     "PIONANR5L17B0380",
     "RAPPANR5L17B0637",
-    "PIONSNR5S459B0273",
     "RAPPSNR5S459B0489"
-   ]
-  },
-  {
-   "date": "2025-01-28",
-   "ref": "DLR5L16N49801",
-   "titre": "Prise en charge intégrale des soins liés au traitement du cancer du sein par l'assurance maladie",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
-   "auteurGroupe": "",
-   "auteurQualite": "",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 42,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 22,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 17,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 7,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 11,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 8,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 5,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONANR5L16B2519",
-    "RAPPANR5L16B2643",
-    "RAPPSNR5S459B0066",
-    "RAPPANR5L17B0844",
-    "PIONSNR5S419B0653",
-    "PIONANR5L17B0528"
    ]
   },
   {
@@ -2123,6 +1785,8 @@
      "abstention": 7
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -2138,11 +1802,11 @@
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B0845",
     "PIONSNR5S459B0279",
-    "PIONANR5L17B0669",
-    "RAPPSNR5S459B0482",
     "PIONANR5L17B1256",
-    "RAPPANR5L17B0845"
+    "PIONANR5L17B0669",
+    "RAPPSNR5S459B0482"
    ]
   },
   {
@@ -2212,6 +1876,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -2224,107 +1890,8 @@
    ],
    "textesRefs": [
     "PIONANR5L17B0580",
-    "PIONSNR5S459B0295",
-    "RAPPANR5L17B0846"
-   ]
-  },
-  {
-   "date": "2025-02-04",
-   "ref": "DLR5L16N46655",
-   "titre": "Interdire les dispositifs électroniques de vapotage à usage unique",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
-   "auteurGroupe": "",
-   "auteurQualite": "",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 58,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 21,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 15,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 15,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 12,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 14,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 7,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "Commission Mixte Paritaire",
-     "etat": "avenir"
-    },
-    {
-     "label": "Commission Mixte Paritaire",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "RAPPANR5L16B2389",
-    "RAPPANR5L17B0849",
-    "RAPPANR5L16B1926",
-    "PIONSNR5S419B0161",
-    "RAPPSNR5S419B0456",
-    "PIONANR5L16B0464",
-    "RAPPSNR5S419B0304"
+    "RAPPANR5L17B0846",
+    "PIONSNR5S459B0295"
    ]
   },
   {
@@ -2359,6 +1926,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -2402,6 +1971,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -2425,22 +1996,22 @@
     }
    ],
    "textesRefs": [
-    "AVISANR5L17B0471",
-    "AVISANR5L17B0472",
-    "AVISANR5L17B0459",
-    "RAPPSNR5S459B0296",
-    "PRJLSNR5S459B0143",
-    "AVISANR5L17B0524",
-    "RAPPANR5L17B0873",
-    "MIONANR5L17B0873-N5",
-    "RAPPSNR5S459B0144",
     "AVISANR5L17B0462",
-    "PRJLANR5L17B0851",
-    "DECLANR5L17B0873-N0",
-    "AVISANR5L17B0486",
-    "RAPPANR5L17B0468",
+    "AVISANR5L17B0472",
+    "AVISANR5L17B0527",
     "PRJLANR5L17B0324",
-    "AVISANR5L17B0527"
+    "AVISANR5L17B0471",
+    "PRJLANR5L17B0851",
+    "RAPPSNR5S459B0296",
+    "AVISANR5L17B0486",
+    "DECLANR5L17B0873-N0",
+    "AVISANR5L17B0459",
+    "AVISANR5L17B0524",
+    "MIONANR5L17B0873-N5",
+    "RAPPANR5L17B0468",
+    "RAPPSNR5S459B0144",
+    "PRJLSNR5S459B0143",
+    "RAPPANR5L17B0873"
    ]
   },
   {
@@ -2470,6 +2041,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -2479,94 +2052,6 @@
    "textesRefs": [
     "MIONANR5L17B0622-N6",
     "DECLANR5L17B0622-N0"
-   ]
-  },
-  {
-   "date": "2025-02-10",
-   "ref": "DLR5L16N49843",
-   "titre": "Proposition de loi visant à permettre l'élection du maire d'une commune nouvelle en cas de conseil municipal incomplet",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Annick Billon",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 32,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 0,
-     "contre": 19,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 8,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 5,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 7,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 7,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 5,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONANR5L17B0457",
-    "RAPPSNR5S419B0661",
-    "PIONSNR5S419B0551",
-    "RAPPANR5L17B0909"
    ]
   },
   {
@@ -2601,6 +2086,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -2608,96 +2095,8 @@
     }
    ],
    "textesRefs": [
-    "DECLANR5L17B0622-N1",
-    "MIONANR5L17B0622-N7"
-   ]
-  },
-  {
-   "date": "2025-02-10",
-   "ref": "DLR5L16N49796",
-   "titre": "Proposition de loi pour améliorer la prise en charge de la sclérose latérale amyotrophique et d’autres maladies évolutives graves",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Gilbert Bouchet",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 27,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 12,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 15,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 11,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 8,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "RAPPANR5L17B0910",
-    "RAPPSNR5S419B0669",
-    "PIONSNR5S419B0542",
-    "PIONANR5L17B0456"
+    "MIONANR5L17B0622-N7",
+    "DECLANR5L17B0622-N1"
    ]
   },
   {
@@ -2732,6 +2131,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -2759,26 +2160,26 @@
     }
    ],
    "textesRefs": [
-    "AVISANR5L17B0480",
-    "RAPPANR5L17B0869",
+    "PRJLSNR5S459B0129",
+    "MIONANR5L17B0622-N7",
     "RAPPSNR5S459B0344",
-    "RAPPSNR5S459B0138",
-    "RAPPSNR5S459B0168",
     "MIONANR5L17B0638-N2",
     "RAPPANR5L17B0638",
-    "DECLANR5L17B0622-N1",
-    "RAPPANR5L17B0487",
-    "MIONANR5L17B0622-N7",
-    "MIONANR5L17B0638-N3",
-    "PRJLSNR5S459B0129",
-    "PRJLANR5L17B0622",
-    "DECLANR5L17B0638-N0",
     "DECLANR5L17B0622-N2",
     "PRJLANR5L17B0325",
     "MIONANR5L17B0622-N6",
-    "PRJLSNR5S459B0341",
+    "RAPPSNR5S459B0168",
+    "DECLANR5L17B0622-N1",
     "MIONANR5L17B0622-N8",
-    "DECLANR5L17B0622-N0"
+    "DECLANR5L17B0638-N0",
+    "DECLANR5L17B0622-N0",
+    "RAPPANR5L17B0869",
+    "AVISANR5L17B0480",
+    "RAPPSNR5S459B0138",
+    "RAPPANR5L17B0487",
+    "PRJLSNR5S459B0341",
+    "PRJLANR5L17B0622",
+    "MIONANR5L17B0638-N3"
    ]
   },
   {
@@ -2813,6 +2214,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -2891,6 +2294,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -2910,15 +2315,15 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B0920",
-    "PRJLANR5L17B0772",
-    "PRJLSNR5S459B0260",
-    "RAPPSNR5S459B0320",
-    "AVCEANR5L17B0772",
-    "ETDIANR5L17B0772",
     "RAPPSNR5S459B0282",
+    "AVCEANR5L17B0772",
+    "PRJLANR5L17B0772",
+    "ETDIANR5L17B0772",
+    "RAPPANR5L17B0920",
+    "RAPPANR5L17B0775",
     "PRJLANR5L17B0911",
-    "RAPPANR5L17B0775"
+    "RAPPSNR5S459B0320",
+    "PRJLSNR5S459B0260"
    ]
   },
   {
@@ -2988,6 +2393,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -3009,11 +2416,11 @@
    "textesRefs": [
     "PIONSNR5S459B0261",
     "RAPPANR5L17B0921",
+    "PIONANR5L17B0584",
     "RAPPANR5L17B0713",
     "PIONANR5L17B0917",
-    "RAPPSNR5S459B0290",
     "RAPPSNR5S459B0322",
-    "PIONANR5L17B0584"
+    "RAPPSNR5S459B0290"
    ]
   },
   {
@@ -3083,6 +2490,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -3098,10 +2507,46 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0353",
-    "PIONANR5L17B0763",
     "RAPPANR5L17B0912",
+    "PIONANR5L17B0763",
+    "PIONSNR5S459B0353",
     "RAPPSNR5S459B0396"
+   ]
+  },
+  {
+   "date": "2025-02-18",
+   "ref": "DLR5L17N50946",
+   "titre": "Ratification du traité sur la coopération dans le domaine de la défense entre la République française et le Royaume d’Espagne",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "Michel Barnier",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLANR5L17B0621",
+    "ETDIANR5L17B0621",
+    "RAPPSNR5S459B0403",
+    "PRJLSNR5S459B0371",
+    "RAPPANR5L17B0718",
+    "ACINANR5L17B0621"
    ]
   },
   {
@@ -3136,6 +2581,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -3208,6 +2655,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -3223,11 +2672,11 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0380",
+    "PIONANR5L17B0768",
     "RAPPSNR5S459B0689",
-    "RAPPANR5L17B0930",
+    "PIONSNR5S459B0380",
     "PIONANR5L17B1579",
-    "PIONANR5L17B0768"
+    "RAPPANR5L17B0930"
    ]
   },
   {
@@ -3292,6 +2741,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -3307,98 +2758,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1003",
     "PIONANR5L17B0822",
     "RAPPSNR5S459B0646",
-    "PIONSNR5S459B0414"
-   ]
-  },
-  {
-   "date": "2025-03-06",
-   "ref": "DLR5L16N49472",
-   "titre": "Proposition de loi visant à endiguer la prolifération du frelon asiatique et à préserver la filière apicole",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Michel Masset",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 36,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 12,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 14,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 27,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "RAPPANR5L17B0995",
-    "PIONSNR5S419B0359",
-    "PIONANR5L16B2473",
-    "RAPPSNR5S419B0500",
-    "PIONANR5L17B0143"
+    "PIONSNR5S459B0414",
+    "RAPPANR5L17B1003"
    ]
   },
   {
@@ -3468,6 +2831,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -3483,10 +2848,10 @@
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B0996",
     "PIONSNR5S459B0411",
     "RAPPSNR5S459B0118",
     "PIONSNR5S419B0782",
-    "RAPPANR5L17B0996",
     "PIONANR5L17B0561"
    ]
   },
@@ -3557,6 +2922,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -3571,100 +2938,6 @@
     "RAPPANR5L17B1026",
     "PIONSNR5S459B0419",
     "PIONANR5L17B0904"
-   ]
-  },
-  {
-   "date": "2025-03-11",
-   "ref": "DLR5L16N48701",
-   "titre": "Proposition de loi créant une dérogation à la participation minimale pour la maîtrise d'ouvrage pour les communes rurales",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Dany Wattebled",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 64,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 24,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 23,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 14,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 14,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 12,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 17,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 7,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 16,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Sénat",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONANR5L16B2219",
-    "PIONSNR5S459B0422",
-    "RAPPANR5L17B1018",
-    "PIONANR5L17B0132",
-    "PIONSNR5S419B0004",
-    "RAPPSNR5S419B0324"
    ]
   },
   {
@@ -3734,6 +3007,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B0283"
@@ -3806,6 +3081,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -3889,6 +3166,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Conseil constitutionnel",
@@ -3896,8 +3175,8 @@
     }
    ],
    "textesRefs": [
-    "PNREANR5L17B0925",
-    "RAPPANR5L17B1016"
+    "RAPPANR5L17B1016",
+    "PNREANR5L17B0925"
    ]
   },
   {
@@ -3967,105 +3246,13 @@
      "abstention": 13
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "RAPPANR5L17B1001",
-    "RAPPANR5L17B0940",
-    "PNREANR5L17B0916"
-   ]
-  },
-  {
-   "date": "2025-03-13",
-   "ref": "DLR5L16N49927",
-   "titre": "Proposition de loi visant à assouplir la gestion des compétences « eau » et « assainissement »",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Jean-Michel Arnaud",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 36,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 13,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 11,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 9,
-     "contre": 2,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 8,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 9,
-     "contre": 1,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONSNR5S459B0446",
-    "RAPPANR5L17B1020",
-    "RAPPSNR5S419B0665",
-    "PIONANR5L17B0466",
-    "RAPPSNR5S459B0486",
-    "PIONSNR5S419B0556"
+    "PNREANR5L17B0916",
+    "RAPPANR5L17B0940"
    ]
   },
   {
@@ -4120,114 +3307,12 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "RAPPANR5L17B1030",
     "PNREANR5L17B0783"
-   ]
-  },
-  {
-   "date": "2025-03-18",
-   "ref": "DLR5L16N49176",
-   "titre": "Proposition de loi relative au renforcement de la sûreté dans les transports",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Philippe Tabarot",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 104,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 77,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 0,
-     "contre": 53,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 0,
-     "contre": 42,
-     "abstention": 2
-    },
-    "DR": {
-     "pour": 34,
-     "contre": 1,
-     "abstention": 1
-    },
-    "ECO": {
-     "pour": 0,
-     "contre": 27,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 21,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 31,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 17,
-     "contre": 0,
-     "abstention": 4
-    },
-    "GDR": {
-     "pour": 0,
-     "contre": 12,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 19,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Commission Mixte Paritaire",
-     "etat": "avenir"
-    },
-    {
-     "label": "Conseil constitutionnel",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "RAPPANR5L17B1035",
-    "RAPPSNR5S419B0318",
-    "PIONSNR5S419B0235",
-    "RAPPSNR5S459B0409",
-    "PIONANR5L17B0134",
-    "RAPPANR5L17B0636",
-    "PIONSNR5S459B0339",
-    "PIONANR5L16B2223"
    ]
   },
   {
@@ -4297,6 +3382,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -4312,10 +3399,10 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0496",
     "RAPPANR5L17B1153",
     "PIONANR5L17B0884",
-    "RAPPSNR5S479B0054"
+    "RAPPSNR5S479B0054",
+    "PIONSNR5S459B0496"
    ]
   },
   {
@@ -4385,6 +3472,8 @@
      "abstention": 3
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B0326"
@@ -4457,6 +3546,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -4468,9 +3559,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1174",
+    "PIONANR5L17B0960",
     "PIONSNR5S459B0513",
-    "PIONANR5L17B0960"
+    "RAPPANR5L17B1174"
    ]
   },
   {
@@ -4540,6 +3631,8 @@
      "abstention": 3
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B0853"
@@ -4612,6 +3705,8 @@
      "abstention": 5
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -4635,14 +3730,14 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1198",
-    "PRJLANR5L17B1103",
-    "RAPPSNR5S459B0497",
-    "RAPPANR5L17B0631",
-    "RAPPSNR5S459B0401",
     "PRJLANR5L17B0529",
+    "RAPPSNR5S459B0401",
+    "RAPPANR5L17B0631",
+    "PRJLSNR5S459B0352",
+    "RAPPANR5L17B1198",
     "ETDIANR5L17B0529",
-    "PRJLSNR5S459B0352"
+    "RAPPSNR5S459B0497",
+    "PRJLANR5L17B1103"
    ]
   },
   {
@@ -4707,6 +3802,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -4718,9 +3815,9 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B0666",
     "RAPPANR5L17B1182",
-    "PIONSNR5S459B0520"
+    "PIONSNR5S459B0520",
+    "PIONANR5L17B0666"
    ]
   },
   {
@@ -4790,6 +3887,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -4801,9 +3900,9 @@
     }
    ],
    "textesRefs": [
+    "PIONANR5L17B0948",
     "RAPPANR5L17B1175",
-    "PIONSNR5S459B0515",
-    "PIONANR5L17B0948"
+    "PIONSNR5S459B0515"
    ]
   },
   {
@@ -4873,6 +3972,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -4888,110 +3989,12 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0519",
-    "PIONANR5L17B0374",
-    "PIONANR5L17B1655",
-    "RAPPANR5L17B2614",
     "RAPPSNR5S459B0780",
+    "RAPPANR5L17B2614",
+    "PIONSNR5S459B0519",
+    "PIONANR5L17B1655",
+    "PIONANR5L17B0374",
     "RAPPANR5L17B1187"
-   ]
-  },
-  {
-   "date": "2025-04-07",
-   "ref": "DLR5L15N43846",
-   "titre": "Renforcement de la parité dans les fonctions électives et exécutives du bloc communal",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
-   "auteurGroupe": "",
-   "auteurQualite": "",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 0,
-     "contre": 116,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 57,
-     "contre": 2,
-     "abstention": 1
-    },
-    "LFI": {
-     "pour": 57,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 35,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 2,
-     "contre": 41,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 20,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 20,
-     "contre": 1,
-     "abstention": 2
-    },
-    "HOR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 18
-    },
-    "LIOT": {
-     "pour": 4,
-     "contre": 8,
-     "abstention": 3
-    },
-    "GDR": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 1
-    },
-    "AUTRE": {
-     "pour": 4,
-     "contre": 13,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Conseil constitutionnel",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONANR5L15B4587",
-    "RAPPSNR5S459B0398",
-    "PIONANR5L17B1105",
-    "PIONSNR5S379B0451",
-    "RAPPANR5L15B4966",
-    "RAPPANR5L17B1245"
    ]
   },
   {
@@ -5061,6 +4064,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -5080,10 +4085,44 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0398",
     "PIONSNR5S459B0011",
+    "RAPPSNR5S459B0398",
     "RAPPANR5L17B1246",
     "PIONANR5L17B1106"
+   ]
+  },
+  {
+   "date": "2025-04-07",
+   "ref": "DLR5L17N51485",
+   "titre": "Proposition de loi visant à convertir des centrales à charbon vers des combustibles moins émetteurs en dioxyde de carbone pour permettre une transition écologique plus juste socialement",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Khalifé Khalifé",
+   "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PIONSNR5S459B0324",
+    "RAPPSNR5S459B0461",
+    "PIONANR5L17B1173",
+    "RAPPANR5L17B1202"
    ]
   },
   {
@@ -5153,6 +4192,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -5176,13 +4217,13 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0315",
     "RAPPSNR5S459B0499",
-    "PIONANR5L17B0693",
+    "PIONSNR5S459B0315",
+    "PIONANR5L17B1176",
     "RAPPANR5L17B0864",
-    "RAPPANR5L17B1199",
     "RAPPSNR5S459B0466",
-    "PIONANR5L17B1176"
+    "RAPPANR5L17B1199",
+    "PIONANR5L17B0693"
    ]
   },
   {
@@ -5252,6 +4293,8 @@
      "abstention": 8
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -5271,13 +4314,84 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1104",
-    "PIONSNR5S459B0451",
-    "RAPPSNR5S459B0484",
     "RAPPSNR5S459B0523",
     "PIONANR5L17B1242",
+    "RAPPSNR5S459B0484",
     "RAPPANR5L17B1263",
-    "PIONANR5L17B0954"
+    "PIONANR5L17B0954",
+    "RAPPANR5L17B1104",
+    "PIONSNR5S459B0451"
+   ]
+  },
+  {
+   "date": "2025-04-10",
+   "ref": "DLR5L17N51729",
+   "titre": "Approbation Accord-cadre France - Nations unies portant sur les arrangements relatifs aux privilèges et immunités",
+   "type": "Projet de loi",
+   "contexte": "Projet de loi ordinaire",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLANR5L17B1154",
+    "ACINANR5L17B1154",
+    "RAPPANR5L17B1184",
+    "RAPPSNR5S459B0589",
+    "PRJLSNR5S459B0533",
+    "ETDIANR5L17B1154"
+   ]
+  },
+  {
+   "date": "2025-04-10",
+   "ref": "DLR5L17N51237",
+   "titre": "Projet de loi autorisant l’approbation de la Résolution n°259 portant modification de l’article 1er de l’Accord portant création de la Banque européenne pour la reconstruction et le développement afin de permettre l’élargissement limité et progressif du champ d’action géographique de la Banque à l’Afrique subsaharienne et à l’Irak",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "RAPPANR5L17B1185",
+    "ACINANR5L17B1110",
+    "PRJLANR5L17B1110",
+    "RAPPSNR5S459B0405",
+    "PRJLSNR5S459B0232"
    ]
   },
   {
@@ -5347,6 +4461,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -5371,11 +4487,11 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B1043",
-    "PIONSNR5S459B0502",
-    "RAPPANR5L17B1277",
-    "PIONSNR5S419B0735",
     "RAPPSNR5S459B0534",
-    "PIONANR5L17B0907"
+    "PIONANR5L17B0907",
+    "RAPPANR5L17B1277",
+    "PIONSNR5S459B0502",
+    "PIONSNR5S419B0735"
    ]
   },
   {
@@ -5445,6 +4561,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -5468,13 +4586,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1044",
-    "PIONANR5L17B0908",
-    "PIONSNR5S459B0197",
-    "RAPPSNR5S459B0534",
     "RAPPANR5L17B1278",
-    "RAPPSNR5S459B0253",
-    "PIONSNR5S459B0503"
+    "PIONSNR5S459B0503",
+    "PIONANR5L17B0908",
+    "RAPPSNR5S459B0534",
+    "RAPPANR5L17B1044",
+    "PIONSNR5S459B0197",
+    "RAPPSNR5S459B0253"
    ]
   },
   {
@@ -5544,6 +4662,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -5559,10 +4679,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0716",
-    "RAPPANR5L17B1348",
+    "PIONSNR5S459B0568",
     "PIONANR5L17B0446",
-    "PIONSNR5S459B0568"
+    "RAPPSNR5S459B0716",
+    "RAPPANR5L17B1348"
    ]
   },
   {
@@ -5632,6 +4752,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -5643,9 +4765,9 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0605",
-    "PIONANR5L17B0966",
     "RAPPANR5L17B1180",
+    "PIONANR5L17B0966",
+    "PIONSNR5S459B0605",
     "RAPPSNR5S479B0668"
    ]
   },
@@ -5716,6 +4838,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -5799,6 +4923,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -5822,12 +4948,12 @@
     }
    ],
    "textesRefs": [
+    "RAPPSNR5S459B0572",
     "RAPPANR5L17B1367",
+    "PIONANR5L17B1188",
+    "PIONSNR5S459B0343",
     "PIONANR5L17B0448",
     "RAPPANR5L17B0628",
-    "PIONANR5L17B1188",
-    "RAPPSNR5S459B0572",
-    "PIONSNR5S459B0343",
     "RAPPSNR5S459B0463"
    ]
   },
@@ -5898,6 +5024,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -5910,8 +5038,8 @@
    ],
    "textesRefs": [
     "PIONANR5L17B1237",
-    "RAPPANR5L17B1373",
-    "PIONSNR5S459B0635"
+    "PIONSNR5S459B0635",
+    "RAPPANR5L17B1373"
    ]
   },
   {
@@ -5981,6 +5109,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -5992,9 +5122,9 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0634",
+    "PIONANR5L17B0369",
     "RAPPANR5L17B1372",
-    "PIONANR5L17B0369"
+    "PIONSNR5S459B0634"
    ]
   },
   {
@@ -6064,6 +5194,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -6075,9 +5207,80 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B0255",
     "RAPPANR5L17B1370",
+    "PIONANR5L17B0255",
     "PIONSNR5S459B0633"
+   ]
+  },
+  {
+   "date": "2025-05-22",
+   "ref": "DLR5L17N50957",
+   "titre": "Projet de loi autorisant l’approbation de l’accord portant création du Centre de développement des capacités cyber dans les Balkans occidentaux (C3BO)",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "Michel Barnier",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLSNR5S459B0166",
+    "PRJLANR5L17B0944",
+    "ACINANR5L17B0944",
+    "RAPPSNR5S459B0284",
+    "RAPPANR5L17B1377"
+   ]
+  },
+  {
+   "date": "2025-05-22",
+   "ref": "DLR5L17N51599",
+   "titre": "Approbation de la convention d’entraide judiciaire en matière pénale entre le Gouvernement de la République française et le Gouvernement de la République du Panama et de la convention d’extradition entre ces mêmes gouvernements",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLANR5L17B1028",
+    "RAPPSNR5S459B0817",
+    "ACINANR5L17B1028",
+    "ETDIANR5L17B1028",
+    "RAPPANR5L17B1426",
+    "PRJLSNR5S459B0651"
    ]
   },
   {
@@ -6147,6 +5350,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -6162,10 +5367,160 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S459B0546",
-    "RAPPANR5L17B1445",
     "RAPPSNR5S459B0617",
-    "PRJLANR5L17B1440"
+    "PRJLSNR5S459B0546",
+    "PRJLANR5L17B1440",
+    "RAPPANR5L17B1445"
+   ]
+  },
+  {
+   "date": "2025-05-26",
+   "ref": "DLR5L17N50819",
+   "titre": "Proposition de loi visant à lever les contraintes à l’exercice du métier d’agriculteur",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Laurent Duplomb",
+   "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
+   "statut": "rejeté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "rejetée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Commission Mixte Paritaire",
+     "etat": "avenir"
+    },
+    {
+     "label": "Conseil constitutionnel",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PIONANR5L17B0856",
+    "RAPPANR5L17B1437",
+    "PIONSNR5S459B0108",
+    "PIONSNR5S459B0655",
+    "RAPPSNR5S459B0185",
+    "RAPPSNR5S459B0799",
+    "RAPPANR5L17B1652"
+   ]
+  },
+  {
+   "date": "2025-06-02",
+   "ref": "DLR5L17N51973",
+   "titre": "Garantir un cadre fiscal stable, juste et lisible pour nos micro-entrepreneurs et nos petites entreprises",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Paul Midy",
+   "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "RAPPSNR5S479B0025",
+    "RAPPANR5L17B1468",
+    "PIONANR5L17B1337",
+    "PIONSNR5S459B0677"
+   ]
+  },
+  {
+   "date": "2025-06-02",
+   "ref": "DLR5L17N51702",
+   "titre": "Proposition de loi relative à la raison impérative d'intérêt public majeur de la liaison autoroutière entre Castres et Toulouse",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Philippe Folliot",
+   "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
+   "statut": "rejeté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "rejetée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Commission Mixte Paritaire",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PIONSNR5S459B0676",
+    "PIONSNR5S459B0452",
+    "RAPPANR5L17B1646",
+    "RAPPSNR5S459B0584",
+    "RAPPSNR5S459B0789",
+    "PIONANR5L17B1435",
+    "RAPPANR5L17B1446"
+   ]
+  },
+  {
+   "date": "2025-06-02",
+   "ref": "DLR5L17N52037",
+   "titre": "Élever Alfred Dreyfus au grade de général de brigade",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Gabriel Attal",
+   "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PIONSNR5S459B0675",
+    "PIONANR5L17B1380",
+    "RAPPANR5L17B1463",
+    "RAPPSNR5S479B0087"
    ]
   },
   {
@@ -6235,6 +5590,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -6246,114 +5603,9 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0685",
     "RAPPANR5L17B1474",
-    "PIONANR5L17B0949"
-   ]
-  },
-  {
-   "date": "2025-06-03",
-   "ref": "DLR5L16N48739",
-   "titre": "Création d'un homicide routier et visant à lutter contre la violence routière",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "",
-   "auteurGroupe": "",
-   "auteurQualite": "",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 57,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 35,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 0,
-     "contre": 6,
-     "abstention": 3
-    },
-    "SOC": {
-     "pour": 28,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 23,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 16,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 5,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONANR5L17B0157",
-    "PIONSNR5S459B0681",
-    "RAPPSNR5S459B0745",
-    "PIONANR5L16B1751",
-    "RAPPSNR5S419B0442",
-    "PIONANR5L16B2417",
-    "RAPPANR5L17B1354",
-    "RAPPANR5L16B2104",
-    "PIONSNR5S419B0308"
+    "PIONANR5L17B0949",
+    "PIONSNR5S459B0685"
    ]
   },
   {
@@ -6423,6 +5675,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -6442,10 +5696,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0433",
-    "PIONSNR5S459B0192",
     "PIONANR5L17B1163",
-    "RAPPANR5L17B1475"
+    "RAPPSNR5S459B0433",
+    "RAPPANR5L17B1475",
+    "PIONSNR5S459B0192"
    ]
   },
   {
@@ -6515,6 +5769,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -6527,8 +5783,8 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B1462",
-    "PIONSNR5S459B0704",
-    "PIONANR5L17B0732"
+    "PIONANR5L17B0732",
+    "PIONSNR5S459B0704"
    ]
   },
   {
@@ -6563,6 +5819,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -6571,6 +5829,69 @@
    ],
    "textesRefs": [
     "MIONANR5L17-N10"
+   ]
+  },
+  {
+   "date": "2025-06-05",
+   "ref": "DLR5L17N51115",
+   "titre": "Proposition de loi expérimentant l’encadrement des loyers et améliorant l’habitat dans les outre-mer",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Audrey Bélim",
+   "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "RAPPANR5L17B1469",
+    "PIONANR5L17B1034",
+    "RAPPSNR5S459B0363",
+    "PIONSNR5S459B0198"
+   ]
+  },
+  {
+   "date": "2025-06-05",
+   "ref": "DLR5L17N51979",
+   "titre": "Accorder le versement des allocations familiales dès le premier enfant",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Édouard Bénard",
+   "auteurGroupe": "GDR",
+   "auteurQualite": "Député",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PIONANR5L17B1342",
+    "RAPPANR5L17B1473",
+    "PIONSNR5S459B0709"
    ]
   },
   {
@@ -6635,6 +5956,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -6655,11 +5978,11 @@
    ],
    "textesRefs": [
     "PIONANR5L17B1366",
-    "PIONSNR5S459B0420",
-    "RAPPSNR5S459B0557",
-    "RAPPANR5L17B1489",
-    "PIONANR5L17B0654",
     "RAPPANR5L17B1029",
+    "RAPPANR5L17B1489",
+    "PIONSNR5S459B0420",
+    "PIONANR5L17B0654",
+    "RAPPSNR5S459B0557",
     "RAPPSNR5S459B0679"
    ]
   },
@@ -6730,10 +6053,73 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
-    "PNREANR5L17B0707",
-    "RAPPANR5L17B0913"
+    "RAPPANR5L17B0913",
+    "PNREANR5L17B0707"
+   ]
+  },
+  {
+   "date": "2025-06-10",
+   "ref": "DLR5L17N52133",
+   "titre": "Approbation des comptes de la sécurité sociale de l'année 2024",
+   "type": "Projet de loi",
+   "contexte": "Projet de loi ordinaire",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "rejeté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "rejeté",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "AVISANR5L17B1523",
+    "PRJLANR5L17B1456",
+    "RAPPANR5L17B1491",
+    "PRJLSNR5S459B0729",
+    "RAPPSNR5S459B0756"
+   ]
+  },
+  {
+   "date": "2025-06-10",
+   "ref": "DLR5L17N51919",
+   "titre": "Projet de loi relatif aux résultats de la gestion et portant approbation des comptes de l'année 2024",
+   "type": "Projet de loi",
+   "contexte": "Projet de loi relative aux résultats de la gestion et portant approbation des comptes",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "rejeté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "rejeté",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLANR5L17B1285",
+    "RAPPSNR5S459B0743",
+    "PRJLSNR5S459B0718",
+    "RAPPANR5L17B1492"
    ]
   },
   {
@@ -6803,6 +6189,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -6822,189 +6210,36 @@
     }
    ],
    "textesRefs": [
+    "ACINANR5L17B0942",
     "PRJLANR5L17B0942",
+    "PRJLSNR5S459B0537",
     "RAPPSNR5S459B0621",
     "RAPPANR5L17B1186",
-    "PRJLSNR5S459B0537",
-    "RAPPANR5L17B1428",
     "PRJLSNR5S419B0715",
-    "ACINANR5L17B0942",
-    "RAPPSNR5S459B0258"
+    "RAPPSNR5S459B0258",
+    "RAPPANR5L17B1428"
    ]
   },
   {
-   "date": "2025-06-24",
-   "ref": "DLR5L16N49849",
-   "titre": "Programmation nationale et simplification normative dans le secteur économique de l’énergie",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Daniel Gremillet",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "rejeté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 122,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 0,
-     "contre": 90,
-     "abstention": 1
-    },
-    "LFI": {
-     "pour": 0,
-     "contre": 71,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 0,
-     "contre": 66,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 46
-    },
-    "ECO": {
-     "pour": 0,
-     "contre": 37,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 0,
-     "contre": 36,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 0,
-     "contre": 34,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 0,
-     "contre": 23,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 0,
-     "contre": 13,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 18,
-     "contre": 7,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONSNR5S459B0775",
-    "PIONANR5L17B0463",
-    "PIONSNR5S419B0555",
-    "PIONANR5L17B1685",
-    "RAPPANR5L17B1522",
-    "RAPPSNR5S459B0801",
-    "RAPPSNR5S419B0642"
-   ]
-  },
-  {
-   "date": "2025-06-25",
-   "ref": "DLR5L16N49299",
-   "titre": "Renforcer la sécurité des professionnels de santé",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
+   "date": "2025-06-19",
+   "ref": "DLR5L17N51783",
+   "titre": "Projet de loi autorisant l’approbation de l’avenant à la convention entre la France et la Suisse du 9 septembre 1966 modifiée, en vue d’éliminer les doubles impositions en matière d’impôts sur le revenu et sur la fortune et de prévenir la fraude et l’évasion fiscales",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
    "auteur": "",
    "auteurGroupe": "",
    "auteurQualite": "",
    "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 59,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 25,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 0,
-     "contre": 27,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 9
-    },
-    "DR": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 0,
-     "contre": 0,
-     "abstention": 13
-    },
-    "DEM": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 18,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 0,
-     "contre": 0,
-     "abstention": 1
-    },
-    "AUTRE": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
    "cycle": [
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
     {
      "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
-     "label": "Commission Mixte Paritaire",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
@@ -7013,82 +6248,26 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L16B2296",
-    "RAPPSNR5S459B0562",
-    "PIONANR5L16B2093",
-    "RAPPANR5L17B1441",
-    "PIONANR5L17B1423",
-    "RAPPSNR5S459B0638",
-    "PIONSNR5S419B0430"
+    "RAPPANR5L17B1464",
+    "ACINANR5L17B1257",
+    "PRJLSNR5S419B0706",
+    "RAPPSNR5S459B0480",
+    "PRJLANR5L17B1257"
    ]
   },
   {
-   "date": "2025-06-30",
-   "ref": "DLR5L16N47697",
-   "titre": "Réforme de l’audiovisuel public et souveraineté audiovisuelle",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Laurent Lafon",
+   "date": "2025-06-23",
+   "ref": "DLR5L17N51789",
+   "titre": "Projet de loi autorisant la ratification du Traité de coopération en matière de défense entre la République française et la République de Djibouti",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
    "auteurGroupe": "",
-   "auteurQualite": "",
+   "auteurQualite": "Premier ministre",
    "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 16,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 0,
-     "contre": 22,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 37,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 14,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 0,
-     "contre": 6,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 22,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 0,
-     "contre": 4,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 0,
-     "contre": 5,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 2,
-     "contre": 1,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -7099,29 +6278,52 @@
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
+     "label": "Promulgation de la loi",
      "etat": "avenir"
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0824",
-    "RAPPSNR5S399B0693",
-    "PIONANR5L16B1350",
-    "PIONSNR5S459B0797",
-    "PIONANR5L17B1754",
-    "RAPPANR5L17B1266",
-    "PIONANR5L17B0118",
-    "RAPPANR5L16B2621",
-    "RAPPANR5L17B1591",
-    "PIONSNR5S399B0545"
+    "RAPPANR5L17B1563",
+    "PRJLSNR5S459B0491",
+    "RAPPSNR5S459B0619",
+    "ACINANR5L17B1450",
+    "PRJLANR5L17B1450"
+   ]
+  },
+  {
+   "date": "2025-06-25",
+   "ref": "DLR5L17N52226",
+   "titre": "Approbation de l’accord de coopération dans le domaine de la défense entre le Gouvernement de la République française et le Gouvernement de la République de Macédoine du Nord",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "RAPPANR5L17B1593",
+    "PRJLSNR5S459B0788",
+    "RAPPSNR5S479B0059",
+    "ETDIANR5L17B1520",
+    "PRJLANR5L17B1520",
+    "ACINANR5L17B1520"
    ]
   },
   {
@@ -7161,6 +6363,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -7238,6 +6442,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -7261,13 +6467,47 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1009",
-    "RAPPANR5L17B1357",
     "PIONSNR5S459B0026",
+    "RAPPANR5L17B1357",
+    "RAPPANR5L17B1460",
+    "RAPPSNR5S459B0335",
     "PIONSNR5S459B0604",
     "RAPPSNR5S459B0656",
-    "RAPPSNR5S459B0335",
-    "RAPPANR5L17B1460"
+    "PIONANR5L17B1009"
+   ]
+  },
+  {
+   "date": "2025-07-02",
+   "ref": "DLR5L17N52002",
+   "titre": "Projet de loi portant création de l’établissement public du commerce et de l’industrie de la collectivité de Corse",
+   "type": "Projet de loi",
+   "contexte": "Projet de loi ordinaire",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLSNR5S459B0552",
+    "PRJLANR5L17B1486",
+    "RAPPSNR5S459B0644",
+    "RAPPANR5L17B1650"
    ]
   },
   {
@@ -7337,6 +6577,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -7352,10 +6594,54 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1350",
     "PIONSNR5S459B0140",
     "RAPPSNR5S459B0529",
+    "PIONANR5L17B1350",
     "RAPPANR5L17B1662"
+   ]
+  },
+  {
+   "date": "2025-07-08",
+   "ref": "DLR5L17N51429",
+   "titre": "Proposition de loi visant à faciliter le maintien en rétention des personnes condamnées pour des faits d’une particulière gravité et présentant de forts risques de récidive",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Jacqueline Eustache-Brinio",
+   "auteurGroupe": "",
+   "auteurQualite": "Sénateur",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "modifiée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "2ème lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Conseil constitutionnel",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "RAPPSNR5S459B0429",
+    "PIONANR5L17B1148",
+    "RAPPSNR5S459B0844",
+    "PIONSNR5S459B0298",
+    "RAPPANR5L17B1640",
+    "PIONSNR5S459B0840"
    ]
   },
   {
@@ -7425,6 +6711,8 @@
      "abstention": 2
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -7448,13 +6736,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0831",
     "PRJLSNR5S459B0810",
-    "PRJLSNR5S459B0544",
-    "PRJLANR5L17B1470",
-    "RAPPANR5L17B1681",
     "RAPPSNR5S459B0612",
-    "RAPPANR5L17B1573"
+    "RAPPANR5L17B1573",
+    "RAPPANR5L17B1681",
+    "RAPPSNR5S459B0831",
+    "PRJLSNR5S459B0544",
+    "PRJLANR5L17B1470"
    ]
   },
   {
@@ -7524,6 +6812,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -7547,13 +6837,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0831",
-    "RAPPANR5L17B1682",
-    "PRJLANR5L17B1471",
-    "RAPPANR5L17B1574",
-    "PRJLSNR5S459B0809",
     "RAPPSNR5S459B0612",
-    "PRJLSNR5S459B0545"
+    "PRJLSNR5S459B0809",
+    "PRJLSNR5S459B0545",
+    "RAPPANR5L17B1682",
+    "RAPPSNR5S459B0831",
+    "RAPPANR5L17B1574",
+    "PRJLANR5L17B1471"
    ]
   },
   {
@@ -7623,6 +6913,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -7650,94 +6942,40 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1487",
-    "RAPPSNR5S459B0836",
+    "RAPPSNR5S459B0769",
+    "RAPPANR5L17B1247",
+    "PIONSNR5S459B0829",
+    "RAPPSNR5S459B0648",
     "RAPPANR5L17B1618",
     "PIONSNR5S459B0532",
-    "RAPPSNR5S459B0648",
-    "RAPPANR5L17B1699",
-    "RAPPSNR5S459B0769",
-    "PIONSNR5S459B0829",
-    "RAPPANR5L17B1656",
-    "RAPPANR5L17B1247",
+    "RAPPSNR5S459B0836",
+    "PIONANR5L17B1487",
     "PIONANR5L17BTA0161",
+    "RAPPANR5L17B1656",
+    "RAPPANR5L17B1699",
     "PIONANR5L17B0451"
    ]
   },
   {
-   "date": "2025-10-15",
-   "ref": "DLR5L16N50115",
-   "titre": "Projet de loi autorisant la ratification de la convention n°155  sur la sécurité et la santé des travailleurs, 1981",
+   "date": "2025-07-10",
+   "ref": "DLR5L17N51352",
+   "titre": "Ratification de plusieurs conventions-cadres relatives aux bureaux à contrôles nationaux juxtaposés, aux contrôles en cours de route et aux gares communes ou d’échange",
    "type": "Projet de loi",
    "contexte": "Projet de ratification des traités et conventions",
-   "auteur": "Gabriel Attal",
+   "auteur": "François Bayrou",
    "auteurGroupe": "",
    "auteurQualite": "Premier ministre",
    "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 44,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 23,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 19,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 14,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 12,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "UDR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté",
    "cycle": [
     {
-     "label": "1ère lecture · Sénat",
+     "label": "1ère lecture · Assemblée",
      "etat": "avenir"
     },
     {
-     "label": "1ère lecture · Assemblée",
+     "label": "1ère lecture · Sénat",
      "etat": "avenir"
     },
     {
@@ -7746,11 +6984,12 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1355",
-    "RAPPSNR5S459B0286",
-    "ACINANR5L17B0969",
-    "PRJLANR5L17B0969",
-    "PRJLSNR5S419B0688"
+    "ETDIANR5L17B0847",
+    "RAPPANR5L17B1675",
+    "PRJLSNR5S459B0853",
+    "ACINANR5L17B0847",
+    "PRJLANR5L17B0847",
+    "RAPPSNR5S479B0182"
    ]
   },
   {
@@ -7825,6 +7064,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -7844,13 +7085,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1683",
-    "RAPPANR5L17B1617",
-    "PRJLSNR5S459B0600",
     "PRJLANR5L17B1526",
     "RAPPSNR5S459B0667",
+    "RAPPANR5L17B1683",
+    "RAPPSNR5S459B0838",
     "PRJLSNR5S459B0828",
-    "RAPPSNR5S459B0838"
+    "RAPPANR5L17B1617",
+    "PRJLSNR5S459B0600"
    ]
   },
   {
@@ -7925,6 +7166,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -7948,13 +7191,13 @@
     }
    ],
    "textesRefs": [
+    "RAPPSNR5S459B0826",
     "PIONANR5L17B1240",
     "PIONANR5L17B1589",
-    "RAPPANR5L17B1378",
-    "PIONSNR5S459B0632",
-    "RAPPSNR5S459B0693",
     "RAPPANR5L17B1672",
-    "RAPPSNR5S459B0826"
+    "PIONSNR5S459B0632",
+    "RAPPANR5L17B1378",
+    "RAPPSNR5S459B0693"
    ]
   },
   {
@@ -8029,6 +7272,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -8049,13 +7294,13 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B1982",
-    "PIONANR5L17B0842",
-    "PIONSNR5S459B0504",
-    "RAPPANR5L17B1181",
-    "PIONANR5L17B1604",
     "AVCEANR5L17B0842",
-    "RAPPSNR5S459B0731",
-    "RAPPSNR5S479B0045"
+    "PIONSNR5S459B0504",
+    "PIONANR5L17B1604",
+    "RAPPANR5L17B1181",
+    "RAPPSNR5S479B0045",
+    "PIONANR5L17B0842",
+    "RAPPSNR5S459B0731"
    ]
   },
   {
@@ -8130,6 +7375,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -8153,13 +7400,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0079",
-    "PIONSNR5S459B0876",
-    "RAPPANR5L17B1980",
     "PIONANR5L17B1969",
+    "PIONSNR5S479B0065",
+    "PIONSNR5S459B0876",
+    "RAPPSNR5S479B0079",
+    "RAPPANR5L17B1980",
     "RAPPANR5L17B2005",
-    "RAPPSNR5S479B0020",
-    "PIONSNR5S479B0065"
+    "RAPPSNR5S479B0020"
    ]
   },
   {
@@ -8234,6 +7481,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -8241,8 +7490,8 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1837",
-    "RAPPANR5L17B1985"
+    "RAPPANR5L17B1985",
+    "PIONANR5L17B1837"
    ]
   },
   {
@@ -8317,6 +7566,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B1778"
@@ -8394,6 +7645,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "RAPPANR5L17B1241",
@@ -8467,6 +7720,8 @@
      "abstention": 2
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -8478,9 +7733,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2118",
+    "PIONANR5L17B1962",
     "PIONSNR5S479B0167",
-    "PIONANR5L17B1962"
+    "RAPPANR5L17B2118"
    ]
   },
   {
@@ -8555,6 +7810,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B2044"
@@ -8632,6 +7889,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -8652,122 +7911,12 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B2146",
-    "RAPPSNR5S479B0136",
     "PRJLANR5L17B2135",
-    "PRJLSNR5S479B0132",
     "RAPPANR5L17B2078",
+    "RAPPSNR5S479B0164",
+    "RAPPSNR5S479B0136",
     "PRJLANR5L17B2068",
-    "RAPPSNR5S479B0164"
-   ]
-  },
-  {
-   "date": "2025-12-08",
-   "ref": "DLR5L16N49280",
-   "titre": "Proposition de loi portant création d'un statut de l'élu local",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Françoise Gatel",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 21,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 22,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 21
-    },
-    "SOC": {
-     "pour": 16,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 8,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 7,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 1
-    },
-    "HOR": {
-     "pour": 11,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 8,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    },
-    "UDR": {
-     "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "RAPPANR5L17B2071",
-    "RAPPSNR5S419B0366",
-    "PIONANR5L17B1997",
-    "PIONANR5L17B0136",
-    "PIONSNR5S459B0854",
-    "RAPPSNR5S479B0033",
-    "RAPPANR5L17B1603",
-    "PIONANR5L16B2313",
-    "PIONSNR5S419B0263"
+    "PRJLSNR5S479B0132"
    ]
   },
   {
@@ -8842,6 +7991,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -8857,10 +8008,10 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0319",
+    "PIONANR5L17B1605",
     "RAPPANR5L17B2136",
-    "RAPPSNR5S459B0721",
-    "PIONANR5L17B1605"
+    "PIONSNR5S459B0319",
+    "RAPPSNR5S459B0721"
    ]
   },
   {
@@ -8935,6 +8086,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -8954,10 +8107,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0580",
     "PIONSNR5S459B0223",
-    "RAPPANR5L17B2119",
-    "PIONANR5L17B1432"
+    "RAPPSNR5S459B0580",
+    "PIONANR5L17B1432",
+    "RAPPANR5L17B2119"
    ]
   },
   {
@@ -9027,6 +8180,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -9115,6 +8270,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -9188,6 +8345,8 @@
      "abstention": 2
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -9200,8 +8359,8 @@
    ],
    "textesRefs": [
     "PIONSNR5S479B0219",
-    "PIONANR5L17B2028",
-    "RAPPANR5L17B2196"
+    "RAPPANR5L17B2196",
+    "PIONANR5L17B2028"
    ]
   },
   {
@@ -9271,6 +8430,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -9282,9 +8443,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2197",
     "PIONSNR5S479B0217",
-    "PIONANR5L17B2039"
+    "PIONANR5L17B2039",
+    "RAPPANR5L17B2197"
    ]
   },
   {
@@ -9349,6 +8510,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -9361,8 +8524,8 @@
    ],
    "textesRefs": [
     "PIONANR5L17B1799",
-    "PIONSNR5S479B0218",
-    "RAPPANR5L17B2199"
+    "RAPPANR5L17B2199",
+    "PIONSNR5S479B0218"
    ]
   },
   {
@@ -9437,6 +8600,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -9464,19 +8629,19 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2152",
-    "RAPPANR5L17B2144",
-    "PRJLANR5L17BTA0188",
-    "PRJLSNR5S479B0122",
-    "PRJLANR5L17B2141",
-    "RAPPANR5L17B2057",
-    "RAPPSNR5S479B0205",
-    "RAPPSNR5S479B0162",
-    "RAPPSNR5S479B0131",
-    "LETTANR5L17B1999",
-    "PRJLSNR5S479B0193",
     "PRJLANR5L17B1907",
-    "AVISANR5L17B2049"
+    "RAPPANR5L17B2057",
+    "AVISANR5L17B2049",
+    "RAPPSNR5S479B0131",
+    "RAPPSNR5S479B0162",
+    "RAPPANR5L17B2152",
+    "PRJLSNR5S479B0193",
+    "RAPPANR5L17B2144",
+    "LETTANR5L17B1999",
+    "PRJLANR5L17B2141",
+    "RAPPSNR5S479B0205",
+    "PRJLANR5L17BTA0188",
+    "PRJLSNR5S479B0122"
    ]
   },
   {
@@ -9551,6 +8716,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -9566,12 +8733,83 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2195",
-    "RAPPSNR5S479B0391",
-    "ETDIANR5L17B1664",
+    "ACINANR5L17B1664",
     "PRJLANR5L17B1664",
+    "RAPPSNR5S479B0391",
+    "RAPPANR5L17B2195",
     "PRJLSNR5S479B0239",
-    "ACINANR5L17B1664"
+    "ETDIANR5L17B1664"
+   ]
+  },
+  {
+   "date": "2025-12-17",
+   "ref": "DLR5L17N52099",
+   "titre": "Approbation de la résolution n° F/BG/2023/04 relative aux amendements à l’accord portant création du Fonds africain de développement",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLANR5L17B1434",
+    "RAPPSNR5S479B0389",
+    "ACINANR5L17B1434",
+    "ETDIANR5L17B1434",
+    "RAPPANR5L17B2137",
+    "PRJLSNR5S479B0240"
+   ]
+  },
+  {
+   "date": "2025-12-17",
+   "ref": "DLR5L17N51519",
+   "titre": "Projet de loi autorisant l’approbation de l’accord entre le Gouvernement de la République française et le Gouvernement de la République de Chypre sur la coopération lors des opérations d’évacuation à partir de la région du Moyen-Orient via le territoire de la République de Chypre dans le cadre d’une situation de crise",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLSNR5S459B0345",
+    "RAPPANR5L17B2138",
+    "PRJLANR5L17B1615",
+    "RAPPSNR5S459B0727",
+    "ACINANR5L17B1615"
    ]
   },
   {
@@ -9641,6 +8879,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -9656,118 +8896,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2244",
-    "RAPPSNR5S459B0431",
     "PIONSNR5S459B0244",
+    "RAPPSNR5S459B0431",
+    "RAPPANR5L17B2244",
     "PIONANR5L17B1165"
-   ]
-  },
-  {
-   "date": "2025-12-18",
-   "ref": "DLR5L16N46127",
-   "titre": "Proposition de loi portant réparation des personnes condamnées pour homosexualité entre 1945 et 1982",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Hussein Bourgi",
-   "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 8,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 21,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 22,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 16,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 11,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 9,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 3,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "UDR": {
-     "pour": 4,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Commission Mixte Paritaire",
-     "etat": "avenir"
-    },
-    {
-     "label": "Nouvelle lecture · Assemblée",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONANR5L17B2351",
-    "RAPPSNR5S419B0103",
-    "RAPPANR5L17B2350",
-    "PIONSNR5S419B0403",
-    "RAPPSNR5S479B0279",
-    "RAPPANR5L17B2243",
-    "RAPPSNR5S459B0564",
-    "PIONANR5L17B1369",
-    "PIONSNR5S379B0864",
-    "PIONSNR5S479B0241",
-    "RAPPANR5L16B2247",
-    "PIONANR5L16B1915"
    ]
   },
   {
@@ -9842,6 +8974,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -9857,9 +8991,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0249",
-    "RAPPANR5L17B2271",
     "PRJLSNR5S479B0248",
+    "RAPPANR5L17B2271",
+    "RAPPSNR5S479B0249",
     "PRJLANR5L17B2269"
    ]
   },
@@ -9905,6 +9039,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -9947,6 +9083,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -9955,6 +9093,112 @@
    ],
    "textesRefs": [
     "MIONANR5L17-N15"
+   ]
+  },
+  {
+   "date": "2026-01-20",
+   "ref": "DLR5L17N53259",
+   "titre": "L’approbation de l’accord entre le Gouvernement de la République française et l’Agence spatiale européenne concernant les installations de l’Agence spatiale européenne en France",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "Sébastien Lecornu",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "ACINANR5L17B2155",
+    "RAPPANR5L17B2343",
+    "PRJLANR5L17B2155",
+    "PRJLSNR5S479B0285",
+    "ETDIANR5L17B2155",
+    "RAPPSNR5S479B0518"
+   ]
+  },
+  {
+   "date": "2026-01-20",
+   "ref": "DLR5L17N52354",
+   "titre": "Projet de loi autorisant l’approbation de l’accord sous forme d’échange de notes verbales entre le Gouvernement de la République française et le Gouvernement de la République de Moldavie relatif à l'échange de permis de conduire",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLANR5L17B2053",
+    "RAPPANR5L17B2315",
+    "ACINANR5L17B2053",
+    "RAPPSNR5S479B0061",
+    "PRJLSNR5S459B0764"
+   ]
+  },
+  {
+   "date": "2026-01-20",
+   "ref": "DLR5L17N50794",
+   "titre": "Projet de loi autorisant l’approbation de l’accord entre le Gouvernement de la République française et l’Observatoire du réseau d’antennes d’un kilomètre carré (SKAO) relatif à l’adhésion de la France à l’Observatoire",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "Michel Barnier",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLSNR5S459B0104",
+    "PRJLANR5L17B1109",
+    "RAPPSNR5S459B0407",
+    "ACINANR5L17B1109",
+    "RAPPANR5L17B2316"
    ]
   },
   {
@@ -10029,6 +9273,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B2206"
@@ -10106,10 +9352,12 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
-    "PNREANR5L17B1455",
     "RAPPANR5L17B2318",
+    "PNREANR5L17B1455",
     "RAPPANR5L17B2344"
    ]
   },
@@ -10129,33 +9377,8 @@
      "contre": 0,
      "abstention": 0
     },
-    "LFI": {
-     "pour": 71,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 5,
-     "contre": 0,
-     "abstention": 0
-    },
     "DR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 36,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
      "pour": 2,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 14,
      "contre": 0,
      "abstention": 0
     },
@@ -10170,6 +9393,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -10177,9 +9402,45 @@
     }
    ],
    "textesRefs": [
-    "MIONANR5L17B2247-N17",
     "DECLANR5L17B2247-N0",
+    "MIONANR5L17B2247-N17",
     "MIONANR5L17B2247-N16"
+   ]
+  },
+  {
+   "date": "2026-01-26",
+   "ref": "DLR5L17N53187",
+   "titre": "Protéger les mineurs des risques auxquels les expose l’utilisation des réseaux sociaux",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Laure Miller",
+   "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "Commission Mixte Paritaire",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "RAPPANR5L17B2341",
+    "PIONANR5L17B2610",
+    "AVCEANR5L17B2107",
+    "RAPPSNR5S479B0468",
+    "PIONANR5L17B2107",
+    "PIONSNR5S479B0304"
    ]
   },
   {
@@ -10214,6 +9475,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -10221,9 +9484,9 @@
     }
    ],
    "textesRefs": [
-    "MIONANR5L17B2247-N18",
     "DECLANR5L17B2247-N1",
-    "MIONANR5L17B2247-N19"
+    "MIONANR5L17B2247-N19",
+    "MIONANR5L17B2247-N18"
    ]
   },
   {
@@ -10288,6 +9551,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -10303,11 +9568,11 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1484",
+    "RAPPSNR5S479B0700",
     "PIONANR5L17B1326",
     "PIONSNR5S479B0311",
-    "PIONANR5L17B2907",
-    "RAPPSNR5S479B0700"
+    "RAPPANR5L17B1484",
+    "PIONANR5L17B2907"
    ]
   },
   {
@@ -10382,6 +9647,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -10397,13 +9664,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0842",
-    "PIONANR5L17B1796",
-    "PIONSNR5S479B0319",
-    "RAPPANR5L17B3004",
     "PIONANR5L17B2917",
+    "PIONANR5L17B1796",
     "RAPPSNR5S479B0685",
-    "RAPPANR5L17B2345"
+    "RAPPANR5L17B3004",
+    "RAPPSNR5S479B0842",
+    "RAPPANR5L17B2345",
+    "PIONSNR5S479B0319"
    ]
   },
   {
@@ -10473,6 +9740,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -10488,11 +9757,11 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2645",
-    "RAPPANR5L17B2360",
     "PIONSNR5S479B0321",
-    "PIONANR5L17B2175",
-    "RAPPSNR5S479B0490"
+    "RAPPANR5L17B2360",
+    "PIONANR5L17B2645",
+    "RAPPSNR5S479B0490",
+    "PIONANR5L17B2175"
    ]
   },
   {
@@ -10562,6 +9831,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -10577,10 +9848,10 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1233",
+    "RAPPSNR5S479B0722",
     "RAPPANR5L17B2355",
-    "PIONSNR5S479B0320",
-    "RAPPSNR5S479B0722"
+    "PIONANR5L17B1233",
+    "PIONSNR5S479B0320"
    ]
   },
   {
@@ -10655,10 +9926,12 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
-    "RAPPANR5L17B2363",
-    "PNREANR5L17B1977"
+    "PNREANR5L17B1977",
+    "RAPPANR5L17B2363"
    ]
   },
   {
@@ -10718,6 +9991,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -10729,9 +10004,9 @@
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B2365",
     "PIONSNR5S479B0326",
-    "PIONANR5L17B1085",
-    "RAPPANR5L17B2365"
+    "PIONANR5L17B1085"
    ],
    "amendements": {
     "total": 255,
@@ -11147,6 +10422,70 @@
    }
   },
   {
+   "date": "2026-01-29",
+   "ref": "DLR5L17N53276",
+   "titre": "Reconnaître les victimes de l'exposition aux essais nucléaires français et améliorer leur indemnisation",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Mereana Reid Arbelot",
+   "auteurGroupe": "GDR",
+   "auteurQualite": "Député",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "2ème lecture · Assemblée",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PIONSNR5S479B0324",
+    "PIONANR5L17B2172",
+    "PIONANR5L17B2852",
+    "RAPPANR5L17B2364",
+    "RAPPSNR5S479B0640"
+   ]
+  },
+  {
+   "date": "2026-01-29",
+   "ref": "DLR5L17N52744",
+   "titre": "Garantir la gratuité des parkings des hôpitaux publics pour les patients, les visiteurs et les personnels sur leur temps de travail",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Stéphane Hablot",
+   "auteurGroupe": "SOC",
+   "auteurQualite": "Député",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PIONSNR5S479B0323",
+    "RAPPANR5L17B2362",
+    "PIONANR5L17B1794"
+   ]
+  },
+  {
    "date": "2026-02-02",
    "ref": "DLR5L17N52428",
    "titre": "Projet de loi de finances pour 2026",
@@ -11203,6 +10542,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -11230,34 +10571,34 @@
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B1906",
-    "RAPPSNR5S479B0245",
-    "AVISANR5L17B2043",
-    "RAPPANR5L17B2266",
-    "DECLANR5L17B2247-N0",
-    "MIONANR5L17B2410-N20",
-    "RAPPSNR5S479B0139",
-    "MIONANR5L17B2410-N21",
-    "AVISANR5L17B1990",
-    "PRJLANR5L17B2247",
     "AVISANR5L17B2063",
-    "PRJLANR5L17BTA0218",
-    "RAPPANR5L17B2321",
-    "RAPPANR5L17B2412",
-    "AVISANR5L17B2006",
-    "MIONANR5L17B2247-N17",
-    "DECLANR5L17B2410-N0",
-    "AVISANR5L17B2060",
-    "RAPPANR5L17B1996",
-    "RAPPSNR5S479B0312",
-    "DECLANR5L17B2247-N1",
-    "PRJLSNR5S479B0308",
-    "PRJLSNR5S479B0138",
-    "MIONANR5L17B2247-N18",
     "MIONANR5L17B2247-N19",
+    "PRJLSNR5S479B0308",
+    "AVISANR5L17B2060",
+    "MIONANR5L17B2247-N16",
+    "DECLANR5L17B2247-N1",
+    "RAPPSNR5S479B0139",
+    "PRJLSNR5S479B0138",
+    "RAPPANR5L17B2266",
+    "RAPPANR5L17B2412",
+    "RAPPSNR5S479B0312",
     "AVISANR5L17B2048",
+    "RAPPSNR5S479B0245",
+    "RAPPANR5L17B2321",
     "AVISANR5L17B2047",
-    "MIONANR5L17B2247-N16"
+    "RAPPANR5L17B1996",
+    "AVISANR5L17B1990",
+    "MIONANR5L17B2247-N18",
+    "PRJLANR5L17BTA0218",
+    "AVISANR5L17B2043",
+    "MIONANR5L17B2410-N20",
+    "PRJLANR5L17B1906",
+    "MIONANR5L17B2247-N17",
+    "PRJLANR5L17B2247",
+    "AVISANR5L17B2006",
+    "MIONANR5L17B2410-N21",
+    "DECLANR5L17B2247-N0",
+    "DECLANR5L17B2410-N0"
    ]
   },
   {
@@ -11272,42 +10613,17 @@
    "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
-     "pour": 118,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 71,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 5,
+     "pour": 115,
      "contre": 0,
      "abstention": 0
     },
     "DR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 32,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 1,
+     "pour": 2,
      "contre": 0,
      "abstention": 0
     },
     "UDR": {
      "pour": 16,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 14,
      "contre": 0,
      "abstention": 0
     },
@@ -11317,6 +10633,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -11325,8 +10643,8 @@
    ],
    "textesRefs": [
     "DECLANR5L17B2410-N0",
-    "MIONANR5L17B2410-N21",
-    "MIONANR5L17B2410-N20"
+    "MIONANR5L17B2410-N20",
+    "MIONANR5L17B2410-N21"
    ]
   },
   {
@@ -11401,6 +10719,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B2265"
@@ -11473,11 +10793,13 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B1170",
-    "RAPPANR5L17B1490",
-    "RAPPANR5L17B1376"
+    "RAPPANR5L17B1376",
+    "RAPPANR5L17B1490"
    ]
   },
   {
@@ -11552,6 +10874,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -11575,13 +10899,13 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S479B0278",
+    "RAPPSNR5S479B0306",
     "RAPPSNR5S459B0733",
-    "RAPPANR5L17B2233",
-    "RAPPANR5L17B2395",
-    "PRJLANR5L17B1641",
     "PRJLSNR5S459B0630",
-    "RAPPSNR5S479B0306"
+    "PRJLANR5L17B1641",
+    "RAPPANR5L17B2395",
+    "PRJLSNR5S479B0278",
+    "RAPPANR5L17B2233"
    ]
   },
   {
@@ -11656,6 +10980,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B1113",
@@ -11734,10 +11060,12 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
-    "RAPPANR5L17B1482",
-    "PNREANR5L17B1258"
+    "PNREANR5L17B1258",
+    "RAPPANR5L17B1482"
    ]
   },
   {
@@ -11807,6 +11135,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "RAPPANR5L17B2143",
@@ -11885,11 +11215,13 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
-    "PNREANR5L17B1763",
     "RAPPANR5L17B1966",
-    "RAPPANR5L17B2072"
+    "RAPPANR5L17B2072",
+    "PNREANR5L17B1763"
    ]
   },
   {
@@ -11959,6 +11291,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -11976,9 +11310,9 @@
    "textesRefs": [
     "PIONANR5L17B2770",
     "PIONSNR5S479B0397",
-    "RAPPANR5L17B2431",
+    "RAPPSNR5S479B0577",
     "PIONANR5L17B2310",
-    "RAPPSNR5S479B0577"
+    "RAPPANR5L17B2431"
    ]
   },
   {
@@ -12053,6 +11387,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -12064,9 +11400,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2396",
     "PIONSNR5S479B0403",
-    "PIONANR5L17B1135"
+    "PIONANR5L17B1135",
+    "RAPPANR5L17B2396"
    ]
   },
   {
@@ -12141,6 +11477,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -12152,9 +11490,38 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2400",
     "PIONSNR5S479B0402",
+    "RAPPANR5L17B2400",
     "PIONANR5L17B1142"
+   ]
+  },
+  {
+   "date": "2026-02-16",
+   "ref": "DLR5L17N53171",
+   "titre": "Expérimentation pour l’instauration d’un enseignement d’éducation à l’alimentation à l’école",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Olivia Grégoire",
+   "auteurGroupe": "EPR",
+   "auteurQualite": "Député",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PIONSNR5S479B0405",
+    "PIONANR5L17B2091",
+    "RAPPANR5L17B2398"
    ]
   },
   {
@@ -12229,6 +11596,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -12253,13 +11622,13 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B2457",
-    "RAPPANR5L17B1281",
     "RAPPSNR5S479B0584",
-    "PIONANR5L17B2406",
     "PIONANR5L17B1102",
-    "PIONSNR5S479B0439",
+    "PIONSNR5S459B0662",
     "RAPPSNR5S479B0266",
-    "PIONSNR5S459B0662"
+    "RAPPANR5L17B1281",
+    "PIONSNR5S479B0439",
+    "PIONANR5L17B2406"
    ]
   },
   {
@@ -12294,6 +11663,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -12336,6 +11707,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -12344,6 +11717,76 @@
    ],
    "textesRefs": [
     "MIONANR5L17-N22"
+   ]
+  },
+  {
+   "date": "2026-02-25",
+   "ref": "DLR5L17N52103",
+   "titre": "Projet de loi autorisant l’approbation de l’avenant à la convention d’entraide judiciaire en matière pénale du 28 mai 1996 entre le Gouvernement de la République française et le Gouvernement de la République fédérative du Brésil",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLANR5L17B1614",
+    "ACINANR5L17B1614",
+    "RAPPSNR5S459B0752",
+    "RAPPANR5L17B2470",
+    "PRJLSNR5S459B0629"
+   ]
+  },
+  {
+   "date": "2026-02-25",
+   "ref": "DLR5L17N52561",
+   "titre": "Projet de loi autorisant l’approbation de l’accord entre le Gouvernement de la République française et le Gouvernement du Monténégro relatif à la coopération dans le domaine de la défense",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLANR5L17B2236",
+    "ACINANR5L17B2236",
+    "RAPPANR5L17B2469",
+    "PRJLSNR5S459B0857",
+    "RAPPSNR5S479B0158"
    ]
   },
   {
@@ -12413,6 +11856,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -12432,12 +11877,12 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B0841",
-    "RAPPANR5L17B0994",
-    "RAPPSNR5S459B0578",
-    "RAPPANR5L17B2525",
     "PIONSNR5S459B0413",
-    "PIONANR5L17B1383"
+    "RAPPANR5L17B0994",
+    "PIONANR5L17B1383",
+    "RAPPSNR5S459B0578",
+    "PIONANR5L17B0841",
+    "RAPPANR5L17B2525"
    ],
    "amendements": {
     "total": 162,
@@ -12831,6 +12276,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -12842,9 +12289,9 @@
     }
    ],
    "textesRefs": [
+    "PIONANR5L17B2445",
     "PIONSNR5S479B0483",
-    "RAPPANR5L17B2531",
-    "PIONANR5L17B2445"
+    "RAPPANR5L17B2531"
    ],
    "amendements": {
     "total": 117,
@@ -13015,6 +12462,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -13034,11 +12483,11 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1041",
-    "PIONSNR5S459B0226",
-    "PIONSNR5S479B0481",
     "RAPPSNR5S479B0579",
     "RAPPSNR5S459B0361",
+    "PIONANR5L17B1041",
+    "PIONSNR5S479B0481",
+    "PIONSNR5S459B0226",
     "RAPPANR5L17B2526"
    ],
    "amendements": {
@@ -13317,6 +12766,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -13332,11 +12783,11 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B0991",
     "PIONSNR5S479B0475",
-    "RAPPSNR5S479B0720",
     "PIONANR5L17B2928",
-    "PIONANR5L17B0824"
+    "PIONANR5L17B0824",
+    "RAPPSNR5S479B0720",
+    "RAPPANR5L17B0991"
    ],
    "amendements": {
     "total": 38,
@@ -13525,6 +12976,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -13546,10 +12999,10 @@
    "textesRefs": [
     "PIONANR5L17B0823",
     "RAPPANR5L17B2524",
+    "PIONANR5L17B2263",
     "RAPPANR5L17B1004",
-    "PIONSNR5S459B0415",
     "RAPPSNR5S479B0194",
-    "PIONANR5L17B2263"
+    "PIONSNR5S459B0415"
    ],
    "amendements": {
     "total": 92,
@@ -13758,6 +13211,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -13769,9 +13224,9 @@
     }
    ],
    "textesRefs": [
+    "PIONSNR5S479B0480",
     "RAPPANR5L17B2520",
-    "PIONANR5L17B2440",
-    "PIONSNR5S479B0480"
+    "PIONANR5L17B2440"
    ],
    "amendements": {
     "total": 52,
@@ -13897,6 +13352,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -13909,8 +13366,8 @@
    ],
    "textesRefs": [
     "PIONSNR5S479B0482",
-    "RAPPANR5L17B2523",
-    "PIONANR5L17B2385"
+    "PIONANR5L17B2385",
+    "RAPPANR5L17B2523"
    ],
    "amendements": {
     "total": 31,
@@ -14021,6 +13478,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -14032,9 +13491,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2527",
     "PIONSNR5S479B0484",
-    "PIONANR5L17B2442"
+    "PIONANR5L17B2442",
+    "RAPPANR5L17B2527"
    ],
    "amendements": {
     "total": 58,
@@ -14209,6 +13668,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -14225,9 +13686,9 @@
    ],
    "textesRefs": [
     "PIONSNR5S479B0328",
+    "PIONANR5L17B2515",
     "RAPPSNR5S479B0381",
-    "RAPPANR5L17B2576",
-    "PIONANR5L17B2515"
+    "RAPPANR5L17B2576"
    ],
    "amendements": {
     "total": 7,
@@ -14240,6 +13701,41 @@
     },
     "listeAdoptes": []
    }
+  },
+  {
+   "date": "2026-03-31",
+   "ref": "DLR5L17N53730",
+   "titre": "Projet de loi autorisant l'approbation de la Convention entre le Gouvernement de la République française et le Gouvernement de la République italienne relative à l’entretien courant et à l’exploitation de la section située en territoire français de la lign",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "Sébastien Lecornu",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLSNR5S479B0355",
+    "RAPPSNR5S479B0387",
+    "ACINANR5L17B2510",
+    "RAPPANR5L17B2581",
+    "PRJLANR5L17B2510"
+   ]
   },
   {
    "date": "2026-04-02",
@@ -14313,6 +13809,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -14328,11 +13826,11 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S479B0023",
     "RAPPSNR5S479B0409",
-    "RAPPANR5L17B2579",
     "PRJLANR5L17B2529",
-    "PRJLSNR5S479B0509"
+    "RAPPANR5L17B2579",
+    "PRJLSNR5S479B0509",
+    "PRJLSNR5S479B0023"
    ],
    "amendements": {
     "total": 3205,
@@ -14465,6 +13963,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -14476,9 +13976,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2606",
     "PIONSNR5S479B0528",
-    "PIONANR5L17B1800"
+    "PIONANR5L17B1800",
+    "RAPPANR5L17B2606"
    ],
    "amendements": {
     "total": 156,
@@ -14685,6 +14185,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -14696,9 +14198,9 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2037",
     "PIONSNR5S479B0530",
-    "RAPPANR5L17B2193"
+    "RAPPANR5L17B2193",
+    "PIONANR5L17B2037"
    ],
    "amendements": {
     "total": 98,
@@ -15018,6 +14520,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -15033,13 +14537,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2616",
-    "PIONANR5L17B2906",
     "PIONANR5L17B2309",
-    "PIONSNR5S479B0529",
+    "RAPPSNR5S479B0817",
     "RAPPANR5L17B2995",
     "RAPPSNR5S479B0697",
-    "RAPPSNR5S479B0817"
+    "PIONSNR5S479B0529",
+    "RAPPANR5L17B2616",
+    "PIONANR5L17B2906"
    ],
    "amendements": {
     "total": 77,
@@ -15376,6 +14880,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -15388,8 +14894,8 @@
    ],
    "textesRefs": [
     "PIONSNR5S479B0534",
-    "PIONANR5L17B2496",
-    "RAPPANR5L17B2611"
+    "RAPPANR5L17B2611",
+    "PIONANR5L17B2496"
    ],
    "amendements": {
     "total": 26,
@@ -15585,6 +15091,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -15596,9 +15104,9 @@
     }
    ],
    "textesRefs": [
+    "PIONSNR5S479B0537",
     "RAPPANR5L17B2618",
-    "PIONANR5L17B1133",
-    "PIONSNR5S479B0537"
+    "PIONANR5L17B1133"
    ],
    "amendements": {
     "total": 124,
@@ -15778,6 +15286,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -15953,6 +15463,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -16172,6 +15684,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -16188,9 +15702,9 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B2578",
-    "PIONANR5L17B2413",
     "RAPPSNR5S479B0288",
-    "PIONSNR5S479B0187"
+    "PIONSNR5S479B0187",
+    "PIONANR5L17B2413"
    ],
    "amendements": {
     "total": 6,
@@ -16284,6 +15798,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -16299,11 +15815,11 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0539",
     "PIONANR5L17B1673",
-    "RAPPSNR5S459B0776",
     "RAPPANR5L17B2335",
-    "PIONSNR5S459B0550"
+    "RAPPSNR5S459B0776",
+    "PIONSNR5S459B0550",
+    "PIONSNR5S479B0539"
    ],
    "amendements": {
     "total": 254,
@@ -16346,104 +15862,77 @@
    "ref": "DLR5L16N49868",
    "titre": "Projet de loi de simplification de la vie économique",
    "type": "Projet de loi",
-   "contexte": "Projet de loi ordinaire",
-   "auteur": "Gabriel Attal",
+   "contexte": "Scrutin n°6182",
+   "auteur": "",
    "auteurGroupe": "",
-   "auteurQualite": "Premier ministre",
-   "statut": "adopté",
+   "auteurQualite": "",
+   "statut": "rejeté",
    "votesParGroupe": {
     "RN": {
-     "pour": 118,
-     "contre": 0,
-     "abstention": 1
+     "pour": 0,
+     "contre": 97,
+     "abstention": 0
     },
     "EPR": {
-     "pour": 25,
-     "contre": 30,
-     "abstention": 19
+     "pour": 0,
+     "contre": 51,
+     "abstention": 1
     },
     "LFI": {
-     "pour": 0,
-     "contre": 68,
+     "pour": 42,
+     "contre": 0,
      "abstention": 0
     },
     "SOC": {
-     "pour": 0,
-     "contre": 67,
-     "abstention": 1
+     "pour": 46,
+     "contre": 0,
+     "abstention": 0
     },
     "DR": {
-     "pour": 43,
-     "contre": 0,
-     "abstention": 3
+     "pour": 0,
+     "contre": 33,
+     "abstention": 0
     },
     "ECO": {
-     "pour": 0,
-     "contre": 38,
+     "pour": 25,
+     "contre": 0,
      "abstention": 0
     },
     "DEM": {
-     "pour": 25,
-     "contre": 2,
+     "pour": 0,
+     "contre": 20,
      "abstention": 2
     },
     "HOR": {
-     "pour": 32,
-     "contre": 2,
+     "pour": 0,
+     "contre": 23,
      "abstention": 0
     },
     "LIOT": {
-     "pour": 9,
-     "contre": 4,
-     "abstention": 4
+     "pour": 1,
+     "contre": 10,
+     "abstention": 2
     },
-    "UDR": {
-     "pour": 17,
+    "GDR": {
+     "pour": 6,
      "contre": 0,
      "abstention": 0
     },
-    "GDR": {
+    "UDR": {
      "pour": 0,
-     "contre": 13,
+     "contre": 10,
      "abstention": 0
     },
     "AUTRE": {
-     "pour": 6,
-     "contre": 1,
-     "abstention": 0
+     "pour": 0,
+     "contre": 3,
+     "abstention": 1
     }
    },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Commission Mixte Paritaire",
-     "etat": "avenir"
-    },
-    {
-     "label": "Conseil constitutionnel",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "RAPPANR5L17B1191",
-    "RAPPSNR5S479B0286",
-    "PRJLSNR5S459B0758",
-    "RAPPSNR5S419B0634",
-    "RAPPANR5L17B2357",
-    "PRJLSNR5S419B0550",
-    "PRJLANR5L17B0481"
-   ],
+   "sansScrutin": false,
+   "mentionDecision": "",
+   "cycle": [],
+   "textesRefs": [],
    "amendements": {
     "total": 0,
     "adoptes": 0,
@@ -16503,6 +15992,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -16518,11 +16009,11 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0294",
+    "ACINANR5L17B2414",
     "RAPPANR5L17B2582",
     "PRJLANR5L17B2414",
     "PRJLSNR5S479B0160",
-    "ACINANR5L17B2414"
+    "RAPPSNR5S479B0294"
    ],
    "amendements": {
     "total": 0,
@@ -16603,6 +16094,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -16622,13 +16115,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2643",
     "RAPPANR5L17B2577",
-    "PIONANR5L17B2511",
-    "RAPPSNR5S479B0546",
     "RAPPSNR5S479B0371",
     "PIONSNR5S479B0485",
-    "PIONSNR5S459B0637"
+    "PIONANR5L17B2511",
+    "PIONSNR5S459B0637",
+    "RAPPSNR5S479B0546",
+    "RAPPANR5L17B2643"
    ],
    "amendements": {
     "total": 41,
@@ -16797,6 +16290,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -16816,12 +16311,12 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2608",
-    "PIONSNR5S479B0401",
-    "PIONANR5L17B2112",
-    "RAPPANR5L17B2347",
+    "RAPPSNR5S479B0461",
     "RAPPANR5L17B2733",
-    "RAPPSNR5S479B0461"
+    "PIONANR5L17B2608",
+    "RAPPANR5L17B2347",
+    "PIONSNR5S479B0401",
+    "PIONANR5L17B2112"
    ],
    "amendements": {
     "total": 13,
@@ -16938,6 +16433,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -16961,13 +16458,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0111",
+    "RAPPSNR5S479B0570",
     "RAPPANR5L17B2250",
-    "PRJLANR5L17B2115",
-    "PRJLSNR5S479B0512",
     "PRJLSNR5S479B0024",
+    "RAPPSNR5S479B0111",
+    "PRJLSNR5S479B0512",
     "RAPPANR5L17B2701",
-    "RAPPSNR5S479B0570"
+    "PRJLANR5L17B2115"
    ],
    "amendements": {
     "total": 1931,
@@ -20134,6 +19631,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -20153,13 +19652,13 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S459B0871",
-    "RAPPANR5L17B2628",
+    "RAPPANR5L17B2745",
     "PRJLSNR5S479B0545",
-    "PRJLANR5L17B2408",
-    "RAPPSNR5S479B0592",
     "RAPPSNR5S479B0290",
-    "RAPPANR5L17B2745"
+    "RAPPANR5L17B2628",
+    "PRJLSNR5S459B0871",
+    "PRJLANR5L17B2408",
+    "RAPPSNR5S479B0592"
    ],
    "amendements": {
     "total": 126,
@@ -20538,6 +20037,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -20561,15 +20062,15 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2751",
+    "RAPPANR5L17B1654",
     "PIONSNR5S479B0608",
+    "RAPPANR5L17B2751",
     "RAPPANR5L17B1360",
-    "PIONSNR5S459B0571",
     "RAPPSNR5S459B0805",
-    "PIONANR5L17B0439",
     "RAPPSNR5S459B0725",
+    "PIONANR5L17B0439",
     "PIONANR5L17B1610",
-    "RAPPANR5L17B1654"
+    "PIONSNR5S459B0571"
    ],
    "amendements": {
     "total": 275,
@@ -21244,6 +20745,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B1860",
@@ -21411,6 +20914,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -21422,9 +20927,9 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0613",
+    "RAPPANR5L17B2615",
     "PIONANR5L17B1502",
-    "RAPPANR5L17B2615"
+    "PIONSNR5S479B0613"
    ],
    "amendements": {
     "total": 110,
@@ -21715,6 +21220,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -21726,9 +21233,9 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0619",
+    "RAPPANR5L17B2761",
     "PIONANR5L17B1793",
-    "RAPPANR5L17B2761"
+    "PIONSNR5S479B0619"
    ],
    "amendements": {
     "total": 103,
@@ -22016,6 +21523,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -22027,9 +21536,9 @@
     }
    ],
    "textesRefs": [
+    "PIONANR5L17B1909",
     "RAPPANR5L17B2190",
-    "PIONSNR5S479B0627",
-    "PIONANR5L17B1909"
+    "PIONSNR5S479B0627"
    ],
    "amendements": {
     "total": 53,
@@ -22161,6 +21670,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -22176,11 +21687,11 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0629",
-    "PIONANR5L17B2595",
     "RAPPSNR5S479B0832",
+    "PIONANR5L17B3019",
     "RAPPANR5L17B2755",
-    "PIONANR5L17B3019"
+    "PIONSNR5S479B0629",
+    "PIONANR5L17B2595"
    ],
    "amendements": {
     "total": 426,
@@ -22829,6 +22340,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -22848,10 +22361,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0630",
-    "PIONANR5L17B2804",
+    "PIONSNR5S459B0636",
     "RAPPANR5L17B2807",
-    "PIONSNR5S459B0636"
+    "RAPPSNR5S479B0630",
+    "PIONANR5L17B2804"
    ],
    "amendements": {
     "total": 28,
@@ -22952,6 +22465,8 @@
      "abstention": 2
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -22963,9 +22478,9 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2674",
     "RAPPANR5L17B2816",
-    "PIONSNR5S479B0673"
+    "PIONSNR5S479B0673",
+    "PIONANR5L17B2674"
    ],
    "amendements": {
     "total": 156,
@@ -23149,6 +22664,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -23164,10 +22681,10 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1674",
     "RAPPSNR5S459B0778",
     "PIONSNR5S459B0475",
-    "RAPPANR5L17B2812"
+    "RAPPANR5L17B2812",
+    "PIONANR5L17B1674"
    ],
    "amendements": {
     "total": 36,
@@ -23269,6 +22786,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -23284,10 +22803,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2806",
     "PIONSNR5S479B0213",
+    "PIONANR5L17B2637",
     "RAPPSNR5S479B0500",
-    "PIONANR5L17B2637"
+    "RAPPANR5L17B2806"
    ],
    "amendements": {
     "total": 20,
@@ -23381,6 +22900,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -23392,9 +22913,9 @@
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B2810",
     "PIONSNR5S479B0672",
-    "PIONANR5L17B1817",
-    "RAPPANR5L17B2810"
+    "PIONANR5L17B1817"
    ],
    "amendements": {
     "total": 49,
@@ -23546,6 +23067,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -23557,9 +23080,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2835",
     "PIONSNR5S479B0675",
-    "PIONANR5L17B2708"
+    "PIONANR5L17B2708",
+    "RAPPANR5L17B2835"
    ],
    "amendements": {
     "total": 382,
@@ -24171,6 +23694,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -24190,12 +23715,12 @@
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B2754",
+    "PIONANR5L17B2538",
     "RAPPSNR5S479B0412",
     "RAPPANR5L17B0625",
-    "PIONANR5L17B0277",
-    "RAPPANR5L17B2754",
     "PIONSNR5S459B0180",
-    "PIONANR5L17B2538"
+    "PIONANR5L17B0277"
    ],
    "amendements": {
     "total": 203,
@@ -24540,6 +24065,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -24555,12 +24082,12 @@
     }
    ],
    "textesRefs": [
-    "ETDIANR5L17B2632",
     "RAPPSNR5S479B0762",
     "AVCEANR5L17B2632",
+    "RAPPANR5L17B2765",
+    "ETDIANR5L17B2632",
     "PRJLSNR5S479B0689",
     "PRJLANR5L17B3017",
-    "RAPPANR5L17B2765",
     "PRJLANR5L17B2632"
    ],
    "amendements": {
@@ -27658,111 +27185,6 @@
   },
   {
    "date": "2026-06-02",
-   "ref": "DLR5L16N49263",
-   "titre": "Reconnaître la responsabilité de l’État et indemniser les victimes du chlordécone",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Elie Califer",
-   "auteurGroupe": "SOC",
-   "auteurQualite": "Député",
-   "statut": "adopté",
-   "votesParGroupe": {
-    "RN": {
-     "pour": 45,
-     "contre": 0,
-     "abstention": 0
-    },
-    "EPR": {
-     "pour": 22,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LFI": {
-     "pour": 51,
-     "contre": 0,
-     "abstention": 0
-    },
-    "SOC": {
-     "pour": 36,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DR": {
-     "pour": 16,
-     "contre": 0,
-     "abstention": 0
-    },
-    "ECO": {
-     "pour": 18,
-     "contre": 0,
-     "abstention": 0
-    },
-    "DEM": {
-     "pour": 12,
-     "contre": 0,
-     "abstention": 0
-    },
-    "HOR": {
-     "pour": 10,
-     "contre": 0,
-     "abstention": 0
-    },
-    "LIOT": {
-     "pour": 8,
-     "contre": 0,
-     "abstention": 0
-    },
-    "GDR": {
-     "pour": 11,
-     "contre": 0,
-     "abstention": 0
-    },
-    "UDR": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
-    },
-    "AUTRE": {
-     "pour": 6,
-     "contre": 0,
-     "abstention": 0
-    }
-   },
-   "cycle": [
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "2ème lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "PIONANR5L17B1578",
-    "PIONSNR5S419B0373",
-    "RAPPANR5L17B2837",
-    "PIONANR5L16B2061",
-    "RAPPSNR5S459B0686",
-    "RAPPANR5L16B2206"
-   ],
-   "amendements": {
-    "total": 0,
-    "adoptes": 0,
-    "parGroupe": {},
-    "listeAdoptes": []
-   }
-  },
-  {
-   "date": "2026-06-02",
    "ref": "DLR5L17N53981",
    "titre": "Projet de loi portant transposition de l’avenant n°3 du 25 février 2026 au protocole d’accord du 10 novembre 2023 relatif à l’assurance chômage",
    "type": "Projet de loi",
@@ -27833,6 +27255,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -27856,14 +27280,14 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2809",
+    "RAPPANR5L17B2633",
     "PRJLSNR5S479B0470",
+    "RAPPSNR5S479B0488",
+    "PRJLANR5L17B2619",
     "PRJLANR5L17B2805",
     "RAPPSNR5S479B0620",
-    "RAPPSNR5S479B0488",
-    "RAPPANR5L17B2633",
-    "PRJLSNR5S479B0561",
-    "PRJLANR5L17B2619"
+    "RAPPANR5L17B2809",
+    "PRJLSNR5S479B0561"
    ],
    "amendements": {
     "total": 157,
@@ -27910,6 +27334,89 @@
       "sort": "Adopté"
      }
     ]
+   }
+  },
+  {
+   "date": "2026-06-02",
+   "ref": "DLR5L16N49263",
+   "titre": "Reconnaître la responsabilité de l’État et indemniser les victimes du chlordécone",
+   "type": "Texte",
+   "contexte": "Scrutin n°7261",
+   "auteur": "",
+   "auteurGroupe": "",
+   "auteurQualite": "",
+   "statut": "adopté",
+   "votesParGroupe": {
+    "RN": {
+     "pour": 45,
+     "contre": 0,
+     "abstention": 0
+    },
+    "EPR": {
+     "pour": 22,
+     "contre": 0,
+     "abstention": 0
+    },
+    "LFI": {
+     "pour": 51,
+     "contre": 0,
+     "abstention": 0
+    },
+    "SOC": {
+     "pour": 36,
+     "contre": 0,
+     "abstention": 0
+    },
+    "DR": {
+     "pour": 16,
+     "contre": 0,
+     "abstention": 0
+    },
+    "ECO": {
+     "pour": 18,
+     "contre": 0,
+     "abstention": 0
+    },
+    "DEM": {
+     "pour": 12,
+     "contre": 0,
+     "abstention": 0
+    },
+    "HOR": {
+     "pour": 10,
+     "contre": 0,
+     "abstention": 0
+    },
+    "LIOT": {
+     "pour": 8,
+     "contre": 0,
+     "abstention": 0
+    },
+    "GDR": {
+     "pour": 11,
+     "contre": 0,
+     "abstention": 0
+    },
+    "UDR": {
+     "pour": 1,
+     "contre": 0,
+     "abstention": 0
+    },
+    "AUTRE": {
+     "pour": 6,
+     "contre": 0,
+     "abstention": 0
+    }
+   },
+   "sansScrutin": false,
+   "mentionDecision": "",
+   "cycle": [],
+   "textesRefs": [],
+   "amendements": {
+    "total": 0,
+    "adoptes": 0,
+    "parGroupe": {},
+    "listeAdoptes": []
    }
   },
   {
@@ -27984,6 +27491,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -27995,9 +27504,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2839",
+    "PIONANR5L17B2678",
     "PIONSNR5S479B0704",
-    "PIONANR5L17B2678"
+    "RAPPANR5L17B2839"
    ],
    "amendements": {
     "total": 42,
@@ -28124,6 +27633,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -28139,9 +27650,9 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2349",
-    "PIONSNR5S479B0128",
     "PIONSNR5S479B0703",
+    "PIONSNR5S479B0128",
+    "PIONANR5L17B2349",
     "RAPPANR5L17B2840",
     "RAPPSNR5S479B0262"
    ],
@@ -28495,6 +28006,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -28506,9 +28019,9 @@
     }
    ],
    "textesRefs": [
+    "PIONSNR5S479B0709",
     "PIONANR5L17B1319",
-    "RAPPANR5L17B2842",
-    "PIONSNR5S479B0709"
+    "RAPPANR5L17B2842"
    ],
    "amendements": {
     "total": 45,
@@ -28727,6 +28240,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -28738,9 +28253,9 @@
     }
    ],
    "textesRefs": [
+    "PIONSNR5S479B0710",
     "PIONANR5L17B2023",
-    "RAPPANR5L17B2200",
-    "PIONSNR5S479B0710"
+    "RAPPANR5L17B2200"
    ],
    "amendements": {
     "total": 96,
@@ -29038,6 +28553,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [],
    "textesRefs": [
     "PNREANR5L17B1769"
@@ -29116,6 +28633,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -29127,8 +28646,8 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2838",
     "PIONANR5L17B1169",
+    "RAPPANR5L17B2838",
     "PIONSNR5S479B0708"
    ],
    "amendements": {
@@ -29246,6 +28765,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -29257,10 +28778,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0736",
-    "PRJLANR5L17B2694",
+    "RAPPANR5L17B2847",
     "PRJLSNR5S479B0726",
-    "RAPPANR5L17B2847"
+    "PRJLANR5L17B2694",
+    "RAPPSNR5S479B0736"
    ],
    "amendements": {
     "total": 112,
@@ -29399,6 +28920,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -29410,11 +28933,11 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2863",
-    "AVISANR5L17B2869",
+    "RAPPSNR5S479B0759",
     "PRJLSNR5S479B0727",
     "PRJLANR5L17B2843",
-    "RAPPSNR5S479B0759"
+    "RAPPANR5L17B2863",
+    "AVISANR5L17B2869"
    ],
    "amendements": {
     "total": 33,
@@ -29574,6 +29097,41 @@
    }
   },
   {
+   "date": "2026-06-09",
+   "ref": "DLR5L17N52549",
+   "titre": "Projet de loi autorisant l’approbation de la convention entre le Gouvernement de la République française et le Gouvernement de la République de Finlande pour l’élimination de la double imposition en matière d’impôts sur le revenu et la prévention de l’évasion et de la fraude fiscales et l’approbation de l’avenant à la convention entre le Gouvernement de la République française et le Gouvernement du Royaume de Suède en vue d’éviter les doubles impositions et de prévenir l’évasion fiscale en matière d’impôts sur le revenu et sur la fortune",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "RAPPANR5L17B2736",
+    "RAPPSNR5S479B0051",
+    "ACINANR5L17B2054",
+    "PRJLSNR5S459B0855",
+    "PRJLANR5L17B2054"
+   ]
+  },
+  {
    "date": "2026-06-11",
    "ref": "DLR5L17N54229",
    "titre": "Réformer les bourses sur critères sociaux et lutter contre la précarité étudiante",
@@ -29640,6 +29198,8 @@
      "abstention": 4
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -29651,9 +29211,9 @@
     }
    ],
    "textesRefs": [
+    "PIONSNR5S479B0739",
     "PIONANR5L17B2710",
-    "RAPPANR5L17B2862",
-    "PIONSNR5S479B0739"
+    "RAPPANR5L17B2862"
    ],
    "amendements": {
     "total": 31,
@@ -29761,6 +29321,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -29780,13 +29342,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0410",
-    "PIONSNR5S479B0735",
-    "RAPPANR5L17B2123",
     "PIONSNR5S479B0170",
+    "PIONANR5L17B2537",
     "PIONANR5L17B1950",
+    "RAPPSNR5S479B0410",
     "RAPPANR5L17B2872",
-    "PIONANR5L17B2537"
+    "PIONSNR5S479B0735",
+    "RAPPANR5L17B2123"
    ],
    "amendements": {
     "total": 492,
@@ -29930,6 +29492,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -29942,8 +29506,8 @@
    ],
    "textesRefs": [
     "PIONANR5L17B1344",
-    "RAPPANR5L17B1478",
-    "PIONSNR5S479B0734"
+    "PIONSNR5S479B0734",
+    "RAPPANR5L17B1478"
    ],
    "amendements": {
     "total": 30,
@@ -30068,6 +29632,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -30083,11 +29649,11 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0185",
-    "RAPPSNR5S479B0297",
-    "PIONANR5L17B2415",
     "PIONSNR5S479B0738",
-    "RAPPANR5L17B2868"
+    "RAPPANR5L17B2868",
+    "PIONANR5L17B2415",
+    "RAPPSNR5S479B0297",
+    "PIONSNR5S479B0185"
    ],
    "amendements": {
     "total": 61,
@@ -30151,6 +29717,35 @@
    }
   },
   {
+   "date": "2026-06-11",
+   "ref": "DLR5L17N53401",
+   "titre": "Pour l’égalité d’accès aux soins des ressortissants ultramarins en hexagone",
+   "type": "Proposition de loi",
+   "contexte": "Proposition de loi ordinaire",
+   "auteur": "Mereana Reid Arbelot",
+   "auteurGroupe": "GDR",
+   "auteurQualite": "Député",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adoptée",
+   "cycle": [
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PIONSNR5S479B0740",
+    "PIONANR5L17B2284",
+    "RAPPANR5L17B2879"
+   ]
+  },
+  {
    "date": "2026-06-15",
    "ref": "DLR5L17N53600",
    "titre": "Projet de loi portant habilitation de l’assemblée de Martinique à fixer elle-même des règles applicables sur son territoire en application de l’article 73 de la Constitution en matière d’énergie, d’eau et d’assainissement",
@@ -30212,6 +29807,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -30227,10 +29824,10 @@
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B2609",
-    "RAPPSNR5S479B0464",
     "RAPPANR5L17B2905",
-    "PRJLSNR5S479B0283"
+    "PRJLSNR5S479B0283",
+    "PRJLANR5L17B2609",
+    "RAPPSNR5S479B0464"
    ],
    "amendements": {
     "total": 0,
@@ -30306,6 +29903,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -30321,10 +29920,10 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0008",
-    "RAPPSNR5S479B0614",
     "RAPPANR5L17B2912",
-    "PIONANR5L17B2803"
+    "PIONSNR5S459B0008",
+    "PIONANR5L17B2803",
+    "RAPPSNR5S479B0614"
    ],
    "amendements": {
     "total": 0,
@@ -30405,6 +30004,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -30424,13 +30025,13 @@
     }
    ],
    "textesRefs": [
+    "RAPPSNR5S479B0705",
     "RAPPSNR5S479B0611",
+    "PIONSNR5S479B0597",
+    "RAPPANR5L17B2877",
     "PIONANR5L17B2180",
     "PIONANR5L17B2817",
-    "RAPPANR5L17B2877",
-    "RAPPANR5L17B2468",
-    "PIONSNR5S479B0597",
-    "RAPPSNR5S479B0705"
+    "RAPPANR5L17B2468"
    ],
    "amendements": {
     "total": 369,
@@ -30825,6 +30426,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -30844,13 +30447,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2856",
-    "RAPPANR5L17B2405",
-    "PIONSNR5S479B0359",
     "RAPPSNR5S479B0676",
+    "RAPPANR5L17B2856",
     "RAPPSNR5S479B0498",
+    "RAPPANR5L17B2405",
     "PIONANR5L17B2334",
-    "PIONANR5L17B2642"
+    "PIONANR5L17B2642",
+    "PIONSNR5S479B0359"
    ],
    "amendements": {
     "total": 321,
@@ -31699,6 +31302,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -31718,13 +31323,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1449",
+    "PIONANR5L17B2607",
+    "PIONSNR5S479B0273",
     "PIONANR5L17B1332",
     "RAPPSNR5S479B0567",
-    "RAPPSNR5S479B0378",
-    "PIONANR5L17B2607",
     "RAPPANR5L17B2700",
-    "PIONSNR5S479B0273"
+    "RAPPANR5L17B1449",
+    "RAPPSNR5S479B0378"
    ],
    "amendements": {
     "total": 88,
@@ -31951,6 +31556,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -31962,10 +31569,10 @@
     }
    ],
    "textesRefs": [
-    "AVCEANR5L17B2697",
+    "PRJLSNR5S479B0782",
     "RAPPANR5L17B2865",
     "PRJLANR5L17B2697",
-    "PRJLSNR5S479B0782"
+    "AVCEANR5L17B2697"
    ],
    "amendements": {
     "total": 164,
@@ -32196,11 +31803,11 @@
    "date": "2026-06-24",
    "ref": "DLR5L16N49364",
    "titre": "Réduire l’impact environnemental de l’industrie textile",
-   "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Anne-Cécile Violland",
-   "auteurGroupe": "HOR",
-   "auteurQualite": "Député",
+   "type": "Texte",
+   "contexte": "Scrutin n°7494",
+   "auteur": "",
+   "auteurGroupe": "",
+   "auteurQualite": "",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -32264,33 +31871,10 @@
      "abstention": 0
     }
    },
-   "cycle": [
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "Commission Mixte Paritaire",
-     "etat": "avenir"
-    },
-    {
-     "label": "Promulgation de la loi",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "RAPPSNR5S479B0765",
-    "PIONANR5L17B1557",
-    "RAPPSNR5S459B0458",
-    "RAPPANR5L17B2940",
-    "PIONANR5L16B2129",
-    "RAPPANR5L16B2307",
-    "PIONSNR5S419B0431"
-   ],
+   "sansScrutin": false,
+   "mentionDecision": "",
+   "cycle": [],
+   "textesRefs": [],
    "amendements": {
     "total": 0,
     "adoptes": 0,
@@ -32299,14 +31883,84 @@
    }
   },
   {
+   "date": "2026-06-24",
+   "ref": "DLR5L17N52000",
+   "titre": "Projet de loi autorisant l’approbation de la convention d’entraide judiciaire en matière pénale entre le Gouvernement de la République française et le Gouvernement de la République du Suriname",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "François Bayrou",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "RAPPSNR5S459B0750",
+    "ACINANR5L17B1616",
+    "PRJLSNR5S459B0553",
+    "RAPPANR5L17B2937",
+    "PRJLANR5L17B1616"
+   ]
+  },
+  {
+   "date": "2026-06-24",
+   "ref": "DLR5L17N53844",
+   "titre": "Projet de loi autorisant l’approbation de l’accord de partenariat et de coopération renforcé\rentre l'Union européenne et ses Etats membres, d'une part, et la République kirghize, d'autre part",
+   "type": "Projet de loi",
+   "contexte": "Projet de ratification des traités et conventions",
+   "auteur": "Sébastien Lecornu",
+   "auteurGroupe": "",
+   "auteurQualite": "Premier ministre",
+   "statut": "adopté",
+   "votesParGroupe": null,
+   "sansScrutin": true,
+   "mentionDecision": "adopté sans modification",
+   "cycle": [
+    {
+     "label": "1ère lecture · Sénat",
+     "etat": "avenir"
+    },
+    {
+     "label": "1ère lecture · Assemblée",
+     "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
+    }
+   ],
+   "textesRefs": [
+    "PRJLSNR5S479B0432",
+    "ACINANR5L17B2691",
+    "PRJLANR5L17B2691",
+    "RAPPSNR5S479B0516",
+    "RAPPANR5L17B2911"
+   ]
+  },
+  {
    "date": "2026-06-25",
    "ref": "DLR5L16N49075",
    "titre": "Proposition de loi visant à renforcer les prérogatives des officiers de l’état civil et du ministère public pour lutter contre les mariages simulés ou arrangés",
    "type": "Proposition de loi",
-   "contexte": "Proposition de loi ordinaire",
-   "auteur": "Stéphane Demilly",
+   "contexte": "Scrutin n°7580",
+   "auteur": "",
    "auteurGroupe": "",
-   "auteurQualite": "Sénateur",
+   "auteurQualite": "",
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
@@ -32365,22 +32019,10 @@
      "abstention": 0
     }
    },
-   "cycle": [
-    {
-     "label": "1ère lecture · Sénat",
-     "etat": "avenir"
-    },
-    {
-     "label": "1ère lecture · Assemblée",
-     "etat": "avenir"
-    }
-   ],
-   "textesRefs": [
-    "RAPPANR5L17B1583",
-    "RAPPSNR5S459B0333",
-    "PIONANR5L17B1008",
-    "PIONSNR5S419B0190"
-   ],
+   "sansScrutin": false,
+   "mentionDecision": "",
+   "cycle": [],
+   "textesRefs": [],
    "amendements": {
     "total": 0,
     "adoptes": 0,
@@ -32460,6 +32102,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -32475,13 +32119,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0669",
-    "PIONANR5L17B1560",
-    "RAPPANR5L17B2797",
-    "RAPPSNR5S479B0885",
     "PIONSNR5S459B0456",
+    "RAPPSNR5S459B0669",
+    "RAPPANR5L17B2797",
+    "RAPPANR5L17B3057",
+    "RAPPSNR5S479B0885",
     "PIONSNR5S479B0807",
-    "RAPPANR5L17B3057"
+    "PIONANR5L17B1560"
    ],
    "amendements": {
     "total": 681,
@@ -34048,6 +33692,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -34075,21 +33721,21 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0586",
-    "RAPPSNR5S479B0825",
-    "PIONANR5L17B2401",
-    "PIONSNR5S479B0440",
-    "PIONSNR5S459B0661",
-    "PIONANR5L17BTA0323",
-    "RAPPANR5L17B2453",
-    "PIONANR5L17B2773",
+    "PIONSNR5S479B0814",
+    "RAPPANR5L17B2861",
+    "RAPPSNR5S479B0680",
+    "RAPPANR5L17B1364",
+    "RAPPSNR5S479B0264",
     "PIONANR5L17B1100",
     "RAPPANR5L17B2915",
-    "RAPPSNR5S479B0264",
-    "RAPPANR5L17B2861",
-    "RAPPANR5L17B1364",
-    "PIONSNR5S479B0814",
-    "RAPPSNR5S479B0680"
+    "PIONSNR5S479B0440",
+    "RAPPSNR5S479B0586",
+    "RAPPANR5L17B2453",
+    "PIONANR5L17B2401",
+    "PIONANR5L17BTA0323",
+    "RAPPSNR5S479B0825",
+    "PIONSNR5S459B0661",
+    "PIONANR5L17B2773"
    ],
    "amendements": {
     "total": 9270,
@@ -36050,6 +35696,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -36069,11 +35717,11 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2934",
-    "PIONSNR5S479B0214",
-    "RAPPANR5L17B2191",
     "RAPPSNR5S479B0638",
+    "RAPPANR5L17B2934",
+    "RAPPANR5L17B2191",
     "PIONANR5L17B1831",
+    "PIONSNR5S479B0214",
     "PIONANR5L17B2853"
    ],
    "amendements": {
@@ -36303,6 +35951,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -36322,15 +35972,15 @@
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B2920",
-    "RAPPSNR5S479B0777",
-    "PRJLANR5L17B2630",
-    "RAPPANR5L17B2976",
     "PRJLSNR5S479B0635",
+    "RAPPSNR5S479B0666",
+    "RAPPSNR5S479B0777",
     "RAPPANR5L17B2695",
+    "RAPPANR5L17B2976",
     "ETDIANR5L17B2630",
+    "PRJLANR5L17B2630",
     "AVCEANR5L17B2630",
-    "RAPPSNR5S479B0666"
+    "PRJLANR5L17B2920"
    ],
    "amendements": {
     "total": 1364,
@@ -37818,6 +37468,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "Débat · Assemblée",
@@ -37906,6 +37558,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Assemblée",
@@ -37917,9 +37571,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2342",
+    "PIONSNR5S479B0866",
     "PIONANR5L17B0691",
-    "PIONSNR5S479B0866"
+    "RAPPANR5L17B2342"
    ],
    "amendements": {
     "total": 604,
@@ -38070,6 +37724,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -38089,12 +37745,12 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0520",
-    "PRJLSNR5S479B0863",
-    "RAPPANR5L17B2904",
-    "RAPPSNR5S479B0868",
     "RAPPANR5L17B3046",
+    "RAPPANR5L17B2904",
+    "PRJLSNR5S479B0863",
+    "RAPPSNR5S479B0520",
     "PRJLSNR5S479B0456",
+    "RAPPSNR5S479B0868",
     "PRJLANR5L17B2681"
    ],
    "amendements": {
@@ -39078,6 +38734,8 @@
      "abstention": 0
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -39097,13 +38755,13 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S479B0457",
-    "RAPPSNR5S479B0520",
-    "RAPPANR5L17B2908",
-    "RAPPSNR5S479B0868",
-    "PRJLANR5L17B2682",
     "PRJLSNR5S479B0864",
-    "RAPPANR5L17B3047"
+    "PRJLSNR5S479B0457",
+    "RAPPANR5L17B3047",
+    "RAPPSNR5S479B0520",
+    "PRJLANR5L17B2682",
+    "RAPPSNR5S479B0868",
+    "RAPPANR5L17B2908"
    ],
    "amendements": {
     "total": 74,
@@ -39350,6 +39008,8 @@
      "abstention": 1
     }
    },
+   "sansScrutin": false,
+   "mentionDecision": "",
    "cycle": [
     {
      "label": "1ère lecture · Sénat",
@@ -39361,10 +39021,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0601",
-    "PRJLANR5L17B2850",
     "PRJLSNR5S479B0472",
-    "RAPPANR5L17B2984"
+    "RAPPSNR5S479B0601",
+    "RAPPANR5L17B2984",
+    "PRJLANR5L17B2850"
    ],
    "amendements": {
     "total": 1827,
