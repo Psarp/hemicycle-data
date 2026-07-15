@@ -276,6 +276,7 @@ function Recherche({textes,onOuvrir}){
   const [fStatut,setFStatut]=useState("");
   const [fRef,setFRef]=useState("");
   const groupes=[...new Set(textes.map(t=>t.auteurGroupe).filter(Boolean))];
+  const types=[...new Set(textes.map(t=>t.type).filter(Boolean))].sort();
   const res=textes.filter(t=>
     (!q||t.titre.toLowerCase().includes(q.toLowerCase())||(t.auteur||"").toLowerCase().includes(q.toLowerCase()))&&
     (!fType||t.type===fType)&&
@@ -289,7 +290,7 @@ function Recherche({textes,onOuvrir}){
     <div style={{background:"#fdfcf9",borderRadius:14,padding:20,border:"1px solid #e6e1d6",marginBottom:20}}>
       <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Rechercher dans le titre ou l'auteur…" style={{...sel,width:"100%",fontSize:14,marginBottom:10}}/>
       <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
-        <select value={fType} onChange={e=>setFType(e.target.value)} style={sel}><option value="">Tous types</option><option>Projet de loi</option><option>Proposition de loi</option></select>
+        <select value={fType} onChange={e=>setFType(e.target.value)} style={sel}><option value="">Tous types</option>{types.map(x=><option key={x} value={x}>{x}</option>)}</select>
         <select value={fGroupe} onChange={e=>setFGroupe(e.target.value)} style={sel}><option value="">Tous partis (auteur)</option>{groupes.map(g=><option key={g} value={g}>{G(g).court}</option>)}</select>
         <select value={fStatut} onChange={e=>setFStatut(e.target.value)} style={sel}><option value="">Tous statuts</option><option value="adopté">Adopté</option><option value="rejeté">Rejeté</option></select>
         <input value={fRef} onChange={e=>setFRef(e.target.value)} placeholder="N° dossier (DLR…)" style={{...sel,flex:"1 1 140px"}}/>

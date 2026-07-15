@@ -130,9 +130,17 @@ def _chambre(code):
         return "Sénat"
     return ""
 
-def _parcours_actes(node, etapes, textes):
-    """Parcourt récursivement l'arbre d'actes pour extraire étapes + textes associés."""
+def _parcours_actes(node, etapes, textes, votes=None):
+    """Parcourt récursivement l'arbre d'actes pour extraire étapes, textes associés
+    et références de scrutins (voteRefs) — ce dernier lien couvre TOUTE la
+    législature, alors que scrutin->dossierRef n'est renseigné que depuis 03/2026."""
+    if votes is None: votes = set()
     if isinstance(node, dict):
+        vr = node.get("voteRefs") or {}
+        if isinstance(vr, dict):
+            v = vr.get("voteRef")
+            if isinstance(v, str): votes.add(v)
+            elif isinstance(v, list): votes.update(x for x in v if isinstance(x, str))
         code = txt(node.get("codeActe"))
         lib = (node.get("libelleActe") or {})
         nom = txt(lib.get("libelleCourt")) if isinstance(lib, dict) else ""
@@ -144,12 +152,13 @@ def _parcours_actes(node, etapes, textes):
             label = f"{nom} · {ch}" if ch else nom
             etapes.append({"code":code, "label":label, "date":date})
         sub = node.get("actesLegislatifs")
-        if sub: _parcours_actes(sub, etapes, textes)
-    elif isinstance(node, dict) is False and isinstance(node, list):
-        for x in node: _parcours_actes(x, etapes, textes)
+        if sub: _parcours_actes(sub, etapes, textes, votes)
+    elif isinstance(node, list):
+        for x in node: _parcours_actes(x, etapes, textes, votes)
     # cas dict contenant 'acteLegislatif'
     if isinstance(node, dict) and "acteLegislatif" in node:
-        _parcours_actes(node["acteLegislatif"], etapes, textes)
+        _parcours_actes(node["acteLegislatif"], etapes, textes, votes)
+    return votes
 
 def charger_dossiers(use_local):
     zf = get_zip("dossiers", use_local)
@@ -165,10 +174,10 @@ def charger_dossiers(use_local):
             if isinstance(init, list): init = init[0] if init else {}
             auteur_ref = txt(init.get("acteurRef"))
             mandat_ref = txt(init.get("mandatRef"))
-            etapes, textes = [], set()
-            _parcours_actes(d.get("actesLegislatifs"), etapes, textes)
+            etapes, textes, votes = [], set(), set()
+            _parcours_actes(d.get("actesLegislatifs"), etapes, textes, votes)
             dossiers[uid] = {"titre":titre, "procedure":proc, "auteurRef":auteur_ref, "mandatRef":mandat_ref,
-                             "textes":list(textes), "etapes":etapes}
+                             "textes":list(textes), "etapes":etapes, "votes":list(votes)}
         except Exception: continue
     print(f"  {len(dossiers)} dossiers")
     return dossiers
@@ -199,21 +208,44 @@ def charger_scrutins(use_local):
                         cur=vpg.get(cg,{"pour":0,"contre":0,"abstention":0})
                         cur["pour"]+=p;cur["contre"]+=c;cur["abstention"]+=a;vpg[cg]=cur
             if date:
-                scrutins.append({"date":date,"ref":ref,"numero":numero,"titre":lib,
-                                 "statut":statut,"votesParGroupe":vpg or None})
+                scrutins.append({"uid":txt(s.get("uid")),"date":date,"ref":ref,"numero":numero,
+                                 "titre":lib,"statut":statut,"votesParGroupe":vpg or None})
         except Exception: continue
-    # dédup par dossier (dernier scrutin) — UNIQUEMENT les scrutins rattachés à un dossier DLR
-    par = {}
+    # index par uid (pour le lien dossier -> voteRefs, valable sur TOUTE la législature)
+    par_uid = {s["uid"]: s for s in scrutins if s["uid"]}
+    # index par dossier (lien direct, seulement renseigné depuis mars 2026)
+    par_dossier = {}
     for s in scrutins:
         k = s["ref"]
-        if k and k.startswith("DLR") and (k not in par or s["date"]>par[k]["date"]): par[k]=s
-    print(f"  {len(par)} dossiers avec scrutin")
-    return par
+        if k and k.startswith("DLR") and (k not in par_dossier or s["date"]>par_dossier[k]["date"]):
+            par_dossier[k]=s
+    print(f"  {len(scrutins)} scrutins | {len(par_dossier)} rattachés directement à un dossier")
+    return par_uid, par_dossier
+
+def deduire_type(procedure, titre):
+    """Type du texte, déduit d'abord de la procédure officielle (fiable),
+    puis du titre en repli."""
+    p = (procedure or "").lower()
+    t = (titre or "").lower()
+    if "responsabilit" in p or t.startswith("motion de censure"):
+        return "Motion de censure"
+    if "résolution" in p or "resolution" in p:
+        return "Résolution"
+    if t.startswith("projet de loi"):
+        return "Projet de loi"
+    if t.startswith("proposition de loi"):
+        return "Proposition de loi"
+    if p.startswith("projet"):
+        return "Projet de loi"
+    if p.startswith("proposition"):
+        return "Proposition de loi"
+    return "Texte"
+
 
 def construire(use_local=False):
     print("=== 1/4 Acteurs ==="); acteurs, organes = charger_acteurs(use_local)
     print("=== 2/4 Dossiers ==="); dossiers = charger_dossiers(use_local)
-    print("=== 3/4 Scrutins ==="); scrutins = charger_scrutins(use_local)
+    print("=== 3/4 Scrutins ==="); scrutins_uid, scrutins_dossier = charger_scrutins(use_local)
     print("=== 4/4 Assemblage ===")
 
     # index texte PION -> dossier DLR (pour rattacher amendements plus tard)
@@ -221,12 +253,27 @@ def construire(use_local=False):
     for dlr, d in dossiers.items():
         for t in d["textes"]: texte_to_dossier[t] = dlr
 
+    # --- Rattachement scrutin <-> dossier par DEUX voies complémentaires ---
+    # (a) dossier.voteRefs -> scrutin : couvre toute la législature
+    # (b) scrutin.objet.dossierLegislatif -> dossier : seulement depuis mars 2026
+    # On retient, par dossier, le scrutin le plus récent trouvé par l'une ou l'autre.
+    retenu = {}
+    for dlr, d in dossiers.items():
+        cands = [scrutins_uid[v] for v in d.get("votes", []) if v in scrutins_uid]
+        if cands:
+            retenu[dlr] = max(cands, key=lambda s: s["date"])
+    voie_a = len(retenu)
+    for dlr, sc in scrutins_dossier.items():
+        if dlr not in retenu or sc["date"] > retenu[dlr]["date"]:
+            retenu[dlr] = sc
+    print(f"  {voie_a} dossiers via voteRefs (toute la législature) -> {len(retenu)} au total")
+
     textes = []
-    for dlr, sc in scrutins.items():
+    for dlr, sc in retenu.items():
         d = dossiers.get(dlr, {})
         auteur = resoudre_auteur(acteurs, organes, d.get("auteurRef",""), d.get("mandatRef",""))
-        titre = sc["titre"] or d.get("titre","") or f"Dossier {dlr}"
-        typ = "Projet de loi" if titre.lower().startswith("projet de loi") else "Proposition de loi"
+        titre = d.get("titre","") or sc["titre"] or f"Dossier {dlr}"
+        typ = deduire_type(d.get("procedure",""), titre)
         # cycle -> frise
         cycle = []
         for e in d.get("etapes", [])[:6]:
