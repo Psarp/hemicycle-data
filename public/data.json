@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-07-15T07:18:19.486780+00:00",
+ "genere_le": "2026-07-15T19:49:01.549294+00:00",
  "source": "open data Assemblée nationale (17e législature)",
  "nb_textes": 71,
  "textes": [
@@ -55,9 +55,9 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1085",
+    "RAPPANR5L17B2365",
     "PIONSNR5S479B0326",
-    "RAPPANR5L17B2365"
+    "PIONANR5L17B1085"
    ]
   },
   {
@@ -204,8 +204,8 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0482",
     "RAPPANR5L17B2523",
+    "PIONSNR5S479B0482",
     "PIONANR5L17B2385"
    ]
   },
@@ -294,12 +294,12 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B0994",
     "RAPPANR5L17B2525",
-    "PIONANR5L17B0841",
-    "PIONANR5L17B1383",
     "PIONSNR5S459B0413",
-    "RAPPSNR5S459B0578"
+    "RAPPSNR5S459B0578",
+    "RAPPANR5L17B0994",
+    "PIONANR5L17B1383",
+    "PIONANR5L17B0841"
    ]
   },
   {
@@ -383,11 +383,11 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B0991",
-    "PIONANR5L17B0824",
-    "PIONANR5L17B2928",
     "RAPPSNR5S479B0720",
-    "PIONSNR5S479B0475"
+    "PIONANR5L17B2928",
+    "RAPPANR5L17B0991",
+    "PIONSNR5S479B0475",
+    "PIONANR5L17B0824"
    ]
   },
   {
@@ -470,12 +470,12 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0579",
+    "RAPPANR5L17B2526",
     "PIONSNR5S479B0481",
-    "PIONANR5L17B1041",
     "RAPPSNR5S459B0361",
-    "PIONSNR5S459B0226",
-    "RAPPANR5L17B2526"
+    "RAPPSNR5S479B0579",
+    "PIONANR5L17B1041",
+    "PIONSNR5S459B0226"
    ]
   },
   {
@@ -530,9 +530,9 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2442",
+    "RAPPANR5L17B2527",
     "PIONSNR5S479B0484",
-    "RAPPANR5L17B2527"
+    "PIONANR5L17B2442"
    ]
   },
   {
@@ -602,9 +602,9 @@
     }
    ],
    "textesRefs": [
+    "PIONANR5L17B2445",
     "PIONSNR5S479B0483",
-    "RAPPANR5L17B2531",
-    "PIONANR5L17B2445"
+    "RAPPANR5L17B2531"
    ]
   },
   {
@@ -677,11 +677,11 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0415",
-    "PIONANR5L17B2263",
+    "RAPPANR5L17B1004",
     "RAPPANR5L17B2524",
     "RAPPSNR5S479B0194",
-    "RAPPANR5L17B1004",
+    "PIONSNR5S459B0415",
+    "PIONANR5L17B2263",
     "PIONANR5L17B0823"
    ]
   },
@@ -761,10 +761,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0381",
-    "PIONSNR5S479B0328",
+    "PIONANR5L17B2515",
     "RAPPANR5L17B2576",
-    "PIONANR5L17B2515"
+    "RAPPSNR5S479B0381",
+    "PIONSNR5S479B0328"
    ]
   },
   {
@@ -853,11 +853,11 @@
     }
    ],
    "textesRefs": [
+    "PRJLSNR5S479B0023",
     "PRJLANR5L17B2529",
-    "PRJLSNR5S479B0509",
-    "RAPPSNR5S479B0409",
     "RAPPANR5L17B2579",
-    "PRJLSNR5S479B0023"
+    "PRJLSNR5S479B0509",
+    "RAPPSNR5S479B0409"
    ]
   },
   {
@@ -941,13 +941,13 @@
     }
    ],
    "textesRefs": [
+    "RAPPSNR5S479B0817",
+    "RAPPANR5L17B2995",
+    "PIONANR5L17B2906",
+    "PIONSNR5S479B0529",
     "PIONANR5L17B2309",
     "RAPPSNR5S479B0697",
-    "RAPPANR5L17B2995",
-    "RAPPSNR5S479B0817",
-    "PIONANR5L17B2906",
-    "RAPPANR5L17B2616",
-    "PIONSNR5S479B0529"
+    "RAPPANR5L17B2616"
    ]
   },
   {
@@ -1027,9 +1027,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2193",
+    "PIONSNR5S479B0530",
     "PIONANR5L17B2037",
-    "PIONSNR5S479B0530"
+    "RAPPANR5L17B2193"
    ]
   },
   {
@@ -1114,9 +1114,9 @@
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B2606",
     "PIONANR5L17B1800",
-    "PIONSNR5S479B0528",
-    "RAPPANR5L17B2606"
+    "PIONSNR5S479B0528"
    ]
   },
   {
@@ -1186,9 +1186,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2618",
+    "PIONANR5L17B1133",
     "PIONSNR5S479B0537",
-    "PIONANR5L17B1133"
+    "RAPPANR5L17B2618"
    ]
   },
   {
@@ -1268,9 +1268,9 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2491",
     "RAPPANR5L17B2605",
-    "PIONSNR5S479B0538"
+    "PIONSNR5S479B0538",
+    "PIONANR5L17B2491"
    ]
   },
   {
@@ -1355,9 +1355,9 @@
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B2611",
     "PIONANR5L17B2496",
-    "PIONSNR5S479B0534",
-    "RAPPANR5L17B2611"
+    "PIONSNR5S479B0534"
    ]
   },
   {
@@ -1433,8 +1433,8 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2621",
-    "PIONANR5L17B2493"
+    "PIONANR5L17B2493",
+    "RAPPANR5L17B2621"
    ]
   },
   {
@@ -1524,9 +1524,9 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B2335",
-    "RAPPSNR5S459B0776",
     "PIONANR5L17B1673",
     "PIONSNR5S459B0550",
+    "RAPPSNR5S459B0776",
     "PIONSNR5S479B0539"
    ]
   },
@@ -1606,10 +1606,10 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2413",
+    "RAPPSNR5S479B0288",
     "PIONSNR5S479B0187",
     "RAPPANR5L17B2578",
-    "RAPPSNR5S479B0288"
+    "PIONANR5L17B2413"
    ]
   },
   {
@@ -1707,12 +1707,12 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B1191",
-    "RAPPSNR5S419B0634",
-    "PRJLANR5L17B0481",
-    "RAPPANR5L17B2357",
-    "PRJLSNR5S419B0550",
     "RAPPSNR5S479B0286",
-    "PRJLSNR5S459B0758"
+    "RAPPANR5L17B2357",
+    "PRJLSNR5S459B0758",
+    "PRJLSNR5S419B0550",
+    "RAPPSNR5S419B0634",
+    "PRJLANR5L17B0481"
    ]
   },
   {
@@ -1781,11 +1781,11 @@
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B2414",
-    "ACINANR5L17B2414",
+    "RAPPSNR5S479B0294",
     "PRJLSNR5S479B0160",
-    "RAPPANR5L17B2582",
-    "RAPPSNR5S479B0294"
+    "ACINANR5L17B2414",
+    "PRJLANR5L17B2414",
+    "RAPPANR5L17B2582"
    ]
   },
   {
@@ -1878,13 +1878,13 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0637",
-    "RAPPANR5L17B2577",
-    "RAPPSNR5S479B0546",
     "RAPPANR5L17B2643",
     "PIONSNR5S479B0485",
     "PIONANR5L17B2511",
-    "RAPPSNR5S479B0371"
+    "RAPPSNR5S479B0546",
+    "RAPPANR5L17B2577",
+    "RAPPSNR5S479B0371",
+    "PIONSNR5S459B0637"
    ]
   },
   {
@@ -1978,11 +1978,11 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B2347",
-    "PIONANR5L17B2112",
     "RAPPANR5L17B2733",
+    "PIONANR5L17B2112",
+    "PIONANR5L17B2608",
     "PIONSNR5S479B0401",
-    "RAPPSNR5S479B0461",
-    "PIONANR5L17B2608"
+    "RAPPSNR5S479B0461"
    ]
   },
   {
@@ -2080,12 +2080,12 @@
    ],
    "textesRefs": [
     "PRJLSNR5S479B0512",
-    "RAPPSNR5S479B0111",
-    "PRJLSNR5S479B0024",
+    "PRJLANR5L17B2115",
     "RAPPANR5L17B2701",
     "RAPPSNR5S479B0570",
-    "RAPPANR5L17B2250",
-    "PRJLANR5L17B2115"
+    "PRJLSNR5S479B0024",
+    "RAPPSNR5S479B0111",
+    "RAPPANR5L17B2250"
    ]
   },
   {
@@ -2178,13 +2178,13 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0592",
     "PRJLANR5L17B2408",
     "RAPPANR5L17B2745",
-    "RAPPANR5L17B2628",
-    "RAPPSNR5S479B0290",
     "PRJLSNR5S459B0871",
-    "PRJLSNR5S479B0545"
+    "PRJLSNR5S479B0545",
+    "RAPPSNR5S479B0592",
+    "RAPPSNR5S479B0290",
+    "RAPPANR5L17B2628"
    ]
   },
   {
@@ -2276,15 +2276,15 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2751",
-    "PIONANR5L17B0439",
-    "RAPPANR5L17B1360",
-    "PIONANR5L17B1610",
-    "RAPPSNR5S459B0805",
-    "PIONSNR5S479B0608",
-    "RAPPANR5L17B1654",
     "PIONSNR5S459B0571",
-    "RAPPSNR5S459B0725"
+    "RAPPSNR5S459B0805",
+    "RAPPSNR5S459B0725",
+    "RAPPANR5L17B1360",
+    "RAPPANR5L17B1654",
+    "PIONANR5L17B1610",
+    "RAPPANR5L17B2751",
+    "PIONSNR5S479B0608",
+    "PIONANR5L17B0439"
    ]
   },
   {
@@ -2350,9 +2350,9 @@
    },
    "cycle": [],
    "textesRefs": [
-    "RAPPANR5L17B2251",
     "PNREANR5L17B1860",
-    "RAPPANR5L17B2205"
+    "RAPPANR5L17B2205",
+    "RAPPANR5L17B2251"
    ]
   },
   {
@@ -2437,9 +2437,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2761",
     "PIONSNR5S479B0619",
-    "PIONANR5L17B1793"
+    "PIONANR5L17B1793",
+    "RAPPANR5L17B2761"
    ]
   },
   {
@@ -2524,9 +2524,9 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0613",
+    "PIONANR5L17B1502",
     "RAPPANR5L17B2615",
-    "PIONANR5L17B1502"
+    "PIONSNR5S479B0613"
    ]
   },
   {
@@ -2610,11 +2610,11 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2755",
-    "RAPPSNR5S479B0832",
+    "PIONANR5L17B3019",
     "PIONSNR5S479B0629",
+    "RAPPSNR5S479B0832",
     "PIONANR5L17B2595",
-    "PIONANR5L17B3019"
+    "RAPPANR5L17B2755"
    ]
   },
   {
@@ -2694,9 +2694,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2190",
     "PIONSNR5S479B0627",
-    "PIONANR5L17B1909"
+    "PIONANR5L17B1909",
+    "RAPPANR5L17B2190"
    ]
   },
   {
@@ -2789,10 +2789,10 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0636",
     "RAPPSNR5S479B0630",
+    "PIONANR5L17B2804",
     "RAPPANR5L17B2807",
-    "PIONANR5L17B2804"
+    "PIONSNR5S459B0636"
    ]
   },
   {
@@ -2872,9 +2872,9 @@
     }
    ],
    "textesRefs": [
+    "PIONANR5L17B2674",
     "RAPPANR5L17B2816",
-    "PIONSNR5S479B0673",
-    "PIONANR5L17B2674"
+    "PIONSNR5S479B0673"
    ]
   },
   {
@@ -2959,9 +2959,9 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1817",
     "PIONSNR5S479B0672",
-    "RAPPANR5L17B2810"
+    "RAPPANR5L17B2810",
+    "PIONANR5L17B1817"
    ]
   },
   {
@@ -3045,10 +3045,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S459B0778",
     "PIONSNR5S459B0475",
     "PIONANR5L17B1674",
-    "RAPPANR5L17B2812"
+    "RAPPANR5L17B2812",
+    "RAPPSNR5S459B0778"
    ]
   },
   {
@@ -3137,9 +3137,9 @@
     }
    ],
    "textesRefs": [
+    "RAPPANR5L17B2806",
     "PIONSNR5S479B0213",
     "RAPPSNR5S479B0500",
-    "RAPPANR5L17B2806",
     "PIONANR5L17B2637"
    ]
   },
@@ -3220,8 +3220,8 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2708",
     "PIONSNR5S479B0675",
+    "PIONANR5L17B2708",
     "RAPPANR5L17B2835"
    ]
   },
@@ -3311,13 +3311,13 @@
     }
    ],
    "textesRefs": [
-    "ETDIANR5L17B2632",
-    "PRJLANR5L17B3017",
-    "AVCEANR5L17B2632",
     "PRJLSNR5S479B0689",
+    "PRJLANR5L17B2632",
     "RAPPSNR5S479B0762",
     "RAPPANR5L17B2765",
-    "PRJLANR5L17B2632"
+    "ETDIANR5L17B2632",
+    "PRJLANR5L17B3017",
+    "AVCEANR5L17B2632"
    ]
   },
   {
@@ -3410,12 +3410,12 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2754",
-    "RAPPSNR5S479B0412",
-    "PIONSNR5S459B0180",
-    "RAPPANR5L17B0625",
     "PIONANR5L17B2538",
-    "PIONANR5L17B0277"
+    "PIONANR5L17B0277",
+    "RAPPANR5L17B2754",
+    "PIONSNR5S459B0180",
+    "RAPPSNR5S479B0412",
+    "RAPPANR5L17B0625"
    ]
   },
   {
@@ -3513,13 +3513,13 @@
    ],
    "textesRefs": [
     "RAPPANR5L17B2633",
-    "PRJLANR5L17B2805",
+    "PRJLSNR5S479B0561",
     "RAPPSNR5S479B0488",
     "RAPPSNR5S479B0620",
     "RAPPANR5L17B2809",
-    "PRJLANR5L17B2619",
     "PRJLSNR5S479B0470",
-    "PRJLSNR5S479B0561"
+    "PRJLANR5L17B2619",
+    "PRJLANR5L17B2805"
    ]
   },
   {
@@ -3612,12 +3612,12 @@
     }
    ],
    "textesRefs": [
+    "PIONANR5L16B2061",
+    "RAPPANR5L17B2837",
+    "PIONSNR5S419B0373",
     "PIONANR5L17B1578",
     "RAPPANR5L16B2206",
-    "PIONSNR5S419B0373",
-    "RAPPANR5L17B2837",
-    "RAPPSNR5S459B0686",
-    "PIONANR5L16B2061"
+    "RAPPSNR5S459B0686"
    ]
   },
   {
@@ -3696,11 +3696,11 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2349",
-    "PIONSNR5S479B0703",
-    "RAPPANR5L17B2840",
     "RAPPSNR5S479B0262",
-    "PIONSNR5S479B0128"
+    "RAPPANR5L17B2840",
+    "PIONANR5L17B2349",
+    "PIONSNR5S479B0128",
+    "PIONSNR5S479B0703"
    ]
   },
   {
@@ -3786,8 +3786,8 @@
    ],
    "textesRefs": [
     "PIONSNR5S479B0704",
-    "RAPPANR5L17B2839",
-    "PIONANR5L17B2678"
+    "PIONANR5L17B2678",
+    "RAPPANR5L17B2839"
    ]
   },
   {
@@ -4062,8 +4062,8 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2842",
     "PIONANR5L17B1319",
+    "RAPPANR5L17B2842",
     "PIONSNR5S479B0709"
    ]
   },
@@ -4151,8 +4151,8 @@
    "textesRefs": [
     "PRJLANR5L17B2694",
     "RAPPANR5L17B2847",
-    "PRJLSNR5S479B0726",
-    "RAPPSNR5S479B0736"
+    "RAPPSNR5S479B0736",
+    "PRJLSNR5S479B0726"
    ]
   },
   {
@@ -4237,9 +4237,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0759",
     "PRJLSNR5S479B0727",
     "RAPPANR5L17B2863",
+    "RAPPSNR5S479B0759",
     "PRJLANR5L17B2843",
     "AVISANR5L17B2869"
    ]
@@ -4321,8 +4321,8 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2862",
     "PIONSNR5S479B0739",
+    "RAPPANR5L17B2862",
     "PIONANR5L17B2710"
    ]
   },
@@ -4406,12 +4406,12 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2123",
-    "PIONSNR5S479B0170",
-    "PIONSNR5S479B0735",
     "RAPPSNR5S479B0410",
-    "PIONANR5L17B1950",
+    "PIONSNR5S479B0735",
     "PIONANR5L17B2537",
+    "PIONSNR5S479B0170",
+    "PIONANR5L17B1950",
+    "RAPPANR5L17B2123",
     "RAPPANR5L17B2872"
    ]
   },
@@ -4573,11 +4573,11 @@
     }
    ],
    "textesRefs": [
+    "PIONSNR5S479B0185",
     "PIONANR5L17B2415",
     "RAPPANR5L17B2868",
-    "PIONSNR5S479B0738",
     "RAPPSNR5S479B0297",
-    "PIONSNR5S479B0185"
+    "PIONSNR5S479B0738"
    ]
   },
   {
@@ -4656,9 +4656,9 @@
     }
    ],
    "textesRefs": [
+    "PRJLANR5L17B2609",
     "RAPPANR5L17B2905",
     "PRJLSNR5S479B0283",
-    "PRJLANR5L17B2609",
     "RAPPSNR5S479B0464"
    ]
   },
@@ -4743,9 +4743,9 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S459B0008",
     "RAPPSNR5S479B0614",
     "RAPPANR5L17B2912",
+    "PIONSNR5S459B0008",
     "PIONANR5L17B2803"
    ]
   },
@@ -4839,12 +4839,12 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0597",
-    "PIONANR5L17B2180",
-    "RAPPANR5L17B2468",
     "RAPPSNR5S479B0611",
-    "PIONANR5L17B2817",
     "RAPPANR5L17B2877",
+    "PIONANR5L17B2180",
+    "PIONSNR5S479B0597",
+    "RAPPANR5L17B2468",
+    "PIONANR5L17B2817",
     "RAPPSNR5S479B0705"
    ]
   },
@@ -4938,13 +4938,13 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B2642",
     "PIONANR5L17B2334",
-    "RAPPANR5L17B2405",
+    "PIONANR5L17B2642",
     "RAPPSNR5S479B0676",
-    "PIONSNR5S479B0359",
+    "RAPPANR5L17B2405",
     "RAPPANR5L17B2856",
-    "RAPPSNR5S479B0498"
+    "RAPPSNR5S479B0498",
+    "PIONSNR5S479B0359"
    ]
   },
   {
@@ -5037,13 +5037,13 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L17B1332",
     "RAPPANR5L17B2700",
-    "RAPPANR5L17B1449",
-    "PIONSNR5S479B0273",
+    "PIONANR5L17B2607",
     "RAPPSNR5S479B0567",
+    "PIONANR5L17B1332",
     "RAPPSNR5S479B0378",
-    "PIONANR5L17B2607"
+    "PIONSNR5S479B0273",
+    "RAPPANR5L17B1449"
    ]
   },
   {
@@ -5128,10 +5128,10 @@
     }
    ],
    "textesRefs": [
-    "PRJLANR5L17B2697",
-    "AVCEANR5L17B2697",
     "RAPPANR5L17B2865",
-    "PRJLSNR5S479B0782"
+    "PRJLSNR5S479B0782",
+    "PRJLANR5L17B2697",
+    "AVCEANR5L17B2697"
    ]
   },
   {
@@ -5224,13 +5224,13 @@
     }
    ],
    "textesRefs": [
-    "PIONANR5L16B2129",
-    "PIONSNR5S419B0431",
-    "PIONANR5L17B1557",
-    "RAPPANR5L17B2940",
+    "RAPPANR5L16B2307",
     "RAPPSNR5S459B0458",
     "RAPPSNR5S479B0765",
-    "RAPPANR5L16B2307"
+    "RAPPANR5L17B2940",
+    "PIONANR5L17B1557",
+    "PIONSNR5S419B0431",
+    "PIONANR5L16B2129"
    ]
   },
   {
@@ -5310,9 +5310,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B1583",
-    "PIONSNR5S419B0190",
     "RAPPSNR5S459B0333",
+    "PIONSNR5S419B0190",
+    "RAPPANR5L17B1583",
     "PIONANR5L17B1008"
    ]
   },
@@ -5399,11 +5399,11 @@
    "textesRefs": [
     "PIONSNR5S459B0456",
     "RAPPSNR5S459B0669",
-    "RAPPANR5L17B3057",
     "RAPPANR5L17B2797",
+    "RAPPSNR5S479B0885",
     "PIONSNR5S479B0807",
-    "PIONANR5L17B1560",
-    "RAPPSNR5S479B0885"
+    "RAPPANR5L17B3057",
+    "PIONANR5L17B1560"
    ]
   },
   {
@@ -5504,21 +5504,21 @@
     }
    ],
    "textesRefs": [
-    "PIONSNR5S479B0440",
-    "PIONANR5L17B2773",
-    "RAPPANR5L17B1364",
-    "RAPPSNR5S479B0680",
-    "PIONANR5L17BTA0323",
-    "RAPPSNR5S479B0586",
-    "RAPPSNR5S479B0825",
-    "PIONSNR5S459B0661",
-    "PIONANR5L17B1100",
-    "PIONSNR5S479B0814",
     "RAPPSNR5S479B0264",
-    "RAPPANR5L17B2453",
     "RAPPANR5L17B2915",
+    "PIONANR5L17BTA0323",
+    "PIONANR5L17B2773",
+    "RAPPSNR5S479B0586",
+    "PIONSNR5S479B0440",
+    "RAPPANR5L17B1364",
+    "PIONSNR5S479B0814",
+    "RAPPSNR5S479B0825",
+    "PIONANR5L17B1100",
+    "RAPPSNR5S479B0680",
+    "RAPPANR5L17B2861",
+    "PIONSNR5S459B0661",
     "PIONANR5L17B2401",
-    "RAPPANR5L17B2861"
+    "RAPPANR5L17B2453"
    ]
   },
   {
@@ -5611,15 +5611,15 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0777",
-    "PRJLSNR5S479B0635",
-    "RAPPSNR5S479B0666",
-    "RAPPANR5L17B2976",
+    "PRJLANR5L17B2920",
     "PRJLANR5L17B2630",
-    "AVCEANR5L17B2630",
-    "RAPPANR5L17B2695",
     "ETDIANR5L17B2630",
-    "PRJLANR5L17B2920"
+    "PRJLSNR5S479B0635",
+    "AVCEANR5L17B2630",
+    "RAPPANR5L17B2976",
+    "RAPPSNR5S479B0777",
+    "RAPPSNR5S479B0666",
+    "RAPPANR5L17B2695"
    ]
   },
   {
@@ -5705,15 +5705,19 @@
     {
      "label": "2ème lecture",
      "etat": "avenir"
+    },
+    {
+     "label": "Promulgation de la loi",
+     "etat": "avenir"
     }
    ],
    "textesRefs": [
     "PIONANR5L17B1831",
-    "RAPPANR5L17B2191",
+    "RAPPSNR5S479B0638",
     "RAPPANR5L17B2934",
     "PIONSNR5S479B0214",
     "PIONANR5L17B2853",
-    "RAPPSNR5S479B0638"
+    "RAPPANR5L17B2191"
    ]
   },
   {
@@ -5844,9 +5848,9 @@
     }
    ],
    "textesRefs": [
-    "RAPPANR5L17B2342",
+    "PIONANR5L17B0691",
     "PIONSNR5S479B0866",
-    "PIONANR5L17B0691"
+    "RAPPANR5L17B2342"
    ]
   },
   {
@@ -5939,13 +5943,13 @@
     }
    ],
    "textesRefs": [
+    "PRJLSNR5S479B0457",
+    "RAPPSNR5S479B0868",
     "PRJLSNR5S479B0864",
     "RAPPSNR5S479B0520",
-    "RAPPSNR5S479B0868",
-    "PRJLANR5L17B2682",
-    "RAPPANR5L17B2908",
     "RAPPANR5L17B3047",
-    "PRJLSNR5S479B0457"
+    "PRJLANR5L17B2682",
+    "RAPPANR5L17B2908"
    ]
   },
   {
@@ -6033,17 +6037,17 @@
     }
    ],
    "textesRefs": [
-    "PRJLSNR5S479B0456",
     "RAPPANR5L17B3046",
-    "RAPPSNR5S479B0520",
+    "PRJLSNR5S479B0456",
     "PRJLANR5L17B2681",
-    "PRJLSNR5S479B0863",
     "RAPPSNR5S479B0868",
-    "RAPPANR5L17B2904"
+    "RAPPANR5L17B2904",
+    "RAPPSNR5S479B0520",
+    "PRJLSNR5S479B0863"
    ]
   },
   {
-   "date": "2026-07-10",
+   "date": "2026-07-15",
    "ref": "DLR5L17N53980",
    "titre": "Projet de loi visant à offrir des réponses immédiates aux phénomènes troublant l’ordre public, la sécurité et la tranquillité de nos concitoyens",
    "type": "Projet de loi",
@@ -6053,54 +6057,64 @@
    "statut": "adopté",
    "votesParGroupe": {
     "RN": {
-     "pour": 15,
+     "pour": 119,
      "contre": 0,
      "abstention": 0
     },
     "EPR": {
-     "pour": 15,
+     "pour": 89,
      "contre": 0,
      "abstention": 0
     },
     "LFI": {
      "pour": 0,
-     "contre": 15,
+     "contre": 65,
      "abstention": 0
     },
     "SOC": {
      "pour": 0,
-     "contre": 2,
-     "abstention": 0
+     "contre": 63,
+     "abstention": 2
     },
     "DR": {
-     "pour": 5,
+     "pour": 46,
      "contre": 0,
      "abstention": 2
     },
     "ECO": {
      "pour": 0,
-     "contre": 5,
+     "contre": 36,
      "abstention": 0
     },
     "DEM": {
-     "pour": 3,
+     "pour": 35,
      "contre": 0,
      "abstention": 0
     },
     "HOR": {
-     "pour": 3,
+     "pour": 33,
      "contre": 0,
      "abstention": 0
     },
     "LIOT": {
-     "pour": 1,
-     "contre": 0,
-     "abstention": 0
+     "pour": 18,
+     "contre": 2,
+     "abstention": 3
     },
     "GDR": {
      "pour": 0,
-     "contre": 1,
+     "contre": 16,
      "abstention": 0
+    },
+    "UDR": {
+     "pour": 17,
+     "contre": 0,
+     "abstention": 0
+    },
+    "AUTRE": {
+     "pour": 9,
+     "contre": 0,
+     "abstention": 1
     }
    },
    "cycle": [
@@ -6114,10 +6128,10 @@
     }
    ],
    "textesRefs": [
-    "RAPPSNR5S479B0601",
-    "PRJLANR5L17B2850",
     "RAPPANR5L17B2984",
-    "PRJLSNR5S479B0472"
+    "RAPPSNR5S479B0601",
+    "PRJLSNR5S479B0472",
+    "PRJLANR5L17B2850"
    ]
   }
  ]
