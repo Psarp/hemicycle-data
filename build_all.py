@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib_commun import ORGANE_TO_GROUPE, txt, clean_html
 
 URLS = {
-    "acteurs": "https://data.assemblee-nationale.fr/static/openData/repository/17/amo/deputes_actifs_mandats_actifs_organes/AMO10_deputes_actifs_mandats_actifs_organes.json.zip",
+    "acteurs": "https://data.assemblee-nationale.fr/static/openData/repository/17/amo/deputes_senateurs_ministres_legislature/AMO20_dep_sen_min_tous_mandats_et_organes.json.zip",
     "dossiers": "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/dossiers_legislatifs/Dossiers_Legislatifs.json.zip",
     "scrutins": "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.json.zip",
     "amendements": "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/amendements_div_legis/Amendements.json.zip",
@@ -26,7 +26,7 @@ OUT_AMDT_DIR = os.path.join(OUT_DIR, "amendements")
 
 # --- Sources : locales (test) ou téléchargées (prod) ---
 LOCAL = {
-    "acteurs": "/mnt/user-data/uploads/AMO10_deputes_actifs_mandats_actifs_organes_json.zip",
+    "acteurs": "/mnt/user-data/uploads/AMO20_dep_sen_min_tous_mandats_et_organes_json.zip",
     "dossiers": "/mnt/user-data/uploads/Dossiers_Legislatifs_json.zip",
     "scrutins": "/mnt/user-data/uploads/Scrutins_json.zip",
     "amendements": None,  # archive complète non fournie ; on gère l'absence
@@ -44,9 +44,22 @@ def get_zip(cle, use_local):
     print(f"     {len(data)//1024//1024} Mo")
     return zipfile.ZipFile(io.BytesIO(data))
 
-# ---------- 1. ACTEURS : PA... -> {nom, groupe} ----------
+# ---------- 1. ACTEURS : PA... -> nom + mandats (députés, sénateurs, ministres) ----------
 def charger_acteurs(use_local):
+    """Jeu AMO20 : députés, sénateurs ET ministres.
+    Indexe aussi les mandats par uid pour retrouver la qualité EXACTE au moment
+    du dépôt d'un texte (via le mandatRef fourni par le dossier)."""
     zf = get_zip("acteurs", use_local)
+
+    # organes : uid -> (libelle, abrege) — utile pour ministères et groupes du Sénat
+    organes = {}
+    for n in zf.namelist():
+        if "/organe/PO" not in n or not n.endswith(".json"): continue
+        try:
+            o = json.loads(zf.read(n).decode("utf-8")).get("organe", {})
+            organes[txt(o.get("uid"))] = (txt(o.get("libelle")), txt(o.get("libelleAbrege")))
+        except Exception: continue
+
     acteurs = {}
     for n in zf.namelist():
         if "/acteur/PA" not in n or not n.endswith(".json"): continue
@@ -57,16 +70,66 @@ def charger_acteurs(use_local):
             nom = (txt(ident.get("prenom"))+" "+txt(ident.get("nom"))).strip()
             mandats = a.get("mandats",{}).get("mandat",[])
             if isinstance(mandats, dict): mandats=[mandats]
-            grp="AUTRE"
+            par_uid = {}
+            gp_actif = ""
             for m in mandats:
-                if m.get("typeOrgane")=="GP":
-                    grp = ORGANE_TO_GROUPE.get(m.get("organes",{}).get("organeRef"),"AUTRE"); break
-            acteurs[uid] = {"nom":nom, "groupe":grp}
+                mu = txt(m.get("uid"))
+                t = m.get("typeOrgane") or ""
+                ref = (m.get("organes") or {}).get("organeRef") or ""
+                if isinstance(ref, dict): ref = txt(ref.get("uid"))
+                q = txt((m.get("infosQualite") or {}).get("libQualite"))
+                fin = m.get("dateFin")
+                encours = (fin is None) or isinstance(fin, dict)
+                if mu:
+                    par_uid[mu] = {"type": t, "ref": ref, "qualite": q}
+                if t == "GP" and encours and not gp_actif:
+                    gp_actif = ORGANE_TO_GROUPE.get(ref, "AUTRE")
+            acteurs[uid] = {"nom": nom, "mandats": par_uid, "gp": gp_actif}
         except Exception: continue
-    print(f"  {len(acteurs)} acteurs")
-    return acteurs
+    print(f"  {len(acteurs)} acteurs (députés, sénateurs, ministres), {len(organes)} organes")
+    return acteurs, organes
+
+
+def resoudre_auteur(acteurs, organes, acteur_ref, mandat_ref):
+    """Renvoie {nom, groupe, qualite} depuis un acteurRef + mandatRef."""
+    a = acteurs.get(acteur_ref)
+    if not a:
+        return {"nom": "", "groupe": "", "qualite": ""}
+    nom = a["nom"]
+    m = a["mandats"].get(mandat_ref)
+    if m:
+        t, ref, q = m["type"], m["ref"], m["qualite"]
+        if t == "GP":
+            return {"nom": nom, "groupe": ORGANE_TO_GROUPE.get(ref, "AUTRE"), "qualite": "Député"}
+        if t in ("MINISTERE", "GOUVERNEMENT"):
+            lib = organes.get(ref, ("", ""))[0]
+            titre = q or lib or "Membre du Gouvernement"
+            # évite « Ministre » tout court quand on connaît le ministère
+            if lib and lib.lower() not in (titre or "").lower() and lib != "Gouvernement":
+                titre = f"{titre} · {lib}"
+            return {"nom": nom, "groupe": "", "qualite": titre}
+        if t in ("SENAT", "GROUPESENAT", "COMSENAT", "COMSPSENAT"):
+            abrev = organes.get(ref, ("", ""))[1] or organes.get(ref, ("", ""))[0]
+            if abrev.strip().lower() in ("sénat", "senat", ""):
+                abrev = ""  # évite « Sénateur · Sénat »
+            return {"nom": nom, "groupe": "", "qualite": "Sénateur" + (f" · {abrev}" if abrev else "")}
+        if t == "ASSEMBLEE":
+            return {"nom": nom, "groupe": a["gp"], "qualite": "Député"}
+    # Repli : si l'acteur a un groupe parlementaire actif, c'est un député
+    if a["gp"]:
+        return {"nom": nom, "groupe": a["gp"], "qualite": "Député"}
+    return {"nom": nom, "groupe": "", "qualite": ""}
 
 # ---------- 2. DOSSIERS : DLR... -> {titre, procédure, auteur, textes[], cycle[]} ----------
+def _chambre(code):
+    """Déduit la chambre depuis le code d'acte : AN1/AN2… = Assemblée, SN1/SN2… = Sénat."""
+    c = (code or "").upper()
+    if c.startswith("AN"):
+        return "Assemblée"
+    if c.startswith("SN"):
+        return "Sénat"
+    return ""
+
 def _parcours_actes(node, etapes, textes):
     """Parcourt récursivement l'arbre d'actes pour extraire étapes + textes associés."""
     if isinstance(node, dict):
@@ -77,7 +140,9 @@ def _parcours_actes(node, etapes, textes):
         ta = txt(node.get("texteAssocie"))
         if ta: textes.add(ta)
         if code and nom and "-" not in code:  # étapes de haut niveau
-            etapes.append({"code":code, "label":nom, "date":date})
+            ch = _chambre(code)
+            label = f"{nom} · {ch}" if ch else nom
+            etapes.append({"code":code, "label":label, "date":date})
         sub = node.get("actesLegislatifs")
         if sub: _parcours_actes(sub, etapes, textes)
     elif isinstance(node, dict) is False and isinstance(node, list):
@@ -99,9 +164,10 @@ def charger_dossiers(use_local):
             init = (((d.get("initiateur") or {}).get("acteurs") or {}).get("acteur") or {})
             if isinstance(init, list): init = init[0] if init else {}
             auteur_ref = txt(init.get("acteurRef"))
+            mandat_ref = txt(init.get("mandatRef"))
             etapes, textes = [], set()
             _parcours_actes(d.get("actesLegislatifs"), etapes, textes)
-            dossiers[uid] = {"titre":titre, "procedure":proc, "auteurRef":auteur_ref,
+            dossiers[uid] = {"titre":titre, "procedure":proc, "auteurRef":auteur_ref, "mandatRef":mandat_ref,
                              "textes":list(textes), "etapes":etapes}
         except Exception: continue
     print(f"  {len(dossiers)} dossiers")
@@ -145,7 +211,7 @@ def charger_scrutins(use_local):
     return par
 
 def construire(use_local=False):
-    print("=== 1/4 Acteurs ==="); acteurs = charger_acteurs(use_local)
+    print("=== 1/4 Acteurs ==="); acteurs, organes = charger_acteurs(use_local)
     print("=== 2/4 Dossiers ==="); dossiers = charger_dossiers(use_local)
     print("=== 3/4 Scrutins ==="); scrutins = charger_scrutins(use_local)
     print("=== 4/4 Assemblage ===")
@@ -158,7 +224,7 @@ def construire(use_local=False):
     textes = []
     for dlr, sc in scrutins.items():
         d = dossiers.get(dlr, {})
-        auteur = acteurs.get(d.get("auteurRef",""), {})
+        auteur = resoudre_auteur(acteurs, organes, d.get("auteurRef",""), d.get("mandatRef",""))
         titre = sc["titre"] or d.get("titre","") or f"Dossier {dlr}"
         typ = "Projet de loi" if titre.lower().startswith("projet de loi") else "Proposition de loi"
         # cycle -> frise
@@ -169,6 +235,7 @@ def construire(use_local=False):
             "date": sc["date"], "ref": dlr, "titre": titre, "type": typ,
             "contexte": d.get("procedure","") or f"Scrutin n°{sc['numero']}",
             "auteur": auteur.get("nom",""), "auteurGroupe": auteur.get("groupe",""),
+            "auteurQualite": auteur.get("qualite",""),
             "statut": sc["statut"], "votesParGroupe": sc["votesParGroupe"],
             "cycle": cycle,
             "textesRefs": d.get("textes", []),
