@@ -96,6 +96,136 @@ function ObjetTexte({texte,num,groupe,apercu=180}){
   </>;
 }
 
+
+// ---------- Votes nominatifs d'un texte : qui a voté quoi ----------
+function VotesNominatifs({texteRef,onOuvrirActeur}){
+  const [ouvert,setOuvert]=useState(false);
+  const [etat,setEtat]=useState("idle");
+  const [votes,setVotes]=useState([]);
+  const [fGroupe,setFGroupe]=useState("");
+  const [fPos,setFPos]=useState("");
+  const [q,setQ]=useState("");
+  const [noms,setNoms]=useState({});
+
+  async function charger(){
+    setEtat("load");
+    try{
+      const [rv,ra]=await Promise.all([
+        fetch("public/votes/"+texteRef+".json?t="+Date.now()),
+        fetch("public/acteurs.json?t="+Date.now()),
+      ]);
+      const jv=await rv.json();
+      const ja=await ra.json();
+      const map={}; (ja.acteurs||[]).forEach(a=>{map[a.acteurRef]=a.nom;});
+      setNoms(map); setVotes(jv.votes||[]); setEtat("ok");
+    }catch(e){setEtat("err");}
+  }
+  function toggle(){ if(!ouvert&&etat==="idle")charger(); setOuvert(!ouvert); }
+
+  const groupes=[...new Set(votes.map(v=>v.groupe))].sort();
+  const filtres=votes.filter(v=>
+    (!fGroupe||v.groupe===fGroupe)&&(!fPos||v.position===fPos)&&
+    (!q||(noms[v.acteurRef]||"").toLowerCase().includes(q.toLowerCase()))
+  ).sort((a,b)=>(noms[a.acteurRef]||"").localeCompare(noms[b.acteurRef]||""));
+  const coulPos={pour:"#1a7a3a",contre:"#c0392b",abstention:"#b8860b","non-votant":"#9ca3af"};
+  const sel={fontSize:12.5,padding:"5px 8px",borderRadius:6,border:"1px solid #d8d2c4",background:"#fff"};
+
+  return <div style={{marginTop:12}}>
+    <button onClick={toggle} style={{fontSize:13,fontWeight:600,color:"#1f3d6b",background:"#eef1f6",border:"1px solid #d5deec",borderRadius:8,padding:"8px 14px",cursor:"pointer"}}>
+      {ouvert?"▼":"▶"} Voir le vote de chaque député
+    </button>
+    {ouvert&&<div style={{marginTop:12}}>
+      {etat==="load"&&<p style={{fontSize:13,color:"#666"}}>Chargement…</p>}
+      {etat==="err"&&<p style={{fontSize:13,color:"#c0392b"}}>Votes nominatifs indisponibles pour ce texte.</p>}
+      {etat==="ok"&&<>
+        <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:10}}>
+          <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Chercher un député…" style={{...sel,flex:"1 1 150px"}}/>
+          <select value={fGroupe} onChange={e=>setFGroupe(e.target.value)} style={sel}><option value="">Tous groupes</option>{groupes.map(g=><option key={g} value={g}>{G(g).court}</option>)}</select>
+          <select value={fPos} onChange={e=>setFPos(e.target.value)} style={sel}><option value="">Toutes positions</option><option value="pour">Pour</option><option value="contre">Contre</option><option value="abstention">Abstention</option><option value="non-votant">Non-votant</option></select>
+        </div>
+        <div style={{fontSize:11.5,color:"#999",marginBottom:6}}>{filtres.length} député{filtres.length>1?"s":""}</div>
+        <div style={{maxHeight:380,overflowY:"auto",border:"1px solid #e6e1d6",borderRadius:8}}>
+          {filtres.map((v,i)=><div key={i} onClick={()=>onOuvrirActeur&&onOuvrirActeur(v.acteurRef)} style={{display:"flex",alignItems:"center",gap:8,padding:"7px 10px",borderBottom:"1px solid #f3f0e8",cursor:"pointer",fontSize:12.5}}>
+            <span style={{width:8,height:8,borderRadius:"50%",background:G(v.groupe).couleur,flexShrink:0}}></span>
+            <span style={{flex:1,color:"#1f3d6b",fontWeight:500}}>{noms[v.acteurRef]||v.acteurRef}</span>
+            <span style={{color:"#999",fontSize:11.5}}>{G(v.groupe).court}</span>
+            <span style={{color:coulPos[v.position],fontWeight:600,minWidth:74,textAlign:"right"}}>{v.position}</span>
+            {v.delegation&&<span title="vote par délégation" style={{fontSize:10,color:"#8a8478",border:"1px solid #e2dcd0",borderRadius:4,padding:"1px 4px"}}>procuration</span>}
+          </div>)}
+        </div>
+        <p style={{fontSize:11,color:"#999",marginTop:8,lineHeight:1.5}}>« Non-votant » ne signifie pas absent : la présidence de séance et certains députés ne prennent pas part au vote. « Procuration » = vote émis par délégation.</p>
+      </>}
+    </div>}
+  </div>;
+}
+
+// ---------- Fiche d'un acteur (député, ministre, sénateur) ----------
+function FicheActeur({acteurRef,onClose,onOuvrirTexte}){
+  const [etat,setEtat]=useState("load");
+  const [f,setF]=useState(null);
+  useEffect(()=>{(async()=>{
+    setEtat("load");
+    try{
+      const r=await fetch("public/acteurs/"+acteurRef+".json?t="+Date.now());
+      setF(await r.json()); setEtat("ok");
+    }catch(e){setEtat("err");}
+  })();},[acteurRef]);
+
+  const Section=({titre,children})=><section style={{marginTop:24}}><h3 style={{fontFamily:"Georgia,serif",fontSize:16,color:"#1a1a2e",margin:"0 0 12px",paddingBottom:7,borderBottom:"2px solid #1f3d6b"}}>{titre}</h3>{children}</section>;
+  const coulPos={pour:"#1a7a3a",contre:"#c0392b",abstention:"#b8860b","non-votant":"#9ca3af"};
+
+  return <div onClick={onClose} style={{position:"fixed",inset:0,background:"rgba(20,20,35,0.55)",zIndex:55,display:"flex",justifyContent:"center",overflowY:"auto",padding:"24px 16px"}}>
+    <div onClick={e=>e.stopPropagation()} style={{background:"#fdfcf9",borderRadius:14,maxWidth:720,width:"100%",height:"fit-content",boxShadow:"0 20px 60px rgba(0,0,0,0.3)",overflow:"hidden"}}>
+      <div style={{background:"linear-gradient(135deg,#1f3d6b 0%,#16294a 100%)",color:"#fff",padding:"20px 26px",position:"relative"}}>
+        <button onClick={onClose} style={{position:"absolute",top:14,right:14,background:"rgba(255,255,255,0.15)",border:"none",borderRadius:8,width:30,height:30,color:"#fff",cursor:"pointer",fontSize:15}}>✕</button>
+        {etat==="ok"&&f?<>
+          <h2 style={{fontFamily:"Georgia,serif",fontSize:22,paddingRight:40}}>{f.nom}</h2>
+          {f.groupe&&<div style={{marginTop:6,display:"inline-flex",alignItems:"center",gap:7,fontSize:13,background:"rgba(255,255,255,0.12)",padding:"4px 10px",borderRadius:6}}>
+            <span style={{width:9,height:9,borderRadius:"50%",background:G(f.groupe).couleur}}></span>{G(f.groupe).nom}
+          </div>}
+        </>:<h2 style={{fontFamily:"Georgia,serif",fontSize:20}}>Chargement…</h2>}
+      </div>
+      <div style={{padding:"6px 26px 30px"}}>
+        {etat==="load"&&<p style={{padding:"30px 0",textAlign:"center",color:"#666"}}>Chargement de la fiche…</p>}
+        {etat==="err"&&<p style={{padding:"30px 0",textAlign:"center",color:"#c0392b"}}>Fiche indisponible.</p>}
+        {etat==="ok"&&f&&<>
+          <Section titre="Ses votes">
+            <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
+              {[["Pour",f.compte.pour,"#1a7a3a"],["Contre",f.compte.contre,"#c0392b"],["Abstention",f.compte.abstention,"#b8860b"],["Non-votant",f.compte["non-votant"],"#9ca3af"]].map(([n,v,c],i)=>
+                <div key={i} style={{flex:"1 1 90px",textAlign:"center",padding:"10px 6px",background:"#fff",border:"1px solid #e2dcd0",borderRadius:8}}>
+                  <div style={{fontSize:20,fontWeight:700,color:c,fontFamily:"Georgia,serif"}}>{v}</div>
+                  <div style={{fontSize:11.5,color:"#777"}}>{n}</div>
+                </div>)}
+            </div>
+            <p style={{fontSize:11.5,color:"#999",marginTop:8}}>Sur {f.nbVotes} scrutin{f.nbVotes>1?"s":""} publics de la base{f.parDelegation>0?` · ${f.parDelegation} vote(s) par procuration`:""}.</p>
+          </Section>
+
+          {f.textesDeposes&&f.textesDeposes.length>0&&<Section titre={"Textes dont il/elle est l'auteur ("+f.textesDeposes.length+")"}>
+            {f.textesDeposes.map((t,i)=><button key={i} onClick={()=>onOuvrirTexte&&onOuvrirTexte(t.ref)} style={{display:"block",width:"100%",textAlign:"left",background:"#fff",border:"1px solid #e6e1d6",borderRadius:8,padding:"9px 12px",marginBottom:7,cursor:"pointer"}}>
+              <div style={{display:"flex",gap:8,alignItems:"center",flexWrap:"wrap",marginBottom:3}}>
+                <span style={{fontSize:10.5,background:"#eef1f6",color:"#1f3d6b",padding:"1px 7px",borderRadius:4,fontWeight:600}}>{t.type}</span>
+                <span style={{fontSize:10.5,padding:"1px 7px",borderRadius:4,fontWeight:600,background:t.statut==="adopté"?"#e6f4ea":"#fbeaea",color:t.statut==="adopté"?"#1a7a3a":"#c0392b"}}>{t.statut}</span>
+                <span style={{fontSize:11,color:"#aaa"}}>{frDate(t.date)}</span>
+              </div>
+              <div style={{fontSize:13,color:"#1a1a2e"}}>{t.titre}</div>
+            </button>)}
+          </Section>}
+
+          <Section titre={"Détail de ses votes ("+f.votes.length+")"}>
+            <div style={{maxHeight:320,overflowY:"auto",border:"1px solid #e6e1d6",borderRadius:8}}>
+              {f.votes.map((v,i)=><div key={i} onClick={()=>onOuvrirTexte&&onOuvrirTexte(v.ref)} style={{display:"flex",gap:10,alignItems:"center",padding:"7px 10px",borderBottom:"1px solid #f3f0e8",cursor:"pointer",fontSize:12.5}}>
+                <span style={{color:"#aaa",fontSize:11,minWidth:78}}>{frDate(v.date)}</span>
+                <span style={{flex:1,color:"#1f3d6b"}}>{v.titre.slice(0,60)}{v.titre.length>60?"…":""}</span>
+                <span style={{color:coulPos[v.position],fontWeight:600,minWidth:70,textAlign:"right"}}>{v.position}</span>
+              </div>)}
+            </div>
+          </Section>
+        </>}
+      </div>
+    </div>
+  </div>;
+}
+
 function TableauAmendements({texteRef}){
   const [ouvert,setOuvert]=useState(false);
   const [etat,setEtat]=useState("idle");
@@ -162,7 +292,7 @@ function TableauAmendements({texteRef}){
   </div>;
 }
 
-function Fiche({t,onClose}){
+function Fiche({t,onClose,onOuvrirActeur}){
   const totaux=useMemo(()=>{
     if(!t.votesParGroupe)return null;
     const s={pour:0,contre:0,abstention:0};
@@ -181,7 +311,7 @@ function Fiche({t,onClose}){
           <span style={{fontSize:12,background:"rgba(255,255,255,0.12)",padding:"3px 9px",borderRadius:5}}>{t.contexte}</span>
         </div>
         <h2 style={{fontFamily:"Georgia,serif",fontSize:21,lineHeight:1.3,paddingRight:40}}>{t.titre}</h2>
-        {t.auteur&&<div style={{marginTop:8,fontSize:13.5}}>Auteur : <strong>{t.auteur}</strong>{auteurLibelle(t)&&<span style={{opacity:0.8}}> · {auteurLibelle(t)}</span>}</div>}
+        {t.auteur&&<div style={{marginTop:8,fontSize:13.5}}>Auteur : {t.auteurActeurRef?<button onClick={()=>onOuvrirActeur&&onOuvrirActeur(t.auteurActeurRef)} style={{background:"none",border:"none",padding:0,cursor:"pointer",color:"#ffc400",fontWeight:700,fontSize:13.5,textDecoration:"underline",fontFamily:"inherit"}}>{t.auteur}</button>:<strong>{t.auteur}</strong>}{auteurLibelle(t)&&<span style={{opacity:0.8}}> · {auteurLibelle(t)}</span>}</div>}
         <div style={{marginTop:10,fontSize:13,opacity:0.85}}>📅 {frDate(t.date)} · 🆔 {t.ref}</div>
       </div>
       <div style={{padding:"8px 28px 32px"}}>
@@ -222,6 +352,8 @@ function Fiche({t,onClose}){
             })}
           </div>
         </Section>}
+
+        {t.votesParGroupe&&<VotesNominatifs texteRef={t.ref} onOuvrirActeur={onOuvrirActeur}/>}
 
         {t.amendements&&t.amendements.total>0&&<Section titre="Bilan des amendements">
           <div style={{display:"flex",gap:16,flexWrap:"wrap",marginBottom:14}}>
@@ -321,7 +453,15 @@ function App(){
   const [mois,setMois]=useState(new Date());
   const [jour,setJour]=useState(null);
   const [fiche,setFiche]=useState(null);
+  const [acteur,setActeur]=useState(null);
   const [vue,setVue]=useState("calendrier");
+  // Navigation par adresse : #texte/DLR… ou #depute/PA… -> liens partageables
+  const allerTexte=(ref)=>{window.location.hash="texte/"+ref;};
+  const allerActeur=(ref)=>{window.location.hash="depute/"+ref;};
+  const fermer=()=>{
+    if(window.location.hash) window.history.back();
+    else {setFiche(null);setActeur(null);}
+  };
 
   async function charger(){
     setEtat("load");
@@ -336,6 +476,22 @@ function App(){
   useEffect(()=>{charger();},[]);
 
   const BASE=(data&&data.textes)||[];
+
+  useEffect(()=>{
+    if(etat!=="ok") return;
+    const appliquer=()=>{
+      const h=(window.location.hash||"").replace(/^#/,"");
+      if(h.startsWith("texte/")){
+        const t=(data&&data.textes||[]).find(x=>x.ref===h.slice(6));
+        setActeur(null); setFiche(t||null);
+      } else if(h.startsWith("depute/")){
+        setFiche(null); setActeur(h.slice(7));
+      } else { setFiche(null); setActeur(null); }
+    };
+    appliquer();
+    window.addEventListener("hashchange",appliquer);
+    return ()=>window.removeEventListener("hashchange",appliquer);
+  },[etat,data]);
   const jours={};BASE.forEach(t=>{jours[t.date]=(jours[t.date]||0)+1;});
   const textesDuJour=jour?BASE.filter(t=>t.date===jour):[];
   const dates=[...new Set(BASE.map(t=>t.date))].sort().reverse();
@@ -362,7 +518,7 @@ function App(){
     {etat==="err"&&<div style={{maxWidth:560,margin:"60px auto",padding:20,background:"#fff6e5",border:"1px solid #f0d9a8",borderRadius:10,color:"#7a5c10",fontSize:13.5,lineHeight:1.6}}>⚠ Impossible de charger <code>public/data.json</code>. Vérifiez que le fichier existe bien dans le dépôt et que GitHub Pages est activé, puis cliquez « Recharger ».</div>}
 
     {etat==="ok"&&vue==="recherche"&&<main style={{maxWidth:900,margin:"0 auto",padding:"28px 20px"}}>
-      <Recherche textes={BASE} onOuvrir={setFiche}/>
+      <Recherche textes={BASE} onOuvrir={(t)=>allerTexte(t.ref)}/>
     </main>}
 
     {etat==="ok"&&vue==="calendrier"&&<main className="layout" style={{maxWidth:1000,margin:"0 auto",padding:"28px 20px",display:"grid",gridTemplateColumns:"minmax(300px,380px) 1fr",gap:28,alignItems:"start"}}>
@@ -380,7 +536,7 @@ function App(){
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}><h2 style={{fontFamily:"Georgia,serif",fontSize:19}}>{frDate(jour)}<span style={{fontSize:14,fontWeight:400,color:"#888",marginLeft:8}}>· {textesDuJour.length} texte{textesDuJour.length>1?"s":""}</span></h2><button onClick={()=>setJour(null)} style={{...navBtn,width:"auto",padding:"0 12px",fontSize:13}}>✕ Fermer</button></div>
           <div style={{display:"flex",flexDirection:"column",gap:14}}>
             {textesDuJour.map((t,i)=>{const ad=t.statut==="adopté",rej=t.statut==="rejeté";
-              return <button key={i} onClick={()=>setFiche(t)} style={{textAlign:"left",background:"#fdfcf9",border:"1px solid #e6e1d6",borderRadius:12,padding:18,cursor:"pointer"}}>
+              return <button key={i} onClick={()=>allerTexte(t.ref)} style={{textAlign:"left",background:"#fdfcf9",border:"1px solid #e6e1d6",borderRadius:12,padding:18,cursor:"pointer"}}>
                 <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:10}}>
                   <span style={{fontSize:11.5,background:"#eef1f6",color:"#1f3d6b",padding:"3px 9px",borderRadius:5,fontWeight:600}}>{t.type}</span>
                   {t.statut&&t.statut!=="—"&&<span style={{fontSize:11.5,padding:"3px 9px",borderRadius:5,fontWeight:600,background:ad?"#e6f4ea":rej?"#fbeaea":"#fff6e5",color:ad?"#1a7a3a":rej?"#c0392b":"#b8860b",textTransform:"capitalize"}}>{t.statut}</span>}
@@ -398,7 +554,8 @@ function App(){
 
     <footer style={{maxWidth:1000,margin:"0 auto",padding:"8px 20px 40px",fontSize:11.5,color:"#aaa",lineHeight:1.5}}>Données réelles issues de l'open data de l'Assemblée nationale. Résultats et votes par groupe : données officielles. Ce site se met à jour automatiquement quand la base est rafraîchie.</footer>
 
-    {fiche&&<Fiche t={fiche} onClose={()=>setFiche(null)}/>}
+    {fiche&&<Fiche t={fiche} onClose={fermer} onOuvrirActeur={allerActeur}/>}
+    {acteur&&<FicheActeur acteurRef={acteur} onClose={fermer} onOuvrirTexte={allerTexte}/>}
   </div>;
 }
 

@@ -22,6 +22,10 @@ URLS = {
 }
 OUT_DIR = "public"
 OUT_DATA = os.path.join(OUT_DIR, "data.json")
+OUT_VOTES_DIR = os.path.join(OUT_DIR, "votes")
+DEBUT_LEGISLATURE = "2024-07-18"   # ouverture de la 17e législature
+OUT_ACTEURS_DIR = os.path.join(OUT_DIR, "acteurs")
+OUT_ACTEURS_INDEX = os.path.join(OUT_DIR, "acteurs.json")
 OUT_AMDT_DIR = os.path.join(OUT_DIR, "amendements")
 
 # --- Sources : locales (test) ou téléchargées (prod) ---
@@ -174,7 +178,7 @@ def charger_dossiers(use_local):
     zf = get_zip("dossiers", use_local)
     dossiers = {}
     for n in zf.namelist():
-        if "/dossierParlementaire/DLR5L17" not in n or not n.endswith(".json"): continue
+        if "/dossierParlementaire/DLR" not in n or not n.endswith(".json"): continue
         try:
             d = json.loads(zf.read(n).decode("utf-8")).get("dossierParlementaire", {})
             uid = txt(d.get("uid"))
@@ -197,10 +201,12 @@ def charger_dossiers(use_local):
 def charger_scrutins(use_local):
     zf = get_zip("scrutins", use_local)
     scrutins = []
+    uid_to_nom = {}
     for n in zf.namelist():
         if not n.endswith(".json"): continue
         try:
             s = json.loads(zf.read(n).decode("utf-8")).get("scrutin", {})
+            uid_to_nom[txt(s.get("uid"))] = n
             numero = txt(s.get("numero")); date = txt(s.get("dateScrutin"))[:10]
             sort = (s.get("sort") or {}); code = txt(sort.get("code")).lower()
             statut = "adopté" if code.startswith("adopt") else "rejeté" if code.startswith("rejet") else "—"
@@ -231,7 +237,117 @@ def charger_scrutins(use_local):
         if k and k.startswith("DLR") and (k not in par_dossier or s["date"]>par_dossier[k]["date"]):
             par_dossier[k]=s
     print(f"  {len(scrutins)} scrutins | {len(par_dossier)} rattachés directement à un dossier")
-    return par_uid, par_dossier
+    return par_uid, par_dossier, zf, uid_to_nom
+
+def _votants(bloc):
+    """Le bloc pours/contres/... contient 'votant' : soit un dict, soit une liste."""
+    if not isinstance(bloc, dict):
+        return []
+    v = bloc.get("votant")
+    if isinstance(v, dict):
+        return [v]
+    if isinstance(v, list):
+        return [x for x in v if isinstance(x, dict)]
+    return []
+
+
+def extraire_votes_nominatifs(zf, uid_to_nom, retenu):
+    """Écrit public/votes/<DLR>.json : le vote de chaque député, nommément.
+    Ne traite que les textes retenus dans la base (pas les 8277 scrutins)."""
+    os.makedirs(OUT_VOTES_DIR, exist_ok=True)
+    positions = [("pours", "pour"), ("contres", "contre"),
+                 ("abstentions", "abstention"), ("nonVotants", "non-votant")]
+    ecrits = 0
+    tous = {}
+    for dlr, sc in retenu.items():
+        uid = sc.get("uid")
+        nom = uid_to_nom.get(uid) if uid else None
+        if not nom:
+            continue  # texte sans scrutin public (vote à main levée)
+        try:
+            s = json.loads(zf.read(nom).decode("utf-8")).get("scrutin", {})
+        except Exception:
+            continue
+        groupes = ((s.get("ventilationVotes") or {}).get("organe") or {}).get("groupes") or {}
+        gl = groupes.get("groupe")
+        if isinstance(gl, dict): gl = [gl]
+        if not isinstance(gl, list): continue
+        votes = []
+        for g in gl:
+            code_g = ORGANE_TO_GROUPE.get(txt(g.get("organeRef")), "AUTRE")
+            dn = (g.get("vote") or {}).get("decompteNominatif") or {}
+            for cle, pos in positions:
+                for v in _votants(dn.get(cle)):
+                    votes.append({
+                        "acteurRef": txt(v.get("acteurRef")),
+                        "groupe": code_g,
+                        "position": pos,
+                        "delegation": txt(v.get("parDelegation")) == "true",
+                    })
+        if not votes:
+            continue
+        with open(os.path.join(OUT_VOTES_DIR, dlr + ".json"), "w", encoding="utf-8") as f:
+            json.dump({"ref": dlr, "numero": sc.get("numero", ""), "date": sc.get("date", ""),
+                       "nbVotants": len(votes), "votes": votes}, f, ensure_ascii=False)
+        tous[dlr] = votes
+        ecrits += 1
+    print(f"  votes nominatifs écrits pour {ecrits} textes")
+    return tous
+
+
+def construire_fiches_acteurs(acteurs, organes, textes, votes_par_texte):
+    """Écrit public/acteurs.json (index) et public/acteurs/<PA>.json (détail).
+    Le détail contient les votes du député sur chaque texte, et les textes dont
+    il est l'auteur."""
+    os.makedirs(OUT_ACTEURS_DIR, exist_ok=True)
+    par_ref = {t["ref"]: t for t in textes}
+
+    # 1. Inverser : acteur -> ses votes
+    votes_acteur = defaultdict(list)
+    for dlr, votes in votes_par_texte.items():
+        t = par_ref.get(dlr)
+        if not t: continue
+        for v in votes:
+            votes_acteur[v["acteurRef"]].append({
+                "ref": dlr, "date": t["date"], "titre": t["titre"],
+                "position": v["position"], "delegation": v["delegation"],
+            })
+
+    # 2. Textes déposés par acteur
+    deposes = defaultdict(list)
+    for t in textes:
+        ar = t.get("auteurActeurRef")
+        if ar:
+            deposes[ar].append({"ref": t["ref"], "date": t["date"], "titre": t["titre"],
+                                "statut": t["statut"], "type": t["type"]})
+
+    index = []
+    concernes = set(votes_acteur) | set(deposes)
+    for ref in concernes:
+        a = acteurs.get(ref)
+        if not a: continue
+        vs = sorted(votes_acteur.get(ref, []), key=lambda x: x["date"], reverse=True)
+        dp = sorted(deposes.get(ref, []), key=lambda x: x["date"], reverse=True)
+        # groupe : celui de son mandat GP actif
+        grp = a.get("gp", "")
+        compte = {"pour":0, "contre":0, "abstention":0, "non-votant":0}
+        for v in vs: compte[v["position"]] = compte.get(v["position"], 0) + 1
+        fiche = {
+            "acteurRef": ref, "nom": a["nom"], "groupe": grp,
+            "nbVotes": len(vs), "compte": compte,
+            "parDelegation": sum(1 for v in vs if v["delegation"]),
+            "votes": vs, "textesDeposes": dp,
+        }
+        with open(os.path.join(OUT_ACTEURS_DIR, ref + ".json"), "w", encoding="utf-8") as f:
+            json.dump(fiche, f, ensure_ascii=False)
+        index.append({"acteurRef": ref, "nom": a["nom"], "groupe": grp,
+                      "nbVotes": len(vs), "nbTextes": len(dp)})
+
+    index.sort(key=lambda x: x["nom"])
+    with open(OUT_ACTEURS_INDEX, "w", encoding="utf-8") as f:
+        json.dump({"nb": len(index), "acteurs": index}, f, ensure_ascii=False)
+    print(f"  {len(index)} fiches d'acteurs (index + détail)")
+
 
 def statut_decision(libelle):
     """Normalise un statutConclusion en adopté / rejeté / —."""
@@ -266,7 +382,7 @@ def deduire_type(procedure, titre):
 def construire(use_local=False):
     print("=== 1/4 Acteurs ==="); acteurs, organes = charger_acteurs(use_local)
     print("=== 2/4 Dossiers ==="); dossiers = charger_dossiers(use_local)
-    print("=== 3/4 Scrutins ==="); scrutins_uid, scrutins_dossier = charger_scrutins(use_local)
+    print("=== 3/4 Scrutins ==="); scrutins_uid, scrutins_dossier, zf_scrutins, uid_to_nom = charger_scrutins(use_local)
     print("=== 4/4 Assemblage ===")
 
     # index texte PION -> dossier DLR (pour rattacher amendements plus tard)
@@ -296,7 +412,8 @@ def construire(use_local=False):
     for dlr, d in dossiers.items():
         if dlr in retenu:
             continue
-        decs = d.get("decisions") or []
+        # ne garder que les décisions de la législature en cours (ouverte le 18/07/2024)
+        decs = [x for x in (d.get("decisions") or []) if x["date"] >= DEBUT_LEGISLATURE]
         if not decs:
             continue
         derniere = max(decs, key=lambda x: x["date"])
@@ -306,6 +423,9 @@ def construire(use_local=False):
                        "mentionDecision": derniere["statut"]}
         sans_scrutin += 1
     print(f"  + {sans_scrutin} dossiers décidés sans scrutin public -> {len(retenu)} textes")
+
+    # Votes nominatifs (qui a voté quoi) pour les textes à scrutin public
+    votes_par_texte = extraire_votes_nominatifs(zf_scrutins, uid_to_nom, retenu)
 
     textes = []
     for dlr, sc in retenu.items():
@@ -322,6 +442,7 @@ def construire(use_local=False):
             "contexte": d.get("procedure","") or f"Scrutin n°{sc['numero']}",
             "auteur": auteur.get("nom",""), "auteurGroupe": auteur.get("groupe",""),
             "auteurQualite": auteur.get("qualite",""),
+            "auteurActeurRef": d.get("auteurRef",""),
             "statut": sc["statut"], "votesParGroupe": sc["votesParGroupe"],
             "sansScrutin": bool(sc.get("sansScrutin")),
             "mentionDecision": sc.get("mentionDecision", ""),
@@ -329,6 +450,8 @@ def construire(use_local=False):
             "textesRefs": d.get("textes", []),
         })
     textes.sort(key=lambda x:x["date"])
+
+    construire_fiches_acteurs(acteurs, organes, textes, votes_par_texte)
 
     # --- Préserver l'enrichissement amendements déjà présent ---
     # build_all.py tourne tous les jours et régénère data.json ; sans cette
