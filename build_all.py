@@ -8,7 +8,7 @@ Produit :
 En production (GitHub Actions), télécharge les 4 archives.
 En test local, on peut injecter des ZIP locaux (voir --local)."""
 import io, json, os, re, sys, zipfile, glob
-from collections import defaultdict
+from collections import defaultdict, Counter
 from datetime import datetime, timezone
 from urllib.request import urlopen, Request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -26,6 +26,7 @@ OUT_VOTES_DIR = os.path.join(OUT_DIR, "votes")
 DEBUT_LEGISLATURE = "2024-07-18"   # ouverture de la 17e législature
 OUT_ACTEURS_DIR = os.path.join(OUT_DIR, "acteurs")
 OUT_ACTEURS_INDEX = os.path.join(OUT_DIR, "acteurs.json")
+OUT_GROUPES = os.path.join(OUT_DIR, "groupes.json")
 OUT_AMDT_DIR = os.path.join(OUT_DIR, "amendements")
 
 # --- Sources : locales (test) ou téléchargées (prod) ---
@@ -349,6 +350,111 @@ def construire_fiches_acteurs(acteurs, organes, textes, votes_par_texte):
     print(f"  {len(index)} fiches d'acteurs (index + détail)")
 
 
+def _position_dominante(v):
+    """Position majoritaire d'un groupe sur un scrutin, depuis son décompte."""
+    if not v: return None
+    trio = [("pour", v.get("pour",0)), ("contre", v.get("contre",0)), ("abstention", v.get("abstention",0))]
+    trio.sort(key=lambda x: -x[1])
+    if trio[0][1] == 0: return None
+    if len(trio) > 1 and trio[0][1] == trio[1][1]: return None   # égalité : pas de position nette
+    return trio[0][0]
+
+
+def construire_fiches_groupes(acteurs, textes, votes_par_texte):
+    """Écrit public/groupes.json : composition, textes déposés, votes,
+    cohésion interne et proximité de vote entre groupes."""
+    par_ref = {t["ref"]: t for t in textes}
+
+    # 1. Composition et présidence
+    membres = defaultdict(list)
+    presidents = {}
+    for ref, a in acteurs.items():
+        g = a.get("gp")
+        if not g: continue
+        membres[g].append({"acteurRef": ref, "nom": a["nom"]})
+        for m in a["mandats"].values():
+            if m["type"] == "GP" and "président" in (m["qualite"] or "").lower():
+                if ORGANE_TO_GROUPE.get(m["ref"]) == g:
+                    presidents[g] = {"acteurRef": ref, "nom": a["nom"]}
+    for g in membres: membres[g].sort(key=lambda x: x["nom"])
+
+    # 2. Textes déposés par un membre du groupe
+    deposes = defaultdict(list)
+    for t in textes:
+        g = t.get("auteurGroupe")
+        if g:
+            deposes[g].append({"ref": t["ref"], "titre": t["titre"], "date": t["date"],
+                               "statut": t["statut"], "type": t["type"]})
+
+    # 3. Votes agrégés + positions par scrutin (pour la proximité)
+    cumul = defaultdict(lambda: {"pour":0, "contre":0, "abstention":0, "scrutins":0})
+    positions = {}   # ref texte -> {groupe: position dominante}
+    for t in textes:
+        vpg = t.get("votesParGroupe")
+        if not vpg: continue
+        pos = {}
+        for g, v in vpg.items():
+            cumul[g]["pour"] += v["pour"]; cumul[g]["contre"] += v["contre"]
+            cumul[g]["abstention"] += v["abstention"]; cumul[g]["scrutins"] += 1
+            p = _position_dominante(v)
+            if p: pos[g] = p
+        positions[t["ref"]] = pos
+
+    # 4. Proximité entre groupes : sur quel % de scrutins votent-ils pareil ?
+    codes = sorted(cumul.keys())
+    proximite = {a: {} for a in codes}
+    for i, a in enumerate(codes):
+        for b in codes:
+            if a == b: continue
+            communs = accord = 0
+            for pos in positions.values():
+                if a in pos and b in pos:
+                    communs += 1
+                    if pos[a] == pos[b]: accord += 1
+            if communs:
+                proximite[a][b] = {"taux": round(accord/communs, 3), "sur": communs, "accords": accord}
+
+    # 5. Cohésion interne : part des membres votant la position majoritaire du groupe
+    coh = defaultdict(list)
+    fractures = defaultdict(list)
+    for dlr, votes in votes_par_texte.items():
+        par_groupe = defaultdict(list)
+        for v in votes:
+            if v["position"] in ("pour","contre","abstention"):
+                par_groupe[v["groupe"]].append(v["position"])
+        for g, ps in par_groupe.items():
+            if len(ps) < 5: continue          # trop peu de votants pour être significatif
+            c = Counter(ps)
+            taux = c.most_common(1)[0][1] / len(ps)
+            coh[g].append(taux)
+            if taux < 0.8:
+                t = par_ref.get(dlr)
+                fractures[g].append({"ref": dlr, "titre": (t or {}).get("titre",""),
+                                     "date": (t or {}).get("date",""),
+                                     "taux": round(taux,3), "detail": dict(c)})
+
+    out = {}
+    for g in set(list(membres) + list(cumul) + list(deposes)):
+        dep = sorted(deposes.get(g, []), key=lambda x: x["date"], reverse=True)
+        adoptes = sum(1 for x in dep if x["statut"] == "adopté")
+        taux_coh = round(sum(coh[g])/len(coh[g]), 3) if coh.get(g) else None
+        fr = sorted(fractures.get(g, []), key=lambda x: x["taux"])[:10]
+        out[g] = {
+            "code": g, "nom": None,
+            "effectif": len(membres.get(g, [])),
+            "president": presidents.get(g),
+            "membres": membres.get(g, []),
+            "textesDeposes": {"total": len(dep), "adoptes": adoptes, "liste": dep[:40]},
+            "votes": dict(cumul.get(g, {})),
+            "cohesion": {"moyenne": taux_coh, "surScrutins": len(coh.get(g, [])), "fractures": fr},
+            "proximite": proximite.get(g, {}),
+        }
+    with open(OUT_GROUPES, "w", encoding="utf-8") as f:
+        json.dump({"genere_le": datetime.now(timezone.utc).isoformat(), "groupes": out},
+                  f, ensure_ascii=False)
+    print(f"  {len(out)} fiches de groupe")
+
+
 def statut_decision(libelle):
     """Normalise un statutConclusion en adopté / rejeté / —."""
     s = (libelle or "").lower()
@@ -452,6 +558,7 @@ def construire(use_local=False):
     textes.sort(key=lambda x:x["date"])
 
     construire_fiches_acteurs(acteurs, organes, textes, votes_par_texte)
+    construire_fiches_groupes(acteurs, textes, votes_par_texte)
 
     # --- Préserver l'enrichissement amendements déjà présent ---
     # build_all.py tourne tous les jours et régénère data.json ; sans cette
