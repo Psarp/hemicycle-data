@@ -11,6 +11,7 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Récupérer le dépôt
         uses: actions/checkout@v4
@@ -18,13 +19,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Générer data.json (télécharge l'open data AN et l'assemble)
+      - name: Générer les données (textes, votes nominatifs, fiches d'acteurs)
         run: python build_all.py
-      - name: Publier data.json si modifié
+      - name: Publier si modifié
         run: |
           git config user.name "hemicycle-bot"
           git config user.email "actions@github.com"
-          git add public/data.json
+          git add public/data.json public/votes public/acteurs.json public/acteurs
           if git diff --staged --quiet; then
             echo "Aucun changement dans les données."
           else
