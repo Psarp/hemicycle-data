@@ -711,19 +711,20 @@ function OrdreDuJour({seances,onOuvrirTexte,textesConnus,futur}){
         const connu=p.dossierRef&&textesConnus&&textesConnus.has(p.dossierRef);
         const Balise=connu?"button":"div";
         return <Balise key={k} onClick={connu?()=>onOuvrirTexte(p.dossierRef):undefined}
+          title={connu&&p.lienDeduit?"Lien reconstitué à partir du libellé : l'Assemblée n'a pas renseigné le dossier pour ce point.":undefined}
           style={{display:"block",width:"100%",textAlign:"left",background:"#fff",border:"1px solid #eee",
                   borderLeft:"3px solid "+(p.type==="Questions au Gouvernement"?"#b8860b":(connu?"#1f3d6b":"#ddd")),
                   borderRadius:"0 8px 8px 0",padding:"8px 11px",marginBottom:6,
                   cursor:connu?"pointer":"default",fontFamily:"inherit"}}>
           <div style={{display:"flex",gap:7,flexWrap:"wrap",alignItems:"center",marginBottom:3}}>
             {p.type&&<span style={{fontSize:10.5,color:"#888",background:"#f4f1ea",padding:"1px 6px",borderRadius:4}}>{p.type}</span>}
-            {connu&&<span style={{fontSize:10.5,color:"#1a7a3a"}}>fiche disponible →</span>}
+            {connu&&<span style={{fontSize:10.5,color:"#1a7a3a"}}>fiche disponible →{p.lienDeduit?" *":""}</span>}
           </div>
           <div style={{fontSize:12.5,color:"#2a2a2a",lineHeight:1.45}}>{p.objet||"(objet non précisé)"}</div>
         </Balise>;
       })}
     </div>)}
-    <p style={{fontSize:11,color:"#999",marginTop:4,lineHeight:1.5}}>Ordre du jour officiel des séances publiques. Tous les points ne donnent pas lieu à un vote : débats, questions au Gouvernement et discussions générales y figurent aussi.</p>
+    <p style={{fontSize:11,color:"#999",marginTop:4,lineHeight:1.5}}>Ordre du jour officiel des séances publiques. Tous les points ne donnent pas lieu à un vote : débats, questions au Gouvernement et discussions générales y figurent aussi. Un astérisque signale un lien vers la fiche reconstitué à partir du libellé, l'Assemblée ne renseignant pas toujours le dossier concerné.</p>
   </div>;
 }
 

@@ -497,13 +497,41 @@ def construire_fiches_groupes(acteurs, textes, votes_par_texte):
     print(f"  {len(out)} fiches de groupe")
 
 
-def construire_agenda(use_local):
+def _norm(s):
+    import unicodedata
+    s = unicodedata.normalize("NFD", (s or "").lower())
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    s = re.sub(r"[^a-z0-9 ]", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _empreinte(titre):
+    """Titre normalisé, débarrassé de son préfixe de type, pour rapprochement."""
+    n = _norm(titre)
+    for p in ("projet de loi constitutionnelle", "projet de loi organique",
+              "proposition de loi organique", "projet de loi",
+              "proposition de loi", "proposition de resolution"):
+        if n.startswith(p):
+            return n[len(p):].strip()
+    return n
+
+
+def construire_agenda(use_local, textes=None):
     """Écrit public/agenda.json : l'ordre du jour de chaque séance publique.
     Le calendrier ne marquait que les jours de VOTE ; l'agenda révèle tous les
     jours de séance (débats, questions au Gouvernement, discussions sans vote)."""
     zf = get_zip("agenda", use_local)
+    # Empreintes des textes de la base : l'Assemblée ne renseigne pas toujours
+    # le lien dossier d'un point d'ordre du jour (ex : 11/07 vs 10/07 sur le même
+    # texte). On rattache alors par le libellé, en marquant le lien comme déduit.
+    empreintes = []
+    for t in (textes or []):
+        e = _empreinte(t["titre"])
+        if len(e) >= 30:
+            empreintes.append((t["ref"], e))
     jours = defaultdict(list)
     n_seances = 0
+    n_deduits = 0
     for n in zf.namelist():
         if "/reunion/RU" not in n or not n.endswith(".json"): continue
         try:
@@ -523,11 +551,24 @@ def construire_agenda(use_local):
             dl = p.get("dossiersLegislatifsRefs") or {}
             ref = dl.get("dossierRef") if isinstance(dl, dict) else None
             if isinstance(ref, list): ref = ref[0] if ref else None
+            objet = txt(p.get("objet"))
+            dref = txt(ref) if ref else ""
+            deduit = False
+            if not dref and empreintes:
+                o = _norm(objet)
+                best = None
+                for r2, e in empreintes:
+                    if e in o and (best is None or len(e) > len(best[1])):
+                        best = (r2, e)
+                if best:
+                    dref, deduit = best[0], True
+                    n_deduits += 1
             points.append({
-                "objet": txt(p.get("objet")),
+                "objet": objet,
                 "type": txt(p.get("typePointODJ")),
                 "nature": txt(p.get("natureTravauxODJ")),
-                "dossierRef": txt(ref) if ref else "",
+                "dossierRef": dref,
+                "lienDeduit": deduit,
             })
         jours[date].append({
             "heure": heure,
@@ -542,7 +583,7 @@ def construire_agenda(use_local):
         json.dump({"genere_le": datetime.now(timezone.utc).isoformat(),
                    "nb_jours": len(jours), "nb_seances": n_seances,
                    "jours": dict(sorted(jours.items()))}, f, ensure_ascii=False)
-    print(f"  agenda : {n_seances} séances publiques sur {len(jours)} jours")
+    print(f"  agenda : {n_seances} séances publiques sur {len(jours)} jours ({n_deduits} liens déduits du libellé)")
 
 
 def statut_decision(libelle):
@@ -649,7 +690,7 @@ def construire(use_local=False):
 
     construire_fiches_acteurs(acteurs, organes, textes, votes_par_texte)
     construire_fiches_groupes(acteurs, textes, votes_par_texte)
-    construire_agenda(use_local)
+    construire_agenda(use_local, textes)
 
     # --- Préserver l'enrichissement amendements déjà présent ---
     # build_all.py tourne tous les jours et régénère data.json ; sans cette
