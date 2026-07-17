@@ -77,6 +77,8 @@ def charger_acteurs(use_local):
             if isinstance(mandats, dict): mandats=[mandats]
             par_uid = {}
             gp_actif = ""
+            circo = None
+            ministere = ""
             for m in mandats:
                 mu = txt(m.get("uid"))
                 t = m.get("typeOrgane") or ""
@@ -89,7 +91,19 @@ def charger_acteurs(use_local):
                     par_uid[mu] = {"type": t, "ref": ref, "qualite": q}
                 if t == "GP" and encours and not gp_actif:
                     gp_actif = ORGANE_TO_GROUPE.get(ref, "AUTRE")
-            acteurs[uid] = {"nom": nom, "mandats": par_uid, "gp": gp_actif}
+                # circonscription d'élection (mandat de député en cours)
+                if t == "ASSEMBLEE" and encours and not circo:
+                    lieu = ((m.get("election") or {}).get("lieu")) or {}
+                    if lieu:
+                        circo = {"dep": txt(lieu.get("departement")),
+                                 "numDep": txt(lieu.get("numDepartement")),
+                                 "region": txt(lieu.get("region")),
+                                 "numCirco": txt(lieu.get("numCirco"))}
+                # fonction gouvernementale en cours
+                if t == "MINISTERE" and encours and not ministere:
+                    ministere = q or ""
+            acteurs[uid] = {"nom": nom, "mandats": par_uid, "gp": gp_actif,
+                            "circo": circo, "ministere": ministere}
         except Exception: continue
     print(f"  {len(acteurs)} acteurs (députés, sénateurs, ministres), {len(organes)} organes")
     return acteurs, organes
@@ -326,7 +340,12 @@ def construire_fiches_acteurs(acteurs, organes, textes, votes_par_texte):
                                 "statut": t["statut"], "type": t["type"]})
 
     index = []
+    # tous ceux qui ont voté ou déposé, PLUS tout député en exercice et tout
+    # membre du Gouvernement (pour que la carte et l'encart soient complets)
     concernes = set(votes_acteur) | set(deposes)
+    for ref, a in acteurs.items():
+        if a.get("circo") or a.get("ministere"):
+            concernes.add(ref)
     for ref in concernes:
         a = acteurs.get(ref)
         if not a: continue
@@ -338,14 +357,18 @@ def construire_fiches_acteurs(acteurs, organes, textes, votes_par_texte):
         for v in vs: compte[v["position"]] = compte.get(v["position"], 0) + 1
         fiche = {
             "acteurRef": ref, "nom": a["nom"], "groupe": grp,
+            "circo": a.get("circo"), "ministere": a.get("ministere",""),
             "nbVotes": len(vs), "compte": compte,
             "parDelegation": sum(1 for v in vs if v["delegation"]),
             "votes": vs, "textesDeposes": dp,
         }
         with open(os.path.join(OUT_ACTEURS_DIR, ref + ".json"), "w", encoding="utf-8") as f:
             json.dump(fiche, f, ensure_ascii=False)
-        index.append({"acteurRef": ref, "nom": a["nom"], "groupe": grp,
-                      "nbVotes": len(vs), "nbTextes": len(dp)})
+        e = {"acteurRef": ref, "nom": a["nom"], "groupe": grp,
+             "nbVotes": len(vs), "nbTextes": len(dp)}
+        if a.get("circo"): e["circo"] = a["circo"]
+        if a.get("ministere"): e["ministere"] = a["ministere"]
+        index.append(e)
 
     index.sort(key=lambda x: x["nom"])
     with open(OUT_ACTEURS_INDEX, "w", encoding="utf-8") as f:

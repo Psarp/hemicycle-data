@@ -180,9 +180,15 @@ function FicheActeur({acteurRef,onClose,onOuvrirTexte,onOuvrirGroupe}){
         <button onClick={onClose} style={{position:"absolute",top:14,right:14,background:"rgba(255,255,255,0.15)",border:"none",borderRadius:8,width:30,height:30,color:"#fff",cursor:"pointer",fontSize:15}}>✕</button>
         {etat==="ok"&&f?<>
           <h2 style={{fontFamily:"Georgia,serif",fontSize:22,paddingRight:40}}>{f.nom}</h2>
-          {f.groupe&&<button onClick={()=>onOuvrirGroupe&&onOuvrirGroupe(f.groupe)} style={{marginTop:6,display:"inline-flex",alignItems:"center",gap:7,fontSize:13,background:"rgba(255,255,255,0.12)",padding:"4px 10px",borderRadius:6,border:"none",color:"#fff",cursor:"pointer",fontFamily:"inherit"}}>
-            <span style={{width:9,height:9,borderRadius:"50%",background:G(f.groupe).couleur}}></span>{G(f.groupe).nom} ↗
-          </button>}
+          <div style={{marginTop:6,display:"flex",gap:8,flexWrap:"wrap",alignItems:"center"}}>
+            {f.groupe&&<button onClick={()=>onOuvrirGroupe&&onOuvrirGroupe(f.groupe)} style={{display:"inline-flex",alignItems:"center",gap:7,fontSize:13,background:"rgba(255,255,255,0.12)",padding:"4px 10px",borderRadius:6,border:"none",color:"#fff",cursor:"pointer",fontFamily:"inherit"}}>
+              <span style={{width:9,height:9,borderRadius:"50%",background:G(f.groupe).couleur}}></span>{G(f.groupe).nom} ↗
+            </button>}
+            {f.circo&&<span style={{fontSize:12.5,background:"rgba(255,255,255,0.12)",padding:"4px 10px",borderRadius:6}}>
+              {f.circo.dep}{f.circo.numCirco?` · ${f.circo.numCirco}ᵉ circonscription`:""}
+            </span>}
+            {f.ministere&&<span style={{fontSize:12.5,background:"rgba(255,196,0,0.25)",color:"#ffc400",padding:"4px 10px",borderRadius:6,fontWeight:600}}>{f.ministere}</span>}
+          </div>
         </>:<h2 style={{fontFamily:"Georgia,serif",fontSize:20}}>Chargement…</h2>}
       </div>
       <div style={{padding:"6px 26px 30px"}}>
@@ -560,6 +566,133 @@ function Stats({textes,depots,onOuvrirTexte,onOuvrirGroupe}){
   </div>;
 }
 
+
+// ---------- Onglet « Vos députés » : carte cliquable + Gouvernement ----------
+const HORS_HEXAGONE=[
+  {code:"971",nom:"Guadeloupe"},{code:"972",nom:"Martinique"},{code:"973",nom:"Guyane"},
+  {code:"974",nom:"La Réunion"},{code:"976",nom:"Mayotte"},{code:"975",nom:"St-Pierre-et-Miquelon"},
+  {code:"977",nom:"St-Barthélemy / St-Martin"},{code:"986",nom:"Wallis-et-Futuna"},
+  {code:"987",nom:"Polynésie française"},{code:"988",nom:"Nouvelle-Calédonie"},
+  {code:"099",nom:"Français de l'étranger"},
+];
+
+function Territoires({onOuvrirActeur,onOuvrirGroupe}){
+  const [etat,setEtat]=useState("load");
+  const [carte,setCarte]=useState(null);
+  const [acteurs,setActeurs]=useState([]);
+  const [sel,setSel]=useState(null);
+  const [survol,setSurvol]=useState(null);
+  const [voirGouv,setVoirGouv]=useState(false);
+
+  useEffect(()=>{(async()=>{
+    try{
+      const [rc,ra]=await Promise.all([
+        fetch("public/carte.json?t="+Date.now()),
+        fetch("public/acteurs.json?t="+Date.now()),
+      ]);
+      setCarte(await rc.json());
+      setActeurs(((await ra.json()).acteurs)||[]);
+      setEtat("ok");
+    }catch(e){setEtat("err");}
+  })();},[]);
+
+  const parDep={};
+  acteurs.forEach(a=>{ if(a.circo){ (parDep[a.circo.numDep]=parDep[a.circo.numDep]||[]).push(a); } });
+  Object.values(parDep).forEach(l=>l.sort((x,y)=>x.nom.localeCompare(y.nom)));
+  const gouv=acteurs.filter(a=>a.ministere).sort((a,b)=>a.nom.localeCompare(b.nom));
+  const nomDep=(code)=>{
+    const d=(carte&&carte.departements||[]).find(x=>x.code===code);
+    if(d) return d.nom;
+    const h=HORS_HEXAGONE.find(x=>x.code===code);
+    return h?h.nom:code;
+  };
+  const listeSel=sel?(parDep[sel]||[]):[];
+
+  const Carte=()=>{
+    if(!carte) return null;
+    return <svg viewBox={carte.viewBox} style={{width:"100%",height:"auto",display:"block"}}>
+      {carte.departements.map(d=>{
+        const n=(parDep[d.code]||[]).length;
+        const actif=sel===d.code, surv=survol===d.code;
+        return <path key={d.code} d={d.d}
+          onClick={()=>setSel(sel===d.code?null:d.code)}
+          onMouseEnter={()=>setSurvol(d.code)} onMouseLeave={()=>setSurvol(null)}
+          style={{cursor:n?"pointer":"default",
+                  fill:actif?"#1f3d6b":(surv?"#c9d4e6":(n?"#e8eef7":"#f0ede6")),
+                  stroke:"#fff",strokeWidth:0.7,transition:"fill .12s"}}>
+          <title>{d.nom} — {n} député{n>1?"s":""}</title>
+        </path>;
+      })}
+    </svg>;
+  };
+
+  return <div>
+    {etat==="load"&&<p style={{padding:"40px 0",textAlign:"center",color:"#666"}}>Chargement de la carte…</p>}
+    {etat==="err"&&<p style={{padding:"40px 0",textAlign:"center",color:"#c0392b"}}>Carte indisponible. Vérifiez que public/carte.json est bien déposé.</p>}
+    {etat==="ok"&&<div className="layout" style={{display:"grid",gridTemplateColumns:"minmax(280px,1fr) minmax(280px,380px)",gap:24,alignItems:"start"}}>
+      {/* Carte */}
+      <div style={{background:"#fdfcf9",borderRadius:14,padding:16,border:"1px solid #e6e1d6"}}>
+        <div style={{fontSize:12.5,color:"#666",marginBottom:10,minHeight:18}}>
+          {survol?`${nomDep(survol)} — ${(parDep[survol]||[]).length} député${(parDep[survol]||[]).length>1?"s":""}`:"Cliquez sur un département"}
+        </div>
+        <Carte/>
+        <div style={{marginTop:14,paddingTop:14,borderTop:"1px solid #eee"}}>
+          <div style={{fontSize:11,color:"#999",fontWeight:600,textTransform:"uppercase",letterSpacing:0.4,marginBottom:8}}>Outre-mer et Français de l'étranger</div>
+          <div style={{display:"flex",flexWrap:"wrap",gap:6}}>
+            {HORS_HEXAGONE.map(h=>{const n=(parDep[h.code]||[]).length; if(!n) return null;
+              return <button key={h.code} onClick={()=>setSel(sel===h.code?null:h.code)}
+                style={{fontSize:11.5,padding:"4px 10px",borderRadius:20,cursor:"pointer",
+                        border:"1px solid "+(sel===h.code?"#1f3d6b":"#e2dcd0"),
+                        background:sel===h.code?"#1f3d6b":"#fff",
+                        color:sel===h.code?"#fff":"#1f3d6b"}}>{h.nom} · {n}</button>;})}
+          </div>
+        </div>
+      </div>
+
+      {/* Panneau latéral */}
+      <div style={{position:"sticky",top:20}}>
+        {sel?<div style={{background:"#fdfcf9",borderRadius:14,padding:18,border:"1px solid #e6e1d6"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10,marginBottom:12}}>
+            <h3 style={{fontFamily:"Georgia,serif",fontSize:17,margin:0}}>{nomDep(sel)}</h3>
+            <button onClick={()=>setSel(null)} style={{background:"#f2efe8",border:"1px solid #e2dcd0",borderRadius:6,width:26,height:26,cursor:"pointer",color:"#1f3d6b"}}>✕</button>
+          </div>
+          <div style={{fontSize:12,color:"#888",marginBottom:10}}>{listeSel.length} député{listeSel.length>1?"s":""}</div>
+          {listeSel.map((a,i)=><button key={i} onClick={()=>onOuvrirActeur&&onOuvrirActeur(a.acteurRef)}
+            style={{display:"flex",alignItems:"center",gap:8,width:"100%",textAlign:"left",background:"#fff",
+                    border:"1px solid #e6e1d6",borderLeft:"3px solid "+G(a.groupe).couleur,
+                    borderRadius:"0 8px 8px 0",padding:"8px 11px",marginBottom:6,cursor:"pointer"}}>
+            <span style={{flex:1}}>
+              <span style={{fontSize:13,color:"#1a1a2e",display:"block"}}>{a.nom}</span>
+              <span style={{fontSize:11,color:"#888"}}>{G(a.groupe).court}{a.circo&&a.circo.numCirco?` · ${a.circo.numCirco}ᵉ circonscription`:""}</span>
+            </span>
+            <span style={{fontSize:11,color:"#bbb"}}>→</span>
+          </button>)}
+        </div>:<div style={{background:"#fdfcf9",borderRadius:14,padding:"28px 18px",border:"1px dashed #d8d2c4",textAlign:"center"}}>
+          <div style={{fontSize:26,marginBottom:8}}>🗺</div>
+          <div style={{fontSize:14,color:"#666",lineHeight:1.5}}>Choisissez un département pour voir ses députés, puis cliquez sur un nom pour ouvrir sa fiche.</div>
+        </div>}
+
+        {/* Gouvernement */}
+        <div style={{background:"#fdfcf9",borderRadius:14,padding:18,border:"1px solid #e6e1d6",marginTop:16}}>
+          <button onClick={()=>setVoirGouv(!voirGouv)} style={{display:"flex",justifyContent:"space-between",alignItems:"center",width:"100%",background:"none",border:"none",cursor:"pointer",padding:0}}>
+            <h3 style={{fontFamily:"Georgia,serif",fontSize:16,margin:0,color:"#1a1a2e"}}>Gouvernement</h3>
+            <span style={{fontSize:12,color:"#888"}}>{gouv.length} membres {voirGouv?"▼":"▶"}</span>
+          </button>
+          {voirGouv&&<div style={{marginTop:12,maxHeight:320,overflowY:"auto"}}>
+            {gouv.map((a,i)=><button key={i} onClick={()=>onOuvrirActeur&&onOuvrirActeur(a.acteurRef)}
+              style={{display:"block",width:"100%",textAlign:"left",background:"#fff",border:"1px solid #e6e1d6",
+                      borderLeft:"3px solid #555",borderRadius:"0 8px 8px 0",padding:"7px 11px",marginBottom:5,cursor:"pointer"}}>
+              <span style={{fontSize:12.5,color:"#1a1a2e",display:"block"}}>{a.nom}</span>
+              <span style={{fontSize:11,color:"#888"}}>{a.ministere}</span>
+            </button>)}
+            <p style={{fontSize:11,color:"#999",marginTop:8,lineHeight:1.5}}>Membres du Gouvernement recensés dans l'open data de l'Assemblée. Ils ne votent pas à l'Assemblée mais y portent les projets de loi.</p>
+          </div>}
+        </div>
+      </div>
+    </div>}
+  </div>;
+}
+
 function TableauAmendements({texteRef}){
   const [ouvert,setOuvert]=useState(false);
   const [etat,setEtat]=useState("idle");
@@ -848,6 +981,7 @@ function App(){
           <button onClick={()=>setVue("calendrier")} style={{background:vue==="calendrier"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="calendrier"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>🗓 Calendrier</button>
           <button onClick={()=>setVue("recherche")} style={{background:vue==="recherche"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="recherche"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>🔍 Recherche</button>
           <button onClick={()=>setVue("stats")} style={{background:vue==="stats"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="stats"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>📊 Stats</button>
+          <button onClick={()=>setVue("deputes")} style={{background:vue==="deputes"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="deputes"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>🗺 Vos députés</button>
         </div>
         {etat==="ok"&&data&&<div style={{marginTop:16,display:"inline-block",background:"rgba(255,255,255,0.1)",borderRadius:10,padding:"8px 14px",fontSize:12.5}}>▤ {data.nb_textes} textes · {data.source} · générées le {data.genere_le?new Date(data.genere_le).toLocaleDateString("fr-FR"):"?"}</div>}
       </div>
@@ -858,6 +992,10 @@ function App(){
 
     {etat==="ok"&&vue==="recherche"&&<main style={{maxWidth:900,margin:"0 auto",padding:"28px 20px"}}>
       <Recherche textes={BASE} onOuvrir={(t)=>allerTexte(t.ref)}/>
+    </main>}
+
+    {etat==="ok"&&vue==="deputes"&&<main style={{maxWidth:1040,margin:"0 auto",padding:"28px 20px"}}>
+      <Territoires onOuvrirActeur={allerActeur} onOuvrirGroupe={allerGroupe}/>
     </main>}
 
     {etat==="ok"&&vue==="stats"&&<main style={{maxWidth:960,margin:"0 auto",padding:"28px 20px"}}>
