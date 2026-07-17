@@ -79,6 +79,7 @@ def charger_acteurs(use_local):
             gp_actif = ""
             circo = None
             ministere = ""
+            au_gouvernement = False
             for m in mandats:
                 mu = txt(m.get("uid"))
                 t = m.get("typeOrgane") or ""
@@ -99,9 +100,21 @@ def charger_acteurs(use_local):
                                  "numDep": txt(lieu.get("numDepartement")),
                                  "region": txt(lieu.get("region")),
                                  "numCirco": txt(lieu.get("numCirco"))}
-                # fonction gouvernementale en cours
+                # Appartenance ACTUELLE au Gouvernement : seul un mandat
+                # GOUVERNEMENT en cours fait foi. Un mandat MINISTERE « en mission »
+                # est une mission temporaire confiée à un parlementaire, pas un poste.
+                if t == "GOUVERNEMENT" and encours:
+                    au_gouvernement = True
                 if t == "MINISTERE" and encours and not ministere:
-                    ministere = q or ""
+                    if (q or "").strip().lower() != "en mission":
+                        lib = organes.get(ref, ("", ""))[0]
+                        if lib and lib.lower() not in (q or "").lower() and lib != "Gouvernement":
+                            ministere = f"{q} · {lib}" if q else lib
+                        else:
+                            ministere = q or lib or ""
+            # On ne retient la fonction que si la personne est bien au Gouvernement
+            if not au_gouvernement:
+                ministere = ""
             acteurs[uid] = {"nom": nom, "mandats": par_uid, "gp": gp_actif,
                             "circo": circo, "ministere": ministere}
         except Exception: continue
