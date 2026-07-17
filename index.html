@@ -324,6 +324,242 @@ function FicheGroupe({code,onClose,onOuvrirTexte,onOuvrirActeur,onOuvrirGroupe})
   </div>;
 }
 
+
+// ---------- Page statistiques : constructeur de requêtes ----------
+const POSITIONS=["pour","contre","abstention"];
+
+function calculer(textes,cfg){
+  // 1. Filtrer les textes
+  let sel=textes.filter(t=>
+    (!cfg.type||t.type===cfg.type)&&
+    (!cfg.auteurGroupe||t.auteurGroupe===cfg.auteurGroupe)&&
+    (!cfg.auteurQualite||t.auteurQualite===cfg.auteurQualite)&&
+    (!cfg.statut||t.statut===cfg.statut)&&
+    (!cfg.annee||t.date.startsWith(cfg.annee))
+  );
+  if(cfg.compte==="voix") sel=sel.filter(t=>t.votesParGroupe);
+
+  // 2. Clé de regroupement
+  const cle=(t,g)=>{
+    switch(cfg.groupePar){
+      case "auteurGroupe": return t.auteurGroupe||"(sans auteur)";
+      case "auteurQualite": return t.auteurQualite||"(inconnue)";
+      case "type": return t.type;
+      case "statut": return t.statut;
+      case "annee": return t.date.slice(0,4);
+      case "mois": return t.date.slice(0,7);
+      case "groupeVotant": return g;
+      default: return "Total";
+    }
+  };
+
+  const res={};
+  const refs={};
+  const ajoute=(k,n,t)=>{res[k]=(res[k]||0)+n; if(t){(refs[k]=refs[k]||new Set()).add(t.ref);}};
+
+  if(cfg.compte==="textes"){
+    sel.forEach(t=>ajoute(cle(t),1,t));
+  }else{
+    sel.forEach(t=>{
+      Object.entries(t.votesParGroupe).forEach(([g,v])=>{
+        if(cfg.groupeVotant&&g!==cfg.groupeVotant) return;
+        const n=cfg.position?(v[cfg.position]||0):(v.pour+v.contre+v.abstention);
+        if(n>0) ajoute(cle(t,g),n,t);
+      });
+    });
+  }
+  const lignes=Object.entries(res).map(([k,v])=>({cle:k,valeur:v,nbTextes:(refs[k]||new Set()).size,
+                                                 refs:[...(refs[k]||[])]}))
+                                  .sort((a,b)=>b.valeur-a.valeur);
+  return {lignes,total:Object.values(res).reduce((a,b)=>a+b,0),nbTextes:sel.length};
+}
+
+const PRESETS=[
+  {nom:"Textes adoptés, par groupe d'auteur",
+   cfg:{compte:"textes",groupePar:"auteurGroupe",statut:"adopté"},
+   aide:"Attention : ne pas lire comme un taux de succès. Voir l'entonnoir ci-dessous."},
+  {nom:"Textes déposés par groupe",
+   cfg:{compte:"textes",groupePar:"auteurGroupe"},
+   aide:"Combien de textes chaque groupe a-t-il porté ?"},
+  {nom:"Voix « pour » de LFI sur les textes déposés par le RN",
+   cfg:{compte:"voix",groupeVotant:"LFI",position:"pour",auteurGroupe:"RN",groupePar:"aucun"},
+   aide:"Exemple de croisement : le groupe qui vote et le groupe qui a déposé le texte."},
+  {nom:"Voix « contre » de chaque groupe sur les textes du PS",
+   cfg:{compte:"voix",position:"contre",auteurGroupe:"SOC",groupePar:"groupeVotant"},
+   aide:"Qui s'oppose aux textes socialistes ?"},
+  {nom:"Textes déposés par le Gouvernement",
+   cfg:{compte:"textes",auteurQualite:"Premier ministre",groupePar:"statut"},
+   aide:"Les projets de loi sont formellement déposés par le Premier ministre."},
+  {nom:"Répartition des textes par type",
+   cfg:{compte:"textes",groupePar:"type"},
+   aide:"Propositions, projets, résolutions, motions de censure."},
+  {nom:"Activité par mois",
+   cfg:{compte:"textes",groupePar:"mois"},
+   aide:"Le rythme parlementaire au fil de la législature."},
+];
+
+function Stats({textes,depots,onOuvrirTexte,onOuvrirGroupe}){
+  const [cfg,setCfg]=useState({compte:"textes",groupePar:"auteurGroupe",type:"",auteurGroupe:"",
+                               auteurQualite:"",statut:"",annee:"",groupeVotant:"",position:""});
+  const [detail,setDetail]=useState(null);
+  const maj=(k,v)=>setCfg(c=>({...c,[k]:v}));
+  const r=useMemo(()=>calculer(textes,cfg),[textes,cfg]);
+
+  const types=[...new Set(textes.map(t=>t.type))].sort();
+  const groupes=[...new Set(textes.map(t=>t.auteurGroupe).filter(Boolean))].sort();
+  const qualites=[...new Set(textes.map(t=>t.auteurQualite).filter(Boolean))].sort();
+  const annees=[...new Set(textes.map(t=>t.date.slice(0,4)))].sort();
+  const sel={fontSize:13,padding:"7px 9px",borderRadius:8,border:"1px solid #d8d2c4",background:"#fff",fontFamily:"inherit"};
+  const lab={fontSize:11,color:"#888",fontWeight:600,textTransform:"uppercase",letterSpacing:0.4,marginBottom:4,display:"block"};
+  const max=r.lignes.length?r.lignes[0].valeur:1;
+  const estGroupe=(k)=>GROUPES[k]!==undefined;
+  const libelleCle=(k)=>estGroupe(k)?G(k).court:(k==="mois"?k:k);
+
+  const ordreDepots=depots?Object.entries(depots).sort((a,b)=>b[1].deposes-a[1].deposes):[];
+  const maxDep=ordreDepots.length?ordreDepots[0][1].deposes:1;
+  const nomGroupe=(k)=>k==="GOUV"?"Gouvernement":(GROUPES[k]?G(k).court:k);
+  const coulGroupe=(k)=>k==="GOUV"?"#555":(GROUPES[k]?G(k).couleur:"#999");
+
+  return <div>
+    {/* Entonnoir législatif */}
+    {ordreDepots.length>0&&<div style={{background:"#fdfcf9",borderRadius:14,padding:20,border:"1px solid #e6e1d6",marginBottom:20}}>
+      <h3 style={{fontFamily:"Georgia,serif",fontSize:17,margin:"0 0 6px"}}>De la proposition à la loi</h3>
+      <p style={{fontSize:12.5,color:"#666",margin:"0 0 16px",lineHeight:1.5}}>
+        Sur tous les textes déposés depuis le début de la législature, combien ont été examinés en séance, puis adoptés ?
+        Un texte déposé n'est pas forcément inscrit à l'ordre du jour — c'est là que se joue l'essentiel.
+      </p>
+      <div style={{overflowX:"auto"}}>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:13}}>
+          <thead><tr style={{textAlign:"left",color:"#888",borderBottom:"1px solid #e2dcd0",fontSize:11.5}}>
+            <th style={{padding:"6px 8px"}}>Auteur</th><th style={{padding:"6px 8px"}}>Déposés</th>
+            <th style={{padding:"6px 8px"}}>Examinés</th><th style={{padding:"6px 8px"}}>Adoptés</th>
+            <th style={{padding:"6px 8px",minWidth:120}}>Part aboutie</th>
+          </tr></thead>
+          <tbody>{ordreDepots.map(([g,v],i)=>{
+            const part=v.deposes?v.adoptes/v.deposes:0;
+            return <tr key={i} style={{borderBottom:"1px solid #f3f0e8"}}>
+              <td style={{padding:"7px 8px"}}>
+                <span style={{display:"inline-flex",alignItems:"center",gap:6}}>
+                  <span style={{width:8,height:8,borderRadius:"50%",background:coulGroupe(g)}}></span>
+                  {GROUPES[g]?<button onClick={()=>onOuvrirGroupe&&onOuvrirGroupe(g)} style={{background:"none",border:"none",padding:0,cursor:"pointer",color:"#1f3d6b",fontSize:13,fontFamily:"inherit",textDecoration:"underline"}}>{nomGroupe(g)}</button>:<span>{nomGroupe(g)}</span>}
+                </span>
+              </td>
+              <td style={{padding:"7px 8px",color:"#555"}}>{v.deposes}</td>
+              <td style={{padding:"7px 8px",color:"#555"}}>{v.examines}</td>
+              <td style={{padding:"7px 8px",color:"#1a7a3a",fontWeight:600}}>{v.adoptes}</td>
+              <td style={{padding:"7px 8px"}}>
+                <div style={{display:"flex",alignItems:"center",gap:7}}>
+                  <div style={{flex:1,height:8,background:"#eee",borderRadius:4,overflow:"hidden",minWidth:60}}>
+                    <div style={{width:(part*100)+"%",height:"100%",background:coulGroupe(g)}}></div>
+                  </div>
+                  <span style={{fontSize:12,fontWeight:600,color:"#555",minWidth:32,textAlign:"right"}}>{Math.round(part*100)}%</span>
+                </div>
+              </td>
+            </tr>;})}</tbody>
+        </table>
+      </div>
+      <p style={{fontSize:11.5,color:"#999",marginTop:12,lineHeight:1.5}}>
+        « Déposés » compte tous les dossiers ouverts depuis le 18 juillet 2024, y compris ceux jamais inscrits à l'ordre du jour.
+        Les groupes d'opposition disposent de peu de journées réservées, ce qui limite mécaniquement le nombre de leurs textes examinés.
+        Ces chiffres décrivent un processus, ils ne jugent pas la qualité des textes.
+      </p>
+    </div>}
+
+    {/* Galerie */}
+    <div style={{marginBottom:20}}>
+      <div style={{fontSize:11.5,color:"#999",fontWeight:600,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8}}>Questions prêtes à l'emploi</div>
+      <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
+        {PRESETS.map((p,i)=><button key={i} onClick={()=>setCfg({compte:"textes",groupePar:"aucun",type:"",auteurGroupe:"",auteurQualite:"",statut:"",annee:"",groupeVotant:"",position:"",...p.cfg})}
+          style={{fontSize:12.5,background:"#fff",border:"1px solid #e6e1d6",borderRadius:20,padding:"6px 12px",cursor:"pointer",color:"#1f3d6b"}}>{p.nom}</button>)}
+      </div>
+    </div>
+
+    {/* Constructeur */}
+    <div style={{background:"#fdfcf9",borderRadius:14,padding:20,border:"1px solid #e6e1d6",marginBottom:20}}>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(150px,1fr))",gap:12}}>
+        <div><label style={lab}>Je compte</label>
+          <select value={cfg.compte} onChange={e=>maj("compte",e.target.value)} style={{...sel,width:"100%"}}>
+            <option value="textes">Des textes</option><option value="voix">Des voix (votes)</option>
+          </select></div>
+        <div><label style={lab}>Regroupé par</label>
+          <select value={cfg.groupePar} onChange={e=>maj("groupePar",e.target.value)} style={{...sel,width:"100%"}}>
+            <option value="aucun">Rien (total)</option>
+            <option value="auteurGroupe">Groupe de l'auteur</option>
+            <option value="auteurQualite">Qualité de l'auteur</option>
+            {cfg.compte==="voix"&&<option value="groupeVotant">Groupe qui vote</option>}
+            <option value="type">Type de texte</option>
+            <option value="statut">Statut</option>
+            <option value="annee">Année</option>
+            <option value="mois">Mois</option>
+          </select></div>
+        <div><label style={lab}>Type de texte</label>
+          <select value={cfg.type} onChange={e=>maj("type",e.target.value)} style={{...sel,width:"100%"}}>
+            <option value="">Tous</option>{types.map(x=><option key={x}>{x}</option>)}
+          </select></div>
+        <div><label style={lab}>Groupe de l'auteur</label>
+          <select value={cfg.auteurGroupe} onChange={e=>maj("auteurGroupe",e.target.value)} style={{...sel,width:"100%"}}>
+            <option value="">Tous</option>{groupes.map(x=><option key={x} value={x}>{G(x).court}</option>)}
+          </select></div>
+        <div><label style={lab}>Qualité de l'auteur</label>
+          <select value={cfg.auteurQualite} onChange={e=>maj("auteurQualite",e.target.value)} style={{...sel,width:"100%"}}>
+            <option value="">Toutes</option>{qualites.map(x=><option key={x}>{x}</option>)}
+          </select></div>
+        <div><label style={lab}>Statut</label>
+          <select value={cfg.statut} onChange={e=>maj("statut",e.target.value)} style={{...sel,width:"100%"}}>
+            <option value="">Tous</option><option value="adopté">Adopté</option><option value="rejeté">Rejeté</option>
+          </select></div>
+        <div><label style={lab}>Année</label>
+          <select value={cfg.annee} onChange={e=>maj("annee",e.target.value)} style={{...sel,width:"100%"}}>
+            <option value="">Toutes</option>{annees.map(x=><option key={x}>{x}</option>)}
+          </select></div>
+        {cfg.compte==="voix"&&<>
+          <div><label style={lab}>Groupe qui vote</label>
+            <select value={cfg.groupeVotant} onChange={e=>maj("groupeVotant",e.target.value)} style={{...sel,width:"100%"}}>
+              <option value="">Tous</option>{Object.keys(GROUPES).map(x=><option key={x} value={x}>{G(x).court}</option>)}
+            </select></div>
+          <div><label style={lab}>Position</label>
+            <select value={cfg.position} onChange={e=>maj("position",e.target.value)} style={{...sel,width:"100%"}}>
+              <option value="">Toutes</option>{POSITIONS.map(x=><option key={x}>{x}</option>)}
+            </select></div>
+        </>}
+      </div>
+      {cfg.compte==="voix"&&<p style={{fontSize:11.5,color:"#999",margin:"12px 0 0",lineHeight:1.5}}>Les voix ne concernent que les textes à scrutin public. Les textes votés à main levée n'ont aucun décompte et sont exclus de ce calcul.</p>}
+    </div>
+
+    {/* Résultat */}
+    <div style={{background:"#fdfcf9",borderRadius:14,padding:20,border:"1px solid #e6e1d6"}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",flexWrap:"wrap",gap:10,marginBottom:14}}>
+        <h3 style={{fontFamily:"Georgia,serif",fontSize:17,margin:0}}>Résultat</h3>
+        <span style={{fontSize:12,color:"#888"}}>{cfg.compte==="textes"?`${r.total} texte${r.total>1?"s":""}`:`${r.total} voix sur ${r.nbTextes} texte${r.nbTextes>1?"s":""}`}</span>
+      </div>
+      {r.lignes.length===0?<p style={{fontSize:13.5,color:"#888"}}>Aucun résultat pour ces critères.</p>:
+        r.lignes.map((l,i)=><div key={i} style={{marginBottom:10}}>
+          <div style={{display:"flex",alignItems:"center",gap:10}}>
+            <span style={{minWidth:96,fontSize:12.5,display:"flex",alignItems:"center",gap:6}}>
+              {estGroupe(l.cle)&&<span style={{width:8,height:8,borderRadius:"50%",background:G(l.cle).couleur,flexShrink:0}}></span>}
+              {estGroupe(l.cle)?<button onClick={()=>onOuvrirGroupe&&onOuvrirGroupe(l.cle)} style={{background:"none",border:"none",padding:0,cursor:"pointer",color:"#1f3d6b",fontSize:12.5,fontFamily:"inherit",textDecoration:"underline"}}>{G(l.cle).court}</button>:<span>{l.cle}</span>}
+            </span>
+            <div style={{flex:1,height:12,background:"#eee",borderRadius:4,overflow:"hidden"}}>
+              <div style={{width:(l.valeur/max*100)+"%",height:"100%",background:estGroupe(l.cle)?G(l.cle).couleur:"#1f3d6b"}}></div>
+            </div>
+            <strong style={{fontSize:13,minWidth:52,textAlign:"right"}}>{l.valeur}</strong>
+            <button onClick={()=>setDetail(detail===l.cle?null:l.cle)} style={{fontSize:11,color:"#1f3d6b",background:"none",border:"none",cursor:"pointer",textDecoration:"underline",minWidth:64}}>
+              {detail===l.cle?"masquer":`${l.nbTextes} texte${l.nbTextes>1?"s":""}`}
+            </button>
+          </div>
+          {detail===l.cle&&<div style={{marginTop:6,marginLeft:106,maxHeight:220,overflowY:"auto",border:"1px solid #eee",borderRadius:6}}>
+            {l.refs.map((ref,k)=>{const t=textes.find(x=>x.ref===ref); if(!t)return null;
+              return <div key={k} onClick={()=>onOuvrirTexte&&onOuvrirTexte(ref)} style={{padding:"6px 9px",borderBottom:"1px solid #f3f0e8",cursor:"pointer",fontSize:12}}>
+                <span style={{color:"#aaa",marginRight:6}}>{frDate(t.date)}</span>
+                <span style={{color:"#1f3d6b"}}>{t.titre.slice(0,58)}{t.titre.length>58?"…":""}</span>
+              </div>;})}
+          </div>}
+        </div>)}
+      <p style={{fontSize:11.5,color:"#999",marginTop:14,lineHeight:1.5}}>Chaque chiffre est cliquable : « X textes » affiche la liste exacte des textes qui le composent. Ces données décrivent les votes en séance publique à l'Assemblée ; elles ne rendent pas compte du travail en commission ni des débats.</p>
+    </div>
+  </div>;
+}
+
 function TableauAmendements({texteRef}){
   const [ouvert,setOuvert]=useState(false);
   const [etat,setEtat]=useState("idle");
@@ -611,6 +847,7 @@ function App(){
         <div style={{marginTop:16,display:"flex",gap:8}}>
           <button onClick={()=>setVue("calendrier")} style={{background:vue==="calendrier"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="calendrier"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>🗓 Calendrier</button>
           <button onClick={()=>setVue("recherche")} style={{background:vue==="recherche"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="recherche"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>🔍 Recherche</button>
+          <button onClick={()=>setVue("stats")} style={{background:vue==="stats"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="stats"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>📊 Stats</button>
         </div>
         {etat==="ok"&&data&&<div style={{marginTop:16,display:"inline-block",background:"rgba(255,255,255,0.1)",borderRadius:10,padding:"8px 14px",fontSize:12.5}}>▤ {data.nb_textes} textes · {data.source} · générées le {data.genere_le?new Date(data.genere_le).toLocaleDateString("fr-FR"):"?"}</div>}
       </div>
@@ -621,6 +858,10 @@ function App(){
 
     {etat==="ok"&&vue==="recherche"&&<main style={{maxWidth:900,margin:"0 auto",padding:"28px 20px"}}>
       <Recherche textes={BASE} onOuvrir={(t)=>allerTexte(t.ref)}/>
+    </main>}
+
+    {etat==="ok"&&vue==="stats"&&<main style={{maxWidth:960,margin:"0 auto",padding:"28px 20px"}}>
+      <Stats textes={BASE} depots={data&&data.depotsParGroupe} onOuvrirTexte={allerTexte} onOuvrirGroupe={allerGroupe}/>
     </main>}
 
     {etat==="ok"&&vue==="calendrier"&&<main className="layout" style={{maxWidth:1000,margin:"0 auto",padding:"28px 20px",display:"grid",gridTemplateColumns:"minmax(300px,380px) 1fr",gap:28,alignItems:"start"}}>

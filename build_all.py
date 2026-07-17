@@ -135,13 +135,16 @@ def _chambre(code):
         return "Sénat"
     return ""
 
-def _parcours_actes(node, etapes, textes, votes=None, decisions=None):
+def _parcours_actes(node, etapes, textes, votes=None, decisions=None, dates=None):
     """Parcourt récursivement l'arbre d'actes pour extraire étapes, textes associés
     et références de scrutins (voteRefs) — ce dernier lien couvre TOUTE la
     législature, alors que scrutin->dossierRef n'est renseigné que depuis 03/2026."""
     if votes is None: votes = set()
     if decisions is None: decisions = []
+    if dates is None: dates = []
     if isinstance(node, dict):
+        da = txt(node.get("dateActe"))[:10]
+        if da: dates.append(da)
         # Décision de l'Assemblée (AN1-DEBATS-DEC, AN2-DEBATS-DEC…) : présente
         # même quand le vote a eu lieu à main levée, sans scrutin public.
         ca = txt(node.get("codeActe"))
@@ -167,12 +170,12 @@ def _parcours_actes(node, etapes, textes, votes=None, decisions=None):
             label = f"{nom} · {ch}" if ch else nom
             etapes.append({"code":code, "label":label, "date":date})
         sub = node.get("actesLegislatifs")
-        if sub: _parcours_actes(sub, etapes, textes, votes, decisions)
+        if sub: _parcours_actes(sub, etapes, textes, votes, decisions, dates)
     elif isinstance(node, list):
-        for x in node: _parcours_actes(x, etapes, textes, votes, decisions)
+        for x in node: _parcours_actes(x, etapes, textes, votes, decisions, dates)
     # cas dict contenant 'acteLegislatif'
     if isinstance(node, dict) and "acteLegislatif" in node:
-        _parcours_actes(node["acteLegislatif"], etapes, textes, votes, decisions)
+        _parcours_actes(node["acteLegislatif"], etapes, textes, votes, decisions, dates)
     return votes
 
 def charger_dossiers(use_local):
@@ -189,11 +192,11 @@ def charger_dossiers(use_local):
             if isinstance(init, list): init = init[0] if init else {}
             auteur_ref = txt(init.get("acteurRef"))
             mandat_ref = txt(init.get("mandatRef"))
-            etapes, textes, votes, decisions = [], set(), set(), []
-            _parcours_actes(d.get("actesLegislatifs"), etapes, textes, votes, decisions)
+            etapes, textes, votes, decisions, dates = [], set(), set(), [], []
+            _parcours_actes(d.get("actesLegislatifs"), etapes, textes, votes, decisions, dates)
             dossiers[uid] = {"titre":titre, "procedure":proc, "auteurRef":auteur_ref, "mandatRef":mandat_ref,
                              "textes":list(textes), "etapes":etapes, "votes":list(votes),
-                             "decisions":decisions}
+                             "decisions":decisions, "dateOuverture": min(dates) if dates else ""}
         except Exception: continue
     print(f"  {len(dossiers)} dossiers")
     return dossiers
@@ -579,9 +582,32 @@ def construire(use_local=False):
     if anciens_amdts:
         print(f"  bilan d'amendements conservé pour {len(anciens_amdts)} textes")
 
+    # --- Entonnoir : tous les textes DÉPOSÉS pendant la législature, par groupe ---
+    # Indispensable pour un taux de succès honnête : la base ne contient que les
+    # textes VOTÉS, alors que l'immense majorité des propositions déposées ne sont
+    # jamais examinées. Sans ce dénominateur, tout groupe afficherait ~100%.
+    depots = defaultdict(lambda: {"deposes":0, "examines":0, "adoptes":0, "promulgues":0})
+    refs_base = {t["ref"]: t for t in textes}
+    for dlr, d in dossiers.items():
+        ouv = d.get("dateOuverture") or ""
+        if not ouv or ouv < DEBUT_LEGISLATURE:
+            continue                       # dossier ouvert avant la législature en cours
+        auteur = resoudre_auteur(acteurs, organes, d.get("auteurRef",""), d.get("mandatRef",""))
+        g = auteur.get("groupe") or ("GOUV" if "ministre" in (auteur.get("qualite","") or "").lower() else "")
+        if not g:
+            continue
+        depots[g]["deposes"] += 1
+        t = refs_base.get(dlr)
+        if t:
+            depots[g]["examines"] += 1
+            if t["statut"] == "adopté": depots[g]["adoptes"] += 1
+            if t.get("promulguee"): depots[g]["promulgues"] += 1
+    print(f"  entonnoir : dépôts comptés pour {len(depots)} groupes")
+
     out = {"genere_le":datetime.now(timezone.utc).isoformat(),
            "source":"open data Assemblée nationale (17e législature)",
-           "nb_textes":len(textes),"textes":textes}
+           "nb_textes":len(textes),"depotsParGroupe":{k:dict(v) for k,v in depots.items()},
+           "textes":textes}
     os.makedirs(OUT_DIR, exist_ok=True)
     with open(OUT_DATA,"w",encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
