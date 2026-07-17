@@ -19,6 +19,7 @@ URLS = {
     "dossiers": "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/dossiers_legislatifs/Dossiers_Legislatifs.json.zip",
     "scrutins": "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.json.zip",
     "amendements": "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/amendements_div_legis/Amendements.json.zip",
+    "agenda": "https://data.assemblee-nationale.fr/static/openData/repository/17/vp/reunions/Agenda.json.zip",
 }
 OUT_DIR = "public"
 OUT_DATA = os.path.join(OUT_DIR, "data.json")
@@ -27,6 +28,7 @@ DEBUT_LEGISLATURE = "2024-07-18"   # ouverture de la 17e législature
 OUT_ACTEURS_DIR = os.path.join(OUT_DIR, "acteurs")
 OUT_ACTEURS_INDEX = os.path.join(OUT_DIR, "acteurs.json")
 OUT_GROUPES = os.path.join(OUT_DIR, "groupes.json")
+OUT_AGENDA = os.path.join(OUT_DIR, "agenda.json")
 OUT_AMDT_DIR = os.path.join(OUT_DIR, "amendements")
 
 # --- Sources : locales (test) ou téléchargées (prod) ---
@@ -35,6 +37,7 @@ LOCAL = {
     "dossiers": "/mnt/user-data/uploads/Dossiers_Legislatifs_json.zip",
     "scrutins": "/mnt/user-data/uploads/Scrutins_json.zip",
     "amendements": None,  # archive complète non fournie ; on gère l'absence
+    "agenda": "/mnt/user-data/uploads/Agenda_json.zip",
 }
 
 def get_zip(cle, use_local):
@@ -494,6 +497,54 @@ def construire_fiches_groupes(acteurs, textes, votes_par_texte):
     print(f"  {len(out)} fiches de groupe")
 
 
+def construire_agenda(use_local):
+    """Écrit public/agenda.json : l'ordre du jour de chaque séance publique.
+    Le calendrier ne marquait que les jours de VOTE ; l'agenda révèle tous les
+    jours de séance (débats, questions au Gouvernement, discussions sans vote)."""
+    zf = get_zip("agenda", use_local)
+    jours = defaultdict(list)
+    n_seances = 0
+    for n in zf.namelist():
+        if "/reunion/RU" not in n or not n.endswith(".json"): continue
+        try:
+            r = json.loads(zf.read(n).decode("utf-8")).get("reunion", {})
+        except Exception:
+            continue
+        if r.get("@xsi:type") != "seance_type":
+            continue                      # on ne garde que les séances publiques
+        ts = txt(r.get("timeStampDebut"))
+        date, heure = ts[:10], ts[11:16]
+        if not date: continue
+        pts = ((r.get("ODJ") or {}).get("pointsODJ") or {}).get("pointODJ")
+        if isinstance(pts, dict): pts = [pts]
+        if not isinstance(pts, list): pts = []
+        points = []
+        for p in pts:
+            dl = p.get("dossiersLegislatifsRefs") or {}
+            ref = dl.get("dossierRef") if isinstance(dl, dict) else None
+            if isinstance(ref, list): ref = ref[0] if ref else None
+            points.append({
+                "objet": txt(p.get("objet")),
+                "type": txt(p.get("typePointODJ")),
+                "nature": txt(p.get("natureTravauxODJ")),
+                "dossierRef": txt(ref) if ref else "",
+            })
+        jours[date].append({
+            "heure": heure,
+            "quantieme": txt(((r.get("identifiants") or {}).get("quantieme"))),
+            "cr": txt(r.get("compteRenduRef")),
+            "points": points,
+        })
+        n_seances += 1
+    for d in jours:
+        jours[d].sort(key=lambda s: s["heure"])
+    with open(OUT_AGENDA, "w", encoding="utf-8") as f:
+        json.dump({"genere_le": datetime.now(timezone.utc).isoformat(),
+                   "nb_jours": len(jours), "nb_seances": n_seances,
+                   "jours": dict(sorted(jours.items()))}, f, ensure_ascii=False)
+    print(f"  agenda : {n_seances} séances publiques sur {len(jours)} jours")
+
+
 def statut_decision(libelle):
     """Normalise un statutConclusion en adopté / rejeté / —."""
     s = (libelle or "").lower()
@@ -598,6 +649,7 @@ def construire(use_local=False):
 
     construire_fiches_acteurs(acteurs, organes, textes, votes_par_texte)
     construire_fiches_groupes(acteurs, textes, votes_par_texte)
+    construire_agenda(use_local)
 
     # --- Préserver l'enrichissement amendements déjà présent ---
     # build_all.py tourne tous les jours et régénère data.json ; sans cette

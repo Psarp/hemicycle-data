@@ -693,6 +693,40 @@ function Territoires({onOuvrirActeur,onOuvrirGroupe}){
   </div>;
 }
 
+
+// ---------- Ordre du jour d'une journée de séance ----------
+const NATURE_LIB={ODJPR:"Ordre du jour du Gouvernement",ODJAN:"Ordre du jour de l'Assemblée",ODJSN:"Semaine de l'Assemblée"};
+function OrdreDuJour({seances,onOuvrirTexte,textesConnus,futur}){
+  if(!seances||!seances.length) return null;
+  return <div style={{background:"#fdfcf9",borderRadius:14,padding:18,border:"1px solid #e6e1d6",marginTop:16}}>
+    <h3 style={{fontFamily:"Georgia,serif",fontSize:16,margin:"0 0 4px"}}>Ordre du jour{futur?" (prévisionnel)":""}</h3>
+    <p style={{fontSize:12,color:"#888",margin:"0 0 14px"}}>{seances.length} séance{seances.length>1?"s":""} {futur?"programmée"+(seances.length>1?"s":""):"ce jour-là"}</p>
+    {seances.map((s,i)=><div key={i} style={{marginBottom:14}}>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:7}}>
+        <span style={{fontSize:12.5,fontWeight:700,color:"#1f3d6b",background:"#eef1f6",padding:"2px 9px",borderRadius:5}}>
+          {s.quantieme?s.quantieme+" séance":"Séance"}{s.heure?" · "+s.heure:""}
+        </span>
+      </div>
+      {s.points.map((p,k)=>{
+        const connu=p.dossierRef&&textesConnus&&textesConnus.has(p.dossierRef);
+        const Balise=connu?"button":"div";
+        return <Balise key={k} onClick={connu?()=>onOuvrirTexte(p.dossierRef):undefined}
+          style={{display:"block",width:"100%",textAlign:"left",background:"#fff",border:"1px solid #eee",
+                  borderLeft:"3px solid "+(p.type==="Questions au Gouvernement"?"#b8860b":(connu?"#1f3d6b":"#ddd")),
+                  borderRadius:"0 8px 8px 0",padding:"8px 11px",marginBottom:6,
+                  cursor:connu?"pointer":"default",fontFamily:"inherit"}}>
+          <div style={{display:"flex",gap:7,flexWrap:"wrap",alignItems:"center",marginBottom:3}}>
+            {p.type&&<span style={{fontSize:10.5,color:"#888",background:"#f4f1ea",padding:"1px 6px",borderRadius:4}}>{p.type}</span>}
+            {connu&&<span style={{fontSize:10.5,color:"#1a7a3a"}}>fiche disponible →</span>}
+          </div>
+          <div style={{fontSize:12.5,color:"#2a2a2a",lineHeight:1.45}}>{p.objet||"(objet non précisé)"}</div>
+        </Balise>;
+      })}
+    </div>)}
+    <p style={{fontSize:11,color:"#999",marginTop:4,lineHeight:1.5}}>Ordre du jour officiel des séances publiques. Tous les points ne donnent pas lieu à un vote : débats, questions au Gouvernement et discussions générales y figurent aussi.</p>
+  </div>;
+}
+
 function TableauAmendements({texteRef}){
   const [ouvert,setOuvert]=useState(false);
   const [etat,setEtat]=useState("idle");
@@ -845,7 +879,7 @@ function Fiche({t,onClose,onOuvrirActeur,onOuvrirGroupe}){
   </div>;
 }
 
-function Calendrier({mois,setMois,onJour,jourActif,jours}){
+function Calendrier({mois,setMois,onJour,jourActif,jours,joursSeance}){
   const a=mois.getFullYear(),m=mois.getMonth();
   const dec=(new Date(a,m,1).getDay()+6)%7,nbj=new Date(a,m+1,0).getDate();
   const cases=[];for(let i=0;i<dec;i++)cases.push(null);for(let d=1;d<=nbj;d++)cases.push(d);
@@ -858,13 +892,21 @@ function Calendrier({mois,setMois,onJour,jourActif,jours}){
     <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:6}}>
       {JOURS.map((j,i)=><div key={i} style={{textAlign:"center",fontSize:12,fontWeight:600,color:"#999",paddingBottom:4}}>{j}</div>)}
       {cases.map((d,i)=>{if(d===null)return <div key={i}/>;
-        const iso=ymd(new Date(a,m,d));const n=jours[iso]||0;const act=n>0;const sel=iso===jourActif;
+        const iso=ymd(new Date(a,m,d));const n=jours[iso]||0;
+        const seance=joursSeance&&joursSeance.has(iso);
+        const act=n>0||seance;const sel=iso===jourActif;
         return <button key={i} onClick={()=>act&&onJour(iso)} disabled={!act} style={{aspectRatio:"1",border:sel?"2px solid #1f3d6b":act?"1px solid #1f3d6b":"1px solid transparent",borderRadius:10,background:sel?"#eef1f6":act?"#fff":"transparent",cursor:act?"pointer":"default",position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",fontSize:14,color:act?"#1a1a2e":"#c4bfb4",fontWeight:act||sel?600:400}}>
-          {d}{act&&<span style={{position:"absolute",bottom:6,display:"flex",gap:2}}>{Array.from({length:Math.min(n,3)}).map((_,k)=><span key={k} style={{width:4,height:4,borderRadius:"50%",background:"#ffc400"}}/>)}</span>}
+          {d}<span style={{position:"absolute",bottom:6,display:"flex",gap:2}}>
+            {n>0?Array.from({length:Math.min(n,3)}).map((_,k)=><span key={k} style={{width:4,height:4,borderRadius:"50%",background:"#ffc400"}}/>)
+                :(seance?<span style={{width:4,height:4,borderRadius:"50%",background:"#c4bfb4"}}/>:null)}
+          </span>
         </button>;
       })}
     </div>
-    <p style={{fontSize:12,color:"#999",marginTop:14}}>● Jour avec scrutin dans la base</p>
+    <div style={{fontSize:11.5,color:"#999",marginTop:14,lineHeight:1.7}}>
+      <span style={{display:"inline-flex",alignItems:"center",gap:5,marginRight:12}}><span style={{width:5,height:5,borderRadius:"50%",background:"#ffc400",display:"inline-block"}}></span> texte voté</span>
+      <span style={{display:"inline-flex",alignItems:"center",gap:5}}><span style={{width:5,height:5,borderRadius:"50%",background:"#c4bfb4",display:"inline-block"}}></span> séance (sans vote ou à venir)</span>
+    </div>
   </div>;
 }
 
@@ -922,6 +964,7 @@ function App(){
   const [fiche,setFiche]=useState(null);
   const [acteur,setActeur]=useState(null);
   const [groupe,setGroupe]=useState(null);
+  const [agenda,setAgenda]=useState(null);
   const [vue,setVue]=useState("calendrier");
   // Navigation par adresse : #texte/DLR… ou #depute/PA… -> liens partageables
   const allerTexte=(ref)=>{window.location.hash="texte/"+ref;};
@@ -938,6 +981,7 @@ function App(){
       const res=await fetch(DATA_URL+"?t="+Date.now());
       const j=await res.json();
       setData(j);
+      fetch("public/agenda.json?t="+Date.now()).then(r=>r.json()).then(a=>setAgenda(a)).catch(()=>{});
       if(j.textes&&j.textes.length){const [y,m]=j.textes[j.textes.length-1].date.split("-").map(Number);setMois(new Date(y,m-1,1));}
       setEtat("ok");
     }catch(e){setEtat("err");}
@@ -964,6 +1008,8 @@ function App(){
     return ()=>window.removeEventListener("hashchange",appliquer);
   },[etat,data]);
   const jours={};BASE.forEach(t=>{jours[t.date]=(jours[t.date]||0)+1;});
+  const joursSeance=useMemo(()=>new Set(agenda?Object.keys(agenda.jours||{}):[]),[agenda]);
+  const refsConnues=useMemo(()=>new Set(BASE.map(t=>t.ref)),[data]);
   const textesDuJour=jour?BASE.filter(t=>t.date===jour):[];
   const dates=[...new Set(BASE.map(t=>t.date))].sort().reverse();
 
@@ -1004,7 +1050,7 @@ function App(){
 
     {etat==="ok"&&vue==="calendrier"&&<main className="layout" style={{maxWidth:1000,margin:"0 auto",padding:"28px 20px",display:"grid",gridTemplateColumns:"minmax(300px,380px) 1fr",gap:28,alignItems:"start"}}>
       <div className="cal-col" style={{background:"#fdfcf9",borderRadius:14,padding:22,border:"1px solid #e6e1d6",position:"sticky",top:20}}>
-        <Calendrier mois={mois} setMois={setMois} onJour={setJour} jourActif={jour} jours={jours}/>
+        <Calendrier mois={mois} setMois={setMois} onJour={setJour} jourActif={jour} jours={jours} joursSeance={joursSeance}/>
       </div>
       <div>
         {!jour?<div style={{background:"#fdfcf9",borderRadius:14,padding:"40px 28px",border:"1px dashed #d8d2c4"}}>
@@ -1014,7 +1060,7 @@ function App(){
             {dates.map(dt=><button key={dt} onClick={()=>setJour(dt)} style={{display:"flex",justifyContent:"space-between",alignItems:"center",width:"100%",textAlign:"left",background:"none",border:"none",borderBottom:"1px solid #f3f0e8",padding:"9px 0",fontSize:13.5,color:"#1f3d6b",cursor:"pointer",fontWeight:500}}><span>{frDate(dt)}</span><span style={{fontSize:12,color:"#999"}}>{jours[dt]} texte{jours[dt]>1?"s":""} →</span></button>)}
           </div>
         </div>:<div>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}><h2 style={{fontFamily:"Georgia,serif",fontSize:19}}>{frDate(jour)}<span style={{fontSize:14,fontWeight:400,color:"#888",marginLeft:8}}>· {textesDuJour.length} texte{textesDuJour.length>1?"s":""}</span></h2><button onClick={()=>setJour(null)} style={{...navBtn,width:"auto",padding:"0 12px",fontSize:13}}>✕ Fermer</button></div>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}><h2 style={{fontFamily:"Georgia,serif",fontSize:19}}>{frDate(jour)}<span style={{fontSize:14,fontWeight:400,color:"#888",marginLeft:8}}>{textesDuJour.length>0?`· ${textesDuJour.length} texte${textesDuJour.length>1?"s":""} voté${textesDuJour.length>1?"s":""}`:(jour>ymd(new Date())?"· séance à venir":"· séance sans vote")}</span></h2><button onClick={()=>setJour(null)} style={{...navBtn,width:"auto",padding:"0 12px",fontSize:13}}>✕ Fermer</button></div>
           <div style={{display:"flex",flexDirection:"column",gap:14}}>
             {textesDuJour.map((t,i)=>{const ad=t.statut==="adopté",rej=t.statut==="rejeté";
               return <button key={i} onClick={()=>allerTexte(t.ref)} style={{textAlign:"left",background:"#fdfcf9",border:"1px solid #e6e1d6",borderRadius:12,padding:18,cursor:"pointer"}}>
@@ -1029,6 +1075,8 @@ function App(){
               </button>;
             })}
           </div>
+          {agenda&&agenda.jours&&agenda.jours[jour]&&
+            <OrdreDuJour seances={agenda.jours[jour]} onOuvrirTexte={allerTexte} textesConnus={refsConnues} futur={jour>ymd(new Date())}/>}
         </div>}
       </div>
     </main>}
