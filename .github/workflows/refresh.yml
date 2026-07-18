@@ -3,7 +3,12 @@ name: Rafraîchir les données Hémicycle
 on:
   schedule:
     - cron: "0 5 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      forcer:
+        description: "Forcer le recalcul complet des objets/descriptions (ignore le cache)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -21,8 +26,8 @@ jobs:
           python-version: "3.12"
       - name: Générer les données (textes, votes nominatifs, fiches d'acteurs)
         run: python build_all.py
-      - name: Compléter les descriptions (exposé des motifs, incrémental)
-        run: python build_descriptions.py
+      - name: Compléter les descriptions (exposé des motifs)
+        run: python build_descriptions.py ${{ inputs.forcer && '--force' || '' }}
       - name: Publier si modifié
         run: |
           git config user.name "hemicycle-bot"
