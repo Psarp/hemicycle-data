@@ -794,6 +794,28 @@ function TableauAmendements({texteRef}){
   </div>;
 }
 
+function DescriptionTexte({d}){
+  const [ouvert,setOuvert]=useState(false);
+  if(!d||(!d.resume&&(!d.articles||d.articles.length===0))) return null;
+  const arts=d.articles||[];
+  const SEUIL=4;
+  const visibles=ouvert?arts:arts.slice(0,SEUIL);
+  const reste=arts.length-SEUIL;
+  const source=d.source==="SN"?"Sénat":"Assemblée nationale";
+  return <section style={{marginTop:26}}>
+    <h3 style={{fontFamily:"Georgia,serif",fontSize:17,color:"#1a1a2e",margin:"0 0 14px",paddingBottom:8,borderBottom:"2px solid #1f3d6b"}}>Objet du texte</h3>
+    {d.resume&&<p style={{fontSize:14.5,lineHeight:1.55,color:"#2a2a3a",margin:"0 0 14px",fontStyle:"italic"}}>« {d.resume} »</p>}
+    {arts.length>0&&<>
+      <div style={{fontSize:12.5,fontWeight:600,color:"#555",marginBottom:8}}>Ce que prévoit le texte</div>
+      <div style={{display:"flex",flexDirection:"column",gap:8}}>
+        {visibles.map((a,i)=><div key={i} style={{borderLeft:"3px solid #1f3d6b",padding:"7px 13px",background:"#fff",borderRadius:"0 6px 6px 0",fontSize:13,lineHeight:1.55,color:"#333"}}>{a}</div>)}
+      </div>
+      {reste>0&&<button onClick={()=>setOuvert(o=>!o)} style={{marginTop:10,background:"#f0ece3",border:"1px solid #e2dcd0",borderRadius:8,padding:"7px 14px",cursor:"pointer",fontSize:13,color:"#1f3d6b",fontWeight:600,fontFamily:"inherit"}}>{ouvert?"▲ Réduire":"▼ Voir les "+reste+" article"+(reste>1?"s":"")+" suivant"+(reste>1?"s":"")}</button>}
+    </>}
+    {d.url&&<div style={{marginTop:12,fontSize:11.5,color:"#9a9488"}}>Résumé issu de l'exposé des motifs (open data {source}) · <a href={d.url} target="_blank" rel="noopener noreferrer" style={{color:"#1f3d6b"}}>texte intégral</a></div>}
+  </section>;
+}
+
 function Fiche({t,onClose,onOuvrirActeur,onOuvrirGroupe}){
   const totaux=useMemo(()=>{
     if(!t.votesParGroupe)return null;
@@ -817,6 +839,7 @@ function Fiche({t,onClose,onOuvrirActeur,onOuvrirGroupe}){
         <div style={{marginTop:10,fontSize:13,opacity:0.85}}>📅 {frDate(t.date)} · 🆔 {t.ref}</div>
       </div>
       <div style={{padding:"8px 28px 32px"}}>
+        <DescriptionTexte d={t.description}/>
         {t.cycle&&t.cycle.length>0&&<Section titre="Cycle législatif">
           <div style={{display:"flex",flexWrap:"wrap",gap:8,alignItems:"center"}}>
             {t.cycle.map((e,i)=><React.Fragment key={i}>
