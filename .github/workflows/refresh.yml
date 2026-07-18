@@ -21,11 +21,13 @@ jobs:
           python-version: "3.12"
       - name: Générer les données (textes, votes nominatifs, fiches d'acteurs)
         run: python build_all.py
+      - name: Compléter les descriptions (exposé des motifs, incrémental)
+        run: python build_descriptions.py
       - name: Publier si modifié
         run: |
           git config user.name "hemicycle-bot"
           git config user.email "actions@github.com"
-          git add public/data.json public/votes public/acteurs.json public/acteurs public/groupes.json public/agenda.json
+          git add public/data.json public/descriptions.json public/votes public/acteurs.json public/acteurs public/groupes.json public/agenda.json
           if git diff --staged --quiet; then
             echo "Aucun changement dans les données."
           else
