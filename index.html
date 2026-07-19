@@ -796,23 +796,23 @@ function TableauAmendements({texteRef}){
 
 function DescriptionTexte({d}){
   const [ouvert,setOuvert]=useState(false);
-  if(!d||(!d.resume&&(!d.articles||d.articles.length===0))) return null;
-  const arts=d.articles||[];
-  const SEUIL=4;
-  const visibles=ouvert?arts:arts.slice(0,SEUIL);
-  const reste=arts.length-SEUIL;
+  if(!d||!d.paragraphes||d.paragraphes.length===0) return null;
+  const ps=d.paragraphes;
+  // Aperçu : jusqu'à ~600 caractères. On évite un « voir plus » pour un seul
+  // paragraphe caché (on montre tout dans ce cas).
+  let n=0,len=0;
+  while(n<ps.length && len<600){ len+=ps[n].length; n++; }
+  if(ps.length-n<=1) n=ps.length;
+  const visibles=ouvert?ps:ps.slice(0,n);
+  const reste=ps.length-n;
   const source=d.source==="SN"?"Sénat":"Assemblée nationale";
   return <section style={{marginTop:26}}>
     <h3 style={{fontFamily:"Georgia,serif",fontSize:17,color:"#1a1a2e",margin:"0 0 14px",paddingBottom:8,borderBottom:"2px solid #1f3d6b"}}>Objet du texte</h3>
-    {d.resume&&<p style={{fontSize:14.5,lineHeight:1.55,color:"#2a2a3a",margin:"0 0 14px",fontStyle:"italic"}}>« {d.resume} »</p>}
-    {arts.length>0&&<>
-      <div style={{fontSize:12.5,fontWeight:600,color:"#555",marginBottom:8}}>Ce que prévoit le texte</div>
-      <div style={{display:"flex",flexDirection:"column",gap:8}}>
-        {visibles.map((a,i)=><div key={i} style={{borderLeft:"3px solid #1f3d6b",padding:"7px 13px",background:"#fff",borderRadius:"0 6px 6px 0",fontSize:13,lineHeight:1.55,color:"#333"}}>{a}</div>)}
-      </div>
-      {reste>0&&<button onClick={()=>setOuvert(o=>!o)} style={{marginTop:10,background:"#f0ece3",border:"1px solid #e2dcd0",borderRadius:8,padding:"7px 14px",cursor:"pointer",fontSize:13,color:"#1f3d6b",fontWeight:600,fontFamily:"inherit"}}>{ouvert?"▲ Réduire":"▼ Voir les "+reste+" article"+(reste>1?"s":"")+" suivant"+(reste>1?"s":"")}</button>}
-    </>}
-    {d.url&&<div style={{marginTop:12,fontSize:11.5,color:"#9a9488"}}>Résumé issu de l'exposé des motifs (open data {source}) · <a href={d.url} target="_blank" rel="noopener noreferrer" style={{color:"#1f3d6b"}}>texte intégral</a></div>}
+    <div style={{fontSize:13.5,lineHeight:1.62,color:"#333"}}>
+      {visibles.map((p,i)=><p key={i} style={{margin:i===0?"0 0 11px":"0 0 11px"}}>{p}</p>)}
+    </div>
+    {reste>0&&<button onClick={()=>setOuvert(o=>!o)} style={{marginTop:2,background:"#f0ece3",border:"1px solid #e2dcd0",borderRadius:8,padding:"7px 14px",cursor:"pointer",fontSize:13,color:"#1f3d6b",fontWeight:600,fontFamily:"inherit"}}>{ouvert?"▲ Réduire":"▼ Lire la suite ("+reste+" paragraphe"+(reste>1?"s":"")+")"}</button>}
+    {d.url&&<div style={{marginTop:12,fontSize:11.5,color:"#9a9488"}}>Objet repris de l'exposé des motifs (open data {source}) · <a href={d.url} target="_blank" rel="noopener noreferrer" style={{color:"#1f3d6b"}}>texte intégral</a></div>}
   </section>;
 }
 
@@ -891,10 +891,6 @@ function Fiche({t,onClose,onOuvrirActeur,onOuvrirGroupe}){
               <tbody>{Object.entries(t.amendements.parGroupe).sort((a,b)=>b[1].deposes-a[1].deposes).map(([g,v])=><tr key={g} style={{borderBottom:"1px solid #f0ece3"}}><td style={{padding:"6px 8px"}}><span style={{display:"inline-block",width:8,height:8,borderRadius:"50%",background:G(g).couleur,marginRight:6}}></span>{G(g).court}</td><td style={{padding:"6px 8px"}}>{v.deposes}</td><td style={{padding:"6px 8px",color:v.adoptes>0?"#1a7a3a":"#999",fontWeight:v.adoptes>0?600:400}}>{v.adoptes}</td></tr>)}</tbody>
             </table>
           </div>
-          {t.amendements.listeAdoptes&&t.amendements.listeAdoptes.length>0&&<div style={{marginBottom:14}}>
-            <div style={{fontSize:12.5,fontWeight:600,color:"#555",marginBottom:8}}>Amendements adoptés</div>
-            {t.amendements.listeAdoptes.map((a,i)=><div key={i} style={{borderLeft:"3px solid "+G(a.groupe).couleur,padding:"6px 12px",marginBottom:6,background:"#fff",borderRadius:"0 6px 6px 0"}}><div style={{fontSize:12.5,display:"flex",alignItems:"center",gap:8,flexWrap:"wrap"}}><strong>{a.num}</strong> <span style={{color:"#888"}}>· {G(a.groupe).court}</span><span style={{fontSize:10.5,padding:"1px 7px",borderRadius:4,background:"#e6f4ea",color:"#1a7a3a",fontWeight:600}}>{a.sort}</span></div><div style={{fontSize:12.5,color:"#444",marginTop:2}}><ObjetTexte texte={a.objet} num={a.num} groupe={a.groupe}/></div></div>)}
-          </div>}
           <TableauAmendements texteRef={t.ref}/>
         </Section>}
         <a href={dossierURL} target="_blank" rel="noopener noreferrer" style={{display:"inline-flex",alignItems:"center",gap:6,marginTop:24,fontSize:13,color:"#1f3d6b",fontWeight:600,textDecoration:"none"}}>↗ Dossier officiel sur assemblee-nationale.fr ({t.ref})</a>
@@ -1002,7 +998,7 @@ function App(){
   async function charger(){
     setEtat("load");
     try{
-      const res=await fetch(DATA_URL+"?t="+Date.now());
+      const res=await fetch(DATA_URL+"?d="+new Date().toISOString().slice(0,10));
       const j=await res.json();
       setData(j);
       fetch("public/agenda.json?t="+Date.now()).then(r=>r.json()).then(a=>setAgenda(a)).catch(()=>{});
