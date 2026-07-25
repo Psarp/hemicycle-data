@@ -1013,7 +1013,62 @@ function ListeCommissions({onOuvrir}){
   </div>;
 }
 
-function FicheCommission({uid,onClose,onOuvrirTexte,onOuvrirActeur}){
+// Fiche allégée d'une loi examinée en commission mais pas (encore) votée
+function FicheTexteCommission({dlr,onClose,onOuvrirActeur}){
+  const [etat,setEtat]=useState("load");
+  const [f,setF]=useState(null);
+  useEffect(()=>{(async()=>{
+    setEtat("load");
+    try{
+      const r=await fetch("public/textes_commission.json?d="+new Date().toISOString().slice(0,10));
+      const j=await r.json();
+      setF((j.textes||{})[dlr]||null); setEtat("ok");
+    }catch(e){setEtat("err");}
+  })();},[dlr]);
+  const Section=({titre,children})=><section style={{marginTop:24}}><h3 style={{fontFamily:"Georgia,serif",fontSize:16,color:"#1a1a2e",margin:"0 0 12px",paddingBottom:7,borderBottom:"2px solid #1f3d6b"}}>{titre}</h3>{children}</section>;
+  return <div onClick={onClose} style={{position:"fixed",inset:0,background:"rgba(20,20,35,0.55)",zIndex:56,display:"flex",justifyContent:"center",overflowY:"auto",padding:"24px 16px"}}>
+    <div onClick={e=>e.stopPropagation()} style={{background:"#fdfcf9",borderRadius:14,maxWidth:720,width:"100%",height:"fit-content",boxShadow:"0 20px 60px rgba(0,0,0,0.3)",overflow:"hidden"}}>
+      <div style={{background:"linear-gradient(135deg,#1f3d6b 0%,#16294a 130%)",color:"#fff",padding:"20px 26px",position:"relative"}}>
+        <button onClick={onClose} style={{position:"absolute",top:14,right:14,background:"rgba(255,255,255,0.2)",border:"none",borderRadius:8,width:30,height:30,color:"#fff",cursor:"pointer",fontSize:15}}>✕</button>
+        <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:8}}>
+          {f&&f.type&&<span style={{fontSize:11.5,background:"rgba(255,255,255,0.18)",padding:"3px 9px",borderRadius:5,fontWeight:600}}>{f.type}</span>}
+          <span style={{fontSize:11.5,background:"#ffc400",color:"#1a1a2e",padding:"3px 9px",borderRadius:5,fontWeight:700}}>examiné en commission · non voté</span>
+        </div>
+        <h2 style={{fontFamily:"Georgia,serif",fontSize:20,paddingRight:40,lineHeight:1.3}}>{f?f.titre:"…"}</h2>
+        {f&&<div style={{marginTop:10,fontSize:13,opacity:0.95,display:"flex",flexWrap:"wrap",gap:"4px 14px"}}>
+          {f.auteur&&<span>✍ {f.auteur}{f.auteurGroupe&&<span style={{opacity:0.8}}> · {G(f.auteurGroupe).court}</span>}</span>}
+          {f.commission&&f.commission.nom&&<span>🏛 {f.commission.nom}</span>}
+          {f.rapporteur&&f.rapporteur.nom&&<span>Rapporteur : <button onClick={()=>onOuvrirActeur&&onOuvrirActeur(f.rapporteur.acteurRef)} style={{background:"none",border:"none",padding:0,cursor:"pointer",color:"#fff",fontWeight:700,fontSize:13,textDecoration:"underline",fontFamily:"inherit"}}>{f.rapporteur.nom}</button></span>}
+        </div>}
+      </div>
+      <div style={{padding:"6px 26px 30px"}}>
+        {etat==="load"&&<p style={{padding:"30px 0",textAlign:"center",color:"#666"}}>Chargement…</p>}
+        {(etat==="err"||(etat==="ok"&&!f))&&<p style={{padding:"30px 0",textAlign:"center",color:"#c0392b"}}>Fiche indisponible pour ce texte.</p>}
+        {f&&<>
+          <DescriptionTexte d={f.objet}/>
+          {f.cycle&&f.cycle.length>0&&<Section titre="Où en est ce texte">
+            <div style={{display:"flex",flexDirection:"column",gap:0}}>
+              {f.cycle.map((e,i)=><div key={i} style={{display:"flex",gap:12,alignItems:"flex-start",paddingBottom:i<f.cycle.length-1?14:0,position:"relative"}}>
+                <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+                  <div style={{width:11,height:11,borderRadius:"50%",background:"#1f3d6b",marginTop:3}}></div>
+                  {i<f.cycle.length-1&&<div style={{width:2,flex:1,minHeight:20,background:"#d8d2c4"}}></div>}
+                </div>
+                <div><div style={{fontSize:13.5,color:"#1a1a2e",fontWeight:600}}>{e.label}</div><div style={{fontSize:12,color:"#888"}}>{frDate(e.date)}</div></div>
+              </div>)}
+              <div style={{display:"flex",gap:12,alignItems:"center"}}>
+                <div style={{width:11,height:11,borderRadius:"50%",background:"#fff",border:"2px solid #b8860b"}}></div>
+                <div style={{fontSize:13,color:"#b8860b",fontWeight:600}}>En attente de passage en séance</div>
+              </div>
+            </div>
+          </Section>}
+          <div style={{marginTop:22,fontSize:12.5}}><a href={f.dossierUrl} target="_blank" rel="noopener noreferrer" style={{color:"#1f3d6b",fontWeight:600}}>→ Dossier complet sur assemblee-nationale.fr</a></div>
+        </>}
+      </div>
+    </div>
+  </div>;
+}
+
+function FicheCommission({uid,onClose,onOuvrirTexte,onOuvrirActeur,onOuvrirTexteCommission}){
   const [etat,data]=useCommissions();
   const c=data&&(data.commissions||[]).find(x=>x.uid===uid);
   const Section=({titre,children})=><section style={{marginTop:24}}><h3 style={{fontFamily:"Georgia,serif",fontSize:16,color:"#1a1a2e",margin:"0 0 12px",paddingBottom:7,borderBottom:"2px solid #1f3d6b"}}>{titre}</h3>{children}</section>;
@@ -1070,7 +1125,7 @@ function FicheCommission({uid,onClose,onOuvrirTexte,onOuvrirActeur}){
                 // Voté -> ouvre la fiche complète. Non voté -> lien vers le dossier officiel.
                 return t.vote
                   ? <button key={i} onClick={()=>onOuvrirTexte&&onOuvrirTexte(t.ref)} style={{...style,cursor:"pointer"}}>{contenu}</button>
-                  : <a key={i} href={"https://www.assemblee-nationale.fr/dyn/17/dossiers/"+t.ref} target="_blank" rel="noopener noreferrer" style={{...style,textDecoration:"none"}}>{contenu}<div style={{fontSize:10.5,color:"#1f3d6b",marginTop:3}}>→ dossier sur assemblee-nationale.fr</div></a>;
+                  : <button key={i} onClick={()=>onOuvrirTexteCommission&&onOuvrirTexteCommission(t.ref)} style={{...style,cursor:"pointer"}}>{contenu}<div style={{fontSize:10.5,color:"#b8860b",marginTop:3}}>→ voir la fiche (objet, cycle, rapporteur)</div></button>;
               })}
             </div>
           </Section>
@@ -1089,6 +1144,7 @@ function App(){
   const [acteur,setActeur]=useState(null);
   const [groupe,setGroupe]=useState(null);
   const [commission,setCommission]=useState(null);
+  const [texteC,setTexteC]=useState(null);
   const [agenda,setAgenda]=useState(null);
   const [vue,setVue]=useState("calendrier");
   // Navigation par adresse : #texte/DLR… ou #depute/PA… -> liens partageables
@@ -1096,6 +1152,7 @@ function App(){
   const allerActeur=(ref)=>{window.location.hash="depute/"+ref;};
   const allerGroupe=(code)=>{window.location.hash="groupe/"+code;};
   const allerCommission=(uid)=>{window.location.hash="commission/"+uid;};
+  const allerTexteCommission=(ref)=>{window.location.hash="textecom/"+ref;};
   const fermer=()=>{
     if(window.location.hash) window.history.back();
     else {setFiche(null);setActeur(null);}
@@ -1122,14 +1179,16 @@ function App(){
       const h=(window.location.hash||"").replace(/^#/,"");
       if(h.startsWith("texte/")){
         const t=(data&&data.textes||[]).find(x=>x.ref===h.slice(6));
-        setActeur(null); setGroupe(null); setCommission(null); setFiche(t||null);
+        setActeur(null); setGroupe(null); setCommission(null); setTexteC(null); setFiche(t||null);
       } else if(h.startsWith("depute/")){
-        setFiche(null); setGroupe(null); setCommission(null); setActeur(h.slice(7));
+        setFiche(null); setGroupe(null); setCommission(null); setTexteC(null); setActeur(h.slice(7));
       } else if(h.startsWith("groupe/")){
-        setFiche(null); setActeur(null); setCommission(null); setGroupe(h.slice(7));
+        setFiche(null); setActeur(null); setCommission(null); setTexteC(null); setGroupe(h.slice(7));
       } else if(h.startsWith("commission/")){
-        setFiche(null); setActeur(null); setGroupe(null); setCommission(h.slice(11));
-      } else { setFiche(null); setActeur(null); setGroupe(null); setCommission(null); }
+        setFiche(null); setActeur(null); setGroupe(null); setTexteC(null); setCommission(h.slice(11));
+      } else if(h.startsWith("textecom/")){
+        setFiche(null); setActeur(null); setGroupe(null); setCommission(null); setTexteC(h.slice(9));
+      } else { setFiche(null); setActeur(null); setGroupe(null); setCommission(null); setTexteC(null); }
     };
     appliquer();
     window.addEventListener("hashchange",appliquer);
@@ -1219,7 +1278,8 @@ function App(){
     {fiche&&<Fiche t={fiche} onClose={fermer} onOuvrirActeur={allerActeur} onOuvrirGroupe={allerGroupe}/>}
     {acteur&&<FicheActeur acteurRef={acteur} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirGroupe={allerGroupe}/>}
     {groupe&&<FicheGroupe code={groupe} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirActeur={allerActeur} onOuvrirGroupe={allerGroupe}/>}
-    {commission&&<FicheCommission uid={commission} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirActeur={allerActeur}/>}
+    {commission&&<FicheCommission uid={commission} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirActeur={allerActeur} onOuvrirTexteCommission={allerTexteCommission}/>}
+    {texteC&&<FicheTexteCommission dlr={texteC} onClose={fermer} onOuvrirActeur={allerActeur}/>}
   </div>;
 }
 
