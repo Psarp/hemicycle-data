@@ -125,22 +125,22 @@ def analyser_dossier(d, commissions, diag):
     """Renvoie un enregistrement complet (commission, rapporteur, entonnoir + de
     quoi bâtir une fiche allégée : doc initial, auteur, cycle) ou None."""
     titre = txt((d.get("titreDossier") or {}).get("titre"))
+    # auteur = initiateur du dossier (même emplacement que build_all.py)
+    init = (((d.get("initiateur") or {}).get("acteurs") or {}).get("acteur") or {})
+    if isinstance(init, list):
+        init = init[0] if init else {}
+    auteur_ref = txt(init.get("acteurRef"))
     fond = Counter()
     rapporteurs, dates_fond = [], []
     examine = rapport = False
     tous_textes = []
     date_depot = date_reunion = date_rapport = ""
-    auteurs = []
     for acte in _iter_actes(d.get("actesLegislatifs")):
         ca = txt(acte.get("codeActe"))
         tous_textes += _refs_textes(acte)
         dd = txt(acte.get("dateActe"))[:10]
-        # auteur du texte : initiateur(s) du dépôt initial
-        if "DEPOT" in ca and ("INITIAL" in ca or not date_depot):
-            if dd and not date_depot:
-                date_depot = dd
-            for cle in ("initiateur", "initiateurs"):
-                auteurs += _pa_dans(acte.get(cle))
+        if "DEPOT" in ca and dd and not date_depot:
+            date_depot = dd
         if "COM-FOND" not in ca:
             continue
         oref = _oref(acte)
@@ -177,7 +177,7 @@ def analyser_dossier(d, commissions, diag):
         "titre": titre,
         "docInit": inits[0] if inits else "",
         "textesRefs": [t for t in set(tous_textes) if re.match(r"(PION|PRJL|RAPP)", t)],
-        "auteurRef": auteurs[0] if auteurs else "",
+        "auteurRef": auteur_ref,
         "dateDepot": date_depot, "dateReunion": date_reunion, "dateRapport": date_rapport,
     }
 
