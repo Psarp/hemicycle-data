@@ -1,0 +1,21 @@
+name: Diagnostic commissions (manuel)
+
+# Workflow de VALIDATION uniquement : il lance build_commissions.py pour imprimer
+# le diagnostic dans les logs. Il ne publie RIEN (pas de commit), on peut donc le
+# lancer sans risque autant de fois qu'on veut.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Lancer le diagnostic (aucune publication)
+        run: python build_commissions.py
