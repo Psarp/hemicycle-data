@@ -7,10 +7,12 @@ Produit :
 
 En production (GitHub Actions), télécharge les 4 archives.
 En test local, on peut injecter des ZIP locaux (voir --local)."""
-import io, json, os, re, sys, zipfile, glob
+import io, json, os, re, sys, zipfile, glob, time
 from collections import defaultdict, Counter
 from datetime import datetime, timezone
 from urllib.request import urlopen, Request
+from urllib.error import URLError
+from http.client import IncompleteRead
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib_commun import ORGANE_TO_GROUPE, txt, clean_html
 
@@ -46,11 +48,20 @@ def get_zip(cle, use_local):
         return zipfile.ZipFile(LOCAL[cle])
     url = URLS[cle]
     print(f"[web] {cle}: {url}")
-    req = Request(url, headers={"User-Agent":"Hemicycle/1.0"})
-    with urlopen(req, timeout=600) as r:
-        data = r.read()
-    print(f"     {len(data)//1024//1024} Mo")
-    return zipfile.ZipFile(io.BytesIO(data))
+    derniere = None
+    for essai in range(1, 5):                       # jusqu'à 4 tentatives
+        try:
+            req = Request(url, headers={"User-Agent": "Hemicycle/1.0"})
+            with urlopen(req, timeout=600) as r:
+                data = r.read()
+            zf = zipfile.ZipFile(io.BytesIO(data))  # lève BadZipFile si tronqué
+            print(f"     {len(data)//1024//1024} Mo")
+            return zf
+        except (IncompleteRead, URLError, TimeoutError, OSError, zipfile.BadZipFile) as e:
+            derniere = e
+            print(f"     tentative {essai}/4 échouée ({type(e).__name__}: {e}) — nouvel essai dans {3*essai}s")
+            time.sleep(3 * essai)
+    raise RuntimeError(f"Téléchargement de '{cle}' impossible après 4 tentatives : {derniere}")
 
 # ---------- 1. ACTEURS : PA... -> nom + mandats (députés, sénateurs, ministres) ----------
 def charger_acteurs(use_local):
