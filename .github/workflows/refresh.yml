@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "hemicycle-bot"
           git config user.email "actions@github.com"
-          git add public/data.json public/descriptions.json public/commissions.json public/votes public/acteurs.json public/acteurs public/groupes.json public/agenda.json
+          git add public/data.json public/descriptions.json public/commissions.json public/textes_commission.json public/descriptions_commission.json public/votes public/acteurs.json public/acteurs public/groupes.json public/agenda.json
           if git diff --staged --quiet; then
             echo "Aucun changement dans les données."
           else
