@@ -837,6 +837,10 @@ function Fiche({t,onClose,onOuvrirActeur,onOuvrirGroupe}){
         <h2 style={{fontFamily:"Georgia,serif",fontSize:21,lineHeight:1.3,paddingRight:40}}>{t.titre}</h2>
         {t.auteur&&<div style={{marginTop:8,fontSize:13.5}}>Auteur : {t.auteurActeurRef?<button onClick={()=>onOuvrirActeur&&onOuvrirActeur(t.auteurActeurRef)} style={{background:"none",border:"none",padding:0,cursor:"pointer",color:"#ffc400",fontWeight:700,fontSize:13.5,textDecoration:"underline",fontFamily:"inherit"}}>{t.auteur}</button>:<strong>{t.auteur}</strong>}{auteurLibelle(t)&&<span style={{opacity:0.8}}> · {auteurLibelle(t)}</span>}</div>}
         <div style={{marginTop:10,fontSize:13,opacity:0.85}}>📅 {frDate(t.date)} · 🆔 {t.ref}</div>
+        {(t.commission||t.rapporteur)&&<div style={{marginTop:8,fontSize:13,opacity:0.95,display:"flex",flexWrap:"wrap",gap:"4px 14px"}}>
+          {t.commission&&t.commission.nom&&<span>🏛 {t.commission.nom}</span>}
+          {t.rapporteur&&t.rapporteur.nom&&<span>Rapporteur : <button onClick={()=>onOuvrirActeur&&onOuvrirActeur(t.rapporteur.acteurRef)} style={{background:"none",border:"none",padding:0,cursor:"pointer",color:"#fff",fontWeight:700,fontSize:13,textDecoration:"underline",fontFamily:"inherit"}}>{t.rapporteur.nom}</button>{t.rapporteur.groupe&&<span style={{opacity:0.8}}> · {G(t.rapporteur.groupe).court}</span>}</span>}
+        </div>}
       </div>
       <div style={{padding:"8px 28px 32px"}}>
         <DescriptionTexte d={t.description}/>
@@ -936,26 +940,30 @@ function Recherche({textes,onOuvrir}){
   const [fGroupe,setFGroupe]=useState("");
   const [fStatut,setFStatut]=useState("");
   const [fRef,setFRef]=useState("");
+  const [fCom,setFCom]=useState("");
   const groupes=[...new Set(textes.map(t=>t.auteurGroupe).filter(Boolean))];
   const types=[...new Set(textes.map(t=>t.type).filter(Boolean))].sort();
+  const commissions=[...new Set(textes.map(t=>t.commission&&t.commission.nom).filter(Boolean))].sort();
   const res=textes.filter(t=>
     (!q||t.titre.toLowerCase().includes(q.toLowerCase())||(t.auteur||"").toLowerCase().includes(q.toLowerCase()))&&
     (!fType||t.type===fType)&&
     (!fGroupe||t.auteurGroupe===fGroupe)&&
     (!fStatut||t.statut===fStatut)&&
+    (!fCom||(t.commission&&t.commission.nom===fCom))&&
     (!fRef||(t.ref||"").toLowerCase().includes(fRef.toLowerCase()))
   ).sort((a,b)=>b.date.localeCompare(a.date));
   const sel={fontSize:13,padding:"8px 10px",borderRadius:8,border:"1px solid #d8d2c4",background:"#fff"};
-  const actif=q||fType||fGroupe||fStatut||fRef;
+  const actif=q||fType||fGroupe||fStatut||fRef||fCom;
   return <div>
     <div style={{background:"#fdfcf9",borderRadius:14,padding:20,border:"1px solid #e6e1d6",marginBottom:20}}>
       <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Rechercher dans le titre ou l'auteur…" style={{...sel,width:"100%",fontSize:14,marginBottom:10}}/>
       <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
         <select value={fType} onChange={e=>setFType(e.target.value)} style={sel}><option value="">Tous types</option>{types.map(x=><option key={x} value={x}>{x}</option>)}</select>
         <select value={fGroupe} onChange={e=>setFGroupe(e.target.value)} style={sel}><option value="">Tous partis (auteur)</option>{groupes.map(g=><option key={g} value={g}>{G(g).court}</option>)}</select>
+        {commissions.length>0&&<select value={fCom} onChange={e=>setFCom(e.target.value)} style={sel}><option value="">Toutes commissions</option>{commissions.map(c=><option key={c} value={c}>{c.replace(/^Commission des? /i,"").replace(/^Commission de l['’]/i,"")}</option>)}</select>}
         <select value={fStatut} onChange={e=>setFStatut(e.target.value)} style={sel}><option value="">Tous statuts</option><option value="adopté">Adopté</option><option value="rejeté">Rejeté</option></select>
         <input value={fRef} onChange={e=>setFRef(e.target.value)} placeholder="N° dossier (DLR…)" style={{...sel,flex:"1 1 140px"}}/>
-        {actif&&<button onClick={()=>{setQ("");setFType("");setFGroupe("");setFStatut("");setFRef("");}} style={{...sel,cursor:"pointer",color:"#c0392b",background:"#fbeaea",border:"1px solid #f0d9d9"}}>✕ Réinitialiser</button>}
+        {actif&&<button onClick={()=>{setQ("");setFType("");setFGroupe("");setFStatut("");setFRef("");setFCom("");}} style={{...sel,cursor:"pointer",color:"#c0392b",background:"#fbeaea",border:"1px solid #f0d9d9"}}>✕ Réinitialiser</button>}
       </div>
     </div>
     <div style={{fontSize:12.5,color:"#999",marginBottom:12}}>{res.length} texte{res.length>1?"s":""} trouvé{res.length>1?"s":""}</div>
@@ -976,6 +984,102 @@ function Recherche({textes,onOuvrir}){
   </div>;
 }
 
+// ---------- Commissions : liste + fiche détaillée (composition + entonnoir) ----------
+function useCommissions(){
+  const [etat,setEtat]=useState("load");
+  const [data,setData]=useState(null);
+  useEffect(()=>{(async()=>{
+    try{
+      const r=await fetch("public/commissions.json?d="+new Date().toISOString().slice(0,10));
+      setData(await r.json()); setEtat("ok");
+    }catch(e){setEtat("err");}
+  })();},[]);
+  return [etat,data];
+}
+
+function ListeCommissions({onOuvrir}){
+  const [etat,data]=useCommissions();
+  if(etat==="load") return <p style={{padding:"40px 0",textAlign:"center",color:"#666"}}>Chargement des commissions…</p>;
+  if(etat==="err"||!data) return <p style={{padding:"40px 0",textAlign:"center",color:"#c0392b"}}>Commissions indisponibles. Le fichier <code>public/commissions.json</code> a-t-il été généré ?</p>;
+  const coms=(data.commissions||[]);
+  return <div>
+    <p style={{fontSize:14,color:"#555",lineHeight:1.6,marginBottom:18}}>Les 8 commissions permanentes de l'Assemblée. Chacune examine les textes de son domaine avant leur passage en séance — y compris des lois qui ne seront jamais votées. Cliquez pour voir sa composition et les lois qu'elle a examinées.</p>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:14}}>
+      {coms.map(c=><button key={c.uid} onClick={()=>onOuvrir(c.uid)} style={{textAlign:"left",background:"#fdfcf9",border:"1px solid #e6e1d6",borderLeft:"4px solid #1f3d6b",borderRadius:12,padding:"16px 18px",cursor:"pointer"}}>
+        <div style={{fontFamily:"Georgia,serif",fontSize:16,color:"#1a1a2e",lineHeight:1.3}}>{c.nom}</div>
+        <div style={{marginTop:8,fontSize:12.5,color:"#777"}}>{c.effectif} membres · <strong style={{color:"#1f3d6b"}}>{c.nbLois}</strong> loi{c.nbLois>1?"s":""} examinée{c.nbLois>1?"s":""}</div>
+      </button>)}
+    </div>
+  </div>;
+}
+
+function FicheCommission({uid,onClose,onOuvrirTexte,onOuvrirActeur}){
+  const [etat,data]=useCommissions();
+  const c=data&&(data.commissions||[]).find(x=>x.uid===uid);
+  const Section=({titre,children})=><section style={{marginTop:24}}><h3 style={{fontFamily:"Georgia,serif",fontSize:16,color:"#1a1a2e",margin:"0 0 12px",paddingBottom:7,borderBottom:"2px solid #1f3d6b"}}>{titre}</h3>{children}</section>;
+  // Regroupe les membres par groupe politique
+  const parGroupe={};
+  if(c) (c.membres||[]).forEach(m=>{(parGroupe[m.groupe]=parGroupe[m.groupe]||[]).push(m);});
+  const groupesTries=Object.entries(parGroupe).sort((a,b)=>b[1].length-a[1].length);
+  const votees=c?c.textes.filter(t=>t.vote).length:0;
+
+  return <div onClick={onClose} style={{position:"fixed",inset:0,background:"rgba(20,20,35,0.55)",zIndex:55,display:"flex",justifyContent:"center",overflowY:"auto",padding:"24px 16px"}}>
+    <div onClick={e=>e.stopPropagation()} style={{background:"#fdfcf9",borderRadius:14,maxWidth:720,width:"100%",height:"fit-content",boxShadow:"0 20px 60px rgba(0,0,0,0.3)",overflow:"hidden"}}>
+      <div style={{background:"linear-gradient(135deg,#1f3d6b 0%,#16294a 130%)",color:"#fff",padding:"20px 26px",position:"relative"}}>
+        <button onClick={onClose} style={{position:"absolute",top:14,right:14,background:"rgba(255,255,255,0.2)",border:"none",borderRadius:8,width:30,height:30,color:"#fff",cursor:"pointer",fontSize:15}}>✕</button>
+        <div style={{fontSize:12,opacity:0.8,textTransform:"uppercase",letterSpacing:0.5}}>Commission permanente</div>
+        <h2 style={{fontFamily:"Georgia,serif",fontSize:21,paddingRight:40,marginTop:2}}>{c?c.nom:"…"}</h2>
+        {c&&<div style={{marginTop:8,fontSize:13.5,opacity:0.95}}>
+          {c.effectif} membres
+          {c.president&&<> · Président : <button onClick={()=>onOuvrirActeur&&onOuvrirActeur(c.president.acteurRef)} style={{background:"none",border:"none",padding:0,cursor:"pointer",color:"#fff",fontWeight:700,fontSize:13.5,textDecoration:"underline",fontFamily:"inherit"}}>{c.president.nom}</button></>}
+        </div>}
+      </div>
+      <div style={{padding:"6px 26px 30px"}}>
+        {etat==="load"&&<p style={{padding:"30px 0",textAlign:"center",color:"#666"}}>Chargement…</p>}
+        {(etat==="err"||(etat==="ok"&&!c))&&<p style={{padding:"30px 0",textAlign:"center",color:"#c0392b"}}>Fiche indisponible pour cette commission.</p>}
+        {c&&<>
+          <Section titre={"Composition ("+c.effectif+" membres)"}>
+            <div style={{display:"flex",flexDirection:"column",gap:6}}>
+              {groupesTries.map(([gp,ms])=><div key={gp} style={{display:"flex",alignItems:"center",gap:10}}>
+                <span style={{display:"inline-flex",alignItems:"center",gap:6,minWidth:70,fontSize:12.5,color:"#1a1a2e"}}>
+                  <span style={{width:9,height:9,borderRadius:"50%",background:G(gp).couleur}}></span>{G(gp).court}
+                </span>
+                <div style={{flex:1,height:14,background:"#eee",borderRadius:4,overflow:"hidden"}}>
+                  <div style={{width:(ms.length/c.effectif*100)+"%",height:"100%",background:G(gp).couleur}}></div>
+                </div>
+                <span style={{fontSize:12,fontWeight:600,color:"#555",minWidth:28,textAlign:"right"}}>{ms.length}</span>
+              </div>)}
+            </div>
+            <p style={{fontSize:11.5,color:"#999",marginTop:8}}>Répartition des membres par groupe politique.</p>
+          </Section>
+
+          <Section titre={"Lois examinées ("+c.nbLois+")"}>
+            <p style={{fontSize:12.5,color:"#666",marginBottom:12}}><strong style={{color:"#1a7a3a"}}>{votees}</strong> passée{votees>1?"s":""} au vote en séance · <strong style={{color:"#b8860b"}}>{c.nbLois-votees}</strong> examinée{(c.nbLois-votees)>1?"s":""} mais non votée{(c.nbLois-votees)>1?"s":""} (arrêtée en commission ou en cours).</p>
+            <div style={{maxHeight:340,overflowY:"auto"}}>
+              {c.textes.map((t,i)=>{
+                const contenu=<>
+                  <div style={{display:"flex",gap:7,alignItems:"center",flexWrap:"wrap",marginBottom:3}}>
+                    {t.vote?<span style={{fontSize:10,padding:"1px 6px",borderRadius:4,fontWeight:600,background:t.statut==="adopté"?"#e6f4ea":t.statut==="rejeté"?"#fbeaea":"#eef1f6",color:t.statut==="adopté"?"#1a7a3a":t.statut==="rejeté"?"#c0392b":"#1f3d6b"}}>{t.statut||"voté"}</span>
+                            :<span style={{fontSize:10,padding:"1px 6px",borderRadius:4,fontWeight:600,background:"#fff6e5",color:"#b8860b"}}>examiné · non voté</span>}
+                    {t.date&&<span style={{fontSize:10.5,color:"#aaa"}}>{frDate(t.date)}</span>}
+                    {t.rapporteurNom&&<span style={{fontSize:10.5,color:"#888"}}>· rapp. {t.rapporteurNom}</span>}
+                  </div>
+                  <div style={{fontSize:12.5,color:"#1a1a2e",lineHeight:1.35}}>{t.titre.slice(0,90)}{t.titre.length>90?"…":""}</div>
+                </>;
+                const style={display:"block",width:"100%",textAlign:"left",background:"#fff",border:"1px solid #e6e1d6",borderLeft:"3px solid "+(t.vote?"#1a7a3a":"#b8860b"),borderRadius:"0 8px 8px 0",padding:"8px 12px",marginBottom:6};
+                // Voté -> ouvre la fiche complète. Non voté -> lien vers le dossier officiel.
+                return t.vote
+                  ? <button key={i} onClick={()=>onOuvrirTexte&&onOuvrirTexte(t.ref)} style={{...style,cursor:"pointer"}}>{contenu}</button>
+                  : <a key={i} href={"https://www.assemblee-nationale.fr/dyn/17/dossiers/"+t.ref} target="_blank" rel="noopener noreferrer" style={{...style,textDecoration:"none"}}>{contenu}<div style={{fontSize:10.5,color:"#1f3d6b",marginTop:3}}>→ dossier sur assemblee-nationale.fr</div></a>;
+              })}
+            </div>
+          </Section>
+        </>}
+      </div>
+    </div>
+  </div>;
+}
+
 function App(){
   const [data,setData]=useState(null);
   const [etat,setEtat]=useState("load");
@@ -984,12 +1088,14 @@ function App(){
   const [fiche,setFiche]=useState(null);
   const [acteur,setActeur]=useState(null);
   const [groupe,setGroupe]=useState(null);
+  const [commission,setCommission]=useState(null);
   const [agenda,setAgenda]=useState(null);
   const [vue,setVue]=useState("calendrier");
   // Navigation par adresse : #texte/DLR… ou #depute/PA… -> liens partageables
   const allerTexte=(ref)=>{window.location.hash="texte/"+ref;};
   const allerActeur=(ref)=>{window.location.hash="depute/"+ref;};
   const allerGroupe=(code)=>{window.location.hash="groupe/"+code;};
+  const allerCommission=(uid)=>{window.location.hash="commission/"+uid;};
   const fermer=()=>{
     if(window.location.hash) window.history.back();
     else {setFiche(null);setActeur(null);}
@@ -1016,12 +1122,14 @@ function App(){
       const h=(window.location.hash||"").replace(/^#/,"");
       if(h.startsWith("texte/")){
         const t=(data&&data.textes||[]).find(x=>x.ref===h.slice(6));
-        setActeur(null); setGroupe(null); setFiche(t||null);
+        setActeur(null); setGroupe(null); setCommission(null); setFiche(t||null);
       } else if(h.startsWith("depute/")){
-        setFiche(null); setGroupe(null); setActeur(h.slice(7));
+        setFiche(null); setGroupe(null); setCommission(null); setActeur(h.slice(7));
       } else if(h.startsWith("groupe/")){
-        setFiche(null); setActeur(null); setGroupe(h.slice(7));
-      } else { setFiche(null); setActeur(null); setGroupe(null); }
+        setFiche(null); setActeur(null); setCommission(null); setGroupe(h.slice(7));
+      } else if(h.startsWith("commission/")){
+        setFiche(null); setActeur(null); setGroupe(null); setCommission(h.slice(11));
+      } else { setFiche(null); setActeur(null); setGroupe(null); setCommission(null); }
     };
     appliquer();
     window.addEventListener("hashchange",appliquer);
@@ -1048,6 +1156,7 @@ function App(){
           <button onClick={()=>setVue("recherche")} style={{background:vue==="recherche"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="recherche"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>🔍 Recherche</button>
           <button onClick={()=>setVue("stats")} style={{background:vue==="stats"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="stats"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>📊 Stats</button>
           <button onClick={()=>setVue("deputes")} style={{background:vue==="deputes"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="deputes"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>🗺 Vos députés</button>
+          <button onClick={()=>setVue("commissions")} style={{background:vue==="commissions"?"#ffc400":"rgba(255,255,255,0.12)",color:vue==="commissions"?"#1a1a2e":"#fff",border:"none",borderRadius:8,padding:"8px 16px",fontSize:13.5,fontWeight:600,cursor:"pointer"}}>🏛 Commissions</button>
         </div>
         {etat==="ok"&&data&&<div style={{marginTop:16,display:"inline-block",background:"rgba(255,255,255,0.1)",borderRadius:10,padding:"8px 14px",fontSize:12.5}}>▤ {data.nb_textes} textes · {data.source} · générées le {data.genere_le?new Date(data.genere_le).toLocaleDateString("fr-FR"):"?"}</div>}
       </div>
@@ -1062,6 +1171,10 @@ function App(){
 
     {etat==="ok"&&vue==="deputes"&&<main style={{maxWidth:1040,margin:"0 auto",padding:"28px 20px"}}>
       <Territoires onOuvrirActeur={allerActeur} onOuvrirGroupe={allerGroupe}/>
+    </main>}
+
+    {etat==="ok"&&vue==="commissions"&&<main style={{maxWidth:900,margin:"0 auto",padding:"28px 20px"}}>
+      <ListeCommissions onOuvrir={allerCommission}/>
     </main>}
 
     {etat==="ok"&&vue==="stats"&&<main style={{maxWidth:960,margin:"0 auto",padding:"28px 20px"}}>
@@ -1106,6 +1219,7 @@ function App(){
     {fiche&&<Fiche t={fiche} onClose={fermer} onOuvrirActeur={allerActeur} onOuvrirGroupe={allerGroupe}/>}
     {acteur&&<FicheActeur acteurRef={acteur} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirGroupe={allerGroupe}/>}
     {groupe&&<FicheGroupe code={groupe} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirActeur={allerActeur} onOuvrirGroupe={allerGroupe}/>}
+    {commission&&<FicheCommission uid={commission} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirActeur={allerActeur}/>}
   </div>;
 }
 
