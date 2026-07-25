@@ -160,9 +160,10 @@ function VotesNominatifs({texteRef,onOuvrirActeur}){
 }
 
 // ---------- Fiche d'un acteur (député, ministre, sénateur) ----------
-function FicheActeur({acteurRef,onClose,onOuvrirTexte,onOuvrirGroupe}){
+function FicheActeur({acteurRef,onClose,onOuvrirTexte,onOuvrirGroupe,onOuvrirCommission,onOuvrirTexteCommission}){
   const [etat,setEtat]=useState("load");
   const [f,setF]=useState(null);
+  const [coms,setComs]=useState(null);
   useEffect(()=>{(async()=>{
     setEtat("load");
     try{
@@ -170,6 +171,22 @@ function FicheActeur({acteurRef,onClose,onOuvrirTexte,onOuvrirGroupe}){
       setF(await r.json()); setEtat("ok");
     }catch(e){setEtat("err");}
   })();},[acteurRef]);
+  useEffect(()=>{(async()=>{
+    try{
+      const r=await fetch("public/commissions.json?d="+new Date().toISOString().slice(0,10));
+      setComs((await r.json()).commissions||[]);
+    }catch(e){setComs([]);}
+  })();},[]);
+
+  // Commissions du député + textes qu'il/elle a rapportés (déduits de commissions.json)
+  const mesCommissions=(coms||[]).map(c=>{
+    const m=(c.membres||[]).find(x=>x.acteurRef===acteurRef);
+    return m?{uid:c.uid,nom:c.nom,fonction:m.fonction}:null;
+  }).filter(Boolean);
+  const vus={}, mesRapports=[];
+  (coms||[]).forEach(c=>(c.textes||[]).forEach(t=>{
+    if(t.rapporteurRef===acteurRef&&!vus[t.ref]){vus[t.ref]=1;mesRapports.push({...t,commission:c.nom});}
+  }));
 
   const Section=({titre,children})=><section style={{marginTop:24}}><h3 style={{fontFamily:"Georgia,serif",fontSize:16,color:"#1a1a2e",margin:"0 0 12px",paddingBottom:7,borderBottom:"2px solid #1f3d6b"}}>{titre}</h3>{children}</section>;
   const coulPos={pour:"#1a7a3a",contre:"#c0392b",abstention:"#b8860b","non-votant":"#9ca3af"};
@@ -205,6 +222,27 @@ function FicheActeur({acteurRef,onClose,onOuvrirTexte,onOuvrirGroupe}){
             </div>
             <p style={{fontSize:11.5,color:"#999",marginTop:8}}>Sur {f.nbVotes} scrutin{f.nbVotes>1?"s":""} publics de la base{f.parDelegation>0?` · ${f.parDelegation} vote(s) par procuration`:""}.</p>
           </Section>
+
+          {mesCommissions.length>0&&<Section titre={mesCommissions.length>1?"Ses commissions":"Sa commission"}>
+            <div style={{display:"flex",flexDirection:"column",gap:8}}>
+              {mesCommissions.map((c,i)=><button key={i} onClick={()=>onOuvrirCommission&&onOuvrirCommission(c.uid)} style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10,width:"100%",textAlign:"left",background:"#fff",border:"1px solid #e6e1d6",borderLeft:"3px solid #1f3d6b",borderRadius:"0 8px 8px 0",padding:"9px 13px",cursor:"pointer"}}>
+                <span style={{fontSize:13,color:"#1a1a2e"}}>{c.nom}</span>
+                {c.fonction&&c.fonction.toLowerCase()!=="membre"&&<span style={{fontSize:11,fontWeight:600,color:"#b8860b",background:"#fff6e5",padding:"2px 8px",borderRadius:5,whiteSpace:"nowrap"}}>{c.fonction}</span>}
+              </button>)}
+            </div>
+          </Section>}
+
+          {mesRapports.length>0&&<Section titre={"Rapporteur de ("+mesRapports.length+")"}>
+            <p style={{fontSize:12,color:"#666",marginBottom:10,lineHeight:1.5}}>Textes dont il/elle a été rapporteur en commission — le rôle clé dans l'écriture d'un texte.</p>
+            {mesRapports.map((t,i)=><button key={i} onClick={()=>t.vote?(onOuvrirTexte&&onOuvrirTexte(t.ref)):(onOuvrirTexteCommission&&onOuvrirTexteCommission(t.ref))} style={{display:"block",width:"100%",textAlign:"left",background:"#fff",border:"1px solid #e6e1d6",borderLeft:"3px solid "+(t.vote?"#1a7a3a":"#b8860b"),borderRadius:"0 8px 8px 0",padding:"8px 12px",marginBottom:6,cursor:"pointer"}}>
+              <div style={{display:"flex",gap:7,alignItems:"center",flexWrap:"wrap",marginBottom:2}}>
+                {t.vote?<span style={{fontSize:10,padding:"1px 6px",borderRadius:4,fontWeight:600,background:t.statut==="adopté"?"#e6f4ea":t.statut==="rejeté"?"#fbeaea":"#eef1f6",color:t.statut==="adopté"?"#1a7a3a":t.statut==="rejeté"?"#c0392b":"#1f3d6b"}}>{t.statut||"voté"}</span>
+                        :<span style={{fontSize:10,padding:"1px 6px",borderRadius:4,fontWeight:600,background:"#fff6e5",color:"#b8860b"}}>examiné · non voté</span>}
+                {t.date&&<span style={{fontSize:10.5,color:"#aaa"}}>{frDate(t.date)}</span>}
+              </div>
+              <div style={{fontSize:12.5,color:"#1a1a2e",lineHeight:1.35}}>{t.titre.slice(0,90)}{t.titre.length>90?"…":""}</div>
+            </button>)}
+          </Section>}
 
           {f.textesDeposes&&f.textesDeposes.length>0&&<Section titre={"Textes dont il/elle est l'auteur ("+f.textesDeposes.length+")"}>
             {f.textesDeposes.map((t,i)=><button key={i} onClick={()=>onOuvrirTexte&&onOuvrirTexte(t.ref)} style={{display:"block",width:"100%",textAlign:"left",background:"#fff",border:"1px solid #e6e1d6",borderRadius:8,padding:"9px 12px",marginBottom:7,cursor:"pointer"}}>
@@ -1070,6 +1108,7 @@ function FicheTexteCommission({dlr,onClose,onOuvrirActeur}){
 
 function FicheCommission({uid,onClose,onOuvrirTexte,onOuvrirActeur,onOuvrirTexteCommission}){
   const [etat,data]=useCommissions();
+  const [grpOuvert,setGrpOuvert]=useState(null);
   const c=data&&(data.commissions||[]).find(x=>x.uid===uid);
   const Section=({titre,children})=><section style={{marginTop:24}}><h3 style={{fontFamily:"Georgia,serif",fontSize:16,color:"#1a1a2e",margin:"0 0 12px",paddingBottom:7,borderBottom:"2px solid #1f3d6b"}}>{titre}</h3>{children}</section>;
   // Regroupe les membres par groupe politique
@@ -1095,17 +1134,28 @@ function FicheCommission({uid,onClose,onOuvrirTexte,onOuvrirActeur,onOuvrirTexte
         {c&&<>
           <Section titre={"Composition ("+c.effectif+" membres)"}>
             <div style={{display:"flex",flexDirection:"column",gap:6}}>
-              {groupesTries.map(([gp,ms])=><div key={gp} style={{display:"flex",alignItems:"center",gap:10}}>
-                <span style={{display:"inline-flex",alignItems:"center",gap:6,minWidth:70,fontSize:12.5,color:"#1a1a2e"}}>
-                  <span style={{width:9,height:9,borderRadius:"50%",background:G(gp).couleur}}></span>{G(gp).court}
-                </span>
-                <div style={{flex:1,height:14,background:"#eee",borderRadius:4,overflow:"hidden"}}>
-                  <div style={{width:(ms.length/c.effectif*100)+"%",height:"100%",background:G(gp).couleur}}></div>
-                </div>
-                <span style={{fontSize:12,fontWeight:600,color:"#555",minWidth:28,textAlign:"right"}}>{ms.length}</span>
-              </div>)}
+              {groupesTries.map(([gp,ms])=>{
+                const ouvert=grpOuvert===gp;
+                return <div key={gp}>
+                  <button onClick={()=>setGrpOuvert(ouvert?null:gp)} style={{display:"flex",alignItems:"center",gap:10,width:"100%",background:"none",border:"none",padding:"3px 0",cursor:"pointer",fontFamily:"inherit"}}>
+                    <span style={{display:"inline-flex",alignItems:"center",gap:6,minWidth:70,fontSize:12.5,color:"#1a1a2e"}}>
+                      <span style={{width:9,height:9,borderRadius:"50%",background:G(gp).couleur}}></span>{G(gp).court}
+                    </span>
+                    <div style={{flex:1,height:14,background:"#eee",borderRadius:4,overflow:"hidden"}}>
+                      <div style={{width:(ms.length/c.effectif*100)+"%",height:"100%",background:G(gp).couleur}}></div>
+                    </div>
+                    <span style={{fontSize:12,fontWeight:600,color:"#555",minWidth:28,textAlign:"right"}}>{ms.length}</span>
+                    <span style={{fontSize:9,color:"#aaa",width:12}}>{ouvert?"▲":"▼"}</span>
+                  </button>
+                  {ouvert&&<div style={{margin:"5px 0 10px 80px",display:"flex",flexWrap:"wrap",gap:6}}>
+                    {ms.slice().sort((a,b)=>a.nom.localeCompare(b.nom)).map((m,j)=><button key={j} onClick={()=>onOuvrirActeur&&onOuvrirActeur(m.acteurRef)} style={{fontSize:12,background:"#fff",border:"1px solid #e6e1d6",borderRadius:6,padding:"4px 9px",cursor:"pointer",color:"#1f3d6b",fontFamily:"inherit"}}>
+                      {m.nom}{m.fonction&&m.fonction.toLowerCase()!=="membre"&&<span style={{color:"#b8860b"}}> · {m.fonction}</span>}
+                    </button>)}
+                  </div>}
+                </div>;
+              })}
             </div>
-            <p style={{fontSize:11.5,color:"#999",marginTop:8}}>Répartition des membres par groupe politique.</p>
+            <p style={{fontSize:11.5,color:"#999",marginTop:8}}>Répartition par groupe politique. Cliquez sur un groupe pour voir ses députés.</p>
           </Section>
 
           <Section titre={"Lois examinées ("+c.nbLois+")"}>
@@ -1276,7 +1326,7 @@ function App(){
     <footer style={{maxWidth:1000,margin:"0 auto",padding:"8px 20px 40px",fontSize:11.5,color:"#aaa",lineHeight:1.5}}>Données réelles issues de l'open data de l'Assemblée nationale. Résultats et votes par groupe : données officielles. Ce site se met à jour automatiquement quand la base est rafraîchie.</footer>
 
     {fiche&&<Fiche t={fiche} onClose={fermer} onOuvrirActeur={allerActeur} onOuvrirGroupe={allerGroupe}/>}
-    {acteur&&<FicheActeur acteurRef={acteur} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirGroupe={allerGroupe}/>}
+    {acteur&&<FicheActeur acteurRef={acteur} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirGroupe={allerGroupe} onOuvrirCommission={allerCommission} onOuvrirTexteCommission={allerTexteCommission}/>}
     {groupe&&<FicheGroupe code={groupe} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirActeur={allerActeur} onOuvrirGroupe={allerGroupe}/>}
     {commission&&<FicheCommission uid={commission} onClose={fermer} onOuvrirTexte={allerTexte} onOuvrirActeur={allerActeur} onOuvrirTexteCommission={allerTexteCommission}/>}
     {texteC&&<FicheTexteCommission dlr={texteC} onClose={fermer} onOuvrirActeur={allerActeur}/>}
