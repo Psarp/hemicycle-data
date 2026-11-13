@@ -6836,5 +6836,43 @@
   "statut": "echec",
   "source": "SN",
   "maj": "2026-11-10T13:22:00+00:00"
+ },
+ "DLR5L17N55223": {
+  "statut": "ok",
+  "source": "AN",
+  "url": "https://www.assemblee-nationale.fr/dyn/opendata/PRJLANR5L17B3434.html",
+  "maj": "2026-11-13T12:55:32+00:00",
+  "paragraphes": [
+   "ARTICLE liminaire : Prévision de solde structurel et de solde effectif de l’ensemble des administrations publiques pour l’année 2026",
+   "PREMIÈRE PARTIE : CONDITIONS GÉNÉRALES DE L’ÉQUILIBRE FINANCIER",
+   "TITRE IER : DISPOSITIONS RELATIVES AUX RESSOURCES",
+   "ARTICLE 1 : Ajustement des dispositions relatives à l’affectation de ressources à des tiers",
+   "ARTICLE 2 : Abaissement en 2026 du plafond de la première section du compte d’affectation spéciale « Contrôle de la circulation et du stationnement routiers »",
+   "ARTICLE 3 : Relations financières entre l’État et la Sécurité sociale",
+   "TITRE II : DISPOSITIONS RELATIVES À L’ÉQUILIBRE DES RESSOURCES ET DES CHARGES",
+   "ARTICLE 4 : Équilibre général du budget, trésorerie et plafond d’autorisation des emplois",
+   "SECONDE PARTIE : MOYENS DES POLITIQUES PUBLIQUES ET DISPOSITIONS SPÉCIALES",
+   "TITRE IER : AUTORISATIONS BUDGÉTAIRES POUR 2026",
+   "I. - Autorisation des crédits des missions",
+   "ARTICLE 5 : Budget général : ouvertures et annulations de crédits",
+   "ARTICLE 6 : Budgets annexes : ouvertures et annulations de crédits",
+   "ARTICLE 7 : Comptes spéciaux : ouvertures et annulations de crédits",
+   "II. - Plafonds des autorisations d’emplois",
+   "ARTICLE 8 : Plafond d’autorisation des emplois des opérateurs de l’État",
+   "TITRE II : RATIFICATION DE DECRETS D’AVANCE",
+   "ARTICLE 9 : Ratification de deux décrets d’avance",
+   "Etat A - Voies et moyens pour 2026 révisés",
+   "Etat B - Répartition des crédits pour 2026 ouverts/annulés, par mission et programme, au titre du budget général",
+   "Etat C - Répartition des crédits pour 2026 ouverts/annulés, par mission et programme, au titre des budgets annexes",
+   "Etat D - Répartition des crédits pour 2026 ouverts/annulés, par mission et programme, au titre des comptes spéciaux",
+   "Analyse par programme des modifications de crédits intervenues en gestion et motivation des modifications proposées par le projet de loi",
+   "I. Budget général : programmes porteurs d’ouvertures et d’annulations de crédits proposées à l’état B",
+   "II. Budgets annexes : programmes porteurs d’ouvertures et d’annulations de crédits proposées à l’état C",
+   "III. Comptes spéciaux : programmes porteurs d’ouvertures et d’annulations de crédits proposées à l’état D",
+   "Tableau récapitulatif des textes réglementaires pris en vertu de la LOLF et relatifs aux crédits de l’année en cours",
+   "Décrets pris en application de l’article 12 de la loi n° 2001-692 du 1er août 2001 - Transferts de crédits",
+   "Décrets pris en application de l’article 12 de la loi n° 2001-692 du 1er août 2001 - Virements de crédits",
+   "Décrets pris en application de l’article 13 de la loi n° 2001-692 du 1er août 2001 - Avances"
+  ]
  }
 }
